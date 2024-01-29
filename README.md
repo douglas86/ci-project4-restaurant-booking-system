@@ -2,6 +2,11 @@
 
 ## [Introduction](#table-of-content)
 
+This is Part of my Fourth Project at Code Institute.
+
+This is a simple Restaurant Booking System, were I can book tables based on a date and
+see the Restaurant Menu and Chef's specials.
+
 ---
 
 # Table of Content
