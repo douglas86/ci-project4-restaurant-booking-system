@@ -39,6 +39,15 @@ Header
 
 ### [Technology Used](#planning)
 
+- HTML/CSS - html templating and css styling
+- Python—logic used in this project
+- JavaScript—Used for Models and other front end logic
+- Django - Python Framework for developing this project
+- PostgresSQL - using elephantSQL for database
+- Heroku - cloud deployment
+- GitHub - version control
+- Pycharm - IDE for development
+
 ### [How to start this project locally](#planning)
 
 ### [How this project was deployed to Heroku](#planning)
