@@ -33,6 +33,10 @@ see the Restaurant Menu and Chef's specials.
 
 ### [User Stories using MOSCOW Prioritization techniques](#planning)
 
+Header
+
+![Screenshot from 2024-02-04 14-57-56.png](static/images/readme/moscow-header.png)
+
 ### [Technology Used](#planning)
 
 ### [How to start this project locally](#planning)
