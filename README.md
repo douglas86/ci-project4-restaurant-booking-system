@@ -13,12 +13,12 @@ see the Restaurant Menu and Chef's specials.
 
 - [Planning](#planning)
   - [Wireframes](#wireframes)
+  - [User Stories using MOSCOW Prioritization techniques](#user-stories-using-moscow-prioritization-techniques)
   - [Technology Used](#technology-used)
   - [How to start this project locally](#how-to-start-this-project-locally)
   - [How this project was deployed to Heroku](#how-this-project-was-deployed-to-heroku)
 - [Features](#features)
   - [Features that have been included in this project](#features-that-have-been-included-in-this-project)
-  - [User Stories using MOSCOW Prioritization techniques](#user-stories-using-moscow-prioritization-techniques)
   - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
@@ -31,6 +31,8 @@ see the Restaurant Menu and Chef's specials.
 
 ### [Wireframes](#planning)
 
+### [User Stories using MOSCOW Prioritization techniques](#planning)
+
 ### [Technology Used](#planning)
 
 ### [How to start this project locally](#planning)
@@ -42,8 +44,6 @@ see the Restaurant Menu and Chef's specials.
 ## [Features](#table-of-content)
 
 ### [Features that have been included in this project](#features)
-
-### [User Stories using MOSCOW Prioritization techniques](#features)
 
 ### [Future features to be added at a later stage](#features)
 
