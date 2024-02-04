@@ -14,9 +14,9 @@ see the Restaurant Menu and Chef's specials.
 - [Planning](#planning)
   - [Wireframes](#wireframes)
   - [User Stories using MOSCOW Prioritization techniques](#user-stories-using-moscow-prioritization-techniques)
-  - [Technology Used](#technology-used)
   - [How to start this project locally](#how-to-start-this-project-locally)
   - [How this project was deployed to Heroku](#how-this-project-was-deployed-to-heroku)
+  - [Technology Used](#technology-used)
 - [Features](#features)
   - [Features that have been included in this project](#features-that-have-been-included-in-this-project)
   - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
@@ -47,6 +47,10 @@ Header
 
 ![Screenshot from 2024-02-04 14-57-56.png](static/images/readme/moscow-header.png)
 
+### [How to start this project locally](#planning)
+
+### [How this project was deployed to Heroku](#planning)
+
 ### [Technology Used](#planning)
 
 - HTML/CSS - html templating and css styling
@@ -57,10 +61,6 @@ Header
 - Heroku - cloud deployment
 - GitHub - version control
 - Pycharm - IDE for development
-
-### [How to start this project locally](#planning)
-
-### [How this project was deployed to Heroku](#planning)
 
 ---
 
