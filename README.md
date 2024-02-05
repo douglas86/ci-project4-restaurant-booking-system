@@ -4,8 +4,8 @@
 
 This is Part of my Fourth Project at Code Institute.
 
-This is a simple Restaurant Booking System, were I can book tables based on a date and
-see the Restaurant Menu and Chef's specials.
+This is a simple Restaurant Booking System, were I can book tables based on a date and time
+I am also able to see the Restaurant's Menu and Chef's specials.
 
 ---
 
@@ -92,6 +92,18 @@ env.py
 ![env.png](static/images/readme/env.png)
 
 ### [How this project was deployed to Heroku](#planning)
+
+- head over to [Heroku Dashboard](https://dashboard.heroku.com/apps)
+- create a new app and add all the environment variables to your config vars
+- make sure to add DISABLE_COLLECTSTATIC with the value of 1
+- if this variable is not used Heroku will spit out an error
+- change DJANGO_DEBUG with the value of False
+- make sure that there is a runtime.txt file
+- this will tell Heroku what version of python to use
+- make sure that requirements.txt is up to date
+- make sure to see if Heroku hasn't automatically add a build pack for PostgresSQL
+- if it has delete it as this project is using elephantSQL instead
+- connect github and the repo to Heroku and build the project
 
 ### [Technology Used](#planning)
 
