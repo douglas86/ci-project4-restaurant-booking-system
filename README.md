@@ -51,6 +51,7 @@ This is the color pallet that I am using
 ![color-pallet.png](static/images/readme/planning/color-pallet.png)
 
 The reason for this color pallet:
+
 I wanted to stick to a blueish theme for this restaurant
 
 ### [User Stories using MOSCOW Prioritization techniques](#planning)
