@@ -3,6 +3,7 @@
 {% url 'home' as home %}
 {% url 'menu' as menu %}
 {% url 'table' as table %}
+{% url 'about' as about %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +51,7 @@
                         <img src="{% static 'images/navbar/Restaurant Table.png' %}" alt="not found">
                         <p>Book Table</p>
                     </a>
-                    <a class="nav-link icon" href="#">
+                    <a class="nav-link icon" href="{% url 'about' %}">
                         <img src="{% static 'images/navbar/Info.png' %}" alt="not found">
                         <p>About</p>
                     </a>

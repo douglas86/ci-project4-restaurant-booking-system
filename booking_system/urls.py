@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from about.views import AboutView
 from book_table.views import BookTable
 from home.views import HomePageView
 from menu.views import MenuView
 
 urlpatterns = [
+    path('about/', AboutView.as_view(), name='about'),
     path('admin/', admin.site.urls),
     path('menu/', MenuView.as_view(), name='menu'),
     path('table/', BookTable.as_view(), name='table'),
