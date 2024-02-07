@@ -43,7 +43,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'home',
+    'menu',
+    'book_table',
+    'about',
 ]
 
 MIDDLEWARE = [
