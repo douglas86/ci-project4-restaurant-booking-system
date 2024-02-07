@@ -64,13 +64,13 @@
             {% if user.is_authenticated %}
                 <a class="navbar-brand icon {% if request.path == logout_url %}active{% endif %}"
                    href="{% url 'account_logout' %}" aria-current="page">
-                    <img src="{% static 'images/navbar/Male User.png' %}" alt="not found">
+                    <img src="{% static 'images/navbar/logout.png' %}" alt="not found">
                     <p>Logout</p>
                 </a>
             {% else %}
                 <a class="navbar-brand icon {% if request.path == login_url %}active{% endif %}"
                    href="{% url 'account_login' %}" aria-current="page">
-                    <img src="{% static 'images/navbar/Male User.png' %}" alt="not found">
+                    <img src="{% static 'images/navbar/login.png' %}" alt="not found">
                     <p>Login</p>
                 </a>
             {% endif %}
