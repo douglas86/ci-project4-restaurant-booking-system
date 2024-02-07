@@ -1,4 +1,7 @@
 /*header*/
+.navbar {
+    background-color: #B4CAED !important;
+}
 .icon img {
     width: 4rem;
     margin: auto;
