@@ -1,5 +1,7 @@
 {% load static %}
 
+{% url 'home' as home %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +36,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a aria-current="page" class="nav-link active icon" href="#">
+                    <a aria-current="page" class="nav-link active icon" href="{% url 'home' %}">
                         <img src="{% static 'images/navbar/Home.png' %}" alt="not found">
                         <p>Home</p>
                     </a>
