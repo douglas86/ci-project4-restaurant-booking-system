@@ -44,15 +44,15 @@ Mobile
 
 ### [Colour Pallet](#planning)
 
-My colour pallet was taken off [color wheel](https://color.adobe.com/create/color-wheel) website
+My colour pallet was taken from [color space](https://mycolor.space/)
 
-Colour Wheel
+This is the color pallet that I am using
 
-![color-wheel](static/images/readme/color-wheel.png)
+![color-pallet.png](static/images/readme/planning/color-pallet.png)
 
-Colour Pallet
+The reason for this color pallet:
 
-![color-pallet.png](static/images/readme/color-pallet.png)
+I wanted to stick to a blueish theme for this restaurant
 
 ### [User Stories using MOSCOW Prioritization techniques](#planning)
 
