@@ -2,5 +2,5 @@ from django.views.generic import TemplateView
 
 
 # Create your views here.
-class HomePageView(TemplateView):
-    template_name = 'home/index.html'
+class MenuView(TemplateView):
+    template_name = 'menu/menu.html'

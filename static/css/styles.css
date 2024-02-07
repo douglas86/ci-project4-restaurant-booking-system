@@ -1,0 +1,21 @@
+/*header*/
+.navbar {
+    background-color: #B4CAED !important;
+}
+.icon img {
+    width: 4rem;
+    margin: auto;
+}
+
+.container-fluid {
+    display: flex;
+}
+
+.navbar-brand {
+    width: 20%;
+}
+
+.navbar-nav {
+    width: 80%;
+    justify-content: space-between;
+}
