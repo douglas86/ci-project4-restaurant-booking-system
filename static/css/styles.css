@@ -3,3 +3,16 @@
     width: 4rem;
     margin: auto;
 }
+
+.container-fluid {
+    display: flex;
+}
+
+.navbar-brand {
+    width: 20%;
+}
+
+.navbar-nav {
+    width: 80%;
+    justify-content: space-between;
+}
