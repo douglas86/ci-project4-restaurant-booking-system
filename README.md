@@ -44,15 +44,11 @@ Mobile
 
 ### [Colour Pallet](#planning)
 
-My colour pallet was taken off [color wheel](https://color.adobe.com/create/color-wheel) website
+My colour pallet was taken from [color space](https://mycolor.space/)
 
-Colour Wheel
+This is the color pallet that I am using
 
-![color-wheel](static/images/readme/color-wheel.png)
-
-Colour Pallet
-
-![color-pallet.png](static/images/readme/color-pallet.png)
+![color-pallet.png](static/images/readme/planning/color-pallet.png)
 
 ### [User Stories using MOSCOW Prioritization techniques](#planning)
 
