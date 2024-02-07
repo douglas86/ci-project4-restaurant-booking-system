@@ -24,6 +24,7 @@ from menu.views import MenuView
 
 urlpatterns = [
     path('about/', AboutView.as_view(), name='about'),
+    path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('menu/', MenuView.as_view(), name='menu'),
     path('table/', BookTable.as_view(), name='table'),
