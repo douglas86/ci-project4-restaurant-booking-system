@@ -32,6 +32,9 @@ class Customer(models.Model):
 
 
 class ChefSpecials(models.Model):
+    """
+    Chef Specials Model for storing breakfast, lunch and supper for carousel on homepage
+    """
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     ingredients = models.JSONField(default=list)
