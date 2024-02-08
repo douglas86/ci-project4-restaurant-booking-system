@@ -7,6 +7,7 @@ class Customer(models.Model):
     """
     Customer Model for storing data based on the user that is logged in
     """
+    id = models.AutoField(primary_key=True)
     user_name = models.ForeignKey(User, on_delete=models.CASCADE)
     next_booking = models.DateField()
     table_history = models.JSONField(default=dict)
