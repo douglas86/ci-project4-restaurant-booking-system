@@ -19,3 +19,8 @@
     width: 80%;
     justify-content: space-between;
 }
+
+/*forms*/
+form {
+    padding: 2em;
+}
