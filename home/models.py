@@ -25,6 +25,9 @@ class Customer(models.Model):
         return self.user_name
 
     class Meta:
+        """
+        Metaclass to order data based on the created_at in descending order
+        """
         ordering = ['-created_at']
 
 
@@ -36,3 +39,16 @@ class ChefSpecials(models.Model):
     featured_image = CloudinaryField('image', default='placeholder')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        """
+        String for representing the Model object by title
+        :return:
+        """
+        return self.title
+
+    class Meta:
+        """
+        Metaclass to order data based on the served value and created_at in ascending order
+        """
+        ordering = ['served', 'created_at']
