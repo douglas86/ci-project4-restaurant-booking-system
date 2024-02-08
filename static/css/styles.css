@@ -5,6 +5,10 @@ h1 {
     margin: 2rem auto;
 }
 
+p {
+    text-align: center;
+}
+
 /*header*/
 .navbar {
     background-color: #B4CAED !important;

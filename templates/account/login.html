@@ -1,9 +1,14 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load allauth account %}
 
 {% block content %}
     <h1>Sign In</h1>
 
+    <p>
+        {% blocktrans %}If you have not created an account yet, then please
+            <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+    </p>
     {% url 'account_login' as login_url %}
     {% element form form=form method="post" action=login_url tags="entrance,login" %}
         {% slot body %}
