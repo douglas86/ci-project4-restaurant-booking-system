@@ -1,6 +1,8 @@
+from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 from django.db import models
 
+# Variable to use to choose what meal time the special is served
 STATUS = ((0, 'Breakfast'), (1, 'Lunch'), (2, 'Supper'))
 
 
@@ -31,17 +33,23 @@ class Customer(models.Model):
         ordering = ['-created_at']
 
 
-class ChefSpecials(models.Model):
+class ChefSpecial(models.Model):
     """
     Chef Specials Model for storing breakfast, lunch and supper for carousel on homepage
     """
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
-    ingredients = models.JSONField(default=list)
+    ingredients = models.JSONField(default=dict, blank=True)
     served = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        """
+        Metaclass to order data based on the served value and created_at in ascending order
+        """
+        ordering = ['served', 'created_at']
 
     def __str__(self):
         """
@@ -49,9 +57,3 @@ class ChefSpecials(models.Model):
         :return:
         """
         return self.title
-
-    class Meta:
-        """
-        Metaclass to order data based on the served value and created_at in ascending order
-        """
-        ordering = ['served', 'created_at']

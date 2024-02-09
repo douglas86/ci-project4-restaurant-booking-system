@@ -8,7 +8,7 @@ class TableBookings(models.Model):
     Table Bookings for when the customer wants to book at the restaurant
     """
     id = models.AutoField(primary_key=True)
-    user_name = modles.ForeignKey(User, on_delete=models.CASCADE)
+    user_name = models.ForeignKey(User, on_delete=models.CASCADE)
     seats = models.IntegerField()
     time_slots = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
