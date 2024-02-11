@@ -94,6 +94,10 @@ Header
 
 ![Screenshot from 2024-02-04 14-57-56.png](static/images/readme/moscow-header.png)
 
+Kambam board halfway cycle
+
+![kambam-board.png](static/images/readme/planning/kambam-board.png)
+
 ### [How to start this project locally](#planning)
 
 - when using ssh
