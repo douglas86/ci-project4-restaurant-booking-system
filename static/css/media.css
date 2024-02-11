@@ -3,15 +3,14 @@
     /*header*/
     .authentication {
         display: flex;
-    }
-
-    .user-message {
-        display: block;
         margin: auto;
-        text-align: center;
-        padding: 1%;
     }
 
+    .auth-img {
+        padding: 1rem;
+    }
+
+    /*main*/
     /*forms*/
     form {
         padding: 5em;

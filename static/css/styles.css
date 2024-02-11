@@ -4,7 +4,6 @@ h1 {
     text-align: center;
     margin: 2rem auto;
 }
-
 p {
     text-align: center;
 }
@@ -17,22 +16,44 @@ p {
     width: 4rem;
     margin: auto;
 }
-
 .container-fluid {
     display: flex;
 }
-
 .navbar-brand {
     width: 20%;
 }
-
 .navbar-nav {
     width: 80%;
     justify-content: space-between;
 }
 
-.user-message {
+.collapse .navbar-collapse .authentication {
     display: none;
+}
+
+.authentication {
+    display: flex;
+}
+
+.user-message {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.auth-icon {
+    display: flex;
+    width: 50%;
+}
+
+.auth-img {
+    display: flex;
+    justify-content: center;
+}
+
+.auth-icon p {
+    margin: auto;
+    text-align: center;
 }
 
 /*main*/
