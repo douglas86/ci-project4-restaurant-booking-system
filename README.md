@@ -90,11 +90,13 @@ I went onto Google and googled: What would be a nice color theme for an exclusiv
 
 ### [User Stories using MOSCOW Prioritization techniques](#planning)
 
+This Project was done in incremental stages, trying my best to follow the agile methods.
+
 Header
 
 ![Screenshot from 2024-02-04 14-57-56.png](static/images/readme/moscow-header.png)
 
-Kambam board halfway cycle
+Kambam board
 
 ![kambam-board.png](static/images/readme/planning/kambam-board.png)
 
