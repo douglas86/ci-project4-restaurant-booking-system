@@ -240,6 +240,18 @@ I wanted to keep it basic
 
 ## [Bugs](#table-of-content)
 
+### The text is not aligned correctly to the Authentication Icon
+
+The text was not aligned correctly to the icon above it
+
+![header-text-incorrect.png](static/images/readme/bugs/header-text-incorrect.png)
+
+This bug was solved
+by placing it inside a container
+then I could manipulate it with CSS
+
+![header-text-correct.png](static/images/readme/bugs/header-text-correct.png)
+
 ---
 
 ## [Credits](#table-of-content)
