@@ -31,6 +31,8 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 
 ## [Planning](#table-of-content)
 
+These Wireframes and UX Designs were designed on Figma
+
 ### [Wireframes](#planning)
 
 #### Homepage
