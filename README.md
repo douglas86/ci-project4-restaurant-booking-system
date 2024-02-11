@@ -26,6 +26,8 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [Manual Testing](#manual-testing)
   - [Automated Testing](#automated-testing)
 - [Bugs](#bugs)
+  - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
+  - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
 - [Credits](#credits)
 
 ---
@@ -181,7 +183,24 @@ env.py
 
 ### [Features that have been included in this project](#features)
 
+When screen gets minimised all content gets reduced to hamburger menu
+
+![header-hamburger-menu.png](static/images/readme/features/header-hamburger-menu.png)
+
+Authentication was implemented
+
+When the user is not logged in, this image will be displayed
+
+![header-logout-image.png](static/images/readme/features/header-logout-image.png)
+
+When the user is logged in, a welcome message will be displayed with a different image
+
+![header-login-image.png](static/images/readme/features/header-login-image.png)
+
 ### [Future features to be added at a later stage](#features)
+
+- I would like to add a dashboard for the admin logged-in user
+- I have already included a role in the database for this feature
 
 ---
 
@@ -250,7 +269,7 @@ I wanted to keep it basic
 
 ## [Bugs](#table-of-content)
 
-### The text is not aligned correctly to the Authentication Icon
+### [The text is not aligned correctly to the Authentication Icon](#bugs)
 
 The text was not aligned correctly to the icon above it
 
@@ -262,7 +281,7 @@ The text was not aligned correctly to the icon above it
 
 ![header-text-correct.png](static/images/readme/bugs/header-text-correct.png)
 
-### Labels are not correctly sitting next to the Icons
+### [Labels are not correctly sitting next to the Icons](#bugs)
 
 The label is sitting to far below the icons
 And not aligning correctly
