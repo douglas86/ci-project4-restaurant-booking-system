@@ -62,6 +62,7 @@
                 </div>
             </div>
             {% if user.is_authenticated %}
+                <h3>Welcome back {{ user }}</h3>
                 <a class="navbar-brand icon {% if request.path == logout_url %}active{% endif %}"
                    href="{% url 'account_logout' %}" aria-current="page">
                     <img src="{% static 'images/navbar/logout.png' %}" alt="not found">
