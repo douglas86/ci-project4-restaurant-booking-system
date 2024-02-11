@@ -184,9 +184,28 @@ This is generally the cycle that I tried to follow for testing
 
 #### Header
 
-This testing was conducted on Lighthouse incognito mode with Desktop in mind
+I have tested the responsive design of the header
+There is a collapsable hamburger menu on devices smaller than laptop
+
+This is what it looks like on a laptop and larger
+
+![header-desktop.png](static/images/readme/testing/header-desktop.png)
+
+When the navbar becomes smaller than laptop this is what it will look like
+
+![header-mobile.png](static/images/readme/testing/header-mobile.png)
+
+When the hamburger icon menu is open
+
+![header-ham-open.png](static/images/readme/testing/header-ham-open.png)
+
+This testing was conducted on Lighthouse with Desktop in mind
 
 ![testing-header.png](static/images/readme/testing/testing-header.png)
+
+This testing was conducted on Lighthouse with Mobile in mind
+
+![testing-header2.png](static/images/readme/testing/testing-header2.png)
 
 ### [Automated Testing](#testing)
 
