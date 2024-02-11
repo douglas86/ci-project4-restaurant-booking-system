@@ -246,11 +246,24 @@ The text was not aligned correctly to the icon above it
 
 ![header-text-incorrect.png](static/images/readme/bugs/header-text-incorrect.png)
 
-This bug was solved
-by placing it inside a container
-then I could manipulate it with CSS
+- This bug was solved
+- by placing it inside a container
+- then I could manipulate it with CSS
 
 ![header-text-correct.png](static/images/readme/bugs/header-text-correct.png)
+
+### Labels are not correctly sitting next to the Icons
+
+The label is sitting to far below the icons
+And not aligning correctly
+
+![header-label-incorrect.png](static/images/readme/bugs/header-label-incorrect.png)
+
+This issue was solved with flexbox and css
+They were already in there own container class
+I just had to alter the CSS properties
+
+![header-label-correct.png](static/images/readme/bugs/header-label-correct.png)
 
 ---
 
