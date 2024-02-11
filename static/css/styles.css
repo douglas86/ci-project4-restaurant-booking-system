@@ -12,9 +12,15 @@ p {
 .navbar {
     background-color: #B4CAED !important;
 }
-.icon img {
-    width: 4rem;
-    margin: auto;
+
+.nav-link {
+    display: flex;
+}
+
+.nav-link img {
+    width: 4em;
+    padding: 1%;
+    margin: 2%;
 }
 .container-fluid {
     display: flex;
