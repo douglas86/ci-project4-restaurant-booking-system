@@ -170,6 +170,18 @@ This is generally the cycle that I tried to follow for testing
 
 ### [Automated Testing](#testing)
 
+Authentication
+
+![auto-test-authentication.png](static/images/readme/testing/auto-test-authentication.png)
+
+What was tested in this scenario:
+
+- I wanted to test if a user can be created
+- I wanted to test if a user was able to log in
+
+As this is the first time I have written auto tests by myself,
+I wanted to keep it basic
+
 ---
 
 ## [Credits](#table-of-content)
