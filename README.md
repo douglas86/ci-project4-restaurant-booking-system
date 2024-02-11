@@ -109,6 +109,16 @@ Explanation of the columns on the board:
 - In review: This is the stage were the testing gets done
 - Done: for all completed issues
 
+Milestones
+
+I created a milestone for keeping track of this project
+
+![milestones.png](static/images/readme/planning/milestones.png)
+
+This is when I am 46% done, but only the header issue was added
+
+![milestones-header-46.png](static/images/readme/planning/milestones-header-46.png)
+
 ### [How to start this project locally](#planning)
 
 - when using ssh
