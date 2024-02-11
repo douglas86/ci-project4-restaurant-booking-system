@@ -199,6 +199,9 @@ When the user is logged in, a welcome message will be displayed with a different
 
 ### [Future features to be added at a later stage](#features)
 
+- I would like to add a dashboard for the admin logged-in user
+- I have already included a role in the database for this feature
+
 ---
 
 ## [Testing](#table-of-content)
