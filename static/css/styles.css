@@ -31,6 +31,10 @@ p {
     justify-content: space-between;
 }
 
+.user-message {
+    display: none;
+}
+
 /*main*/
 /*forms*/
 form {
