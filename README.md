@@ -75,7 +75,16 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 
 ![color-pallet.png](static/images/readme/planning/color-pallet.png)
 
-Click [here](https://coolors.co/9f7e69-d2bba0-f2efc7-f7ffe0-ffeee2) to see where I go this color pallet
+Click [here](https://coolors.co/9f7e69-d2bba0-f2efc7-f7ffe0-ffeee2) to see where I got this color pallet from
+
+How I came by this color Pallet:
+
+I went onto Google and googled: What would be a nice color theme for an exclusive restaurant
+
+- See
+  results [here](https://www.google.com/search?client=firefox-b-d&q=what+would+be+a+nice+color+theme+for+an+exclusive+restaurant&dlnr=1&sei=bazIZcmsAvKxhbIP18mBkAE)
+- I had thought that a nice light gray would've worked well as some of the colors used with my UX design was already a
+  grayish color
 
 ### [User Stories using MOSCOW Prioritization techniques](#planning)
 
