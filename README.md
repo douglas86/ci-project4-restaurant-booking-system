@@ -182,6 +182,12 @@ This is generally the cycle that I tried to follow for testing
 
 ### [Manual Testing](#testing)
 
+#### Header
+
+This testing was conducted on Lighthouse incognito mode with Desktop in mind
+
+![testing-header.png](static/images/readme/testing/testing-header.png)
+
 ### [Automated Testing](#testing)
 
 Authentication
