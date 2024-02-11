@@ -13,6 +13,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 
 - [Planning](#planning)
   - [Wireframes](#wireframes)
+  - [Ux-design](#ux-design)
   - [Colour Pallet](#colour-pallet)
   - [User Stories using MOSCOW Prioritization techniques](#user-stories-using-moscow-prioritization-techniques)
   - [How to start this project locally](#how-to-start-this-project-locally)
@@ -47,6 +48,24 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 #### Book a table Page
 
 ![wireframe-book-table.png](static/images/readme/planning/wireframe-book-table.png)
+
+### [Ux-design](#planning)
+
+### Home Page
+
+![ux-homepage.png](static/images/readme/planning/ux-homepage.png)
+
+### Menu Page
+
+![ux-menupage.png](static/images/readme/planning/ux-menupage.png)
+
+### Book Table Page
+
+![ux-book-table.png](static/images/readme/planning/ux-book-table.png)
+
+### About Page
+
+![ux-about.png](static/images/readme/planning/ux-about.png)
 
 ### [Colour Pallet](#planning)
 
