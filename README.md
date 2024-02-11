@@ -199,6 +199,20 @@ When the hamburger icon menu is open
 
 ![header-ham-open.png](static/images/readme/testing/header-ham-open.png)
 
+Testing with html validator
+
+![header-html-validator.png](static/images/readme/testing/header-html-validator.png)
+
+The results can be
+found [here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fci-booking-system-5abd35239ade.herokuapp.com%2F)
+
+Testing with a css validator
+
+![header-css-validator.png](static/images/readme/testing/header-css-validator.png)
+
+The results can be
+found [here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fci-booking-system-5abd35239ade.herokuapp.com%2F)
+
 This testing was conducted on Lighthouse with Desktop in mind
 
 ![testing-header.png](static/images/readme/testing/testing-header.png)
