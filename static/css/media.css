@@ -3,6 +3,11 @@
     /*header*/
     .authentication {
         display: flex;
+        margin: auto;
+    }
+
+    .auth-img {
+        padding: 1rem;
     }
 
     /*main*/
