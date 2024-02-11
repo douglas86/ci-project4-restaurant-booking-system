@@ -5,13 +5,7 @@
         display: flex;
     }
 
-    .user-message {
-        display: block;
-        margin: auto;
-        text-align: center;
-        padding: 1%;
-    }
-
+    /*main*/
     /*forms*/
     form {
         padding: 5em;
