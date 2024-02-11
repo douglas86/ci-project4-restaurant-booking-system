@@ -51,21 +51,25 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 
 ### [Ux-design](#planning)
 
-### Home Page
+#### Home Page
 
 ![ux-homepage.png](static/images/readme/planning/ux-homepage.png)
 
-### Menu Page
+#### Menu Page
 
 ![ux-menupage.png](static/images/readme/planning/ux-menupage.png)
 
-### Book Table Page
+#### Book Table Page
 
 ![ux-book-table.png](static/images/readme/planning/ux-book-table.png)
 
-### About Page
+#### About Page
 
 ![ux-about.png](static/images/readme/planning/ux-about.png)
+
+### ERD diagram
+
+![ERD diagram.png](static/images/readme/planning/ERD%20diagram.png)
 
 ### [Colour Pallet](#planning)
 
