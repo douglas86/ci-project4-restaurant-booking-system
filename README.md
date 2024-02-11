@@ -32,15 +32,21 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 
 ### [Wireframes](#planning)
 
-#### Header
+#### Homepage
 
-Desktop
+![wireframe-homepage.png](static/images/readme/planning/wireframe-homepage.png)
 
-![header-desktop.png](static/images/readme/header-desktop.png)
+#### Menu Page
 
-Mobile
+![wireframe-menupage.png](static/images/readme/planning/wireframe-menupage.png)
 
-![header-mobile.png](static/images/readme/header-mobile.png)
+#### About Page
+
+![wireframe-about.png](static/images/readme/planning/wireframe-about.png)
+
+#### Book a table Page
+
+![wireframe-book-table.png](static/images/readme/planning/wireframe-book-table.png)
 
 ### [Colour Pallet](#planning)
 
