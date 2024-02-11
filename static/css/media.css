@@ -1,5 +1,16 @@
 /*media query for tablets and larger*/
 @media screen and (min-width: 768px) {
+    /*header*/
+    .authentication {
+        display: flex;
+    }
+
+    .user-message {
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+
     /*forms*/
     form {
         padding: 5em;

@@ -31,13 +31,8 @@ p {
     justify-content: space-between;
 }
 
-.authentication {
-    display: flex;
-}
-
 .user-message {
-    margin: auto;
-    text-align: center;
+    display: none;
 }
 
 /*main*/
