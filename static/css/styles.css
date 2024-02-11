@@ -1,3 +1,14 @@
+/*general*/
+h1 {
+    width: 100%;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+p {
+    text-align: center;
+}
+
 /*header*/
 .navbar {
     background-color: #B4CAED !important;
@@ -18,4 +29,15 @@
 .navbar-nav {
     width: 80%;
     justify-content: space-between;
+}
+
+/*main*/
+/*forms*/
+form {
+    padding: 2em;
+}
+
+form input[type="text"], form input[type="password"], form input[type="email"] {
+    width: 100%;
+    border-radius: 10px;
 }

@@ -1,0 +1,15 @@
+/*media query for tablets and larger*/
+@media screen and (min-width: 768px) {
+    /*forms*/
+    form {
+        padding: 5em;
+    }
+}
+
+/*media query for laptops and larger*/
+@media screen and (min-width: 1024px) {
+    /*forms*/
+    form {
+        padding: 5em 10em;
+    }
+}
