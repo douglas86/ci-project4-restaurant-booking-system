@@ -25,6 +25,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
   - [Automated Testing](#automated-testing)
+- [Bugs](#bugs)
 - [Credits](#credits)
 
 ---
@@ -234,6 +235,10 @@ What was tested in this scenario:
 
 As this is the first time I have written auto tests by myself,
 I wanted to keep it basic
+
+---
+
+## [Bugs](#table-of-content)
 
 ---
 
