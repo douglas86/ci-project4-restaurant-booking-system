@@ -25,6 +25,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
   - [Automated Testing](#automated-testing)
+- [Bugs](#bugs)
 - [Credits](#credits)
 
 ---
@@ -234,6 +235,35 @@ What was tested in this scenario:
 
 As this is the first time I have written auto tests by myself,
 I wanted to keep it basic
+
+---
+
+## [Bugs](#table-of-content)
+
+### The text is not aligned correctly to the Authentication Icon
+
+The text was not aligned correctly to the icon above it
+
+![header-text-incorrect.png](static/images/readme/bugs/header-text-incorrect.png)
+
+- This bug was solved
+- by placing it inside a container
+- then I could manipulate it with CSS
+
+![header-text-correct.png](static/images/readme/bugs/header-text-correct.png)
+
+### Labels are not correctly sitting next to the Icons
+
+The label is sitting to far below the icons
+And not aligning correctly
+
+![header-label-incorrect.png](static/images/readme/bugs/header-label-incorrect.png)
+
+This issue was solved with flexbox and css
+They were already in there own container class
+I just had to alter the CSS properties
+
+![header-label-correct.png](static/images/readme/bugs/header-label-correct.png)
 
 ---
 
