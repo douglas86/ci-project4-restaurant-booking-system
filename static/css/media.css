@@ -1,9 +1,6 @@
 /*media query for tablets and larger*/
 @media screen and (min-width: 768px) {
     /*header*/
-    .nav-link {
-        display: block;
-    }
     .authentication {
         display: flex;
         margin: auto;
@@ -17,6 +14,20 @@
     /*forms*/
     form {
         padding: 5em;
+    }
+}
+
+/*media query for nav link as it changes to hamburger icon at this distance*/
+@media screen and (min-width: 990px) {
+    /*header*/
+    .nav-link {
+        display: block;
+    }
+
+    .nav-link p {
+        font-size: 1.2em;
+        text-align: center;
+        margin: 0.2em auto;
     }
 }
 
