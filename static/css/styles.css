@@ -31,6 +31,15 @@ p {
     justify-content: space-between;
 }
 
+.authentication {
+    display: flex;
+}
+
+.user-message {
+    margin: auto;
+    text-align: center;
+}
+
 /*main*/
 /*forms*/
 form {

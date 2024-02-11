@@ -61,20 +61,22 @@
                     </a>
                 </div>
             </div>
-            {% if user.is_authenticated %}
-                <h3>Welcome back {{ user }}</h3>
-                <a class="navbar-brand icon {% if request.path == logout_url %}active{% endif %}"
-                   href="{% url 'account_logout' %}" aria-current="page">
-                    <img src="{% static 'images/navbar/logout.png' %}" alt="not found">
-                    <p>Logout</p>
-                </a>
-            {% else %}
-                <a class="navbar-brand icon {% if request.path == login_url %}active{% endif %}"
-                   href="{% url 'account_login' %}" aria-current="page">
-                    <img src="{% static 'images/navbar/login.png' %}" alt="not found">
-                    <p>Login</p>
-                </a>
-            {% endif %}
+            <div class="authentication">
+                {% if user.is_authenticated %}
+                    <h3 class="user-message">Welcome back {{ user | title }}</h3>
+                    <a class="navbar-brand icon {% if request.path == logout_url %}active{% endif %}"
+                       href="{% url 'account_logout' %}" aria-current="page">
+                        <img src="{% static 'images/navbar/logout.png' %}" alt="not found">
+                        <p>Logout</p>
+                    </a>
+                {% else %}
+                    <a class="navbar-brand icon {% if request.path == login_url %}active{% endif %}"
+                       href="{% url 'account_login' %}" aria-current="page">
+                        <img src="{% static 'images/navbar/login.png' %}" alt="not found">
+                        <p>Login</p>
+                    </a>
+                {% endif %}
+            </div>
         </div>
     </nav>
 </header>
