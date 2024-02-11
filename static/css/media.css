@@ -17,6 +17,20 @@
     }
 }
 
+/*media query for nav link as it changes to hamburger icon at this distance*/
+@media screen and (min-width: 990px) {
+    /*header*/
+    .nav-link {
+        display: block;
+    }
+
+    .nav-link p {
+        font-size: 1.2em;
+        text-align: center;
+        margin: 0.2em auto;
+    }
+}
+
 /*media query for laptops and larger*/
 @media screen and (min-width: 1024px) {
     /*forms*/
