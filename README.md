@@ -162,6 +162,10 @@ env.py
 
 ## [Testing](#table-of-content)
 
+This is generally the cycle that I tried to follow for testing
+
+![testing-lifecycle.png](static/images/readme/testing/testing-lifecycle.png)
+
 ### [Manual Testing](#testing)
 
 ### [Automated Testing](#testing)
