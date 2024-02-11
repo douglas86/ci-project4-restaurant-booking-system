@@ -98,6 +98,14 @@ Kambam board halfway cycle
 
 ![kambam-board.png](static/images/readme/planning/kambam-board.png)
 
+Explanation of the columns on the board:
+
+- Backlog: this is where the issues start from when they are created
+- Ready: these issues are ready to be picked up so work can be conducted
+- In Progress: This is what is busy being worked on
+- In review: This is the stage were the testing gets done
+- Done: for all completed issues
+
 ### [How to start this project locally](#planning)
 
 - when using ssh
