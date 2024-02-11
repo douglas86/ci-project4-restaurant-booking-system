@@ -39,7 +39,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 
 #### Menu Page
 
-![wireframe-menupage.png](static/images/readme/planning/wireframe-menupage.png)
+![wireframe-menu-page.png](static/images/readme/planning/wireframe-menu-page.png)
 
 #### About Page
 
@@ -57,7 +57,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 
 #### Menu Page
 
-![ux-menupage.png](static/images/readme/planning/ux-menupage.png)
+![ux-menu-page.png](static/images/readme/planning/ux-menu-page.png)
 
 #### Book Table Page
 
@@ -73,15 +73,9 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 
 ### [Colour Pallet](#planning)
 
-My colour pallet was taken from [color space](https://mycolor.space/)
-
-This is the color pallet that I am using
-
 ![color-pallet.png](static/images/readme/planning/color-pallet.png)
 
-The reason for this color pallet:
-
-I wanted to stick to a blueish theme for this restaurant
+Click [here](https://coolors.co/9f7e69-d2bba0-f2efc7-f7ffe0-ffeee2) to see where I go this color pallet
 
 ### [User Stories using MOSCOW Prioritization techniques](#planning)
 
@@ -110,8 +104,8 @@ Header
 - so if you need one, follow the following link
 - [generate a new secret key](https://www.makeuseof.com/django-secret-key-generate-new/#:~:text=You%20can%20accidentally%20make%20your,are%20still%20learning%20about%20GitHub.)
 - Then go to [elephantSQL](https://www.elephantsql.com/)
-- And create a new database instance make sure that the version of PostgresSQL is greater than 12
-- Once created then copy and paste the url in the env.py for the DATABASE_URL string
+- And create a new database instance to make sure that the version of PostgresSQL is greater than 12
+- Once created, then copy and paste the url in the env.py for the DATABASE_URL string
 - once that is done, then you can run the command below to run the server
 - python manage.py runserver
 - you can use ctrl + click on the server name that should open up a web browser at the correct port
@@ -125,14 +119,14 @@ env.py
 - head over to [Heroku Dashboard](https://dashboard.heroku.com/apps)
 - create a new app and add all the environment variables to your config vars
 - make sure to add DISABLE_COLLECTSTATIC with the value of 1
-- if this variable is not used Heroku will spit out an error
+- if this variable is not used, Heroku will spit out an error
 - change DJANGO_DEBUG with the value of False
 - make sure that there is a runtime.txt file
 - this will tell Heroku what version of python to use
 - make sure that requirements.txt is up to date
-- make sure to see if Heroku hasn't automatically add a build pack for PostgresSQL
-- if it has delete it as this project is using elephantSQL instead
-- connect github and the repo to Heroku and build the project
+- make sure to see if Heroku hasn't automatically added a build pack for PostgresSQL
+- if it has deleted it as this project is using elephantSQL instead
+- connect GitHub and the repo to Heroku and build the project
 
 ### [Technology Used](#planning)
 
