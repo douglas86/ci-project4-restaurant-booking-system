@@ -191,7 +191,7 @@ This is what it looks like on a laptop and larger
 
 ![header-desktop.png](static/images/readme/testing/header-desktop.png)
 
-When the navbar becomes smaller than laptop this is what it will look like
+When the navbar becomes smaller than laptop, this is what it will look like
 
 ![header-mobile.png](static/images/readme/testing/header-mobile.png)
 
