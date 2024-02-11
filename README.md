@@ -183,6 +183,20 @@ env.py
 
 ### [Features that have been included in this project](#features)
 
+When screen gets minimised all content gets reduced to hamburger menu
+
+![header-hamburger-menu.png](static/images/readme/features/header-hamburger-menu.png)
+
+Authentication was implemented
+
+When the user is not logged in, this image will be displayed
+
+![header-logout-image.png](static/images/readme/features/header-logout-image.png)
+
+When the user is logged in, a welcome message will be displayed with a different image
+
+![header-login-image.png](static/images/readme/features/header-login-image.png)
+
 ### [Future features to be added at a later stage](#features)
 
 ---
