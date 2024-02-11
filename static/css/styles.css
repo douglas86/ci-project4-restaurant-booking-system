@@ -31,6 +31,31 @@ p {
     display: none;
 }
 
+.authentication {
+    display: flex;
+}
+
+.user-message {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.auth-icon {
+    display: flex;
+    width: 50%;
+}
+
+.auth-img {
+    display: flex;
+    justify-content: center;
+}
+
+.auth-icon p {
+    margin: auto;
+    text-align: center;
+}
+
 /*main*/
 /*forms*/
 form {
