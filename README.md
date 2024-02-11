@@ -26,6 +26,8 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [Manual Testing](#manual-testing)
   - [Automated Testing](#automated-testing)
 - [Bugs](#bugs)
+  - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
+  - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
 - [Credits](#credits)
 
 ---
@@ -250,7 +252,7 @@ I wanted to keep it basic
 
 ## [Bugs](#table-of-content)
 
-### The text is not aligned correctly to the Authentication Icon
+### [The text is not aligned correctly to the Authentication Icon](#bugs)
 
 The text was not aligned correctly to the icon above it
 
@@ -262,7 +264,7 @@ The text was not aligned correctly to the icon above it
 
 ![header-text-correct.png](static/images/readme/bugs/header-text-correct.png)
 
-### Labels are not correctly sitting next to the Icons
+### [Labels are not correctly sitting next to the Icons](#bugs)
 
 The label is sitting to far below the icons
 And not aligning correctly
