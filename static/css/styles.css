@@ -87,3 +87,9 @@ footer {
     margin-top: auto;
     background-color: #B5CBB7;
 }
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
