@@ -1,9 +1,15 @@
 {% load static %}
 
 <nav class="nav">
-    <button type="button" class="hamburger-menu">
+    <button type="button" class="hamburger-menu" onclick="hamburgerMenu()">
         <img src="{% static 'images/navbar/Hamburger.png' %}" alt="not found">
     </button>
+
+    <div id="icon-links">
+        <a href="">
+            <img src="{% static 'images/navbar/Home.png' %}" alt="not found">
+        </a>
+    </div>
 </nav>
 
 {#<nav class="navbar navbar-expand-lg bg-body-tertiary">#}
