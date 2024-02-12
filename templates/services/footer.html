@@ -1,4 +1,24 @@
+{% load static %}
+
 <div class="footer">
-    <p>Phone Number: 01632 960207</p>
-    <p>Email address: restaurant@gmail.com</p>
+    <div class="contact-details">
+        <h4><img src="{% static 'images/footer/Phone.png' %}" alt="not found"> 01632 960207</h4>
+        <h4><img src="{% static 'images/footer/Email.png' %}" alt="not found"> restaurant@gmail.com</h4>
+    </div>
+    <div class="designer">
+        <div class="copyright">
+            <img src="{% static 'images/footer/copyright.png' %}" alt="not found">
+            <p>{{ year }}</p>
+        </div>
+        <div class="developer">
+            <p>Developed by
+                <a href="www.linkedin.com/in/douglas-maxton-58134b170">Douglas Maxton</a>
+                and icons supplied by
+                <a
+                        href="https://icons8.com/?utm_source=figma-plugin-icons8&utm_medium=cross-promo&utm_campaign=web-version">
+                    Icon8
+                </a>
+            </p>
+        </div>
+    </div>
 </div>
