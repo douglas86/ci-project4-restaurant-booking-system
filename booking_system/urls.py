@@ -28,5 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('menu/', MenuView.as_view(), name='menu'),
     path('table/', BookTable.as_view(), name='table'),
+    path("__reload__/", include("django_browser_reload.urls")),
     path('', HomePageView.as_view(), name='home'),
 ]
