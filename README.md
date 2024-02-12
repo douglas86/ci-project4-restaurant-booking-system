@@ -28,6 +28,8 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 - [Bugs](#bugs)
   - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
   - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
+  - [Problem with Hamburger Menu](#problem-with-hamburger-menu)
+  - [Hamburger menu jumps as I try and open and close menu](#hamburger-menu-jumps-as-i-try-and-open-and-close-menu)
 - [Credits](#credits)
 
 ---
@@ -314,6 +316,15 @@ How was this Problem solved?
 - I am attempting to practice DRY (Don't Repeat Yourself) run coding style
 
 ![page-icons-displaying.png](static/images/readme/bugs/page-icons-displaying.png)
+
+### [Hamburger menu jumps as I try and open and close menu](#bugs)
+
+What is the Issue?
+
+- The hamburger menu is jumping up and down as the menu is opened or closed
+- The bug is not visible from the screenshot below
+
+![hamburger-menu.png](static/images/readme/bugs/hamburger-menu.png)
 
 ---
 
