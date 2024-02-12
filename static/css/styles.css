@@ -1,4 +1,9 @@
 /*general*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 h1 {
     width: 100%;
     text-align: center;
@@ -75,4 +80,9 @@ form {
 form input[type="text"], form input[type="password"], form input[type="email"] {
     width: 100%;
     border-radius: 10px;
+}
+
+/*footer*/
+footer {
+    margin-top: auto;
 }
