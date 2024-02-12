@@ -11,7 +11,7 @@ p {
 /*header*/
 .nav {
     display: block;
-    background-color: #D3D3D3;
+    background-color: #B5CBB7;
 }
 
 .nav button {
@@ -19,22 +19,33 @@ p {
     border: none;
     background-color: transparent;
 }
-
 #icon-links {
     display: none;
-    background-color: #D3D3D3;
+    background-color: #B5CBB7;
+}
+#icon-links a {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: bold;
 }
 
-#icon-links a {
+#icon-links a:hover {
+    color: #E7E08B;
+    font-weight: bolder;
+}
+
+.links {
     display: flex;
 }
 
-#icon-links a img {
-    margin: 1.5em;
+.links img {
+    margin: 1em;
 }
 
-#icon-links a p {
-    text-align: center;
+.links p {
+    width: 80%;
+    margin: auto;
 }
 
 /*.navbar {*/
