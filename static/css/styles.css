@@ -85,4 +85,5 @@ form input[type="text"], form input[type="password"], form input[type="email"] {
 /*footer*/
 footer {
     margin-top: auto;
+    background-color: #B5CBB7;
 }
