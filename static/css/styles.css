@@ -13,7 +13,6 @@ p {
     display: flex;
     background-color: #B5CBB7;
 }
-
 #nav button {
     margin: 1em;
     border: none;
@@ -29,23 +28,38 @@ p {
     font-size: large;
     font-weight: bold;
 }
-
 #icon-links a:hover {
     color: #E7E08B;
     font-weight: bolder;
 }
-
 .links {
     display: flex;
 }
-
 .links img {
     margin: 1em;
 }
-
 .links p {
     width: 80%;
     margin: auto;
+}
+
+.authentication-icon {
+    display: flex;
+    width: 80%;
+}
+
+#user-message {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+#auth-icon {
+    padding: 0.8em;
+}
+
+#auth-icon p {
+    font-weight: bold;
 }
 
 /*.navbar {*/
