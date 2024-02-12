@@ -24,17 +24,18 @@
 
     <title>Booking System</title>
 
+    {#    added a favicon icon#}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}">
+
     {#    css style sheets#}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/media.css' %}">
 
-    {#    added a favicon icon#}
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon/Restaurant.ico' %}">
 </head>
 <body>
 
 <header>
-    {% include 'navbar.html' %}
+    {% include 'services/navbar.html' %}
 </header>
 
 <main>
@@ -44,7 +45,7 @@
 </main>
 
 <footer>
-    <!-- This is the footer content -->
+    <h1>This is the footer</h1>
 </footer>
 
 <!--bootstrap script tag-->
