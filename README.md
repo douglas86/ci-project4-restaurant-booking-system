@@ -330,4 +330,11 @@ What is the Issue?
 
 ## [Credits](#table-of-content)
 
+- How the hamburger menu was achieved was taken from [here](https://www.w3schools.com/howto/howto_js_mobile_navbar.asp)
+- All icons in this project were designed
+  by [Icons8](https://icons8.com/?utm_source=figma-plugin-icons8&utm_medium=cross-promo&utm_campaign=web-version) with
+  the help of Figma
+- [Luke Buchanan](https://www.linkedin.com/in/lukebuchanan67/) - Mentor
+- [Code Institute](https://codeinstitute.net/) - Bootcamp
+
 ---
