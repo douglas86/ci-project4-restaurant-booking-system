@@ -1,3 +1,7 @@
+/*
+This function is to hide and un hide elements when hamburger icon is open or close,
+It will also hide the hamburger menu when on a screen tablet or bigger
+ */
 const hamburgerMenu = () => {
     let iconLinks = document.getElementById('icon-links')
     let nav = document.getElementById('nav')
