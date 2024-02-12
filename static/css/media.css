@@ -1,21 +1,22 @@
 /*media query for tablets and larger*/
 @media screen and (min-width: 768px) {
     /*header*/
-    #nav button[type='button'] {
+    .mobile {
         display: none;
     }
 
+    .tablet {
+        display: block;
+    }
     #icon-links {
         display: flex;
         width: 80%;
         justify-content: space-evenly;
     }
-
     .links {
         display: block;
         padding: 0.5em;
     }
-
     .links img {
         width: 5em;
         height: 5em;

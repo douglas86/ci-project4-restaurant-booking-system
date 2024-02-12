@@ -9,6 +9,13 @@ p {
 }
 
 /*header*/
+.mobile {
+    display: block;
+}
+
+.tablet {
+    display: none;
+}
 #nav {
     display: flex;
     background-color: #B5CBB7;
@@ -42,22 +49,18 @@ p {
     width: 80%;
     margin: auto;
 }
-
 .authentication-icon {
     display: flex;
     width: 80%;
 }
-
 #user-message {
     width: 80%;
     text-align: center;
     margin: auto;
 }
-
 #auth-icon {
     padding: 0.8em;
 }
-
 #auth-icon p {
     font-weight: bold;
 }
@@ -67,7 +70,6 @@ p {
 form {
     padding: 2em;
 }
-
 form input[type="text"], form input[type="password"], form input[type="email"] {
     width: 100%;
     border-radius: 10px;

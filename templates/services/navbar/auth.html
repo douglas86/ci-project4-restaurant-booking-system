@@ -1,0 +1,13 @@
+{% load static %}
+
+<div class="authentication-icon">
+    {% if user.is_authenticated %}
+        <h4 id="user-message">Welcome Back {{ user | title }}</h4>
+        <a class="nav-link" href="">
+            <div id="auth-icon">
+                <img src="{% static 'images/navbar/logout.png' %}" alt="not found">
+                <p>Logout</p>
+            </div>
+        </a>
+    {% endif %}
+</div>
