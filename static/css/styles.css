@@ -87,3 +87,33 @@ footer {
     margin-top: auto;
     background-color: #B5CBB7;
 }
+.footer {
+    display: block;
+    padding: 1em;
+    text-align: center;
+}
+
+.contact-details {
+    display: inline-block;
+    justify-content: space-between;
+}
+
+.contact-details img {
+    width: 1.8em;
+    height: 1.8em;
+}
+
+.designer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.copyright {
+    display: flex;
+}
+
+.copyright img {
+    width: 1.2em;
+    height: 1.2em;
+}
