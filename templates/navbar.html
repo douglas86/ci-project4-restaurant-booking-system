@@ -1,52 +1,58 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <button aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
-                class="navbar-toggler"
-                data-bs-target="#navbarNavAltMarkup" data-bs-toggle="collapse" type="button">
-            <img src="{% static 'images/navbar/Hamburger.png' %}" alt="not found">
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a aria-current="page" class="nav-link active" href="{% url 'home' %}">
-                    <img src="{% static 'images/navbar/Home.png' %}" alt="not found">
-                    <p>Home</p>
-                </a>
-                <a class="nav-link" href="{% url 'menu' %}">
-                    <img src="{% static 'images/navbar/Restaurant Menu.png' %}" alt="not found">
-                    <p>Menu</p>
-                </a>
-                <a class="nav-link" href="{% url 'table' %}">
-                    <img src="{% static 'images/navbar/Restaurant Table.png' %}" alt="not found">
-                    <p>Book Table</p>
-                </a>
-                <a class="nav-link" href="{% url 'about' %}">
-                    <img src="{% static 'images/navbar/Info.png' %}" alt="not found">
-                    <p>About</p>
-                </a>
-            </div>
-            <div class="authentication">
-                {% if user.is_authenticated %}
-                    <h4 class="user-message">Welcome back {{ user | title }}</h4>
-                    <a class="navbar-brand nav-link auth-icon {% if request.path == logout_url %}active{% endif %}"
-                       href="{% url 'account_logout' %}" aria-current="page">
-                        <div class="auth-img">
-                            <img src="{% static 'images/navbar/logout.png' %}" alt="not found">
-                        </div>
-                        <p>Logout</p>
-                    </a>
-                {% else %}
-                    <a class="navbar-brand {% if request.path == login_url %}active{% endif %} auth-icon"
-                       href="{% url 'account_login' %}" aria-current="page">
-                        <div class="auth-img">
-                            <img src="{% static 'images/navbar/login.png' %}" alt="not found">
-                        </div>
-                        <p>Login</p>
-                    </a>
-                {% endif %}
-            </div>
-        </div>
-
-    </div>
+<nav class="nav">
+    <button type="button" class="hamburger-menu">
+        <img src="{% static 'images/navbar/Hamburger.png' %}" alt="not found">
+    </button>
 </nav>
+
+{#<nav class="navbar navbar-expand-lg bg-body-tertiary">#}
+{#    <div class="container-fluid">#}
+{#        <button aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"#}
+{#                class="navbar-toggler"#}
+{#                data-bs-target="#navbarNavAltMarkup" data-bs-toggle="collapse" type="button">#}
+{#            <img src="{% static 'images/navbar/Hamburger.png' %}" alt="not found">#}
+{#        </button>#}
+{#        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">#}
+{#            <div class="navbar-nav">#}
+{#                <a aria-current="page" class="nav-link active" href="{% url 'home' %}">#}
+{#                    <img src="{% static 'images/navbar/Home.png' %}" alt="not found">#}
+{#                    <p>Home</p>#}
+{#                </a>#}
+{#                <a class="nav-link" href="{% url 'menu' %}">#}
+{#                    <img src="{% static 'images/navbar/Restaurant Menu.png' %}" alt="not found">#}
+{#                    <p>Menu</p>#}
+{#                </a>#}
+{#                <a class="nav-link" href="{% url 'table' %}">#}
+{#                    <img src="{% static 'images/navbar/Restaurant Table.png' %}" alt="not found">#}
+{#                    <p>Book Table</p>#}
+{#                </a>#}
+{#                <a class="nav-link" href="{% url 'about' %}">#}
+{#                    <img src="{% static 'images/navbar/Info.png' %}" alt="not found">#}
+{#                    <p>About</p>#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="authentication">#}
+{#                {% if user.is_authenticated %}#}
+{#                    <h4 class="user-message">Welcome back {{ user | title }}</h4>#}
+{#                    <a class="navbar-brand nav-link auth-icon {% if request.path == logout_url %}active{% endif %}"#}
+{#                       href="{% url 'account_logout' %}" aria-current="page">#}
+{#                        <div class="auth-img">#}
+{#                            <img src="{% static 'images/navbar/logout.png' %}" alt="not found">#}
+{#                        </div>#}
+{#                        <p>Logout</p>#}
+{#                    </a>#}
+{#                {% else %}#}
+{#                    <a class="navbar-brand {% if request.path == login_url %}active{% endif %} auth-icon"#}
+{#                       href="{% url 'account_login' %}" aria-current="page">#}
+{#                        <div class="auth-img">#}
+{#                            <img src="{% static 'images/navbar/login.png' %}" alt="not found">#}
+{#                        </div>#}
+{#                        <p>Login</p>#}
+{#                    </a>#}
+{#                {% endif %}#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#    </div>#}
+{#</nav>#}
