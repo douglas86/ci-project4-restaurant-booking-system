@@ -10,6 +10,7 @@ p {
 
 /*header*/
 .nav {
+    display: block;
     background-color: #D3D3D3;
 }
 
@@ -17,6 +18,23 @@ p {
     margin: 1em;
     border: none;
     background-color: transparent;
+}
+
+#icon-links {
+    display: none;
+    background-color: #D3D3D3;
+}
+
+#icon-links a {
+    display: flex;
+}
+
+#icon-links a img {
+    margin: 1.5em;
+}
+
+#icon-links a p {
+    text-align: center;
 }
 
 /*.navbar {*/
