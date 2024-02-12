@@ -123,6 +123,13 @@ This is when I am 46% done, but only the header issue was added
 
 ![milestones-header-46.png](static/images/readme/planning/milestones-header-46.png)
 
+Footer
+
+- The footer had only three issues in it, so I only labeled them as Must-have
+- There was also an issue that I created for Documentation
+
+![moscow-footer.png](static/images/readme/planning/moscow-footer.png)
+
 ### [How to start this project locally](#planning)
 
 - when using ssh
