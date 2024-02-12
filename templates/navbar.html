@@ -1,6 +1,6 @@
 {% load static %}
 
-<nav class="nav">
+<nav id="nav">
     {#    Hamburger menu button#}
     <button type="button" class="hamburger-menu" onclick="hamburgerMenu()">
         <img src="{% static 'images/navbar/Hamburger.png' %}" alt="not found">
@@ -32,6 +32,12 @@
                 <p>About</p>
             </div>
         </a>
+    </div>
+
+    <div class="authentication-icon">
+        {% if user.is_authenticated %}
+            <h4 id="user-message">Welcome Back {{ user | title }}</h4>
+        {% endif %}
     </div>
 </nav>
 

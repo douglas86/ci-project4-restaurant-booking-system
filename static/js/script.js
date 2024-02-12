@@ -1,9 +1,15 @@
 const hamburgerMenu = () => {
-    let x = document.getElementById('icon-links')
+    let iconLinks = document.getElementById('icon-links')
+    let nav = document.getElementById('nav')
+    let userMessage = document.getElementById('user-message')
 
-    if (x.style.display === "block") {
-        x.style.display = "none"
+    if (iconLinks.style.display === "block") {
+        iconLinks.style.display = "none"
+        nav.style.display = "flex"
+        userMessage.style.display = "block"
     } else {
-        x.style.display = "block"
+        iconLinks.style.display = "block"
+        nav.style.display = "block"
+        userMessage.style.display = "none"
     }
 }
