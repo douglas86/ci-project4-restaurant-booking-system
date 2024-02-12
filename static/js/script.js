@@ -2,7 +2,7 @@ const hamburgerMenu = () => {
     let iconLinks = document.getElementById('icon-links')
     let nav = document.getElementById('nav')
     let userMessage = document.getElementById('user-message')
-    let authIcon = document.getElementById('auth-icon')
+    let authIcon = document.getElementsByClassName('auth-icon')[0]
 
     if (iconLinks.style.display === "block") {
         iconLinks.style.display = "none"

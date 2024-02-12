@@ -3,10 +3,20 @@
 <div class="authentication-icon">
     {% if user.is_authenticated %}
         <h4 id="user-message">Welcome Back {{ user | title }}</h4>
-        <a class="nav-link" href="">
-            <div id="auth-icon">
+        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{% url 'account_logout' %}"
+           aria-current="page">
+            <div class="auth-icon">
                 <img src="{% static 'images/navbar/logout.png' %}" alt="not found">
                 <p>Logout</p>
+            </div>
+        </a>
+    {% else %}
+        <h4 id="user-message">You are not logged in</h4>
+        <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{% url 'account_login' %}"
+           aria-current="page">
+            <div class="auth-icon">
+                <img src="{% static 'images/navbar/login.png' %}" alt="not found">
+                <p>Login</p>
             </div>
         </a>
     {% endif %}

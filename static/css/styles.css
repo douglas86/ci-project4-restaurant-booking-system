@@ -58,10 +58,12 @@ p {
     text-align: center;
     margin: auto;
 }
-#auth-icon {
+
+.auth-icon {
     padding: 0.8em;
 }
-#auth-icon p {
+
+.auth-icon p {
     font-weight: bold;
 }
 
