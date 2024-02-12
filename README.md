@@ -289,10 +289,31 @@ And not aligning correctly
 ![header-label-incorrect.png](static/images/readme/bugs/header-label-incorrect.png)
 
 This issue was solved with flexbox and css
-They were already in there own container class
+They were already in their own container class
 I just had to alter the CSS properties
 
 ![header-label-correct.png](static/images/readme/bugs/header-label-correct.png)
+
+### [Problem with Hamburger Menu](#bugs)
+
+What is the Problem?
+
+- When I am testing responsive design and the Hamburger menu is open
+- It doesn't want to display the page icons
+
+![page-icons-not-displayed.png](static/images/readme/bugs/page-icons-not-displayed.png)
+
+How was this Problem solved?
+
+- I separated my code out into a services directory inside the templates directory
+- Created two div containers giving each one its own class
+- The first had a class of mobile
+- The Second had a class of tablet
+- I would then hide and un hide the two depending on what size screen it was on
+- The reason for breaking up the code is that I needed to call the icons in two different locations
+- I am attempting to practice DRY (Don't Repeat Yourself) run coding style
+
+![page-icons-displaying.png](static/images/readme/bugs/page-icons-displaying.png)
 
 ---
 
