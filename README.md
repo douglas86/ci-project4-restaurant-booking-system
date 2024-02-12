@@ -28,6 +28,8 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 - [Bugs](#bugs)
   - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
   - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
+  - [Problem with Hamburger Menu](#problem-with-hamburger-menu)
+  - [Hamburger menu jumps as I try and open and close menu](#hamburger-menu-jumps-as-i-try-and-open-and-close-menu)
 - [Credits](#credits)
 
 ---
@@ -120,6 +122,13 @@ I created a milestone for keeping track of this project
 This is when I am 46% done, but only the header issue was added
 
 ![milestones-header-46.png](static/images/readme/planning/milestones-header-46.png)
+
+Footer
+
+- The footer had only three issues in it, so I only labeled them as Must-have
+- There was also an issue that I created for Documentation
+
+![moscow-footer.png](static/images/readme/planning/moscow-footer.png)
 
 ### [How to start this project locally](#planning)
 
@@ -289,13 +298,50 @@ And not aligning correctly
 ![header-label-incorrect.png](static/images/readme/bugs/header-label-incorrect.png)
 
 This issue was solved with flexbox and css
-They were already in there own container class
+They were already in their own container class
 I just had to alter the CSS properties
 
 ![header-label-correct.png](static/images/readme/bugs/header-label-correct.png)
 
+### [Problem with Hamburger Menu](#bugs)
+
+What is the Problem?
+
+- When I am testing responsive design and the Hamburger menu is open
+- It doesn't want to display the page icons
+
+![page-icons-not-displayed.png](static/images/readme/bugs/page-icons-not-displayed.png)
+
+How was this Problem solved?
+
+- I separated my code out into a services directory inside the templates directory
+- Created two div containers giving each one its own class
+- The first had a class of mobile
+- The Second had a class of tablet
+- I would then hide and un hide the two depending on what size screen it was on
+- The reason for breaking up the code is that I needed to call the icons in two different locations
+- I am attempting to practice DRY (Don't Repeat Yourself) run coding style
+
+![page-icons-displaying.png](static/images/readme/bugs/page-icons-displaying.png)
+
+### [Hamburger menu jumps as I try and open and close menu](#bugs)
+
+What is the Issue?
+
+- The hamburger menu is jumping up and down as the menu is opened or closed
+- The bug is not visible from the screenshot below
+
+![hamburger-menu.png](static/images/readme/bugs/hamburger-menu.png)
+
 ---
 
 ## [Credits](#table-of-content)
+
+- How the hamburger menu was achieved was taken from [here](https://www.w3schools.com/howto/howto_js_mobile_navbar.asp)
+- All icons in this project were designed
+  by [Icons8](https://icons8.com/?utm_source=figma-plugin-icons8&utm_medium=cross-promo&utm_campaign=web-version) with
+  the help of Figma
+- [Luke Buchanan](https://www.linkedin.com/in/lukebuchanan67/) - Mentor
+- [Code Institute](https://codeinstitute.net/) - Bootcamp
 
 ---
