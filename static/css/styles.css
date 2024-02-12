@@ -62,58 +62,6 @@ p {
     font-weight: bold;
 }
 
-/*.navbar {*/
-/*    background-color: #B4CAED !important;*/
-/*}*/
-/*.nav-link {*/
-/*    display: flex;*/
-/*}*/
-/*.nav-link img {*/
-/*    width: 4em;*/
-/*    padding: 1%;*/
-/*    margin: 2%;*/
-/*}*/
-
-/*.nav-link p {*/
-/*    font-size: 1.5em;*/
-/*    margin: auto 1em;*/
-/*    vertical-align: middle;*/
-/*    font-weight: bold;*/
-/*}*/
-/*.container-fluid {*/
-/*    display: flex;*/
-/*}*/
-/*.navbar-brand {*/
-/*    width: 20%;*/
-/*}*/
-/*.navbar-nav {*/
-/*    width: 80%;*/
-/*    justify-content: space-between;*/
-/*}*/
-/*.collapse .navbar-collapse .authentication {*/
-/*    display: none;*/
-/*}*/
-/*.authentication {*/
-/*    display: flex;*/
-/*}*/
-/*.user-message {*/
-/*    width: 50%;*/
-/*    margin: auto;*/
-/*    text-align: center;*/
-/*}*/
-/*.auth-icon {*/
-/*    display: flex;*/
-/*    width: 50%;*/
-/*}*/
-/*.auth-img {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*}*/
-/*.auth-icon p {*/
-/*    margin: auto;*/
-/*    text-align: center;*/
-/*}*/
-
 /*main*/
 /*forms*/
 form {

@@ -1,33 +1,32 @@
 /*media query for tablets and larger*/
 @media screen and (min-width: 768px) {
     /*header*/
-    .authentication {
-        display: flex;
-        margin: auto;
+    #nav button[type='button'] {
+        display: none;
     }
 
-    .auth-img {
-        padding: 1rem;
+    #icon-links {
+        display: flex;
+        width: 80%;
+        justify-content: space-evenly;
+    }
+
+    .links {
+        display: block;
+        padding: 0.5em;
+    }
+
+    .links img {
+        width: 5em;
+        height: 5em;
+        margin: 0.1em;
+        padding: 0.8em;
     }
 
     /*main*/
     /*forms*/
     form {
         padding: 5em;
-    }
-}
-
-/*media query for nav link as it changes to hamburger icon at this distance*/
-@media screen and (min-width: 990px) {
-    /*header*/
-    .nav-link {
-        display: block;
-    }
-
-    .nav-link p {
-        font-size: 1.2em;
-        text-align: center;
-        margin: 0.2em auto;
     }
 }
 
