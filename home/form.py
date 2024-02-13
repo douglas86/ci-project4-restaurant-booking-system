@@ -15,14 +15,12 @@ class ChefForm(forms.ModelForm):
         :return:
         """
 
-        # Stops the storing of more than 9 records in the ChefSpecial model
-        total_records = ChefSpecial.objects.all().count()
-        if total_records > 9:
-            raise ValidationError('DB limit reached for more than 2')
+        # gets the value of the choice selected in a served model
+        served_data_from_form = self.cleaned_data.get("served")
 
-        # checks how many records are stored from breakfast, lunch and supper
-        # stops storing of more than 3 records per meal time
-        for i in range(3):
-            chef = ChefSpecial.objects.filter(served=i).count()
-            if chef >= 3:
-                raise ValidationError("You already have enough of that particular meal")
+        # counts how many values are under the choice model served
+        chef = ChefSpecial.objects.filter(served=served_data_from_form).count()
+
+        # if there is more than 3 for the choice model served, then error occurs
+        if chef >= 3:
+            raise ValidationError("You have already have enough of that meal")
