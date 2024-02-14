@@ -24,8 +24,14 @@
     }
 
     /*main*/
+    /*carousel*/
+    .carousel-inner {
+        height: 50em;
+        margin: 2em auto;
+    }
     .card img {
-
+        width: 25em;
+        height: 25em;
     }
     /*forms*/
     form {

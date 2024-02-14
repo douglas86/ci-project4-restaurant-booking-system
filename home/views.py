@@ -13,10 +13,9 @@ class HomePageView(TemplateView):
     template_name = 'home/index.html'
     model = ChefSpecial
 
-    # variables to gather current year of Laptop
-    today = datetime.date.today()
-    current_hour = datetime.datetime.now().strftime('%H')
-    year = today.year
+    today = datetime.date.today()  # gets current data of laptop
+    current_hour = datetime.datetime.now().strftime('%H')  # gets the current hour only
+    year = today.year  # gets the current year
 
     # name of the restaurant
     name = "culinary Haven"
@@ -39,13 +38,15 @@ class HomePageView(TemplateView):
         """
         Gathers data from a database based on filter
         """
+        # calls method get_served to see what meals it needs to display
         served_meals = self.get_served()
+        # ternary operator to see if variable served_meals is greater than 3
         meal = ChefSpecial.objects.all().filter(served=served_meals) if served_meals < 3 else "Not served"
         return meal
 
     def get_context_data(self, *args, **kwargs):
         """
-        Passes the current year to the template context
+        Passes data to the template variable
         :param args:
         :param kwargs:
         :return:
