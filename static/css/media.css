@@ -42,6 +42,22 @@
 /*media query for laptops and larger*/
 @media screen and (min-width: 1024px) {
     /*main*/
+    /*carousel*/
+    .image {
+        width: 50%;
+        margin: 0;
+    }
+
+    .card-details {
+        width: 50%;
+        position: absolute;
+        left: 50%;
+    }
+
+    .ingredients {
+        margin-left: 1em;
+    }
+
     /*forms*/
     form {
         padding: 5em 10em;
