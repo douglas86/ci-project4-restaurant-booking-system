@@ -91,6 +91,17 @@ p {
     width: 20em;
     height: 5em;
 }
+
+/*carousel*/
+.carousel-inner {
+    width: 30em;
+    margin: 2em auto;
+}
+
+.card {
+    height: 48em;
+    padding: 1em;
+}
 /*forms*/
 form {
     padding: 2em;
@@ -102,7 +113,6 @@ form input[type="text"], form input[type="password"], form input[type="email"] {
 
 /*footer*/
 footer {
-    margin-top: auto;
     background-color: #B5CBB7;
 }
 .footer {

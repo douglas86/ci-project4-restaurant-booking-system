@@ -9,7 +9,7 @@
         <p>Not served</p>
     {% else %}
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" style="width: 30em">
+            <div class="carousel-inner">
                 {% for meal in meals %}
                     {% if forloop.first %}
                         <div class="carousel-item active" style="width: 100%" data-bs-interval="2000">
