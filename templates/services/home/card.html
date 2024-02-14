@@ -4,5 +4,10 @@
 <div class="card">
     <img src="{{ meal.featured_image.url }}" class="card-img-top" alt="not found">
     <div class="card-title"><h2>{{ meal.title | title }}</h2></div>
-    <p>{{ meal.ingredients }}</p>
+    <h3>Ingredients</h3>
+    <ul>
+        {% for ing in meal.ingredients %}
+            <li>{{ ing }}</li>
+        {% endfor %}
+    </ul>
 </div>
