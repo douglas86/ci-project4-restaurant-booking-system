@@ -89,7 +89,7 @@ p {
     justify-content: left;
     align-items: flex-start;
     width: 20em;
-    height: 10em;
+    height: 12em;
 }
 
 /*carousel*/
@@ -105,8 +105,8 @@ p {
 }
 
 .card img {
-    width: 20em;
-    height: 20em;
+    width: 18em;
+    height: 18em;
     margin: auto;
 }
 .card-title {
