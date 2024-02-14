@@ -89,6 +89,10 @@ p {
     height: 12em;
 }
 /*carousel*/
+.default-carousel-image img {
+    width: 100%;
+    padding: 1em;
+}
 .carousel-inner {
     display: flex;
     width: 100%;
@@ -100,7 +104,6 @@ p {
     padding: 1em;
     background-color: #D3D3D3;
 }
-
 .image {
     margin: auto;
 }
