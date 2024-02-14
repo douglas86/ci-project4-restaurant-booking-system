@@ -26,12 +26,21 @@ class HomePageView(TemplateView):
         Logic to return current meal
         :return:
         """
+        if int(self.current_hour) >= 8:
+            return 0  # filters all breakfast meals
+        elif int(self.current_hour) >= 12:
+            return 1  # filters all lunch meals
+        elif int(self.current_hour) >= 18:
+            return 2  # filters all supper meals
+        else:
+            return 3  # returns the default image
 
     def get_queryset(self):
         """
         Gathers data from a database based on filter
         """
-        meal = ChefSpecial.objects.all().filter(served=self.get_served())
+        served_meals = self.get_served()
+        meal = ChefSpecial.objects.all().filter(served=served_meals) if served_meals < 3 else "Not served"
         return meal
 
     def get_context_data(self, *args, **kwargs):

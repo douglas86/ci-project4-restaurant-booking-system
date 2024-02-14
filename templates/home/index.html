@@ -5,7 +5,12 @@
         <h1>Welcome to {{ name | title }}</h1>
     </div>
 
-    {% for meal in meals %}
-        <p>{{ meal.title }}</p>
-    {% endfor %}
+    {% if meals == "Not served" %}
+        <p>Not served</p>
+    {% else %}
+        {% for meal in meals %}
+            <p>{{ meal.title | title }}</p>
+        {% endfor %}
+    {% endif %}
+
 {% endblock content %}
