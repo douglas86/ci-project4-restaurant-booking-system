@@ -5,13 +5,18 @@ body {
     min-height: 100vh;
 }
 h1 {
-    width: 20%;
+    justify-content: center;
     text-align: center;
-    margin: 2rem auto;
+    vertical-align: middle;
+    padding: 0.5em;
+    margin-top: 1em;
+    margin-left: 1em;
     font-family: "Protest Revolution", sans-serif;
     font-weight: 400;
     font-style: normal;
-    border: 5px solid #555;
+    border: 5px solid #E7E08B;
+    color: #D3D3D3;
+    -webkit-text-stroke-width: 2px;
 }
 p {
     text-align: center;
@@ -77,6 +82,14 @@ p {
 }
 
 /*main*/
+/*title*/
+.heading {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    width: 20em;
+    height: 5em;
+}
 /*forms*/
 form {
     padding: 2em;
