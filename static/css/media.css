@@ -37,6 +37,11 @@
 
 /*media query for laptops and larger*/
 @media screen and (min-width: 1024px) {
+    /*main*/
+    /*carousel*/
+    .card {
+        height: 70em;
+    }
     /*forms*/
     form {
         padding: 5em 10em;
