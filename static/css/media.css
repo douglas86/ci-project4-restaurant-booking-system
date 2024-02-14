@@ -25,6 +25,10 @@
     }
 
     /*main*/
+    /*carousel*/
+    .carousel-inner {
+        width: 50%;
+    }
     /*forms*/
     form {
         padding: 5em;
