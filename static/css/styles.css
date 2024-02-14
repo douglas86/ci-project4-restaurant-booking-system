@@ -17,6 +17,7 @@ h1 {
     border: 5px solid #E7E08B;
     color: #D3D3D3;
     -webkit-text-stroke-width: 2px;
+    transform: rotate(-2deg);
 }
 p {
     text-align: center;
