@@ -2,6 +2,8 @@ import datetime
 
 from django.views.generic import TemplateView
 
+from .models import ChefSpecial
+
 
 # Create your views here.
 class HomePageView(TemplateView):
@@ -9,6 +11,7 @@ class HomePageView(TemplateView):
     Home page view
     """
     template_name = 'home/index.html'
+    model = ChefSpecial
 
     # variables to gather current year of Laptop
     today = datetime.date.today()
