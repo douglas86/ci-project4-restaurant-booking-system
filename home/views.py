@@ -14,6 +14,9 @@ class HomePageView(TemplateView):
     today = datetime.date.today()
     year = today.year
 
+    # name of the restaurant
+    name = "culinary Haven"
+
     def get_context_data(self, *args, **kwargs):
         """
         Passes the current year to the template context
@@ -21,4 +24,4 @@ class HomePageView(TemplateView):
         :param kwargs:
         :return:
         """
-        return {'year': self.year}
+        return {'year': self.year, "name": self.name}

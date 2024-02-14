@@ -39,7 +39,7 @@ class ChefSpecial(models.Model):
     """
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
-    ingredients = models.JSONField(default=dict, blank=True)
+    ingredients = models.JSONField(default=list, blank=True)
     served = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
     created_at = models.DateTimeField(auto_now_add=True)
