@@ -94,13 +94,28 @@ p {
 
 /*carousel*/
 .carousel-inner {
-    width: 30em;
+    width: 100%;
     margin: 2em auto;
+    padding: 0.4em;
 }
 
 .card {
-    height: 48em;
     padding: 1em;
+    height: 50em;
+    background-color: #D3D3D3;
+}
+
+.image {
+    position: relative;
+    margin: auto;
+}
+
+.card-title {
+    margin: 1em;
+}
+
+.ingredients {
+    margin: auto;
 }
 /*forms*/
 form {

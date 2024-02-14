@@ -1,13 +1,17 @@
 {% load static %}
 
-{#<img src="{{ meal.featured_image.url }}" class="d-block w-100" alt="not found">#}
 <div class="card">
-    <img src="{{ meal.featured_image.url }}" class="card-img-top" alt="not found">
+    <div class="image">
+        <img src="{{ meal.featured_image.url }}" class="card-img-top" alt="not found">
+    </div>
     <div class="card-title"><h2>{{ meal.title | title }}</h2></div>
-    <h3>Ingredients</h3>
-    <ul>
-        {% for ing in meal.ingredients %}
-            <li>{{ ing }}</li>
-        {% endfor %}
-    </ul>
+    <div class="ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+            {% for ing in meal.ingredients %}
+                <li>{{ ing }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
 </div>
