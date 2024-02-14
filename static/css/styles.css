@@ -3,6 +3,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: white url('/static/images/home/restaurant_image.jpg') no-repeat;
+    background-size: cover;
 }
 h1 {
     justify-content: center;

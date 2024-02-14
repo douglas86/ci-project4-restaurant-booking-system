@@ -40,7 +40,7 @@ class HomePageView(TemplateView):
         """
         # calls method get_served to see what meals it needs to display
         # served_meals = self.get_served()
-        served_meals = 3
+        served_meals = 0
         # ternary operator to see if variable served_meals is greater than 3
         meal = ChefSpecial.objects.all().filter(served=served_meals) if served_meals < 3 else "Not served"
         return meal

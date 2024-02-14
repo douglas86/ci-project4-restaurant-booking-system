@@ -47,6 +47,9 @@
         height: 15em;
     }
     /*carousel*/
+    .default-carousel-image img {
+        padding: 5em;
+    }
     .carousel-inner {
         height: 30em;
     }

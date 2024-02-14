@@ -9,8 +9,8 @@
     {% if meals == "Not served" %}
         <div class="default-carousel-image">
             <img src="{% static 'images/home/lands-endslide__800x600.jpg' %}" alt="not found">
+            <p>We currently have no specials running, but you can enjoy the view in the meantime</p>
         </div>
-        <p>We currently have no specials running, but you can enjoy the view in the meantime</p>
     {% else %}
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -27,17 +27,6 @@
                 {% endfor %}
             </div>
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     {% endif %}
 
 {% endblock content %}
