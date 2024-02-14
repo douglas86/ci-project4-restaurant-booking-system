@@ -42,7 +42,14 @@
 /*media query for laptops and larger*/
 @media screen and (min-width: 1024px) {
     /*main*/
+    /*heading*/
+    .heading {
+        height: 15em;
+    }
     /*carousel*/
+    .carousel-inner {
+        height: 30em;
+    }
     .image {
         width: 50%;
         margin: 0;
