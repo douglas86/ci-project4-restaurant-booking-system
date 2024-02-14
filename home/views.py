@@ -23,7 +23,7 @@ class HomePageView(TemplateView):
 
     def get_served(self):
         """
-        Logic to return current meal
+        Logic to return current meal served
         :return:
         """
         if int(self.current_hour) >= 18:
@@ -40,7 +40,6 @@ class HomePageView(TemplateView):
         Gathers data from a database based on filter
         """
         served_meals = self.get_served()
-        print('s', served_meals)
         meal = ChefSpecial.objects.all().filter(served=served_meals) if served_meals < 3 else "Not served"
         return meal
 
