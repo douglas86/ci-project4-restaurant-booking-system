@@ -8,9 +8,32 @@
     {% if meals == "Not served" %}
         <p>Not served</p>
     {% else %}
-        {% for meal in meals %}
-            <p>{{ meal.title | title }}</p>
-        {% endfor %}
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" style="width: 30em">
+                {% for meal in meals %}
+                    {% if forloop.first %}
+                        <div class="carousel-item active" style="width: 100%" data-bs-interval="2000">
+                            {% include 'services/home/card.html' %}
+                        </div>
+                    {% else %}
+                        <div class="carousel-item" data-bs-interval="2000">
+                            {% include 'services/home/card.html' %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     {% endif %}
 
 {% endblock content %}
