@@ -4,7 +4,6 @@
     .mobile {
         display: none;
     }
-
     .tablet {
         display: block;
     }
@@ -25,10 +24,9 @@
     }
 
     /*main*/
-    /*carousel*/
-    /*.carousel-inner {*/
-    /*    width: 50%;*/
-    /*}*/
+    .card img {
+
+    }
     /*forms*/
     form {
         padding: 5em;
@@ -38,10 +36,6 @@
 /*media query for laptops and larger*/
 @media screen and (min-width: 1024px) {
     /*main*/
-    /*carousel*/
-    /*.card {*/
-    /*    height: auto;*/
-    /*}*/
     /*forms*/
     form {
         padding: 5em 10em;

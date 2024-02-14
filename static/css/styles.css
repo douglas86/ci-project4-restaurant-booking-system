@@ -27,7 +27,6 @@ p {
 .mobile {
     display: block;
 }
-
 .tablet {
     display: none;
 }
@@ -73,11 +72,9 @@ p {
     text-align: center;
     margin: auto;
 }
-
 .auth-icon {
     padding: 0.8em;
 }
-
 .auth-icon p {
     font-weight: bold;
 }
@@ -91,7 +88,6 @@ p {
     width: 20em;
     height: 12em;
 }
-
 /*carousel*/
 .carousel-inner {
     display: flex;
@@ -103,7 +99,6 @@ p {
     margin: auto;
     padding: 1em;
 }
-
 .card img {
     width: 18em;
     height: 18em;
@@ -116,39 +111,6 @@ p {
 .ingredients {
     padding: 1em;
 }
-
-/*.carousel {*/
-/*    display: flex;*/
-/*    padding: 1em;*/
-/*}*/
-/*.card {*/
-/*    width: 100%;*/
-/*    height: auto;*/
-/*}*/
-/*.carousel-inner {*/
-/*    width: 100%;*/
-/*    margin: 2em auto;*/
-/*    padding: 0.4em;*/
-/*}*/
-
-/*.card {*/
-/*    padding: 1em;*/
-/*    height: 50em;*/
-/*    background-color: #D3D3D3;*/
-/*}*/
-
-/*.image {*/
-/*    position: relative;*/
-/*    margin: auto;*/
-/*}*/
-
-/*.card-title {*/
-/*    margin: 1em;*/
-/*}*/
-
-/*.ingredients {*/
-/*    margin: auto;*/
-/*}*/
 /*forms*/
 form {
     padding: 2em;
@@ -167,27 +129,22 @@ footer {
     padding: 1em;
     text-align: center;
 }
-
 .contact-details {
     display: inline-block;
     justify-content: space-between;
 }
-
 .contact-details img {
     width: 1.8em;
     height: 1.8em;
 }
-
 .designer {
     display: flex;
     justify-content: space-between;
     padding: 1em;
 }
-
 .copyright {
     display: flex;
 }
-
 .copyright img {
     width: 1.2em;
     height: 1.2em;
