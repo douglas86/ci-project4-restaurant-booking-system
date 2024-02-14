@@ -4,4 +4,8 @@
     <div class="heading">
         <h1>Welcome to {{ name | title }}</h1>
     </div>
+
+    {% for meal in meals %}
+        <p>{{ meal.title }}</p>
+    {% endfor %}
 {% endblock content %}

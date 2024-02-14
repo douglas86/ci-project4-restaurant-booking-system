@@ -15,10 +15,24 @@ class HomePageView(TemplateView):
 
     # variables to gather current year of Laptop
     today = datetime.date.today()
+    current_hour = datetime.datetime.now().strftime('%H')
     year = today.year
 
     # name of the restaurant
     name = "culinary Haven"
+
+    def get_served(self):
+        """
+        Logic to return current meal
+        :return:
+        """
+
+    def get_queryset(self):
+        """
+        Gathers data from a database based on filter
+        """
+        meal = ChefSpecial.objects.all().filter(served=self.get_served())
+        return meal
 
     def get_context_data(self, *args, **kwargs):
         """
@@ -27,4 +41,4 @@ class HomePageView(TemplateView):
         :param kwargs:
         :return:
         """
-        return {'year': self.year, "name": self.name}
+        return {'year': self.year, "name": self.name, "meals": self.get_queryset()}
