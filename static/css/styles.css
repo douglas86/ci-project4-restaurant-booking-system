@@ -2,7 +2,7 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 120vh;
 }
 h1 {
     justify-content: center;
@@ -94,29 +94,56 @@ p {
 
 /*carousel*/
 .carousel-inner {
+    display: flex;
     width: 100%;
-    margin: 2em auto;
-    padding: 0.4em;
+    height: 45em;
+    margin: 2em;
 }
-
 .card {
+    width: 80%;
+    margin: auto;
     padding: 1em;
-    height: 50em;
-    background-color: #D3D3D3;
 }
-
-.image {
-    position: relative;
-    margin: auto;
-}
-
 .card-title {
-    margin: 1em;
+    padding: 1em;
+    text-align: center;
+}
+.ingredients {
+    padding: 1em;
 }
 
-.ingredients {
-    margin: auto;
-}
+/*.carousel {*/
+/*    display: flex;*/
+/*    padding: 1em;*/
+/*}*/
+/*.card {*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*}*/
+/*.carousel-inner {*/
+/*    width: 100%;*/
+/*    margin: 2em auto;*/
+/*    padding: 0.4em;*/
+/*}*/
+
+/*.card {*/
+/*    padding: 1em;*/
+/*    height: 50em;*/
+/*    background-color: #D3D3D3;*/
+/*}*/
+
+/*.image {*/
+/*    position: relative;*/
+/*    margin: auto;*/
+/*}*/
+
+/*.card-title {*/
+/*    margin: 1em;*/
+/*}*/
+
+/*.ingredients {*/
+/*    margin: auto;*/
+/*}*/
 /*forms*/
 form {
     padding: 2em;
