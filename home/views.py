@@ -39,8 +39,7 @@ class HomePageView(TemplateView):
         """
         Gathers data from a database based on filter
         """
-        # served_meals = self.get_served()
-        served_meals = 0
+        served_meals = self.get_served()
         meal = ChefSpecial.objects.all().filter(served=served_meals) if served_meals < 3 else "Not served"
         return meal
 
