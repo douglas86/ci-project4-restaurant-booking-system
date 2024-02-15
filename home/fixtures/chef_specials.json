@@ -1,0 +1,163 @@
+[
+  {
+    "model": "home.ChefSpecial",
+    "pk": 1,
+    "fields": {
+      "title": "Chocolate Pancakes",
+      "ingredients": [
+        "Butter",
+        "Dark Chocolate Chips",
+        "Brown Sugar",
+        "Milk",
+        "Cocoa Powder"
+      ],
+      "served": 0,
+      "featured_image": "https://cdn.vox-cdn.com/uploads/chorus_image/image/62582192/IMG_2025.280.jpg",
+      "created_at": "2024-02-15T13:20:30+03:00",
+      "updated_at": "2024-02-15T13:20:30+03:00"
+    }
+  },
+  {
+    "model": "home.ChefSpecial",
+    "pk": 2,
+    "fields": {
+      "title": "English Breakfast",
+      "ingredients": [
+        "Lean back bacon",
+        "Tomatoes halved",
+        "Closed cup mushrooms",
+        "Reduced salt and sugar",
+        "baked beans in tomato sauce"
+      ],
+      "served": 0,
+      "featured_image": "https://cdn.vox-cdn.com/uploads/chorus_image/image/62582192/IMG_2025.280.jpg",
+      "created_at": "2024-02-15T13:20:30+03:00",
+      "updated_at": "2024-02-15T13:20:30+03:00"
+    }
+  },
+  {
+    "model": "home.ChefSpecial",
+    "pk": 3,
+    "fields": {
+      "title": "Scrambled Eggs on Toast",
+      "ingredients": [
+        "Slices of bread",
+        "Button",
+        "Eggs",
+        "Good Quality Feta Cheese crumbled"
+      ],
+      "served": 0,
+      "featured_image": "https://cdn.vox-cdn.com/uploads/chorus_image/image/62582192/IMG_2025.280.jpg",
+      "created_at": "2024-02-15T13:20:30+03:00",
+      "updated_at": "2024-02-15T13:20:30+03:00"
+    }
+  },
+  {
+    "model": "home.ChefSpecial",
+    "pk": 4,
+    "fields": {
+      "title": "Homemade Pizza",
+      "ingredients": [
+        "Olive oil",
+        "Sugar",
+        "Salt",
+        "Bread flour"
+      ],
+      "served": 1,
+      "featured_image": "https://cdn.vox-cdn.com/uploads/chorus_image/image/62582192/IMG_2025.280.jpg",
+      "created_at": "2024-02-15T13:20:30+03:00",
+      "updated_at": "2024-02-15T13:20:30+03:00"
+    }
+  },
+  {
+    "model": "home.ChefSpecial",
+    "pk": 5,
+    "fields": {
+      "title": "Pasta with Pancetta",
+      "ingredients": [
+        "Pancetta",
+        "Pasta",
+        "Sea Salt",
+        "Freshly Cracked White Pepper",
+        "Olive Oil",
+        "Fresh Parsely Finely Chopped"
+      ],
+      "served": 1,
+      "featured_image": "https://cdn.vox-cdn.com/uploads/chorus_image/image/62582192/IMG_2025.280.jpg",
+      "created_at": "2024-02-15T13:20:30+03:00",
+      "updated_at": "2024-02-15T13:20:30+03:00"
+    }
+  },
+  {
+    "model": "home.ChefSpecial",
+    "pk": 6,
+    "fields": {
+      "title": "Pasta Salad",
+      "ingredients": [
+        "Uncooked rot-ini Pasta",
+        "Italian Salad Dressing",
+        "Cucumbers",
+        "Tomatoes",
+        "Green Onions"
+      ],
+      "served": 1,
+      "featured_image": "https://cdn.vox-cdn.com/uploads/chorus_image/image/62582192/IMG_2025.280.jpg",
+      "created_at": "2024-02-15T13:20:30+03:00",
+      "updated_at": "2024-02-15T13:20:30+03:00"
+    }
+  },
+  {
+    "model": "home.ChefSpecial",
+    "pk": 7,
+    "fields": {
+      "title": "One Pot Chicken Pasta",
+      "ingredients": [
+        "Olive Oil",
+        "Chicken Breast",
+        "Salt and Pepper",
+        "Cup Onions",
+        "Cloves Garlic"
+      ],
+      "served": 2,
+      "featured_image": "https://cdn.vox-cdn.com/uploads/chorus_image/image/62582192/IMG_2025.280.jpg",
+      "created_at": "2024-02-15T13:20:30+03:00",
+      "updated_at": "2024-02-15T13:20:30+03:00"
+    }
+  },
+  {
+    "model": "home.ChefSpecial",
+    "pk": 8,
+    "fields": {
+      "title": "Grilled BBQ Chicken Breast",
+      "ingredients": [
+        "Boneless Chicken Breast",
+        "BBQ sauce",
+        "Lime Wedges",
+        "Chopped Cilantro",
+        "Dry BBQ rub"
+      ],
+      "served": 2,
+      "featured_image": "https://cdn.vox-cdn.com/uploads/chorus_image/image/62582192/IMG_2025.280.jpg",
+      "created_at": "2024-02-15T13:20:30+03:00",
+      "updated_at": "2024-02-15T13:20:30+03:00"
+    }
+  },
+  {
+    "model": "home.ChefSpecial",
+    "pk": 9,
+    "fields": {
+      "title": "Beef burgers and chips",
+      "ingredients": [
+        "Desiree Potatoes",
+        "Fatty Beef Mince",
+        "Fresh Marjoram",
+        "Egg Yolk",
+        "Peanut Oil"
+      ],
+      "served": 2,
+      "featured_image": "https://cdn.vox-cdn.com/uploads/chorus_image/image/62582192/IMG_2025.280.jpg",
+      "created_at": "2024-02-15T13:20:30+03:00",
+      "updated_at": "2024-02-15T13:20:30+03:00"
+    }
+  }
+]
