@@ -341,6 +341,8 @@ What is the Issue?
 - All icons in this project were designed
   by [Icons8](https://icons8.com/?utm_source=figma-plugin-icons8&utm_medium=cross-promo&utm_campaign=web-version) with
   the help of Figma
+- All images that you see on the homepage for Chef's Specials were taken from homepage, I tried my best to make sure
+  that there was no copyright on it
 - [Luke Buchanan](https://www.linkedin.com/in/lukebuchanan67/) - Mentor
 - [Code Institute](https://codeinstitute.net/) - Bootcamp
 
