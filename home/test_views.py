@@ -30,5 +30,35 @@ class TestViews(TestCase):
         meal = ChefSpecial.objects.all().filter(served=served_meals) if served_meals < 3 else "Not served"
         return meal.values()
 
-    def test_get_breakfast_meals(self):
-        print(self.get_queryset())
+    def test_check_data_returned_breakfast_meals(self):
+        # change current hour variable
+        self.current_hour = 8
+
+        print("Breakfast Meals")
+
+        for meal in self.get_queryset():
+            self.assertEqual(meal['served'], 0)
+
+        print("Breakfast Meals Passed")
+
+    def test_check_data_returned_lunch_meals(self):
+        # change current hour variable
+        self.current_hour = 12
+
+        print("Lunch Meals")
+
+        for meal in self.get_queryset():
+            self.assertEqual(meal['served'], 1)
+
+        print("Lunch Meals Passed")
+
+    def test_check_data_returned_supper_meals(self):
+        # change current hour variable
+        self.current_hour = 18
+
+        print("Supper Meals")
+
+        for meal in self.get_queryset():
+            self.assertEqual(meal['served'], 2)
+
+        print("Supper Meals Passed")
