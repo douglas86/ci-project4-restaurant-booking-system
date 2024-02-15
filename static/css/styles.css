@@ -3,6 +3,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: white url('/static/images/home/restaurant_image.jpg') no-repeat;
+    background-size: cover;
 }
 h1 {
     justify-content: center;
@@ -27,7 +29,6 @@ p {
 .mobile {
     display: block;
 }
-
 .tablet {
     display: none;
 }
@@ -73,11 +74,9 @@ p {
     text-align: center;
     margin: auto;
 }
-
 .auth-icon {
     padding: 0.8em;
 }
-
 .auth-icon p {
     font-weight: bold;
 }
@@ -89,7 +88,38 @@ p {
     justify-content: left;
     align-items: flex-start;
     width: 20em;
-    height: 5em;
+    height: 12em;
+}
+/*carousel*/
+.default-carousel-image img {
+    width: 100%;
+    padding: 1em;
+}
+.carousel-inner {
+    display: flex;
+    width: 100%;
+    height: 45em;
+}
+.card {
+    width: 80%;
+    margin: auto;
+    padding: 1em;
+    background-color: #D3D3D3;
+}
+.image {
+    margin: auto;
+}
+.card img {
+    width: 18em;
+    height: 18em;
+    margin: auto;
+}
+.card-title {
+    padding: 1em;
+    text-align: center;
+}
+.ingredients {
+    padding: 1em;
 }
 /*forms*/
 form {
@@ -110,27 +140,22 @@ footer {
     padding: 1em;
     text-align: center;
 }
-
 .contact-details {
     display: inline-block;
     justify-content: space-between;
 }
-
 .contact-details img {
     width: 1.8em;
     height: 1.8em;
 }
-
 .designer {
     display: flex;
     justify-content: space-between;
     padding: 1em;
 }
-
 .copyright {
     display: flex;
 }
-
 .copyright img {
     width: 1.2em;
     height: 1.2em;

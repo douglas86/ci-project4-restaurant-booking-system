@@ -4,7 +4,6 @@
     .mobile {
         display: none;
     }
-
     .tablet {
         display: block;
     }
@@ -25,6 +24,15 @@
     }
 
     /*main*/
+    /*carousel*/
+    .carousel-inner {
+        height: 50em;
+        margin: 2em auto;
+    }
+    .card img {
+        width: 25em;
+        height: 25em;
+    }
     /*forms*/
     form {
         padding: 5em;
@@ -33,6 +41,33 @@
 
 /*media query for laptops and larger*/
 @media screen and (min-width: 1024px) {
+    /*main*/
+    /*heading*/
+    .heading {
+        height: 15em;
+    }
+    /*carousel*/
+    .default-carousel-image img {
+        padding: 5em;
+    }
+    .carousel-inner {
+        height: 30em;
+    }
+    .image {
+        width: 50%;
+        margin: 0;
+    }
+
+    .card-details {
+        width: 50%;
+        position: absolute;
+        left: 50%;
+    }
+
+    .ingredients {
+        margin-left: 1em;
+    }
+
     /*forms*/
     form {
         padding: 5em 10em;
