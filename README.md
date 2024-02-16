@@ -300,11 +300,24 @@ If you are trying to enter more than three entries for breakfast
 
 ![manual-homepage-meal.png](static/images/readme/testing/manual-homepage-meal.png)
 
+- Tested responsiveness of the carousel
+- I don't test for anything below 400pixels
+
+Responsive on Mobile devices
+
+![manual-homepage-responsive-mobile.png](static/images/readme/testing/manual-homepage-responsive-mobile.png)
+
+Responsive on Tablet devices
+
+![manual-homepage-responsive-tablet.png](static/images/readme/testing/manual-homepage-responsive-tablet.png)
+
+Responsive on Laptop devices
+
+![manual-homepage-responsive-laptop.png](static/images/readme/testing/manual-homepage-responsive-laptop.png)
+
 ### [Automated Testing](#testing)
 
-Authentication
-
-![auto-test-authentication.png](static/images/readme/testing/auto-test-authentication.png)
+#### Authentication
 
 What was tested in this scenario:
 
@@ -313,6 +326,26 @@ What was tested in this scenario:
 
 As this is the first time I have written auto tests by myself,
 I wanted to keep it basic
+
+![auto-test-authentication.png](static/images/readme/testing/auto-test-authentication.png)
+
+#### Homepage
+
+What was tested in this scenario
+
+- I first created a failing test for breakfast
+
+Changing the assertEqual variable to a number that is not zero
+
+![auto-homepage-testing-what.png](static/images/readme/testing/auto-homepage-testing-what.png)
+
+The results of a failing test
+
+![auto-homepage-testing-results-fail.png](static/images/readme/testing/auto-homepage-testing-results-fail.png)
+
+Testing for a passing test
+
+![auto-homepage-testing-what-pass.png](static/images/readme/testing/auto-homepage-testing-what-pass.png)
 
 ---
 
