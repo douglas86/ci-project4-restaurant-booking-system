@@ -292,6 +292,14 @@ If you are trying to enter more than three entries for breakfast
 
 ![manual-homepage-db-fail.png](static/images/readme/testing/manual-homepage-db-fail.png)
 
+- Was testing to see if I could get the correct meals from the database
+- Just by changing the filter variable
+- When you enter what type of meal, you want, it is done as a choice based on three numbers
+- Zero being breakfast, one being lunched and 2 being supper
+- There is also a number three that means that if it doesn't correspond to any number that will then run
+
+![manual-homepage-meal.png](static/images/readme/testing/manual-homepage-meal.png)
+
 ### [Automated Testing](#testing)
 
 Authentication
