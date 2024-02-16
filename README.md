@@ -135,6 +135,11 @@ Footer
 
 ![milestone-footer.png](static/images/readme/planning/milestone-footer.png)
 
+- The milestone was taken after the homepage was done
+- When the Menu Page and About Page were added as issues
+
+![milestone-homepage.png](static/images/readme/planning/milestone-homepage.png)
+
 ### [How to start this project locally](#planning)
 
 - when using ssh
