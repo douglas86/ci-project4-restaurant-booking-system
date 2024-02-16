@@ -277,6 +277,21 @@ This testing was conducted on Lighthouse with Mobile in mind
 
 ![testing-header2.png](static/images/readme/testing/testing-header2.png)
 
+#### Homepage
+
+- When you are added data for the Carousel
+- You are only allowed to add three entries per meal
+- For instance, you are only allowed three breakfasts, three lunches and three suppers
+- The carousel will auto choose which one based on the time of day
+
+If all data is correct, it will show this in the admin panel
+
+![manual-homepage-db-pass.png](static/images/readme/testing/manual-homepage-db-pass.png)
+
+If you are trying to enter more than three entries for breakfast
+
+![manual-homepage-db-fail.png](static/images/readme/testing/manual-homepage-db-fail.png)
+
 ### [Automated Testing](#testing)
 
 Authentication
