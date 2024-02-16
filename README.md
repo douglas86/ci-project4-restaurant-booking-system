@@ -147,6 +147,26 @@ Homepage
 
 ![milestone-homepage.png](static/images/readme/planning/milestone-homepage.png)
 
+Menu Page
+
+- I created 10 sticky notes to decide on what I wanted for the issues
+- Once I knew what I wanted, then created the issues for the Kambam board,
+- Sorting them out into Moscow priorities sticking with 60% Must-have
+- I have also created an issue for the documentation
+- Which I will do after all required issues are done
+
+Sticky notes on Figma to plan what sort of issues I am wanting to solve
+
+![moscow-menu-planning.png](static/images/readme/planning/moscow-menu-planning.png)
+
+Once the Issues were created, I gave them their labels using MOSCOW priorities
+
+![moscow-menu-create-issues.png](static/images/readme/planning/moscow-menu-create-issues.png)
+
+After all, planning is in place the milestone section shows percentage done
+
+![moscow-menu-milestone.png](static/images/readme/planning/moscow-menu-milestone.png)
+
 ### [How to start this project locally](#planning)
 
 - when using ssh
