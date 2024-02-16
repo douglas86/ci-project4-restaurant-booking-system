@@ -115,7 +115,8 @@ Explanation of the columns on the board:
 
 Milestones
 
-I created a milestone for keeping track of this project
+This project was done in incremental stages, building it page by page.
+As such, the milestone percentage will change slightly in each iteration.
 
 ![milestones.png](static/images/readme/planning/milestones.png)
 
@@ -129,6 +130,10 @@ Footer
 - There was also an issue that I created for Documentation
 
 ![moscow-footer.png](static/images/readme/planning/moscow-footer.png)
+
+- Once the footer had been completed, 84% was done.
+
+![milestone-footer.png](static/images/readme/planning/milestone-footer.png)
 
 ### [How to start this project locally](#planning)
 
