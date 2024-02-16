@@ -115,7 +115,8 @@ Explanation of the columns on the board:
 
 Milestones
 
-I created a milestone for keeping track of this project
+This project was done in incremental stages, building it page by page.
+As such, the milestone percentage will change slightly in each iteration.
 
 ![milestones.png](static/images/readme/planning/milestones.png)
 
@@ -129,6 +130,42 @@ Footer
 - There was also an issue that I created for Documentation
 
 ![moscow-footer.png](static/images/readme/planning/moscow-footer.png)
+
+- Once the footer had been completed, 84% was done.
+
+![milestone-footer.png](static/images/readme/planning/milestone-footer.png)
+
+Homepage
+
+- There were only four issues added for this section
+- As I didn't plan on doing a lot of work here
+
+![moscow-homepage.png](static/images/readme/planning/moscow-homepage.png)
+
+- The milestone was taken after the homepage was done
+- When the Menu Page and About Page were added as issues
+
+![milestone-homepage.png](static/images/readme/planning/milestone-homepage.png)
+
+Menu Page
+
+- I created 10 sticky notes to decide on what I wanted for the issues
+- Once I knew what I wanted, then created the issues for the Kambam board,
+- Sorting them out into Moscow priorities sticking with 60% Must-have
+- I have also created an issue for the documentation
+- Which I will do after all required issues are done
+
+Sticky notes on Figma to plan what sort of issues I am wanting to solve
+
+![moscow-menu-planning.png](static/images/readme/planning/moscow-menu-planning.png)
+
+Once the Issues were created, I gave them their labels using MOSCOW priorities
+
+![moscow-menu-create-issues.png](static/images/readme/planning/moscow-menu-create-issues.png)
+
+After all, planning is in place the milestone section shows percentage done
+
+![moscow-menu-milestone.png](static/images/readme/planning/moscow-menu-milestone.png)
 
 ### [How to start this project locally](#planning)
 
@@ -260,11 +297,53 @@ This testing was conducted on Lighthouse with Mobile in mind
 
 ![testing-header2.png](static/images/readme/testing/testing-header2.png)
 
+#### Homepage
+
+- When you are added data for the Carousel
+- You are only allowed to add three entries per meal
+- For instance, you are only allowed three breakfasts, three lunches and three suppers
+- The carousel will auto choose which one based on the time of day
+
+If all data is correct, it will show this in the admin panel
+
+![manual-homepage-db-pass.png](static/images/readme/testing/manual-homepage-db-pass.png)
+
+If you are trying to enter more than three entries for breakfast
+
+![manual-homepage-db-fail.png](static/images/readme/testing/manual-homepage-db-fail.png)
+
+- Was testing to see if I could get the correct meals from the database
+- Just by changing the filter variable
+- When you enter what type of meal, you want, it is done as a choice based on three numbers
+- Zero being breakfast, one being lunched and 2 being supper
+- There is also a number three that means that if it doesn't correspond to any number that will then run
+
+![manual-homepage-meal.png](static/images/readme/testing/manual-homepage-meal.png)
+
+- Tested responsiveness of the carousel
+- I don't test for anything below 400pixels
+
+Responsive on Mobile devices
+
+![manual-homepage-responsive-mobile.png](static/images/readme/testing/manual-homepage-responsive-mobile.png)
+
+Responsive on Tablet devices
+
+![manual-homepage-responsive-tablet.png](static/images/readme/testing/manual-homepage-responsive-tablet.png)
+
+Responsive on Laptop devices
+
+![manual-homepage-responsive-laptop.png](static/images/readme/testing/manual-homepage-responsive-laptop.png)
+
 ### [Automated Testing](#testing)
 
-Authentication
+The following command can be used to run tests in Parallel
+Auto means that it will only run tests on threads that are available
+python manage.py test --parallel auto
 
-![auto-test-authentication.png](static/images/readme/testing/auto-test-authentication.png)
+If you are just wanting to test conventionally
+
+#### Authentication
 
 What was tested in this scenario:
 
@@ -273,6 +352,26 @@ What was tested in this scenario:
 
 As this is the first time I have written auto tests by myself,
 I wanted to keep it basic
+
+![auto-test-authentication.png](static/images/readme/testing/auto-test-authentication.png)
+
+#### Homepage
+
+What was tested in this scenario
+
+- I first created a failing test for breakfast
+
+Changing the assertEqual variable to a number that is not zero
+
+![auto-homepage-testing-what.png](static/images/readme/testing/auto-homepage-testing-what.png)
+
+The results of a failing test
+
+![auto-homepage-testing-results-fail.png](static/images/readme/testing/auto-homepage-testing-results-fail.png)
+
+Testing for a passing test
+
+![auto-homepage-testing-what-pass.png](static/images/readme/testing/auto-homepage-testing-what-pass.png)
 
 ---
 
@@ -341,6 +440,8 @@ What is the Issue?
 - All icons in this project were designed
   by [Icons8](https://icons8.com/?utm_source=figma-plugin-icons8&utm_medium=cross-promo&utm_campaign=web-version) with
   the help of Figma
+- All images that you see on the homepage for Chef's Specials were taken from homepage, I tried my best to make sure
+  that there was no copyright on it
 - [Luke Buchanan](https://www.linkedin.com/in/lukebuchanan67/) - Mentor
 - [Code Institute](https://codeinstitute.net/) - Bootcamp
 
