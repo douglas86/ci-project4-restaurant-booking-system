@@ -317,6 +317,12 @@ Responsive on Laptop devices
 
 ### [Automated Testing](#testing)
 
+The following command can be used to run tests in Parallel
+Auto means that it will only run tests on threads that are available
+python manage.py test --parallel auto
+
+If you are just wanting to test conventionally
+
 #### Authentication
 
 What was tested in this scenario:
