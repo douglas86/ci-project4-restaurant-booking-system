@@ -135,6 +135,13 @@ Footer
 
 ![milestone-footer.png](static/images/readme/planning/milestone-footer.png)
 
+Homepage
+
+- There were only four issues added for this section
+- As I didn't plan on doing a lot of work here
+
+![moscow-homepage.png](static/images/readme/planning/moscow-homepage.png)
+
 - The milestone was taken after the homepage was done
 - When the Menu Page and About Page were added as issues
 
