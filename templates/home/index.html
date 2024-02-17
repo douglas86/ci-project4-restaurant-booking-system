@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block content %}
@@ -17,11 +17,11 @@
                 {% for meal in meals %}
                     {% if forloop.first %}
                         <div class="carousel-item active" style="width: 100%" data-bs-interval="5000">
-                            {% include 'services/home/card.html' %}
+                            {% include "services/home/card.html" %}
                         </div>
                     {% else %}
                         <div class="carousel-item" data-bs-interval="5000">
-                            {% include 'services/home/card.html' %}
+                            {% include "services/home/card.html" %}
                         </div>
                     {% endif %}
                 {% endfor %}
