@@ -1,32 +1,39 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="heading">
+	<h1>Welcome to {{ name | title }}</h1>
+</div>
 
-{% block content %}
-    <div class="heading">
-        <h1>Welcome to {{ name | title }}</h1>
-    </div>
-
-    {% if meals == "Not served" %}
-        <div class="default-carousel-image">
-            <img src="{% static 'images/home/lands-endslide__800x600.jpg' %}" alt="not found">
-            <p>We currently have no specials running, but you can enjoy the view in the meantime</p>
-        </div>
-    {% else %}
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                {% for meal in meals %}
-                    {% if forloop.first %}
-                        <div class="carousel-item active" style="width: 100%" data-bs-interval="5000">
-                            {% include "services/home/card.html" %}
-                        </div>
-                    {% else %}
-                        <div class="carousel-item" data-bs-interval="5000">
-                            {% include "services/home/card.html" %}
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    {% endif %}
-
-{% endblock content %}
+{% if meals == "Not served" %}
+<div class="default-carousel-image">
+	<img
+		src="{% static 'images/home/lands-endslide__800x600.jpg' %}"
+		alt="not found"
+	/>
+	<p>
+		We currently have no specials running, but you can enjoy the view in the
+		meantime
+	</p>
+</div>
+{% else %}
+<div
+	id="carouselExampleInterval"
+	class="carousel slide"
+	data-bs-ride="carousel"
+>
+	<div class="carousel-inner">
+		{% for meal in meals %} {% if forloop.first %}
+		<div
+			class="carousel-item active"
+			style="width: 100%"
+			data-bs-interval="5000"
+		>
+			{% include "services/home/card.html" %}
+		</div>
+		{% else %}
+		<div class="carousel-item" data-bs-interval="5000">
+			{% include "services/home/card.html" %}
+		</div>
+		{% endif %} {% endfor %}
+	</div>
+</div>
+{% endif %} {% endblock content %}

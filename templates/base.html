@@ -1,68 +1,69 @@
-{% load static %}
-
-{% url "home" as home %}
-{% url "menu" as menu %}
-{% url "table" as table %}
-{% url "about" as about %}
-
-{% url "account_login" as login_url %}
-{% url "account_signup" as signup_url %}
-{% url "account_logout" as logout_url %}
+{% load static %} {% url "home" as home %} {% url "menu" as menu %} {% url
+"table" as table %} {% url "about" as about %} {% url "account_login" as
+login_url %} {% url "account_signup" as signup_url %} {% url "account_logout" as
+logout_url %}
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <meta name="description" content="Restaurant booking system">
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="width=device-width" name="viewport" />
+		<meta content="ie=edge" http-equiv="X-UA-Compatible" />
+		<meta name="description" content="Restaurant booking system" />
+		<meta name="keywords" content="restaurant,booking">
 
-    <!--    bootstrap link tag-->
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet">
+		<!--    bootstrap link tag-->
+		<link
+			crossorigin="anonymous"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			rel="stylesheet"
+		/>
 
+		<title>Booking System</title>
 
-    <title>Booking System</title>
+		{# added a favicon icon#}
+		<link
+			rel="shortcut icon"
+			type="image/x-icon"
+			href="{% static "favicon/favicon.ico" %}"
+		/>
 
-    {#    added a favicon icon#}
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}">
+		{# css style sheets#}
+		<link rel="stylesheet" href="{% static "css/styles.css" %}" />
+		<link rel="stylesheet" href="{% static "css/media.css" %}" />
 
-    {#    css style sheets#}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/media.css' %}">
+		{# Google fonts#}
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Exo:wght@100&family=Protest+Revolution&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header>{% include "services/navbar.html" %}</header>
 
-    {#    Google fonts#}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@100&family=Protest+Revolution&display=swap"
-          rel="stylesheet">
+		<main>
+			{% block content %}
+			<!-- Content goes here -->
+			{% endblock content %}
+		</main>
 
-</head>
-<body>
+		<footer>{% include "services/footer.html" %}</footer>
 
-<header>
-    {% include 'services/navbar.html' %}
-</header>
+		<!--bootstrap script tag-->
+		<script
+			crossorigin="anonymous"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		></script>
+		<script
+			crossorigin="anonymous"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		></script>
 
-<main>
-    {% block content %}
-        <!-- Content goes here -->
-    {% endblock content %}
-</main>
-
-<footer>
-    {% include 'services/footer.html' %}
-</footer>
-
-<!--bootstrap script tag-->
-<script crossorigin="anonymous"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-<script crossorigin="anonymous"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<script src="{% static 'js/script.js' %}"></script>
-
-</body>
+		<script src="{% static "js/script.js" %}"></script>
+	</body>
 </html>
