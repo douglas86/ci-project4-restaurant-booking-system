@@ -165,7 +165,8 @@ form input[type="email"] {
 }
 .show {
 	display: flex;
-	margin: 3.5em 10% 0;
+	margin: 3.6em 11% 0;
+	border-radius: 3px;
 }
 
 /*footer*/
