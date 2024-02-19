@@ -1,28 +1,33 @@
 {% load static %}
-
 <div id="icon-links">
-    <a aria-current="page" class="nav-link active" href="{% url 'home' %}">
-        <div class="links">
-            <img src="{% static 'images/navbar/Home.png' %}" alt="not found">
-            <p>Home</p>
-        </div>
-    </a>
-    <a class="nav-link" href="{% url 'menu' %}">
-        <div class="links">
-            <img src="{% static 'images/navbar/Restaurant Menu.png' %}" alt="not found">
-            <p>Menu</p>
-        </div>
-    </a>
-    <a class="nav-link" href="{% url 'table' %}">
-        <div class="links">
-            <img src="{% static 'images/navbar/Restaurant Table.png' %}" alt="not found">
-            <p>Book Table</p>
-        </div>
-    </a>
-    <a class="nav-link" href="{% url 'about' %}">
-        <div class="links">
-            <img src="{% static 'images/navbar/Info.png' %}" alt="not found">
-            <p>About</p>
-        </div>
-    </a>
+	<a aria-current="page" class="nav-link active" href="{% url 'home' %}">
+		<div class="links">
+			<img src="{% static 'images/navbar/Home.png' %}" alt="not found" />
+			<p>Home</p>
+		</div>
+	</a>
+	<a class="nav-link" href="{% url 'meal' slug='breakfast' %}">
+		<div class="links">
+			<img
+				src="{% static 'images/navbar/Restaurant Menu.png' %}"
+				alt="not found"
+			/>
+			<p>Menu</p>
+		</div>
+	</a>
+	<a class="nav-link" href="{% url 'table' %}">
+		<div class="links">
+			<img
+				src="{% static 'images/navbar/Restaurant Table.png' %}"
+				alt="not found"
+			/>
+			<p>Book Table</p>
+		</div>
+	</a>
+	<a class="nav-link" href="{% url 'about' %}">
+		<div class="links">
+			<img src="{% static 'images/navbar/Info.png' %}" alt="not found" />
+			<p>About</p>
+		</div>
+	</a>
 </div>

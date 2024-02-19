@@ -25,7 +25,7 @@ urlpatterns = [
     path('about/', AboutView.as_view(), name='about'),
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
-    path('menu/', include('menu.urls'), name='menu'),
+    path('menu/', include('menu.urls')),
     path('table/', BookTable.as_view(), name='table'),
     path("__reload__/", include("django_browser_reload.urls")),
     path('', HomePageView.as_view(), name='home'),
