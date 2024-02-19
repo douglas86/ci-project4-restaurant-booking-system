@@ -4,7 +4,9 @@
 		Select Your Meal Menu
 	</button>
 	<div id="dropdownContent" class="dropdownContents">
-		{% for meal in meals %}<a href="/menu/{{ meal }}">{{ meal }}</a>{% endfor %}
+		{% for meal in meals %}
+		<a href="{% url 'meal' meal %}">{{ meal | title }}</a>
+		{% endfor %}
 	</div>
 </div>
 {% endblock content %}

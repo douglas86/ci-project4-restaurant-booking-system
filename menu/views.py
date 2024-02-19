@@ -6,6 +6,6 @@ class MenuView(TemplateView):
     template_name = 'menu/menu.html'
 
     def get_context_data(self, **kwargs):
-        meals = ['Breakfast', 'Lunch', 'Supper']
+        meals = ['breakfast', 'lunch', 'supper']
 
         return {'meals': meals}
