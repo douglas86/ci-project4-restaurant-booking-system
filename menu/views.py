@@ -7,5 +7,29 @@ class MenuView(TemplateView):
 
     def get_context_data(self, **kwargs):
         meals = ['breakfast', 'lunch', 'supper']
+        context = self.kwargs['slug']
 
-        return {'meals': meals}
+        switch(context)
+
+        return {'meals': meals, 'context': context}
+
+
+def switch(context):
+    if context == 'breakfast':
+        return breakfast()
+    elif context == 'lunch':
+        return lunch()
+    elif context == 'supper':
+        return supper()
+
+
+def breakfast():
+    print('breakfast')
+
+
+def lunch():
+    print('lunch')
+
+
+def supper():
+    print('supper')
