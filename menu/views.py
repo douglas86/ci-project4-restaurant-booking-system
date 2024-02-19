@@ -6,10 +6,14 @@ class MenuView(TemplateView):
     template_name = 'menu/menu.html'
 
     def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
         meals = ['breakfast', 'lunch', 'supper']
-        context = self.kwargs['slug']
+        # gets the url path which is a key of slug that was passed
+        context['slug'] = self.kwargs['slug']
 
-        switch(context)
+        print('context', context)
+
+        # swi = switch(context)
 
         return {'meals': meals, 'context': context}
 
@@ -24,7 +28,9 @@ def switch(context):
 
 
 def breakfast():
-    print('breakfast')
+    menu = {'title': 'Breakfast Menu', 'name': 'This is breakfast',
+            'ingredients': ['one', 'two', 'three'], 'price': 23}
+    return menu
 
 
 def lunch():

@@ -6,6 +6,7 @@ body {
 	background: white url("/static/images/home/restaurant_image.jpg") no-repeat;
 	background-size: cover;
 }
+
 h1 {
 	justify-content: center;
 	text-align: center;
@@ -21,6 +22,7 @@ h1 {
 	-webkit-text-stroke-width: 2px;
 	transform: rotate(-2deg);
 }
+
 p {
 	text-align: center;
 }
@@ -29,54 +31,67 @@ p {
 .mobile {
 	display: block;
 }
+
 .tablet {
 	display: none;
 }
+
 #nav {
 	display: flex;
 	background-color: #b5cbb7;
 }
+
 #nav button {
 	margin: 1em;
 	border: none;
 	background-color: transparent;
 }
+
 #icon-links {
 	display: none;
 	background-color: #b5cbb7;
 }
+
 #icon-links a {
 	text-decoration: none;
 	color: black;
 	font-size: large;
 	font-weight: bold;
 }
+
 #icon-links a:hover {
 	color: #e7e08b;
 	font-weight: bolder;
 }
+
 .links {
 	display: flex;
 }
+
 .links img {
 	margin: 1em;
 }
+
 .links p {
 	width: 80%;
 	margin: auto;
 }
+
 .authentication-icon {
 	display: flex;
 	width: 80%;
 }
+
 #user-message {
 	width: 80%;
 	text-align: center;
 	margin: auto;
 }
+
 .auth-icon {
 	padding: 0.8em;
 }
+
 .auth-icon p {
 	font-weight: bold;
 }
@@ -90,57 +105,69 @@ p {
 	width: 20em;
 	height: 12em;
 }
+
 /*carousel*/
 .default-carousel-image img {
 	width: 100%;
 	padding: 1em;
 }
+
 .carousel-inner {
 	display: flex;
 	width: 100%;
 	height: 45em;
 }
+
 .card {
 	width: 80%;
 	margin: auto;
 	padding: 1em;
 	background-color: #d3d3d3;
 }
+
 .image {
 	margin: auto;
 }
+
 .card img {
 	width: 18em;
 	height: 18em;
 	margin: auto;
 }
+
 .card-title {
 	padding: 1em;
 	text-align: center;
 }
+
 .ingredients {
 	padding: 1em;
 }
+
 /*forms*/
 form {
 	padding: 2em;
 }
+
 form input[type="text"],
 form input[type="password"],
 form input[type="email"] {
 	width: 100%;
 	border-radius: 10px;
 }
+
 /* menu */
 .menu {
 	background-color: #d3d3d3;
 	margin: 2em;
 }
+
 /* dropdown menu */
 .dropdown {
 	display: flex;
 	padding: 1em;
 }
+
 .dropdownButton {
 	width: 80%;
 	justify-content: center;
@@ -153,6 +180,7 @@ form input[type="email"] {
 	cursor: pointer;
 	border-radius: 0.3em;
 }
+
 .dropdownContents {
 	display: none;
 	position: absolute;
@@ -162,27 +190,36 @@ form input[type="email"] {
 	z-index: 1;
 	margin: 3.5em auto 0;
 }
+
 .dropdownContents a {
 	color: black;
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
 }
+
 .show {
 	display: flex;
 	margin: 3.6em 11% 0;
 	border-radius: 3px;
 }
-.meal-tabs {
+
+.items {
 	display: flex;
-	background-color: #d3d3d3;
 }
-.meal-tabs ul {
+
+.meal-tabs {
+	display: block;
 	width: 30%;
 	padding: 2em;
 }
+
 .nav-items {
 	text-align: center;
+}
+
+.content {
+	width: 70%;
 }
 
 /*footer*/
@@ -190,27 +227,33 @@ footer {
 	margin-top: auto;
 	background-color: #b5cbb7;
 }
+
 .footer {
 	display: block;
 	padding: 1em;
 	text-align: center;
 }
+
 .contact-details {
 	display: inline-block;
 	justify-content: space-between;
 }
+
 .contact-details img {
 	width: 1.8em;
 	height: 1.8em;
 }
+
 .designer {
 	display: flex;
 	justify-content: space-between;
 	padding: 1em;
 }
+
 .copyright {
 	display: flex;
 }
+
 .copyright img {
 	width: 1.2em;
 	height: 1.2em;
