@@ -146,6 +146,7 @@ form input[type="email"] {
 	font-size: 16px;
 	border: none;
 	cursor: pointer;
+	border-radius: 0.3em;
 }
 
 /*footer*/
