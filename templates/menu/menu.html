@@ -3,11 +3,8 @@
 	<button onclick="dropdownMenu()" class="dropdownButton">
 		Select Your Meal Menu
 	</button>
-
 	<div id="dropdownContent" class="dropdownContents">
-		<a href="">Link 1</a>
-		<a href="">Link 2</a>
-		<a href="">Link 3</a>
+		{% for meal in meals %}<a href="/menu/{{ meal }}">{{ meal }}</a>{% endfor %}
 	</div>
 </div>
 {% endblock content %}

@@ -20,13 +20,12 @@ from django.urls import path, include
 from about.views import AboutView
 from book_table.views import BookTable
 from home.views import HomePageView
-from menu.views import MenuView
 
 urlpatterns = [
     path('about/', AboutView.as_view(), name='about'),
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
-    path('menu/', MenuView.as_view(), name='menu'),
+    path('menu/', include('menu.urls'), name='menu'),
     path('table/', BookTable.as_view(), name='table'),
     path("__reload__/", include("django_browser_reload.urls")),
     path('', HomePageView.as_view(), name='home'),
