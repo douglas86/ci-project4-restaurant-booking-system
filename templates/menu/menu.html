@@ -1,12 +1,30 @@
 {% extends "base.html" %} {% block content %}
-<div class="dropdown mobile">
-	<button onclick="dropdownMenu()" class="dropdownButton">
-		Select Your Meal Menu
-	</button>
-	<div id="dropdownContent" class="dropdownContents">
-		{% for meal in meals %}
-		<a href="{% url 'meal' meal %}">{{ meal | title }}</a>
-		{% endfor %}
+<div class="menu">
+	{%for meal in meals%}
+	<div class="dropdown mobile">
+		<button onclick="dropdownMenu()" class="dropdownButton">
+			Select Your Meal Menu
+		</button>
+		<div id="dropdownContent" class="dropdownContents">
+			<a href="{% url 'meal' meal %}">{{ meal | title }}</a>
+		</div>
 	</div>
+	<div class="meal-tabs tablet">
+		<ul class="nav nav-pills">
+			<li class="nav-item" role="presentation">
+				<button
+					class="nav-link"
+					id="pills-{{meal}}-tab"
+					data-bs-toggle="pills"
+					type="button"
+					role="tab"
+					aria-controls="pills-{{meal}}"
+				>
+					{{meal|title}}
+				</button>
+			</li>
+		</ul>
+	</div>
+	{%endfor%}
 </div>
 {% endblock content %}

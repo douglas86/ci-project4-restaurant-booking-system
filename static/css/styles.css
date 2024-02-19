@@ -131,6 +131,11 @@ form input[type="email"] {
 	width: 100%;
 	border-radius: 10px;
 }
+/* menu */
+.menu {
+	background-color: #d3d3d3;
+	margin: 2em;
+}
 /* dropdown menu */
 .dropdown {
 	display: flex;
@@ -167,6 +172,17 @@ form input[type="email"] {
 	display: flex;
 	margin: 3.6em 11% 0;
 	border-radius: 3px;
+}
+.meal-tabs {
+	display: flex;
+	background-color: #d3d3d3;
+}
+.meal-tabs ul {
+	width: 30%;
+	padding: 2em;
+}
+.nav-items {
+	text-align: center;
 }
 
 /*footer*/
