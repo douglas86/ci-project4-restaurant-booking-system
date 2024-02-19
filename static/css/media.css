@@ -24,6 +24,11 @@
 	}
 
 	/*main*/
+	.meal-tabs ul {
+		width: 100%;
+		justify-content: space-between;
+		padding: 1em;
+	}
 	/*carousel*/
 	.carousel-inner {
 		height: 50em;
@@ -33,6 +38,7 @@
 		width: 25em;
 		height: 25em;
 	}
+	/* menu */
 	/*forms*/
 	form {
 		padding: 5em;

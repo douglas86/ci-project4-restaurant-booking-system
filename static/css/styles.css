@@ -22,6 +22,10 @@ h1 {
 	-webkit-text-stroke-width: 2px;
 	transform: rotate(-2deg);
 }
+h3 {
+	text-align: center;
+	padding: 0.5em;
+}
 
 p {
 	text-align: center;
@@ -202,24 +206,6 @@ form input[type="email"] {
 	display: flex;
 	margin: 3.6em 11% 0;
 	border-radius: 3px;
-}
-
-.items {
-	display: flex;
-}
-
-.meal-tabs {
-	display: block;
-	width: 30%;
-	padding: 2em;
-}
-
-.nav-items {
-	text-align: center;
-}
-
-.content {
-	width: 70%;
 }
 
 /*footer*/
