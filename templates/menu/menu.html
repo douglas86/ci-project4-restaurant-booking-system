@@ -1,5 +1,32 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
 {% block content %}
-    <h1>This is the menu page</h1>
+    <div class="menu">
+        <h3>{{ context.slug|title }} Menu</h3>
+        <div class="dropdown mobile">
+            <button onclick="dropdownMenu()" class="dropdownButton">Select Your Meal Menu</button>
+            <div id="dropdownContent" class="dropdownContents">
+                {% for meal in meals %}
+                    <a href="{% url 'meal' meal %}">{{ meal | title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="content mobile">{{ context.slug }}</div>
+        <div class="tablet">
+            <div class="meal-tabs">
+                <ul class="nav nav-pills">
+                    {% for meal in meals %}
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link"
+                               id="pills-{{ meal }}-tab"
+                               data-bs-toggle="pills"
+                               role="tab"
+                               aria-controls="pills-{{ meal }}"
+                               href="{% url 'meal' meal %}">{{ meal|title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="content">{{ context.slug }}</div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}

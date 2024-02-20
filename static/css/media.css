@@ -1,75 +1,81 @@
 /*media query for tablets and larger*/
 @media screen and (min-width: 768px) {
-    /*header*/
-    .mobile {
-        display: none;
-    }
-    .tablet {
-        display: block;
-    }
-    #icon-links {
-        display: flex;
-        width: 80%;
-        justify-content: space-evenly;
-    }
-    .links {
-        display: block;
-        padding: 0.5em;
-    }
-    .links img {
-        width: 5em;
-        height: 5em;
-        margin: 0.1em;
-        padding: 0.8em;
-    }
+	/*header*/
+	.mobile {
+		display: none;
+	}
+	.tablet {
+		display: block;
+	}
+	#icon-links {
+		display: flex;
+		width: 80%;
+		justify-content: space-evenly;
+	}
+	.links {
+		display: block;
+		padding: 0.5em;
+	}
+	.links img {
+		width: 5em;
+		height: 5em;
+		margin: 0.1em;
+		padding: 0.8em;
+	}
 
-    /*main*/
-    /*carousel*/
-    .carousel-inner {
-        height: 50em;
-        margin: 2em auto;
-    }
-    .card img {
-        width: 25em;
-        height: 25em;
-    }
-    /*forms*/
-    form {
-        padding: 5em;
-    }
+	/*main*/
+	.meal-tabs ul {
+		width: 100%;
+		justify-content: space-between;
+		padding: 1em;
+	}
+	/*carousel*/
+	.carousel-inner {
+		height: 50em;
+		margin: 2em auto;
+	}
+	.card img {
+		width: 25em;
+		height: 25em;
+	}
+	/* menu */
+	/*forms*/
+	form {
+		padding: 5em;
+	}
 }
 
 /*media query for laptops and larger*/
 @media screen and (min-width: 1024px) {
-    /*main*/
-    /*heading*/
-    .heading {
-        height: 15em;
-    }
-    /*carousel*/
-    .default-carousel-image img {
-        padding: 5em;
-    }
-    .carousel-inner {
-        height: 30em;
-    }
-    .image {
-        width: 50%;
-        margin: 0;
-    }
+	/*main*/
+	/*heading*/
+	.heading {
+		height: 15em;
+	}
+	/*carousel*/
+	.default-carousel-image img {
+		padding: 5em;
+	}
+	.carousel-inner {
+		height: 30em;
+	}
+	.image {
+		width: 50%;
+		margin: 0;
+	}
 
-    .card-details {
-        width: 50%;
-        position: absolute;
-        left: 50%;
-    }
+	.card-details {
+		width: 50%;
+		position: absolute;
+		left: 50%;
+	}
 
-    .ingredients {
-        margin-left: 1em;
-    }
+	.ingredients {
+		margin-left: 1em;
+	}
 
-    /*forms*/
-    form {
-        padding: 5em 10em;
-    }
+	/*forms*/
+	form {
+		padding: 5em 10em;
+	}
 }
