@@ -117,5 +117,5 @@ class MenuView(TemplateView):
         context['menu_items'] = self.get_queryset()[1]
 
         return {
-            'meals': meals, 'context': context, 'queryset': self.get_queryset()
+            'meals': meals, 'context': context
         }
