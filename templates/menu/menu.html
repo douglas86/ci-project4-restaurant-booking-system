@@ -25,9 +25,9 @@
                         </li>
                     {% endfor %}
                 </ul>
-                <div class="content">{{ context.slug }}</div>
+                <div class="content">{{ context.menu_type }}</div>
+                {% for items in context.menu_items %}<p>{{ items.title }}</p>{% endfor %}
             </div>
         </div>
-        {% for query in queryset %}<p>{{ query.ingredients }}</p>{% endfor %}
     </div>
 {% endblock content %}

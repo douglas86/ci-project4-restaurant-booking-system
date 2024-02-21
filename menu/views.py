@@ -7,24 +7,79 @@ from home.models import ChefSpecial
 # Create your views here.
 class MenuView(TemplateView):
     """
-    This is the view for the Menu to be displayed
+    View used for the Menu Page
     """
     template_name = 'menu/menu.html'
 
-    today = datetime.date.today()  # gets current data of laptop
+    # variables used for the current time
+    today = datetime.date.today()  # gets current date of laptop
     current_hour = datetime.datetime.now().strftime(
         '%H')  # gets the current hour only
 
+    def combine_menus(self, specials, additional_meals):
+        lists = []
+
+        # had to create two for loops as both of them
+        # were of different data types
+
+        # iterates over specails model from database
+        # appends it to lists above
+        for v in specials.values():
+            dict = {}
+            dict['title'] = v['title']
+            dict['ingredients'] = v['ingredients']
+            lists.append(dict)
+
+        # iterate over additional_meals from a created dictionary
+        # appends it to lists above
+        for v in additional_meals.items():
+            dict = {}
+            dict['title'] = v[0]
+            dict['ingredients'] = v[1]
+            lists.append(dict)
+
+        return lists
+
     def breakfast_meal(self):
-        return ChefSpecial.objects.filter(served=0)
+        """
+        Display information for the Breakfast Menu
+        """
+        menu_type = "Breakfast Menu"
+        specials = ChefSpecial.objects.filter(served=0)
+        lunch_menu = {
+            "title": "This is the first menu",
+            "ingredients": ['one', 'two', 'three']
+        }
+        return menu_type, self.combine_menus(specials, lunch_menu)
 
     def lunch_meal(self):
-        return ChefSpecial.objects.filter(served=1)
+        """
+        Display information for the Lunch Menu
+        """
+        menu_type = "Lunch Menu"
+        specials = ChefSpecial.objects.filter(served=1)
+        lunch_menu = {
+            "title": "This is the first menu",
+            "ingredients": ['one', 'two', 'three']
+        }
+        return menu_type, self.combine_menus(specials, lunch_menu)
 
     def supper_meal(self):
-        return ChefSpecial.objects.filter(served=2)
+        """
+        Display information for the Supper Menu
+        """
+        menu_type = "Supper Menu"
+        specials = ChefSpecial.objects.filter(served=2)
+        lunch_menu = {
+            "title": "This is the first menu",
+            "ingredients": ['one', 'two', 'three']
+        }
+        return menu_type, self.combine_menus(specials, lunch_menu)
 
     def decide_on_meal(self):
+        """
+        dicide on the correct meal to display based on current hour
+        """
         if int(self.current_hour) >= 18:
             return self.supper_meal()  # filters all supper meals
         elif int(self.current_hour) >= 12:
@@ -34,40 +89,33 @@ class MenuView(TemplateView):
         else:
             return 3  # returns the default image
 
+    def __getitem__(self, items):
+        """
+        Special method used to iterate over lists, dictionaries and tuples
+        """
+        return items
+
     def get_queryset(self):
-        return self.decide_on_meal()
+        """
+        Special Django method used to gather data
+        """
+        menu_type = self.__getitem__(self.decide_on_meal())[0]
+        menu_items = self.__getitem__(self.decide_on_meal())[1]
+        return menu_type, menu_items
 
     def get_context_data(self, **kwargs):
+        """
+        Special Django method used to send data to template for display
+        """
         context = super().get_context_data(**kwargs)
+        # variable used for dropdown list when on mobile
+        # and tabs when on tablet
         meals = ['breakfast', 'lunch', 'supper']
-        # gets the url path which is a key of slug that was passed
-        context['slug'] = self.kwargs['slug']
 
-        print('context', self.get_queryset())
+        # updated context with name of menu type and its items
+        context['menu_type'] = self.get_queryset()[0]
+        context['menu_items'] = self.get_queryset()[1]
 
-        # swi = switch(context)
-
-        return {'meals': meals, 'context': context, 'queryset': self.get_queryset()}
-
-
-def switch(context):
-    if context == 'breakfast':
-        return breakfast()
-    elif context == 'lunch':
-        return lunch()
-    elif context == 'supper':
-        return supper()
-
-
-def breakfast():
-    menu = {'title': 'Breakfast Menu', 'name': 'This is breakfast',
-            'ingredients': ['one', 'two', 'three'], 'price': 23}
-    return menu
-
-
-def lunch():
-    print('lunch')
-
-
-def supper():
-    print('supper')
+        return {
+            'meals': meals, 'context': context, 'queryset': self.get_queryset()
+        }
