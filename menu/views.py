@@ -48,12 +48,25 @@ class MenuView(TemplateView):
         specials = ChefSpecial.objects.filter(served=0)
         breakfast_menu = [
             {
-                "title": "First title",
-                "ingredients": ["one", "two", "three"]
+                "title": "Fluffy Pancakes",
+                "ingredients": [
+                    "whole milk",
+                    "large egg",
+                    "vegatable oil",
+                    "homemade pancake mix",
+                    "sugar"
+                ]
             },
             {
-                "title": "Second title",
-                "ingredients": ["four", "five", "six"]
+                "title": "Focaccia French Toast",
+                "ingredients": [
+                    "large eggs",
+                    "whole eggs",
+                    "pure vanilla extracts",
+                    "ground cinnamon",
+                    "slices of focaccia",
+                    "unsalted butter",
+                ]
             }
         ]
         return menu_type, self.combine_menus(specials, breakfast_menu)

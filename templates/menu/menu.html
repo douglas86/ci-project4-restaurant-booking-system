@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="menu">
-        <h3>{{ context.slug|title }} Menu</h3>
+        <h3>{{ context.menu_type|title }}</h3>
         <div class="dropdown mobile">
             <button onclick="dropdownMenu()" class="dropdownButton">Select Your Meal Menu</button>
             <div id="dropdownContent" class="dropdownContents">
@@ -25,7 +25,6 @@
                         </li>
                     {% endfor %}
                 </ul>
-                <div class="content">{{ context.menu_type }}</div>
                 {% for items in context.menu_items %}<p>{{ items.title }}</p>{% endfor %}
             </div>
         </div>
