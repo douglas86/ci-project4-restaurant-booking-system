@@ -105,12 +105,21 @@ class MenuView(TemplateView):
         specials = ChefSpecial.objects.filter(served=2)
         supper_menu = [
             {
-                "title": "First title",
-                "ingredients": ["one", "two", "three"]
+                "title": "Rump 7oz",
+                "ingredients": [
+                    "firm texture and rich flavour",
+                    "recommended medium",
+                    "served with chips"
+                ]
             },
             {
-                "title": "Second title",
-                "ingredients": ["four", "five", "six"]
+                "title": "Fish & chips",
+                "ingredients": [
+                    "Crispy golden battered haddock",
+                    "Thick cut chunky chips",
+                    "Pea puree",
+                    "Tartare sauce"
+                ]
             }
         ]
         return menu_type, self.combine_menus(specials, supper_menu)
