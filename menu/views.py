@@ -16,6 +16,8 @@ class MenuView(TemplateView):
     current_hour = datetime.datetime.now().strftime(
         '%H')  # gets the current hour only
 
+    slug = 'breakfast'
+
     def combine_menus(self, specials, additional_meals):
         lists = []
 
@@ -128,14 +130,20 @@ class MenuView(TemplateView):
         """
         dicide on the correct meal to display based on current hour
         """
-        if int(self.current_hour) >= 18:
-            return self.supper_meal()  # filters all supper meals
-        elif int(self.current_hour) >= 12:
-            return self.lunch_meal()  # filters all lunch meals
-        elif int(self.current_hour) >= 8:
-            return self.breakfast_meal()  # filters all breakfast meals
+        if self.slug == "breakfast":
+            return self.breakfast_meal()
+        elif self.slug == 'lunch':
+            return self.lunch_meal()
         else:
-            return 3  # returns the default image
+            return self.supper_meal()
+        # if int(self.current_hour) >= 18:
+        #     return self.supper_meal()  # filters all supper meals
+        # elif int(self.current_hour) >= 12:
+        #     return self.lunch_meal()  # filters all lunch meals
+        # elif int(self.current_hour) >= 8:
+        #     return self.breakfast_meal()  # filters all breakfast meals
+        # else:
+        #     return 3  # returns the default image
 
     def __getitem__(self, items):
         """
@@ -156,9 +164,12 @@ class MenuView(TemplateView):
         Special Django method used to send data to template for display
         """
         context = super().get_context_data(**kwargs)
+        print('arguments', self.kwargs['slug'])
         # variable used for dropdown list when on mobile
         # and tabs when on tablet
         meals = ['breakfast', 'lunch', 'supper']
+        # changes self.slug to url path
+        self.slug = self.kwargs['slug']
 
         # updated context with name of menu type and its items
         context['menu_type'] = self.get_queryset()[0]
