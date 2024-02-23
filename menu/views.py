@@ -32,11 +32,11 @@ class MenuView(TemplateView):
 
         # iterate over additional_meals from a created dictionary
         # appends it to lists above
-        for v in additional_meals.items():
-            dict = {}
-            dict['title'] = v[0]
-            dict['ingredients'] = v[1]
-            lists.append(dict)
+        for meals in additional_meals:
+            for key, value in meals.items():
+                dict = {}
+                dict[key] = value
+                lists.append(dict)
 
         return lists
 
@@ -46,11 +46,17 @@ class MenuView(TemplateView):
         """
         menu_type = "Breakfast Menu"
         specials = ChefSpecial.objects.filter(served=0)
-        lunch_menu = {
-            "title": "This is the first menu",
-            "ingredients": ['one', 'two', 'three']
-        }
-        return menu_type, self.combine_menus(specials, lunch_menu)
+        breakfast_menu = [
+            {
+                "title": "First title",
+                "ingredients": ["one", "two", "three"]
+            },
+            {
+                "title": "Second title",
+                "ingredients": ["four", "five", "six"]
+            }
+        ]
+        return menu_type, self.combine_menus(specials, breakfast_menu)
 
     def lunch_meal(self):
         """
@@ -58,10 +64,16 @@ class MenuView(TemplateView):
         """
         menu_type = "Lunch Menu"
         specials = ChefSpecial.objects.filter(served=1)
-        lunch_menu = {
-            "title": "This is the first menu",
-            "ingredients": ['one', 'two', 'three']
-        }
+        lunch_menu = [
+            {
+                "title": "First title",
+                "ingredients": ["one", "two", "three"]
+            },
+            {
+                "title": "Second title",
+                "ingredients": ["four", "five", "six"]
+            }
+        ]
         return menu_type, self.combine_menus(specials, lunch_menu)
 
     def supper_meal(self):
@@ -70,11 +82,17 @@ class MenuView(TemplateView):
         """
         menu_type = "Supper Menu"
         specials = ChefSpecial.objects.filter(served=2)
-        lunch_menu = {
-            "title": "This is the first menu",
-            "ingredients": ['one', 'two', 'three']
-        }
-        return menu_type, self.combine_menus(specials, lunch_menu)
+        supper_menu = [
+            {
+                "title": "First title",
+                "ingredients": ["one", "two", "three"]
+            },
+            {
+                "title": "Second title",
+                "ingredients": ["four", "five", "six"]
+            }
+        ]
+        return menu_type, self.combine_menus(specials, supper_menu)
 
     def decide_on_meal(self):
         """
