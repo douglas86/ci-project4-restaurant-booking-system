@@ -79,12 +79,20 @@ class MenuView(TemplateView):
         specials = ChefSpecial.objects.filter(served=1)
         lunch_menu = [
             {
-                "title": "First title",
-                "ingredients": ["one", "two", "three"]
+                "title": "Confit Pork Belly",
+                "ingredients": [
+                    "Savoy cabbage",
+                    "Gratin dauphinois potatoes",
+                    "Thyme jus"
+                ]
             },
             {
-                "title": "Second title",
-                "ingredients": ["four", "five", "six"]
+                "title": "Roasted Lamb Rump",
+                "ingredients": [
+                    "Anchovy Braised Lentils",
+                    "chantenay carrots",
+                    "Crispy Leeks"
+                ]
             }
         ]
         return menu_type, self.combine_menus(specials, lunch_menu)
