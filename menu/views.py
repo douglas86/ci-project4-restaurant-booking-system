@@ -9,14 +9,14 @@ class MenuView(TemplateView):
     """
     View used for the Menu Page
     """
-    template_name = 'menu/menu.html'
+
+    template_name = "menu/menu.html"
 
     # variables used for the current time
     today = datetime.date.today()  # gets current date of laptop
-    current_hour = datetime.datetime.now().strftime(
-        '%H')  # gets the current hour only
+    current_hour = datetime.datetime.now().strftime("%H")  # gets the current hour only
 
-    slug = 'breakfast'
+    slug = "breakfast"
 
     def combine_menus(self, specials, additional_meals):
         lists = []
@@ -28,8 +28,8 @@ class MenuView(TemplateView):
         # appends it to lists above
         for v in specials.values():
             dict = {}
-            dict['title'] = v['title']
-            dict['ingredients'] = v['ingredients']
+            dict["title"] = v["title"]
+            dict["ingredients"] = v["ingredients"]
             lists.append(dict)
 
         # iterate over additional_meals from a created dictionary
@@ -56,8 +56,8 @@ class MenuView(TemplateView):
                     "large egg",
                     "vegatable oil",
                     "homemade pancake mix",
-                    "sugar"
-                ]
+                    "sugar",
+                ],
             },
             {
                 "title": "Focaccia French Toast",
@@ -68,8 +68,8 @@ class MenuView(TemplateView):
                     "ground cinnamon",
                     "slices of focaccia",
                     "unsalted butter",
-                ]
-            }
+                ],
+            },
         ]
         return menu_type, self.combine_menus(specials, breakfast_menu)
 
@@ -85,17 +85,17 @@ class MenuView(TemplateView):
                 "ingredients": [
                     "Savoy cabbage",
                     "Gratin dauphinois potatoes",
-                    "Thyme jus"
-                ]
+                    "Thyme jus",
+                ],
             },
             {
                 "title": "Roasted Lamb Rump",
                 "ingredients": [
                     "Anchovy Braised Lentils",
                     "chantenay carrots",
-                    "Crispy Leeks"
-                ]
-            }
+                    "Crispy Leeks",
+                ],
+            },
         ]
         return menu_type, self.combine_menus(specials, lunch_menu)
 
@@ -111,8 +111,8 @@ class MenuView(TemplateView):
                 "ingredients": [
                     "firm texture and rich flavour",
                     "recommended medium",
-                    "served with chips"
-                ]
+                    "served with chips",
+                ],
             },
             {
                 "title": "Fish & chips",
@@ -120,30 +120,23 @@ class MenuView(TemplateView):
                     "Crispy golden battered haddock",
                     "Thick cut chunky chips",
                     "Pea puree",
-                    "Tartare sauce"
-                ]
-            }
+                    "Tartare sauce",
+                ],
+            },
         ]
         return menu_type, self.combine_menus(specials, supper_menu)
 
     def decide_on_meal(self):
         """
-        dicide on the correct meal to display based on current hour
+        decision to be made on what menu gets displayed
+        based on url path
         """
         if self.slug == "breakfast":
             return self.breakfast_meal()
-        elif self.slug == 'lunch':
+        elif self.slug == "lunch":
             return self.lunch_meal()
         else:
             return self.supper_meal()
-        # if int(self.current_hour) >= 18:
-        #     return self.supper_meal()  # filters all supper meals
-        # elif int(self.current_hour) >= 12:
-        #     return self.lunch_meal()  # filters all lunch meals
-        # elif int(self.current_hour) >= 8:
-        #     return self.breakfast_meal()  # filters all breakfast meals
-        # else:
-        #     return 3  # returns the default image
 
     def __getitem__(self, items):
         """
@@ -164,17 +157,14 @@ class MenuView(TemplateView):
         Special Django method used to send data to template for display
         """
         context = super().get_context_data(**kwargs)
-        print('arguments', self.kwargs['slug'])
         # variable used for dropdown list when on mobile
         # and tabs when on tablet
-        meals = ['breakfast', 'lunch', 'supper']
+        meals = ["breakfast", "lunch", "supper"]
         # changes self.slug to url path
-        self.slug = self.kwargs['slug']
+        self.slug = self.kwargs["slug"]
 
         # updated context with name of menu type and its items
-        context['menu_type'] = self.get_queryset()[0]
-        context['menu_items'] = self.get_queryset()[1]
+        context["menu_type"] = self.get_queryset()[0]
+        context["menu_items"] = self.get_queryset()[1]
 
-        return {
-            'meals': meals, 'context': context
-        }
+        return {"meals": meals, "context": context}

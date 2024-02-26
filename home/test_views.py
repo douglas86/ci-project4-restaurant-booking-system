@@ -4,11 +4,8 @@ from .models import ChefSpecial
 
 
 class TestViews(TestCase):
-    fixtures = ['chef_specials']
+    fixtures = ["chef_specials"]
     current_hour = 0
-
-    # def setUp(self):
-    #     call_command('loaddata', './fixtures/chef_specials.json', verbosity=0)
 
     def get_served(self):
         if int(self.current_hour) >= 18:
@@ -27,7 +24,11 @@ class TestViews(TestCase):
         # calls method get_served to see what meals it needs to display
         served_meals = self.get_served()
         # ternary operator to see if variable served_meals is greater than 3
-        meal = ChefSpecial.objects.all().filter(served=served_meals) if served_meals < 3 else "Not served"
+        meal = (
+            ChefSpecial.objects.all().filter(served=served_meals)
+            if served_meals < 3
+            else "Not served"
+        )
         return meal.values()
 
     def test_check_data_returned_breakfast_meals(self):
@@ -37,7 +38,7 @@ class TestViews(TestCase):
         print("Breakfast Meals")
 
         for meal in self.get_queryset():
-            self.assertEqual(meal['served'], 0)
+            self.assertEqual(meal["served"], 0)
 
         print("Breakfast Meals Passed")
 
@@ -48,7 +49,7 @@ class TestViews(TestCase):
         print("Lunch Meals")
 
         for meal in self.get_queryset():
-            self.assertEqual(meal['served'], 1)
+            self.assertEqual(meal["served"], 1)
 
         print("Lunch Meals Passed")
 
@@ -59,6 +60,6 @@ class TestViews(TestCase):
         print("Supper Meals")
 
         for meal in self.get_queryset():
-            self.assertEqual(meal['served'], 2)
+            self.assertEqual(meal["served"], 2)
 
         print("Supper Meals Passed")
