@@ -2,9 +2,10 @@ from django.core.management import call_command
 from django.test import TestCase
 
 from home.models import ChefSpecial
+from . import views
 
 
-class TestMenu(TestCase):
+class TestMenu(TestCase, views.MenuView):
     """
     This test method is going to be used to test if I am getting data from db
 
@@ -15,67 +16,72 @@ class TestMenu(TestCase):
     """
 
     fixtures = ["home/fixtures/chef_specials.json"]
+    slug = views.MenuView.slug
 
-    def __getItem__(self, items):
+    def test_decide_on_breakfast_menu(self):
         """
-        Special method to iterate over list, dictionaries and tuples
-        """
-        return items
-
-    def filter_menu(self, served, passing_menu):
-        """
-        This will return True or False
-
-        Returns True if the correct menu was returned
-        Returns False if the incorrect menu was returned
-
-        Parameters:
-        served - this is a parameter from 0 to 2
-        passing_menu - this is variable from 0 to 2, for if the correct value is returned
-
-        0 - being breakfast menu
-        1 - being lunch menu
-        2 - being supper menu
+        Test if the breakfast menu is returned simulating self.slug
         """
 
-        chef_model = ChefSpecial.objects.filter(served=served)
+        meal = views.MenuView.decide_on_meal(self)
 
-        for i in range(len(self.__getItem__(chef_model).values())):
-            menu_served = int(self.__getItem__(chef_model).values()[i]["served"])
+        self.assertEqual(
+            meal[0],
+            "Breakfast Menu",
+            msg="Test if the correct slug is passed and the correct meal is returned",
+        )
 
-            if passing_menu == 0 and menu_served == 0:
-                return True
-            elif passing_menu == 1 and menu_served == 1:
-                return True
-            elif passing_menu == 2 and menu_served == 2:
-                return True
-            else:
-                return False
-
-    def test_chefspecial_database(self):
+    def test_decide_on_lunch_menu(self):
         """
-        This will test if there is data in the database
-        from chef_specials model
+        Test if the lunch menu is returned simulating self.slug change
         """
-        chef_model = ChefSpecial.objects.all()
-        count_model_entries = chef_model.count()
-        self.assertTrue(count_model_entries > 0, msg="The model has got entries")
+        self.slug = "lunch"
+        meal = views.MenuView.decide_on_meal(self)
 
-    def test_correct_slug_menu(self):
+        self.assertEqual(meal[0], "Lunch Menu", msg="Test if Lunch menu is returned")
+
+    def test_decide_on_supper_menu(self):
         """
-        Testing to see if the correct menu is being returned
-
-        Parameters to be passed to the filter_menu method
-        The first parameter is the menu that you want from the database from 0 to 2
-        The second parameter is to make sure that the filter function is working correctly value from 0 to 2
-
-        0 - being breakfast menu
-        1 - being lunch menu
-        2 - being supper menu
+        Test if the supper menu is returned simulating self.slug change
         """
-        self.assertTrue(
-            self.filter_menu(0, 1), msg="The database is not returning the correct menu"
+
+        self.slug = "supper"
+        meal = views.MenuView.decide_on_meal(self)
+
+        self.assertEqual(
+            meal[0],
+            "Supper Menu",
+            msg="Test if Supper Menu is returned based on slug change",
         )
 
     def test_menu_type_slug(self):
-        pass
+        """
+        Test if the menu_type is the correct menu that is passed in
+
+        Test:
+        Fail test - pass in an incorrect menu
+        """
+
+        # variables to gather the instances from MenuView
+        breakfast_menu = views.MenuView.breakfast_meal(self)[0]
+        lunch_menu = views.MenuView.lunch_meal(self)[0]
+        supper_menu = views.MenuView.supper_meal(self)[0]
+
+        # These 3 tests check if the correct menu_type is returned
+        self.assertEqual(
+            breakfast_menu.title(),
+            "Breakfast Menu",
+            msg="Breakfast Menu must be returned from this function",
+        )
+
+        self.assertEqual(
+            lunch_menu.title(),
+            "Lunch Menu",
+            msg="Lunch Menu must be returned from this function",
+        )
+
+        self.assertEqual(
+            supper_menu.title(),
+            "Supper Menu",
+            msg="Supper Menu must be returned from this function",
+        )

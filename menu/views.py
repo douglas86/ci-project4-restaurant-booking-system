@@ -124,6 +124,7 @@ class MenuView(TemplateView):
                 ],
             },
         ]
+
         return menu_type, self.combine_menus(specials, supper_menu)
 
     def decide_on_meal(self):
