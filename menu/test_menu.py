@@ -54,34 +54,31 @@ class TestMenu(TestCase, views.MenuView):
             msg="Test if Supper Menu is returned based on slug change",
         )
 
-    def test_menu_type_slug(self):
+    def test_menu_type_breakfast(self):
         """
-        Test if the menu_type is the correct menu that is passed in
-
-        Test:
-        Fail test - pass in an incorrect menu
+        Test if the menu_type returned is the breakfast_menu
         """
 
-        # variables to gather the instances from MenuView
-        breakfast_menu = views.MenuView.breakfast_meal(self)[0]
-        lunch_menu = views.MenuView.lunch_meal(self)[0]
-        supper_menu = views.MenuView.supper_meal(self)[0]
-
-        # These 3 tests check if the correct menu_type is returned
-        self.assertEqual(
-            breakfast_menu.title(),
-            "Breakfast Menu",
-            msg="Breakfast Menu must be returned from this function",
-        )
+        menu = views.MenuView.breakfast_meal(self)[0]
 
         self.assertEqual(
-            lunch_menu.title(),
-            "Lunch Menu",
-            msg="Lunch Menu must be returned from this function",
+            menu.title(), "Breakfast Menu", msg="Breakfast menu get returned"
         )
 
-        self.assertEqual(
-            supper_menu.title(),
-            "Supper Menu",
-            msg="Supper Menu must be returned from this function",
-        )
+    def test_menu_type_lunch(self):
+        """
+        Test if the menu_type returned is the lunch_menu
+        """
+
+        menu = views.MenuView.lunch_meal(self)[0]
+
+        self.assertEqual(menu.title(), "Lunch Menu", msg="Lunch menu gets returned")
+
+    def test_menu_type_supper(self):
+        """
+        Test if the menu_type returned is the supper_menu
+        """
+
+        menu = views.MenuView.supper_meal(self)[0]
+
+        self.assertEqual(menu.title(), "Supper Menu", msg="Supper menu gets returned")
