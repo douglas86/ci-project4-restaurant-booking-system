@@ -29,7 +29,7 @@ class MenuView(TemplateView):
         for v in specials.values():
             dict = {}
             dict["title"] = v["title"]
-            dict["ingredients"] = v["ingredients"]
+            dict["ingredients"] = ", ".join(v["ingredients"])
             lists.append(dict)
 
         # iterate over additional_meals from a created dictionary
@@ -37,7 +37,11 @@ class MenuView(TemplateView):
         for meals in additional_meals:
             for key, value in meals.items():
                 dict = {}
-                dict[key] = value
+                # check if value is a list
+                if isinstance(value, list):
+                    dict[key] = ", ".join(value)
+                else:
+                    dict[key] = value
                 lists.append(dict)
 
         return lists
@@ -151,6 +155,7 @@ class MenuView(TemplateView):
         """
         menu_type = self.__getitem__(self.decide_on_meal())[0]
         menu_items = self.__getitem__(self.decide_on_meal())[1]
+
         return menu_type, menu_items
 
     def get_context_data(self, **kwargs):
