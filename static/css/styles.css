@@ -180,54 +180,9 @@ form input[type="email"] {
 .menu_items a {
   text-decoration: none;
 }
-
-/* dropdown menu */
-/* .dropdown { */
-/*   display: flex; */
-/*   padding: 1em; */
-/* } */
-/**/
-/* .dropdownButton { */
-/*   width: 80%; */
-/*   justify-content: center; */
-/*   background-color: #3498db; */
-/*   color: white; */
-/*   padding: 1em; */
-/*   margin: auto; */
-/*   font-size: 16px; */
-/*   border: none; */
-/*   cursor: pointer; */
-/*   border-radius: 0.3em; */
-/* } */
-/**/
-/* .dropdownContents { */
-/*   display: none; */
-/*   position: absolute; */
-/*   background-color: #f1f1f1; */
-/*   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
-/*   z-index: 1; */
-/*   margin: 3.5em 10%; */
-/* } */
-/**/
-/* .dropdownContents a { */
-/*   color: black; */
-/*   padding: 12px 16px; */
-/*   text-decoration: none; */
-/*   display: block; */
-/* } */
-/**/
-/* .content { */
-/*   padding: 1em; */
-/* } */
-/* .content h4 { */
-/*   text-align: center; */
-/* } */
-/**/
-/* .show { */
-/*   display: flex; */
-/*   margin: 3.6em 11% 0; */
-/*   border-radius: 3px; */
-/* } */
+.menu_context h4 {
+  text-align: center;
+}
 
 /*footer*/
 footer {

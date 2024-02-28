@@ -9,56 +9,11 @@
                 </li>
             {% endfor %}
         </ul>
+        <div class="menu_context">
+            {% for items in context.menu_items %}
+                <h4>{{ items.title|title }}</h4>
+                <p>{{ items.ingredients|title }}</p>
+            {% endfor %}
+        </div>
     </div>
-    <!-- <div class="menu"> -->
-    <!--     <h3>{{ context.menu_type|title }}</h3> -->
-    <!--     <div class="dropdown mobile"> -->
-    <!--         <button onclick="dropdownMenu()" class="dropdownButton">Select Your Meal Menu</button> -->
-    <!--         <div id="dropdownContent" class="dropdownContents"> -->
-    <!--             {% for meal in meals %} -->
-    <!--                 <a href="{% url 'meal' meal %}">{{ meal | title }}</a> -->
-    <!--             {% endfor %} -->
-    <!--         </div> -->
-    <!--     </div> -->
-    <!--     <ul class="nav nav-pills"> -->
-    <!--         {% for meal in meals %} -->
-    <!--             <li class="nav-item" role="presentation"> -->
-    <!--                 <a class="nav-link" -->
-    <!--                    id="pills-{{ meal }}-tab" -->
-    <!--                    data-bs-toggle="pills" -->
-    <!--                    role="tab" -->
-    <!--                    aria-controls="pills-{{ meal }}" -->
-    <!--                    href="{% url 'meal' meal %}">{{ meal|title }}</a> -->
-    <!--             </li> -->
-    <!--         {% endfor %} -->
-    <!--     </ul> -->
-    <!--     <div class="content mobile"> -->
-    <!--         {% for items in context.menu_items %} -->
-    <!--             <h4>{{ items.title }}</h4> -->
-    <!--             <p>{{ items.ingredients }}</p> -->
-    <!--         {% endfor %} -->
-    <!--     </div> -->
-    <!--     <div class="tablet"> -->
-    <!--         <div class="meal-tabs"> -->
-    <!--             <ul class="nav nav-pills"> -->
-    <!--                 {% for meal in meals %} -->
-    <!--                     <li class="nav-item" role="presentation"> -->
-    <!--                         <a class="nav-link" -->
-    <!--                            id="pills-{{ meal }}-tab" -->
-    <!--                            data-bs-toggle="pills" -->
-    <!--                            role="tab" -->
-    <!--                            aria-controls="pills-{{ meal }}" -->
-    <!--                            href="{% url 'meal' meal %}">{{ meal|title }}</a> -->
-    <!--                     </li> -->
-    <!--                 {% endfor %} -->
-    <!--             </ul> -->
-    <!--             <div class="content tablet"> -->
-    <!--                 {% for items in context.menu_items %} -->
-    <!--                     <h4>{{ items.title }}</h4> -->
-    <!--                     <p>{{ items.ingredients }}</p> -->
-    <!--                 {% endfor %} -->
-    <!--             </div> -->
-    <!--         </div> -->
-    <!--     </div> -->
-    <!-- </div> -->
 {% endblock content %}
