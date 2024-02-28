@@ -5,7 +5,7 @@
         <ul class="main_menu">
             {% for meal in meals %}
                 <li class= "menu_items">
-                    <a href="">{{ meal|title }} Menu</a>
+                    <a href="{% url 'meal' meal %}">{{ meal|title }} Menu</a>
                 </li>
             {% endfor %}
         </ul>
