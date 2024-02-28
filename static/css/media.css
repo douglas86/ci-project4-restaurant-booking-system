@@ -79,6 +79,12 @@
     margin-left: 1em;
   }
 
+  /* menu */
+  .menu {
+    width: 60%;
+    margin: 4% 20%;
+  }
+
   /*forms*/
   form {
     padding: 5em 10em;
