@@ -39,10 +39,10 @@
     height: 25em;
   }
   /* menu */
-  .menu {
-    width: 70%;
-    margin: 3% 15%;
-  }
+  /* .menu { */
+  /*   width: 70%; */
+  /*   margin: 3% 15%; */
+  /* } */
 
   /*forms*/
   form {
