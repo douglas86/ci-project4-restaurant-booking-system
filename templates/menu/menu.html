@@ -10,7 +10,12 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="content mobile">{{ context.slug }}</div>
+        <div class="content mobile">
+            {% for items in context.menu_items %}
+                <h4>{{ items.title }}</h4>
+                <p>{{ items.ingredients }}</p>
+            {% endfor %}
+        </div>
         <div class="tablet">
             <div class="meal-tabs">
                 <ul class="nav nav-pills">

@@ -202,6 +202,13 @@ form input[type="email"] {
   display: block;
 }
 
+.content {
+  padding: 1em;
+}
+.content h4 {
+  text-align: center;
+}
+
 .show {
   display: flex;
   margin: 3.6em 11% 0;
