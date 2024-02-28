@@ -163,7 +163,9 @@ form input[type="email"] {
 /* menu */
 .menu {
   background-color: #d3d3d3;
-  margin: 2em;
+  width: 80%;
+  margin: 3% 10%;
+  opacity: 0.85;
 }
 
 /* dropdown menu */

@@ -30,7 +30,12 @@
                         </li>
                     {% endfor %}
                 </ul>
-                {% for items in context.menu_items %}<p>{{ items.title }}</p>{% endfor %}
+                <div class="content tablet">
+                    {% for items in context.menu_items %}
+                        <h4>{{ items.title }}</h4>
+                        <p>{{ items.ingredients }}</p>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
