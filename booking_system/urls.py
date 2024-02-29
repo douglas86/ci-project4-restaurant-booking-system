@@ -15,9 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-import os
 from django.contrib import admin
 from django.urls import path, include
+
+from .settings import DEBUG
 
 from about.views import AboutView
 from book_table.views import BookTable
@@ -32,5 +33,5 @@ urlpatterns = [
     path("", HomePageView.as_view(), name="home"),
 ]
 
-if os.environ.get("DJANGO_DEBUG") is not True:
+if DEBUG is True:
     urlpatterns.append(path("__reload__/", include("django_browser_reload.urls")))
