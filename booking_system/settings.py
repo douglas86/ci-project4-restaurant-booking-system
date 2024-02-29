@@ -76,7 +76,7 @@ MIDDLEWARE = [
 
 
 print("os", os.environ.get("DJANGO_DEBUG"))
-if os.environ.get("DJANGO_DEBUG"):
+if os.environ.get("DJANGO_DEBUG") is False:
     print("debug mode")
 else:
     print("debug off")
