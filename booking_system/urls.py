@@ -14,19 +14,26 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
+
+from .settings import DEBUG
 
 from about.views import AboutView
 from book_table.views import BookTable
 from home.views import HomePageView
 
 urlpatterns = [
-    path('about/', AboutView.as_view(), name='about'),
-    path('accounts/', include('allauth.urls')),
-    path('admin/', admin.site.urls),
-    path('menu/', include('menu.urls')),
-    path('table/', BookTable.as_view(), name='table'),
-    path("__reload__/", include("django_browser_reload.urls")),
-    path('', HomePageView.as_view(), name='home'),
+    path("about/", AboutView.as_view(), name="about"),
+    path("accounts/", include("allauth.urls")),
+    path("admin/", admin.site.urls),
+    path("menu/", include("menu.urls")),
+    path("table/", BookTable.as_view(), name="table"),
+    path("", HomePageView.as_view(), name="home"),
 ]
+
+# this logic is needed in development
+# this will only run django_browser_reload during DEBUG True
+if DEBUG == "True":
+    urlpatterns.append(path("__reload__/", include("django_browser_reload.urls")))
