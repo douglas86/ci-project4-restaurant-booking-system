@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     "menu",
     "book_table",
     "about",
-    "django_browser_reload",
 ]
 
 SITE_ID = 1
@@ -71,15 +70,13 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 
 print("os", os.environ.get("DJANGO_DEBUG"))
 if os.environ.get("DJANGO_DEBUG") is False:
-    print("debug mode")
-else:
-    print("debug off")
+    INSTALLED_APPS.append("django_browser_reload")
+    MIDDLEWARE.append("django_browser_reload.middleware.BrowserReloadMiddleware")
 
 ROOT_URLCONF = "booking_system.urls"
 
