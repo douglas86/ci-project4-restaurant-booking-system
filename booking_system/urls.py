@@ -33,5 +33,5 @@ urlpatterns = [
     path("", HomePageView.as_view(), name="home"),
 ]
 
-if DEBUG is True:
+if DEBUG == "True":
     urlpatterns.append(path("__reload__/", include("django_browser_reload.urls")))
