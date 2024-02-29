@@ -119,7 +119,31 @@ class MenuView(TemplateView):
 
         menu_type = "Alcohol Menu"
         alcohol_menu = [
-            {"title": "", "ingredients": []},
+            {
+                "title": "Ramon Roqueta Reserva",
+                "ingredients": [
+                    "Fruit aromas with balsamic touch",
+                    "Notes of vanilla and coconut",
+                ],
+            },
+            {
+                "title": "Musica en el camino",
+                "ingredients": [
+                    "Fresh and velvety",
+                    "Red fruit aromas with spicy and mint notes",
+                ],
+            },
+            {"title": "Aperol Spritz", "ingredients": ["Presecco", "Aperol", "Soda"]},
+            {
+                "title": "Mojito",
+                "ingredients": [
+                    "Rum",
+                    "Lime",
+                    "Mint",
+                    "Soda",
+                ],
+            },
+            {"title": "Margarita", "ingredients": ["Teqila", "Cointreau", "Lime"]},
         ]
 
         return menu_type, self.combine_menus([], alcohol_menu)
