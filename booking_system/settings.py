@@ -72,21 +72,13 @@ MIDDLEWARE = [
     "allauth.account.middleware.AccountMiddleware",
 ]
 
-print("ins", INSTALLED_APPS)
 
-
-print("os", os.environ.get("DJANGO_DEBUG"))
-
+# this logic is needed in development
+# this will only run django_browser_reload during DEBUG True
 if DEBUG == "True":
     INSTALLED_APPS.append("django_browser_reload")
     MIDDLEWARE.append("django_browser_reload.middleware.BrowserReloadMiddleware")
 
-# if os.environ.get("DJANGO_DEBUG") is True:
-#     INSTALLED_APPS.append("django_browser_reload")
-#     MIDDLEWARE.append("django_browser_reload.middleware.BrowserReloadMiddleware")
-
-
-print("insA", INSTALLED_APPS)
 
 ROOT_URLCONF = "booking_system.urls"
 

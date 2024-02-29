@@ -33,5 +33,7 @@ urlpatterns = [
     path("", HomePageView.as_view(), name="home"),
 ]
 
+# this logic is needed in development
+# this will only run django_browser_reload during DEBUG True
 if DEBUG == "True":
     urlpatterns.append(path("__reload__/", include("django_browser_reload.urls")))
