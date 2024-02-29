@@ -18,7 +18,11 @@ class MenuView(TemplateView):
 
     slug = "breakfast"
 
-    def combine_menus(self, specials, additional_meals):
+    def combine_menus(self, specials=[], additional_meals=[]):
+        """
+        This will combine specails and additional_meails into one list
+        """
+
         lists = []
 
         # had to create two for loops as both of them
@@ -26,23 +30,26 @@ class MenuView(TemplateView):
 
         # iterates over specails model from database
         # appends it to lists above
-        for v in specials.values():
-            dict = {}
-            dict["title"] = v["title"]
-            dict["ingredients"] = ", ".join(v["ingredients"])
-            lists.append(dict)
+        # if I don't have a specails I can pass it an open list
+        if specials != []:
+            for v in specials.values():
+                dict = {}
+                dict["title"] = v["title"]
+                dict["ingredients"] = ", ".join(v["ingredients"])
+                lists.append(dict)
 
         # iterate over additional_meals from a created dictionary
         # appends it to lists above
-        for meals in additional_meals:
-            for key, value in meals.items():
-                dict = {}
-                # check if value is a list
-                if isinstance(value, list):
-                    dict[key] = ", ".join(value)
-                else:
-                    dict[key] = value
-                lists.append(dict)
+        if additional_meals != []:
+            for meals in additional_meals:
+                for key, value in meals.items():
+                    dict = {}
+                    # check if value is a list
+                    if isinstance(value, list):
+                        dict[key] = ", ".join(value)
+                    else:
+                        dict[key] = value
+                    lists.append(dict)
 
         return lists
 
@@ -50,6 +57,7 @@ class MenuView(TemplateView):
         """
         Display information for the Breakfast Menu
         """
+
         menu_type = "Breakfast Menu"
         specials = ChefSpecial.objects.filter(served=0)
         breakfast_menu = [
@@ -81,6 +89,7 @@ class MenuView(TemplateView):
         """
         Display information for the Lunch Menu
         """
+
         menu_type = "Lunch Menu"
         specials = ChefSpecial.objects.filter(served=1)
         lunch_menu = [
@@ -103,10 +112,23 @@ class MenuView(TemplateView):
         ]
         return menu_type, self.combine_menus(specials, lunch_menu)
 
+    def alcohol(self):
+        """
+        Displays information for the alcohol menu
+        """
+
+        menu_type = "Alcohol Menu"
+        alcohol_menu = [
+            {"title": "", "ingredients": []},
+        ]
+
+        return menu_type, self.combine_menus([], alcohol_menu)
+
     def supper_meal(self):
         """
         Display information for the Supper Menu
         """
+
         menu_type = "Supper Menu"
         specials = ChefSpecial.objects.filter(served=2)
         supper_menu = [
@@ -136,10 +158,13 @@ class MenuView(TemplateView):
         decision to be made on what menu gets displayed
         based on url path
         """
+
         if self.slug == "breakfast":
             return self.breakfast_meal()
         elif self.slug == "lunch":
             return self.lunch_meal()
+        elif self.slug == "alcohol":
+            return self.alcohol()
         else:
             return self.supper_meal()
 
@@ -147,12 +172,14 @@ class MenuView(TemplateView):
         """
         Special method used to iterate over lists, dictionaries and tuples
         """
+
         return items
 
     def get_queryset(self):
         """
         Special Django method used to gather data
         """
+
         menu_type = self.__getitem__(self.decide_on_meal())[0]
         menu_items = self.__getitem__(self.decide_on_meal())[1]
 
@@ -162,10 +189,11 @@ class MenuView(TemplateView):
         """
         Special Django method used to send data to template for display
         """
+
         context = super().get_context_data(**kwargs)
         # variable used for dropdown list when on mobile
         # and tabs when on tablet
-        meals = ["breakfast", "lunch", "supper"]
+        meals = ["breakfast", "lunch", "supper", "alcohol"]
         # changes self.slug to url path
         self.slug = self.kwargs["slug"]
 
