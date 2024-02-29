@@ -76,6 +76,10 @@ MIDDLEWARE = [
 
 
 print("os", os.environ.get("DJANGO_DEBUG"))
+if os.environ.get("DJANGO_DEBUG"):
+    print("debug mode")
+else:
+    print("debug off")
 
 ROOT_URLCONF = "booking_system.urls"
 
