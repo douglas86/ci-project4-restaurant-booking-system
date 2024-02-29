@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
-    "django_browser_reload",
     "cloudinary_storage",
     "django.contrib.sites",
     "allauth",
@@ -55,6 +54,7 @@ INSTALLED_APPS = [
     "menu",
     "book_table",
     "about",
+    "django_browser_reload",
 ]
 
 SITE_ID = 1
