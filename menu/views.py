@@ -177,6 +177,12 @@ class MenuView(TemplateView):
 
         return menu_type, self.combine_menus(specials, supper_menu)
 
+    def starter_menu(self):
+        """
+        This menu will displayed at the top of the lunch and supper menu only
+        """
+        pass
+
     def decide_on_meal(self):
         """
         decision to be made on what menu gets displayed
