@@ -75,10 +75,7 @@ MIDDLEWARE = [
 print("ins", INSTALLED_APPS)
 
 
-print("os", os.environ.get("DJANGO_DEBUG"))
-if os.environ.get("DJANGO_DEBUG") is not True:
-    INSTALLED_APPS.append("django_browser_reload")
-    MIDDLEWARE.append("django_browser_reload.middleware.BrowserReloadMiddleware")
+print("debug", DEBUG)
 
 
 print("insA", INSTALLED_APPS)
