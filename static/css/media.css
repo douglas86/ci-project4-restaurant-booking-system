@@ -41,7 +41,7 @@
   /* menu */
   .menu {
     width: 70%;
-    margin: 10% 15%;
+    margin: 3% 15%;
   }
   .main_menu {
     display: flex;
@@ -59,10 +59,6 @@
 /*media query for laptops and larger*/
 @media screen and (min-width: 1024px) {
   /*main*/
-  /*heading*/
-  .heading {
-    height: 15em;
-  }
   /*carousel*/
   .default-carousel-image img {
     padding: 5em;
