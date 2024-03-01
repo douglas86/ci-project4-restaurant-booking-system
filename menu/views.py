@@ -85,6 +85,29 @@ class MenuView(TemplateView):
         ]
         return menu_type, self.combine_menus(specials, breakfast_menu)
 
+    def starter_menu(self):
+        """
+        This menu will displayed at the top of the lunch and supper menu only
+        """
+
+        menu_type = "starter menu"
+        starter_menu = [
+            {
+                "title": "Meat starters",
+                "ingredients": ["Fig", "mozzarella", "serrano", "ham salad"],
+            },
+            {
+                "title": "Seafood starter",
+                "ingredients": ["Giant champagne", "lemon prawn", "prawn vol-au-vents"],
+            },
+            {
+                "title": "Vegetarian starter",
+                "ingredients": ["Fig", "goat's cheese", "filo parcels"],
+            },
+        ]
+
+        return menu_type, starter_menu
+
     def lunch_meal(self):
         """
         Display information for the Lunch Menu
@@ -92,6 +115,7 @@ class MenuView(TemplateView):
 
         menu_type = "Lunch Menu"
         specials = ChefSpecial.objects.filter(served=1)
+
         lunch_menu = [
             {
                 "title": "Confit Pork Belly",
@@ -110,7 +134,42 @@ class MenuView(TemplateView):
                 ],
             },
         ]
-        return menu_type, self.combine_menus(specials, lunch_menu)
+
+        starter_menu = self.starter_menu()
+
+        return menu_type, self.combine_menus(specials, lunch_menu), starter_menu
+
+    def supper_meal(self):
+        """
+        Display information for the Supper Menu
+        """
+
+        menu_type = "Supper Menu"
+        specials = ChefSpecial.objects.filter(served=2)
+
+        supper_menu = [
+            {
+                "title": "Rump 7oz",
+                "ingredients": [
+                    "firm texture and rich flavour",
+                    "recommended medium",
+                    "served with chips",
+                ],
+            },
+            {
+                "title": "Fish & chips",
+                "ingredients": [
+                    "Crispy golden battered haddock",
+                    "Thick cut chunky chips",
+                    "Pea puree",
+                    "Tartare sauce",
+                ],
+            },
+        ]
+
+        starter_menu = self.starter_menu()
+
+        return menu_type, self.combine_menus(specials, supper_menu), starter_menu
 
     def alcohol(self):
         """
@@ -148,58 +207,6 @@ class MenuView(TemplateView):
 
         return menu_type, self.combine_menus([], alcohol_menu)
 
-    def supper_meal(self):
-        """
-        Display information for the Supper Menu
-        """
-
-        menu_type = "Supper Menu"
-        specials = ChefSpecial.objects.filter(served=2)
-        supper_menu = [
-            {
-                "title": "Rump 7oz",
-                "ingredients": [
-                    "firm texture and rich flavour",
-                    "recommended medium",
-                    "served with chips",
-                ],
-            },
-            {
-                "title": "Fish & chips",
-                "ingredients": [
-                    "Crispy golden battered haddock",
-                    "Thick cut chunky chips",
-                    "Pea puree",
-                    "Tartare sauce",
-                ],
-            },
-        ]
-
-        return menu_type, self.combine_menus(specials, supper_menu)
-
-    def starter_menu(self):
-        """
-        This menu will displayed at the top of the lunch and supper menu only
-        """
-
-        menu_type = "starter menu"
-        starter_menu = [
-            {
-                "title": "Meat starters",
-                "ingredients": ["Fig", "mozzarella", "serrano", "ham salad"],
-            },
-            {
-                "title": "Seafood starter",
-                "ingredients": ["Giant champagne", "lemon prawn", "prawn vol-au-vents"],
-            },
-            {
-                "title": "Vegetarian starter",
-                "ingredients": ["Fig", "goat's cheese", "filo parcels"],
-            },
-        ]
-
-        return menu_type, starter_menu
-
     def decide_on_meal(self):
         """
         decision to be made on what menu gets displayed
@@ -230,7 +237,14 @@ class MenuView(TemplateView):
         menu_type = self.__getitem__(self.decide_on_meal())[0]
         menu_items = self.__getitem__(self.decide_on_meal())[1]
 
-        return menu_type, menu_items
+        # check if there is a starter menu included if not
+        # return starter_menu as empty list
+        try:
+            starter_menu = self.__getitem__(self.decide_on_meal())[2]
+        except IndexError:
+            starter_menu = []
+
+        return (menu_type, menu_items, starter_menu)
 
     def get_context_data(self, **kwargs):
         """
@@ -247,5 +261,6 @@ class MenuView(TemplateView):
         # updated context with name of menu type and its items
         context["menu_type"] = self.get_queryset()[0]
         context["menu_items"] = self.get_queryset()[1]
+        context["starter_menu"] = self.get_queryset()[2]
 
         return {"meals": meals, "context": context}
