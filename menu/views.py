@@ -181,7 +181,24 @@ class MenuView(TemplateView):
         """
         This menu will displayed at the top of the lunch and supper menu only
         """
-        pass
+
+        menu_type = "starter menu"
+        starter_menu = [
+            {
+                "title": "Meat starters",
+                "ingredients": ["Fig", "mozzarella", "serrano", "ham salad"],
+            },
+            {
+                "title": "Seafood starter",
+                "ingredients": ["Giant champagne", "lemon prawn", "prawn vol-au-vents"],
+            },
+            {
+                "title": "Vegetarian starter",
+                "ingredients": ["Fig", "goat's cheese", "filo parcels"],
+            },
+        ]
+
+        return menu_type, starter_menu
 
     def decide_on_meal(self):
         """
