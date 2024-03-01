@@ -90,7 +90,7 @@ class MenuView(TemplateView):
         This menu will displayed at the top of the lunch and supper menu only
         """
 
-        menu_type = "starter menu"
+        menu_type = "Starter Menu"
         starter_menu = [
             {
                 "title": "Meat starters",
@@ -106,7 +106,7 @@ class MenuView(TemplateView):
             },
         ]
 
-        return menu_type, starter_menu
+        return menu_type, self.combine_menus([], starter_menu)
 
     def lunch_meal(self):
         """
@@ -262,5 +262,8 @@ class MenuView(TemplateView):
         context["menu_type"] = self.get_queryset()[0]
         context["menu_items"] = self.get_queryset()[1]
         context["starter_menu"] = self.get_queryset()[2]
+
+        starter_menu = context["starter_menu"]
+        print("starter_menu", starter_menu)
 
         return {"meals": meals, "context": context}
