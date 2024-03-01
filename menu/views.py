@@ -10,19 +10,24 @@ class MenuView(TemplateView):
     View used for the Menu Page
     """
 
+    # template that gets displayed when view is loaded
     template_name = "menu/menu.html"
 
     # variables used for the current time
     today = datetime.date.today()  # gets current date of laptop
     current_hour = datetime.datetime.now().strftime("%H")  # gets the current hour only
 
+    # slug to determine on what menu to display based on url
+    # this variable is set in get_context_data method
     slug = "breakfast"
 
     def combine_menus(self, specials=[], additional_meals=[]):
         """
-        This will combine specails and additional_meails into one list
+        This will combine specails and additional_meals into one list
         """
 
+        # get returned when the arrays have been combined for easy iteration
+        # in template
         lists = []
 
         # had to create two for loops as both of them
@@ -135,6 +140,7 @@ class MenuView(TemplateView):
             },
         ]
 
+        # display starter menu on main menu for lunch
         starter_menu = self.starter_menu()
 
         return menu_type, self.combine_menus(specials, lunch_menu), starter_menu
@@ -167,6 +173,7 @@ class MenuView(TemplateView):
             },
         ]
 
+        # display starter menu on main menu for supper
         starter_menu = self.starter_menu()
 
         return menu_type, self.combine_menus(specials, supper_menu), starter_menu
@@ -177,6 +184,7 @@ class MenuView(TemplateView):
         """
 
         menu_type = "Alcohol Menu"
+
         alcohol_menu = [
             {
                 "title": "Ramon Roqueta Reserva",
@@ -234,6 +242,7 @@ class MenuView(TemplateView):
         Special Django method used to gather data
         """
 
+        # gets menu_type and menu_items from decide_on_meal method
         menu_type = self.__getitem__(self.decide_on_meal())[0]
         menu_items = self.__getitem__(self.decide_on_meal())[1]
 
@@ -262,8 +271,5 @@ class MenuView(TemplateView):
         context["menu_type"] = self.get_queryset()[0]
         context["menu_items"] = self.get_queryset()[1]
         context["starter_menu"] = self.get_queryset()[2]
-
-        starter_menu = context["starter_menu"]
-        print("starter_menu", starter_menu)
 
         return {"meals": meals, "context": context}
