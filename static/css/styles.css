@@ -184,6 +184,11 @@ form input[type="email"] {
 .starter h4 {
   text-align: center;
 }
+.menu_title {
+  color: brown;
+  font-weight: 500;
+  opacity: 1;
+}
 
 /*footer*/
 footer {

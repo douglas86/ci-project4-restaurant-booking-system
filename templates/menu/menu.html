@@ -15,7 +15,7 @@
         </ul>
         <!-- starter menu with its title and ingredients -->
         <div class="starter">
-            <h3>{{ context.starter_menu.0 }}</h3>
+            <h3 class="menu_title">{{ context.starter_menu.0 }}</h3>
             {% for starter in context.starter_menu.1 %}
                 <h4>{{ starter.title|title }}</h4>
                 <p>{{ starter.ingredients|title }}</p>
@@ -23,7 +23,7 @@
         </div>
         <!-- main menu with the title of the item and its ingredients -->
         <div class="menu_context">
-            <h3>{{ context.menu_type }}</h3>
+            <h3 class="menu_title">{{ context.menu_type }}</h3>
             {% for items in context.menu_items %}
                 <h4>{{ items.title|title }}</h4>
                 <p>{{ items.ingredients|title }}</p>
