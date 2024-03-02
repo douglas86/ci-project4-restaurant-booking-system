@@ -1,5 +1,5 @@
+import os
 from django.test import TestCase
-from django.utils.http import base64
 
 from menu import views
 
@@ -13,39 +13,27 @@ class TestTheme(TestCase, views.MenuView):
     Test if I pass a month if the correct image gets displayed
     """
 
-    def convert_image(self, image_path):
+    def file_exists(self, filename):
         """
-        Contert image to base64 string
-
-        Parameters:
-        image_path - this is the path of the image to be converted
+        Check if the file is in existance
         """
 
-        with open(image_path, "rb") as image_file:
-            image_data = base64.b64encode(image_file.read()).decode("utf-8")
+        # varaible for filepath
+        file = f"static/images/menu/{filename}"
+        # check is file exists using the varaible above
+        path = os.path.exists(file)
 
-        return image_data
+        # assertion to see if path varaible is true
+        # if not true it will return the f string
+        self.assertTrue(path, f"The file {filename} does not exist")
 
-    def try_image(self, image):
+    def test_file_exists(self):
         """
-        Uses a try except block to see if the image is in existance
-        Only pass the path of the file to this method
-
-        Parameters:
-        image - this parameter will just check if something is in existance
-        """
-
-        try:
-            self.convert_image(image)
-            return "file exists"
-        except FileNotFoundError:
-            raise FileNotFoundError
-
-    def test_winter_image(self):
-        """
-        This will be to test if the winter image exists
+        Test if file exists
         """
 
-        print("Testing if winter image exists")
-
-        self.try_image("static/images/menu/winter.jpg")
+        # pass file to file_exists method to see if the file exists
+        self.file_exists("winter.jpg")
+        self.file_exists("autumn.jpg")
+        self.file_exists("summer.jpeg")
+        self.file_exists("spring.jpg")
