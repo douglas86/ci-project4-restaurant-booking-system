@@ -1,7 +1,6 @@
 import datetime
 from django.utils.http import base64
 from django.views.generic import TemplateView
-from django.http import FileResponse
 
 from home.models import ChefSpecial
 
