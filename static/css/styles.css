@@ -190,6 +190,9 @@ form input[type="email"] {
   font-weight: 500;
   opacity: 1;
 }
+.theme {
+  display: none;
+}
 
 /*footer*/
 footer {

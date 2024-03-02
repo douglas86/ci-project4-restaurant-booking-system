@@ -1,5 +1,7 @@
 import datetime
+from django.utils.http import base64
 from django.views.generic import TemplateView
+from django.http import FileResponse
 
 from home.models import ChefSpecial
 
@@ -20,6 +22,13 @@ class MenuView(TemplateView):
     # slug to determine on what menu to display based on url
     # this variable is set in get_context_data method
     slug = "breakfast"
+
+    def __getitem__(self, items):
+        """
+        Special method used to iterate over lists, dictionaries and tuples
+        """
+
+        return items
 
     def combine_menus(self, specials=[], additional_meals=[]):
         """
@@ -230,12 +239,14 @@ class MenuView(TemplateView):
         else:
             return self.supper_meal()
 
-    def __getitem__(self, items):
-        """
-        Special method used to iterate over lists, dictionaries and tuples
-        """
+    def themes(self):
 
-        return items
+        image_path = "static/images/menu/autumn.jpg"
+
+        with open(image_path, "rb") as image_file:
+            image_data = base64.b64encode(image_file.read()).decode("utf-8")
+
+        return image_data
 
     def get_queryset(self):
         """
@@ -272,4 +283,6 @@ class MenuView(TemplateView):
         context["menu_items"] = self.get_queryset()[1]
         context["starter_menu"] = self.get_queryset()[2]
 
-        return {"meals": meals, "context": context}
+        print("theme", self.themes())
+
+        return {"meals": meals, "context": context, "theme": self.themes()}

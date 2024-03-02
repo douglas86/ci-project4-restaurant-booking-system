@@ -49,6 +49,11 @@
   .menu_items {
     justify-content: space-between;
   }
+  .theme {
+    display: flex;
+    width: 5em;
+    height: 5em;
+  }
 
   /*forms*/
   form {
