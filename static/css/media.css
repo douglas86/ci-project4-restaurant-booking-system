@@ -51,8 +51,12 @@
   }
   .theme {
     display: flex;
-    width: 5em;
-    height: 5em;
+    position: absolute;
+    width: 10em;
+    height: 10em;
+    margin: 2em;
+    opacity: 0.4;
+    transform: rotate(-5deg);
   }
 
   /*forms*/
