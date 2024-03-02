@@ -24,6 +24,29 @@
   }
 
   /*main*/
+  /*title*/
+  .heading {
+    display: flex;
+    padding: 1em;
+  }
+  .heading .title {
+    width: 30%;
+    vertical-align: middle;
+    margin: auto;
+  }
+  .heading .theme {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    padding: 1em;
+    opacity: 0.6;
+  }
+  .theme img {
+    width: 15em;
+    height: auto;
+    transform: rotate(5deg);
+  }
+
   .meal-tabs ul {
     width: 100%;
     justify-content: space-between;

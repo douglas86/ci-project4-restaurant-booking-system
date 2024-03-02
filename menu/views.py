@@ -1,5 +1,7 @@
 import datetime
+from django.utils.http import base64
 from django.views.generic import TemplateView
+from django.http import FileResponse
 
 from home.models import ChefSpecial
 
@@ -20,6 +22,13 @@ class MenuView(TemplateView):
     # slug to determine on what menu to display based on url
     # this variable is set in get_context_data method
     slug = "breakfast"
+
+    def __getitem__(self, items):
+        """
+        Special method used to iterate over lists, dictionaries and tuples
+        """
+
+        return items
 
     def combine_menus(self, specials=[], additional_meals=[]):
         """
@@ -230,12 +239,62 @@ class MenuView(TemplateView):
         else:
             return self.supper_meal()
 
-    def __getitem__(self, items):
+    def images_to_be_displayed(self, month):
         """
-        Special method used to iterate over lists, dictionaries and tuples
+        This method will determine what image needs to be displayed
+
+        Parameters:
+        month - this is an integer that is passed in based on the current month
         """
 
-        return items
+        # Winter - December, January, February
+        if month >= 12:
+            return "static/images/menu/winter.jpg"
+        # Autumn - September, October, November
+        elif month >= 9:
+            return "static/images/menu/autumn.jpg"
+        # Summer - June, July, August
+        elif month >= 6:
+            return "static/images/menu/summer.jpeg"
+        # Spring - March, April, May
+        elif month >= 3:
+            return "static/images/menu/spring.jpg"
+        # this section is for January and February months
+        else:
+            return "static/images/menu/winter.jpg"
+
+    def determing_month_of_year(self):
+        """
+        This method determines the month of the year
+        Once that is determined it will pass it to the method
+        images_to_be_displayed
+        """
+
+        # variable to determine the current month
+        # this method returns the current month as an integer
+        month = self.today.month
+
+        # spring - March, April, May
+        # Summer - June, July, August
+        # Autumn - September, October, November
+        # Winter - December, January, February
+
+        return self.images_to_be_displayed(month)
+
+    def themes(self):
+        """
+        This method will return the current theme to get_context_data
+        """
+
+        # varaible for returning image path
+        image_path = self.determing_month_of_year()
+
+        # logic for reading in the file from the image_path variable
+        # and returning it as a base64 string
+        with open(image_path, "rb") as image_file:
+            image_data = base64.b64encode(image_file.read()).decode("utf-8")
+
+        return image_data
 
     def get_queryset(self):
         """
@@ -272,4 +331,4 @@ class MenuView(TemplateView):
         context["menu_items"] = self.get_queryset()[1]
         context["starter_menu"] = self.get_queryset()[2]
 
-        return {"meals": meals, "context": context}
+        return {"meals": meals, "context": context, "theme": self.themes()}

@@ -3,7 +3,13 @@
 {% block content %}
     <!-- heading -->
     <div class="heading">
-        <h1>{{ context.menu_type }}</h1>
+        <!-- title -->
+        <h1 class="title">{{ context.menu_type }}</h1>
+        <!-- theme -->
+        <div class="theme">
+            <img src="data:image/jpg;charset='utf-8';base64,{{ theme }}"
+                 alt="not found">
+        </div>
     </div>
     <!-- menu -->
     <div class="menu">
@@ -16,7 +22,6 @@
                 </li>
             {% endfor %}
         </ul>
-        <!-- starter menu with its title and ingredients -->
         <div class="starter">
             <!-- title of when starter menu is called -->
             <h3 class="menu_title">{{ context.starter_menu.0 }}</h3>
