@@ -5,13 +5,15 @@ class TestUser(TestCase):
     """
     Testing if the user can log in or be created
     """
+
     def setUp(self):
         """
         This method initializes the setup of the user
         :return:
         """
         self.client = Client()
-        self.create_user = self.client.post('/accounts/signup/', {'username': 'test', 'password': '123456'})
+        self.create_user = self.client.post(
+            '/accounts/signup/', {'username': 'test', 'password': '123456'})
 
     def test_create_user(self):
         """

@@ -15,4 +15,4 @@ class MenuAdmin(admin.ModelAdmin):
     # fields that I want to see on the admin panel
     list_display = ("title", "ingredients", "menu_type", "created_at", "updated_at")
     # I want to search based on title
-    search_fields = "title"
+    search_fields = ("title",)
