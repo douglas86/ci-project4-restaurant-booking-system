@@ -77,6 +77,6 @@ class TestTheme(TestCase, views.MenuView):
 
         # assertion to check if the month is correct with the image returned
         self.assertTrue(
-            self.check_correct_theme(10, "winter.jpg"),
+            self.check_correct_theme(1, "winter.jpg"),
             "The file and the month do not match",
         )
