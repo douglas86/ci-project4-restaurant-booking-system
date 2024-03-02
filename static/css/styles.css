@@ -103,6 +103,10 @@ p {
 
 /*main*/
 /*title*/
+.heading {
+  display: flex;
+  padding: 1em;
+}
 .title {
   background-color: #d3d3d3;
   opacity: 0.6;
