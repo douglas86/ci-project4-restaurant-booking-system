@@ -1,7 +1,7 @@
 # Create your models here.
 from django.db import models
 
-from home.models import STATUS
+STATUS = ((0, 'Breakfast'), (1, 'Lunch'), (2, 'Supper'), (3, 'alcohol'), (4, 'starter'))
 
 
 class Menu(models.Model):
