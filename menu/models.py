@@ -1,7 +1,7 @@
 # Create your models here.
 from django.db import models
 
-STATUS = ((0, 'Breakfast'), (1, 'Lunch'), (2, 'Supper'), (3, 'alcohol'), (4, 'starter'))
+STATUS = ((0, "Breakfast"), (1, "Lunch"), (2, "Supper"), (3, "alcohol"), (4, "starter"))
 
 
 class Menu(models.Model):
@@ -10,7 +10,7 @@ class Menu(models.Model):
     """
 
     id = models.AutoField(primary_key=True)
-    title = models.CharField(blank=False)
+    title = models.CharField(max_length=200, blank=False)
     description = models.TextField(blank=False)
     menu_type = models.IntegerField(choices=STATUS, default=0)
     created_at = models.DateTimeField(auto_now_add=True)
