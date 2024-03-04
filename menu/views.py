@@ -3,6 +3,7 @@ from django.utils.http import base64
 from django.views.generic import TemplateView
 
 from home.models import ChefSpecial
+from menu.models import Menu
 
 
 # Create your views here.
@@ -73,6 +74,8 @@ class MenuView(TemplateView):
 
         menu_type = "Breakfast Menu"
         specials = ChefSpecial.objects.filter(served=0)
+        breakfast_meal = Menu.objects.all().values().filter(menu_type=0)
+
         breakfast_menu = [
             {
                 "title": "Fluffy Pancakes",
@@ -96,7 +99,12 @@ class MenuView(TemplateView):
                 ],
             },
         ]
-        return menu_type, self.combine_menus(specials, breakfast_menu)
+
+        return (
+            menu_type,
+            self.combine_menus(specials, breakfast_menu),
+            breakfast_meal,
+        )
 
     def starter_menu(self):
         """
@@ -303,6 +311,9 @@ class MenuView(TemplateView):
         # gets menu_type and menu_items from decide_on_meal method
         menu_type = self.__getitem__(self.decide_on_meal())[0]
         menu_items = self.__getitem__(self.decide_on_meal())[1]
+
+        menu = self.__getitem__(self.decide_on_meal())
+        print("menu", menu)
 
         # check if there is a starter menu included if not
         # return starter_menu as empty list
