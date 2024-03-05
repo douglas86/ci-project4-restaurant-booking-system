@@ -29,6 +29,32 @@ class MenuView(TemplateView):
     status_basic_menu_choice = 0
     menu = Menu.objects.filter(menu_type=status_special_menu_choice)
 
+    def breakfast_menu(self):
+        """
+        Gathers all information for the breakfast_menu from database
+        Includes breakfast_menu specials
+        """
+        pass
+
+    def get_queryset(self, **kwargs):
+        """
+        Django method used to gather all data for this class
+        """
+
+        pass
+
+    def get_context_data(self, **kwargs):
+        """
+        Django method used to send data to template file
+        and gather basic information from this class
+        """
+
+        context = super().get_context_data(**kwargs)
+
+        self.slug = self.kwargs["slug"]
+
+        return {"context", context}
+
     # def __getitem__(self, items):
     #     """
     #     Special method used to iterate over lists, dictionaries and tuples
