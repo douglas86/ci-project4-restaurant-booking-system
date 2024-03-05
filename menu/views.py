@@ -23,289 +23,301 @@ class MenuView(TemplateView):
     # this variable is set in get_context_data method
     slug = "breakfast"
 
-    def __getitem__(self, items):
-        """
-        Special method used to iterate over lists, dictionaries and tuples
-        """
+    status_special_menu_choice = 0
+    chef_special = ChefSpecial.objects.filter(served=status_special_menu_choice)
 
-        return items
+    status_basic_menu_choice = 0
+    menu = Menu.objects.filter(menu_type=status_special_menu_choice)
 
-    def combine_menus(self, specials=[], additional_meals=[]):
-        """
-        This will combine specails and additional_meals into one list
-        """
-
-        # get returned when the arrays have been combined for easy iteration
-        # in template
-        lists = []
-
-        # had to create two for loops as both of them
-        # were of different data types
-
-        # iterates over specails model from database
-        # appends it to lists above
-        # if I don't have a specails I can pass it an open list
-        if specials != []:
-            for v in specials.values():
-                dict = {}
-                dict["title"] = v["title"]
-                dict["ingredients"] = ", ".join(v["ingredients"])
-                lists.append(dict)
-
-        # iterates over additional_meals from menu model
-        if additional_meals != []:
-            for k in additional_meals.values():
-                dict = {}
-                dict["title"] = k["title"]
-                dict["description"] = k["description"]
-                lists.append(dict)
-
-        return lists
-
-    def breakfast_meal(self):
-        """
-        Display information for the Breakfast Menu
-        """
-
-        menu_type = "Breakfast Menu"
-        specials = ChefSpecial.objects.filter(served=0)
-        breakfast_menu = Menu.objects.filter(menu_type=0)
-
-        return (
-            menu_type,
-            self.combine_menus(specials, breakfast_menu),
-        )
-
-    def starter_menu(self):
-        """
-        This menu will displayed at the top of the lunch and supper menu only
-        """
-
-        menu_type = "Starter Menu"
-        starter_menu = [
-            {
-                "title": "Meat starters",
-                "ingredients": ["Fig", "mozzarella", "serrano", "ham salad"],
-            },
-            {
-                "title": "Seafood starter",
-                "ingredients": ["Giant champagne", "lemon prawn", "prawn vol-au-vents"],
-            },
-            {
-                "title": "Vegetarian starter",
-                "ingredients": ["Fig", "goat's cheese", "filo parcels"],
-            },
-        ]
-
-        return menu_type, self.combine_menus([], starter_menu)
-
-    def lunch_meal(self):
-        """
-        Display information for the Lunch Menu
-        """
-
-        menu_type = "Lunch Menu"
-        specials = ChefSpecial.objects.filter(served=1)
-
-        lunch_menu = [
-            {
-                "title": "Confit Pork Belly",
-                "ingredients": [
-                    "Savoy cabbage",
-                    "Gratin dauphinois potatoes",
-                    "Thyme jus",
-                ],
-            },
-            {
-                "title": "Roasted Lamb Rump",
-                "ingredients": [
-                    "Anchovy Braised Lentils",
-                    "chantenay carrots",
-                    "Crispy Leeks",
-                ],
-            },
-        ]
-
-        # display starter menu on main menu for lunch
-        starter_menu = self.starter_menu()
-
-        return menu_type, self.combine_menus(specials, lunch_menu), starter_menu
-
-    def supper_meal(self):
-        """
-        Display information for the Supper Menu
-        """
-
-        menu_type = "Supper Menu"
-        specials = ChefSpecial.objects.filter(served=2)
-
-        supper_menu = [
-            {
-                "title": "Rump 7oz",
-                "ingredients": [
-                    "firm texture and rich flavour",
-                    "recommended medium",
-                    "served with chips",
-                ],
-            },
-            {
-                "title": "Fish & chips",
-                "ingredients": [
-                    "Crispy golden battered haddock",
-                    "Thick cut chunky chips",
-                    "Pea puree",
-                    "Tartare sauce",
-                ],
-            },
-        ]
-
-        # display starter menu on main menu for supper
-        starter_menu = self.starter_menu()
-
-        return menu_type, self.combine_menus(specials, supper_menu), starter_menu
-
-    def alcohol(self):
-        """
-        Displays information for the alcohol menu
-        """
-
-        menu_type = "Alcohol Menu"
-
-        alcohol_menu = [
-            {
-                "title": "Ramon Roqueta Reserva",
-                "ingredients": [
-                    "Fruit aromas with balsamic touch",
-                    "Notes of vanilla and coconut",
-                ],
-            },
-            {
-                "title": "Musica en el camino",
-                "ingredients": [
-                    "Fresh and velvety",
-                    "Red fruit aromas with spicy and mint notes",
-                ],
-            },
-            {"title": "Aperol Spritz", "ingredients": ["Presecco", "Aperol", "Soda"]},
-            {
-                "title": "Mojito",
-                "ingredients": [
-                    "Rum",
-                    "Lime",
-                    "Mint",
-                    "Soda",
-                ],
-            },
-            {"title": "Margarita", "ingredients": ["Teqila", "Cointreau", "Lime"]},
-        ]
-
-        return menu_type, self.combine_menus([], alcohol_menu)
-
-    def decide_on_meal(self):
-        """
-        decision to be made on what menu gets displayed
-        based on url path
-        """
-
-        if self.slug == "breakfast":
-            return self.breakfast_meal()
-        elif self.slug == "lunch":
-            return self.lunch_meal()
-        elif self.slug == "alcohol":
-            return self.alcohol()
-        else:
-            return self.supper_meal()
-
-    def images_to_be_displayed(self, month):
-        """
-        This method will determine what image needs to be displayed
-
-        Parameters:
-        month - this is an integer that is passed in based on the current month
-        """
-
-        # Winter - December, January, February
-        if month >= 12:
-            return "static/images/menu/winter.jpg"
-        # Autumn - September, October, November
-        elif month >= 9:
-            return "static/images/menu/autumn.jpg"
-        # Summer - June, July, August
-        elif month >= 6:
-            return "static/images/menu/summer.jpeg"
-        # Spring - March, April, May
-        elif month >= 3:
-            return "static/images/menu/spring.jpg"
-        # this section is for January and February months
-        else:
-            return "static/images/menu/winter.jpg"
-
-    def determing_month_of_year(self):
-        """
-        This method determines the month of the year
-        Once that is determined it will pass it to the method
-        images_to_be_displayed
-        """
-
-        # variable to determine the current month
-        # this method returns the current month as an integer
-        month = self.today.month
-
-        # spring - March, April, May
-        # Summer - June, July, August
-        # Autumn - September, October, November
-        # Winter - December, January, February
-
-        return self.images_to_be_displayed(month)
-
-    def themes(self):
-        """
-        This method will return the current theme to get_context_data
-        """
-
-        # varaible for returning image path
-        image_path = self.determing_month_of_year()
-
-        # logic for reading in the file from the image_path variable
-        # and returning it as a base64 string
-        with open(image_path, "rb") as image_file:
-            image_data = base64.b64encode(image_file.read()).decode("utf-8")
-
-        return image_data
-
-    def get_queryset(self):
-        """
-        Special Django method used to gather data
-        """
-
-        # gets menu_type and menu_items from decide_on_meal method
-        menu_type = self.__getitem__(self.decide_on_meal())[0]
-        menu_items = self.__getitem__(self.decide_on_meal())[1]
-
-        # check if there is a starter menu included if not
-        # return starter_menu as empty list
-        try:
-            starter_menu = self.__getitem__(self.decide_on_meal())[2]
-        except IndexError:
-            starter_menu = []
-
-        return (menu_type, menu_items, starter_menu)
-
-    def get_context_data(self, **kwargs):
-        """
-        Special Django method used to send data to template for display
-        """
-
-        context = super().get_context_data(**kwargs)
-        # variable used for dropdown list when on mobile
-        # and tabs when on tablet
-        meals = ["breakfast", "lunch", "supper", "alcohol"]
-        # changes self.slug to url path
-        self.slug = self.kwargs["slug"]
-
-        # updated context with name of menu type and its items
-        context["menu_type"] = self.get_queryset()[0]
-        context["menu_items"] = self.get_queryset()[1]
-        context["starter_menu"] = self.get_queryset()[2]
-
-        return {"meals": meals, "context": context, "theme": self.themes()}
+    # def __getitem__(self, items):
+    #     """
+    #     Special method used to iterate over lists, dictionaries and tuples
+    #     """
+    #
+    #     return items
+    #
+    # def combine_menus(self, specials=[], additional_meals=[]):
+    #     """
+    #     This will combine specails and additional_meals into one list
+    #     """
+    #
+    #     # get returned when the arrays have been combined for easy iteration
+    #     # in template
+    #     lists = []
+    #
+    #     # had to create two for loops as both of them
+    #     # were of different data types
+    #
+    #     # iterates over specails model from database
+    #     # appends it to lists above
+    #     # if I don't have a specails I can pass it an open list
+    #     if specials != []:
+    #         for v in specials.values():
+    #             dict = {}
+    #             dict["title"] = v["title"]
+    #             dict["ingredients"] = ", ".join(v["ingredients"])
+    #             lists.append(dict)
+    #
+    #     # iterates over additional_meals from menu model
+    #     if additional_meals != []:
+    #         for k in additional_meals.values():
+    #             dict = {}
+    #             dict["title"] = k["title"]
+    #             dict["description"] = k["description"]
+    #             lists.append(dict)
+    #
+    #     return lists
+    #
+    # def breakfast_meal(self):
+    #     """
+    #     Display information for the Breakfast Menu
+    #     """
+    #
+    #     menu_type = "Breakfast Menu"
+    #     specials = ChefSpecial.objects.filter(served=0)
+    #     breakfast_menu = Menu.objects.filter(menu_type=0)
+    #
+    #     return (
+    #         menu_type,
+    #         self.combine_menus(specials, breakfast_menu),
+    #     )
+    #
+    # def starter_menu(self):
+    #     """
+    #     This menu will displayed at the top of the lunch and supper menu only
+    #     """
+    #
+    #     menu_type = "Starter Menu"
+    #     starter_menu = Menu.objects.filter(menu_type=4)
+    #
+    #     # starter_menu = [
+    #     #     {
+    #     #         "title": "Meat starters",
+    #     #         "ingredients": ["Fig", "mozzarella", "serrano", "ham salad"],
+    #     #     },
+    #     #     {
+    #     #         "title": "Seafood starter",
+    #     #         "ingredients": ["Giant champagne", "lemon prawn", "prawn vol-au-vents"],
+    #     #     },
+    #     #     {
+    #     #         "title": "Vegetarian starter",
+    #     #         "ingredients": ["Fig", "goat's cheese", "filo parcels"],
+    #     #     },
+    #     # ]
+    #
+    #     return menu_type, self.combine_menus([], starter_menu)
+    #
+    # def lunch_meal(self):
+    #     """
+    #     Display information for the Lunch Menu
+    #     """
+    #
+    #     menu_type = "Lunch Menu"
+    #     specials = ChefSpecial.objects.filter(served=1)
+    #     lunch_menu = Menu.objects.filter(menu_type=4)
+    #
+    #     # lunch_menu = [
+    #     #     {
+    #     #         "title": "Confit Pork Belly",
+    #     #         "ingredients": [
+    #     #             "Savoy cabbage",
+    #     #             "Gratin dauphinois potatoes",
+    #     #             "Thyme jus",
+    #     #         ],
+    #     #     },
+    #     #     {
+    #     #         "title": "Roasted Lamb Rump",
+    #     #         "ingredients": [
+    #     #             "Anchovy Braised Lentils",
+    #     #             "chantenay carrots",
+    #     #             "Crispy Leeks",
+    #     #         ],
+    #     #     },
+    #     # ]
+    #
+    #     # display starter menu on main menu for lunch
+    #     starter_menu = self.starter_menu()
+    #
+    #     return menu_type, self.combine_menus(specials, lunch_menu), starter_menu
+    #
+    # def supper_meal(self):
+    #     """
+    #     Display information for the Supper Menu
+    #     """
+    #
+    #     menu_type = "Supper Menu"
+    #     specials = ChefSpecial.objects.filter(served=2)
+    #
+    #     supper_menu = [
+    #         {
+    #             "title": "Rump 7oz",
+    #             "ingredients": [
+    #                 "firm texture and rich flavour",
+    #                 "recommended medium",
+    #                 "served with chips",
+    #             ],
+    #         },
+    #         {
+    #             "title": "Fish & chips",
+    #             "ingredients": [
+    #                 "Crispy golden battered haddock",
+    #                 "Thick cut chunky chips",
+    #                 "Pea puree",
+    #                 "Tartare sauce",
+    #             ],
+    #         },
+    #     ]
+    #
+    #     # display starter menu on main menu for supper
+    #     starter_menu = self.starter_menu()
+    #
+    #     return menu_type, self.combine_menus(specials, supper_menu), starter_menu
+    #
+    # def alcohol(self):
+    #     """
+    #     Displays information for the alcohol menu
+    #     """
+    #
+    #     menu_type = "Alcohol Menu"
+    #
+    #     alcohol_menu = [
+    #         {
+    #             "title": "Ramon Roqueta Reserva",
+    #             "ingredients": [
+    #                 "Fruit aromas with balsamic touch",
+    #                 "Notes of vanilla and coconut",
+    #             ],
+    #         },
+    #         {
+    #             "title": "Musica en el camino",
+    #             "ingredients": [
+    #                 "Fresh and velvety",
+    #                 "Red fruit aromas with spicy and mint notes",
+    #             ],
+    #         },
+    #         {"title": "Aperol Spritz", "ingredients": ["Presecco", "Aperol", "Soda"]},
+    #         {
+    #             "title": "Mojito",
+    #             "ingredients": [
+    #                 "Rum",
+    #                 "Lime",
+    #                 "Mint",
+    #                 "Soda",
+    #             ],
+    #         },
+    #         {"title": "Margarita", "ingredients": ["Teqila", "Cointreau", "Lime"]},
+    #     ]
+    #
+    #     return menu_type, self.combine_menus([], alcohol_menu)
+    #
+    # def decide_on_meal(self):
+    #     """
+    #     decision to be made on what menu gets displayed
+    #     based on url path
+    #     """
+    #
+    #     if self.slug == "breakfast":
+    #         return self.breakfast_meal()
+    #     elif self.slug == "lunch":
+    #         return self.lunch_meal()
+    #     elif self.slug == "alcohol":
+    #         return self.alcohol()
+    #     else:
+    #         return self.supper_meal()
+    #
+    # def images_to_be_displayed(self, month):
+    #     """
+    #     This method will determine what image needs to be displayed
+    #
+    #     Parameters:
+    #     month - this is an integer that is passed in based on the current month
+    #     """
+    #
+    #     # Winter - December, January, February
+    #     if month >= 12:
+    #         return "static/images/menu/winter.jpg"
+    #     # Autumn - September, October, November
+    #     elif month >= 9:
+    #         return "static/images/menu/autumn.jpg"
+    #     # Summer - June, July, August
+    #     elif month >= 6:
+    #         return "static/images/menu/summer.jpeg"
+    #     # Spring - March, April, May
+    #     elif month >= 3:
+    #         return "static/images/menu/spring.jpg"
+    #     # this section is for January and February months
+    #     else:
+    #         return "static/images/menu/winter.jpg"
+    #
+    # def determing_month_of_year(self):
+    #     """
+    #     This method determines the month of the year
+    #     Once that is determined it will pass it to the method
+    #     images_to_be_displayed
+    #     """
+    #
+    #     # variable to determine the current month
+    #     # this method returns the current month as an integer
+    #     month = self.today.month
+    #
+    #     # spring - March, April, May
+    #     # Summer - June, July, August
+    #     # Autumn - September, October, November
+    #     # Winter - December, January, February
+    #
+    #     return self.images_to_be_displayed(month)
+    #
+    # def themes(self):
+    #     """
+    #     This method will return the current theme to get_context_data
+    #     """
+    #
+    #     # varaible for returning image path
+    #     image_path = self.determing_month_of_year()
+    #
+    #     # logic for reading in the file from the image_path variable
+    #     # and returning it as a base64 string
+    #     with open(image_path, "rb") as image_file:
+    #         image_data = base64.b64encode(image_file.read()).decode("utf-8")
+    #
+    #     return image_data
+    #
+    # def get_queryset(self):
+    #     """
+    #     Special Django method used to gather data
+    #     """
+    #
+    #     # gets menu_type and menu_items from decide_on_meal method
+    #     menu_type = self.__getitem__(self.decide_on_meal())[0]
+    #     menu_items = self.__getitem__(self.decide_on_meal())[1]
+    #
+    #     # check if there is a starter menu included if not
+    #     # return starter_menu as empty list
+    #     try:
+    #         starter_menu = self.__getitem__(self.decide_on_meal())[2]
+    #     except IndexError:
+    #         starter_menu = []
+    #
+    #     return (menu_type, menu_items, starter_menu)
+    #
+    # def get_context_data(self, **kwargs):
+    #     """
+    #     Special Django method used to send data to template for display
+    #     """
+    #
+    #     context = super().get_context_data(**kwargs)
+    #     # variable used for dropdown list when on mobile
+    #     # and tabs when on tablet
+    #     meals = ["breakfast", "lunch", "supper", "alcohol"]
+    #     # changes self.slug to url path
+    #     self.slug = self.kwargs["slug"]
+    #
+    #     # updated context with name of menu type and its items
+    #     context["menu_type"] = self.get_queryset()[0]
+    #     context["menu_items"] = self.get_queryset()[1]
+    #     context["starter_menu"] = self.get_queryset()[2]
+    #
+    #     print("mt", context["menu_items"])
+    #     print("sta", context["starter_menu"])
+    #
+    #     return {"meals": meals, "context": context, "theme": self.themes()}
