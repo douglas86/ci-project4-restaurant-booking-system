@@ -52,18 +52,13 @@ class MenuView(TemplateView):
                 dict["ingredients"] = ", ".join(v["ingredients"])
                 lists.append(dict)
 
-        # iterate over additional_meals from a created dictionary
-        # appends it to lists above
+        # iterates over additional_meals from menu model
         if additional_meals != []:
-            for meals in additional_meals:
-                for key, value in meals.items():
-                    dict = {}
-                    # check if value is a list
-                    if isinstance(value, list):
-                        dict[key] = ", ".join(value)
-                    else:
-                        dict[key] = value
-                    lists.append(dict)
+            for k in additional_meals.values():
+                dict = {}
+                dict["title"] = k["title"]
+                dict["description"] = k["description"]
+                lists.append(dict)
 
         return lists
 
@@ -74,36 +69,11 @@ class MenuView(TemplateView):
 
         menu_type = "Breakfast Menu"
         specials = ChefSpecial.objects.filter(served=0)
-        breakfast_meal = Menu.objects.all().values().filter(menu_type=0)
-
-        breakfast_menu = [
-            {
-                "title": "Fluffy Pancakes",
-                "ingredients": [
-                    "whole milk",
-                    "large egg",
-                    "vegatable oil",
-                    "homemade pancake mix",
-                    "sugar",
-                ],
-            },
-            {
-                "title": "Focaccia French Toast",
-                "ingredients": [
-                    "large eggs",
-                    "whole eggs",
-                    "pure vanilla extracts",
-                    "ground cinnamon",
-                    "slices of focaccia",
-                    "unsalted butter",
-                ],
-            },
-        ]
+        breakfast_menu = Menu.objects.filter(menu_type=0)
 
         return (
             menu_type,
             self.combine_menus(specials, breakfast_menu),
-            breakfast_meal,
         )
 
     def starter_menu(self):
@@ -311,9 +281,6 @@ class MenuView(TemplateView):
         # gets menu_type and menu_items from decide_on_meal method
         menu_type = self.__getitem__(self.decide_on_meal())[0]
         menu_items = self.__getitem__(self.decide_on_meal())[1]
-
-        menu = self.__getitem__(self.decide_on_meal())
-        print("menu", menu)
 
         # check if there is a starter menu included if not
         # return starter_menu as empty list
