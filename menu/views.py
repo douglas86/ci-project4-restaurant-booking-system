@@ -1,9 +1,9 @@
 import datetime
 from django.utils.http import base64
 from django.views.generic import TemplateView
-from django.http import FileResponse
 
 from home.models import ChefSpecial
+from menu.models import Menu
 
 
 # Create your views here.
@@ -52,18 +52,13 @@ class MenuView(TemplateView):
                 dict["ingredients"] = ", ".join(v["ingredients"])
                 lists.append(dict)
 
-        # iterate over additional_meals from a created dictionary
-        # appends it to lists above
+        # iterates over additional_meals from menu model
         if additional_meals != []:
-            for meals in additional_meals:
-                for key, value in meals.items():
-                    dict = {}
-                    # check if value is a list
-                    if isinstance(value, list):
-                        dict[key] = ", ".join(value)
-                    else:
-                        dict[key] = value
-                    lists.append(dict)
+            for k in additional_meals.values():
+                dict = {}
+                dict["title"] = k["title"]
+                dict["description"] = k["description"]
+                lists.append(dict)
 
         return lists
 
@@ -74,30 +69,12 @@ class MenuView(TemplateView):
 
         menu_type = "Breakfast Menu"
         specials = ChefSpecial.objects.filter(served=0)
-        breakfast_menu = [
-            {
-                "title": "Fluffy Pancakes",
-                "ingredients": [
-                    "whole milk",
-                    "large egg",
-                    "vegatable oil",
-                    "homemade pancake mix",
-                    "sugar",
-                ],
-            },
-            {
-                "title": "Focaccia French Toast",
-                "ingredients": [
-                    "large eggs",
-                    "whole eggs",
-                    "pure vanilla extracts",
-                    "ground cinnamon",
-                    "slices of focaccia",
-                    "unsalted butter",
-                ],
-            },
-        ]
-        return menu_type, self.combine_menus(specials, breakfast_menu)
+        breakfast_menu = Menu.objects.filter(menu_type=0)
+
+        return (
+            menu_type,
+            self.combine_menus(specials, breakfast_menu),
+        )
 
     def starter_menu(self):
         """
@@ -105,20 +82,7 @@ class MenuView(TemplateView):
         """
 
         menu_type = "Starter Menu"
-        starter_menu = [
-            {
-                "title": "Meat starters",
-                "ingredients": ["Fig", "mozzarella", "serrano", "ham salad"],
-            },
-            {
-                "title": "Seafood starter",
-                "ingredients": ["Giant champagne", "lemon prawn", "prawn vol-au-vents"],
-            },
-            {
-                "title": "Vegetarian starter",
-                "ingredients": ["Fig", "goat's cheese", "filo parcels"],
-            },
-        ]
+        starter_menu = Menu.objects.filter(menu_type=4)
 
         return menu_type, self.combine_menus([], starter_menu)
 
@@ -129,25 +93,7 @@ class MenuView(TemplateView):
 
         menu_type = "Lunch Menu"
         specials = ChefSpecial.objects.filter(served=1)
-
-        lunch_menu = [
-            {
-                "title": "Confit Pork Belly",
-                "ingredients": [
-                    "Savoy cabbage",
-                    "Gratin dauphinois potatoes",
-                    "Thyme jus",
-                ],
-            },
-            {
-                "title": "Roasted Lamb Rump",
-                "ingredients": [
-                    "Anchovy Braised Lentils",
-                    "chantenay carrots",
-                    "Crispy Leeks",
-                ],
-            },
-        ]
+        lunch_menu = Menu.objects.filter(menu_type=1)
 
         # display starter menu on main menu for lunch
         starter_menu = self.starter_menu()
@@ -161,26 +107,7 @@ class MenuView(TemplateView):
 
         menu_type = "Supper Menu"
         specials = ChefSpecial.objects.filter(served=2)
-
-        supper_menu = [
-            {
-                "title": "Rump 7oz",
-                "ingredients": [
-                    "firm texture and rich flavour",
-                    "recommended medium",
-                    "served with chips",
-                ],
-            },
-            {
-                "title": "Fish & chips",
-                "ingredients": [
-                    "Crispy golden battered haddock",
-                    "Thick cut chunky chips",
-                    "Pea puree",
-                    "Tartare sauce",
-                ],
-            },
-        ]
+        supper_menu = Menu.objects.filter(menu_type=2)
 
         # display starter menu on main menu for supper
         starter_menu = self.starter_menu()
@@ -193,34 +120,7 @@ class MenuView(TemplateView):
         """
 
         menu_type = "Alcohol Menu"
-
-        alcohol_menu = [
-            {
-                "title": "Ramon Roqueta Reserva",
-                "ingredients": [
-                    "Fruit aromas with balsamic touch",
-                    "Notes of vanilla and coconut",
-                ],
-            },
-            {
-                "title": "Musica en el camino",
-                "ingredients": [
-                    "Fresh and velvety",
-                    "Red fruit aromas with spicy and mint notes",
-                ],
-            },
-            {"title": "Aperol Spritz", "ingredients": ["Presecco", "Aperol", "Soda"]},
-            {
-                "title": "Mojito",
-                "ingredients": [
-                    "Rum",
-                    "Lime",
-                    "Mint",
-                    "Soda",
-                ],
-            },
-            {"title": "Margarita", "ingredients": ["Teqila", "Cointreau", "Lime"]},
-        ]
+        alcohol_menu = Menu.objects.filter(menu_type=3)
 
         return menu_type, self.combine_menus([], alcohol_menu)
 
@@ -298,7 +198,7 @@ class MenuView(TemplateView):
 
     def get_queryset(self):
         """
-        Special Django method used to gather data
+        Special Django method used to gather data from database
         """
 
         # gets menu_type and menu_items from decide_on_meal method

@@ -13,8 +13,7 @@ class TestUser(TestCase):
         """
         self.client = Client()
         self.create_user = self.client.post(
-            "/accounts/signup/", {"username": "test", "password": "123456"}
-        )
+            '/accounts/signup/', {'username': 'test', 'password': '123456'})
 
     def test_create_user(self):
         """

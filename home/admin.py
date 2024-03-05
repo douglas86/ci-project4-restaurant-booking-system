@@ -12,8 +12,16 @@ class CustomerAdmin(admin.ModelAdmin):
     list_display variable is used to make it easier for me in the admin panel
     search_fields variable is for searching based on user_name
     """
-    list_display = ('user_name', 'next_booking', 'table_history', 'role', 'created_at', 'updated_at')
-    search_fields = ('user_name',)
+
+    list_display = (
+        "user_name",
+        "next_booking",
+        "table_history",
+        "role",
+        "created_at",
+        "updated_at",
+    )
+    search_fields = ("user_name",)
 
 
 @admin.register(ChefSpecial)
@@ -23,5 +31,13 @@ class ChefSpecialAdmin(admin.ModelAdmin):
     form variable is used to run validations on ChefSpecial model
     list_display variable is used to make it easier for me in the admin panel
     """
+
     form = ChefForm
-    list_display = ('title', 'ingredients', 'served', 'featured_image', 'created_at', 'updated_at')
+    list_display = (
+        "title",
+        "ingredients",
+        "served",
+        "featured_image",
+        "created_at",
+        "updated_at",
+    )
