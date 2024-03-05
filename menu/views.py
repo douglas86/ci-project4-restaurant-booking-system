@@ -84,21 +84,6 @@ class MenuView(TemplateView):
         menu_type = "Starter Menu"
         starter_menu = Menu.objects.filter(menu_type=4)
 
-        # starter_menu = [
-        #     {
-        #         "title": "Meat starters",
-        #         "ingredients": ["Fig", "mozzarella", "serrano", "ham salad"],
-        #     },
-        #     {
-        #         "title": "Seafood starter",
-        #         "ingredients": ["Giant champagne", "lemon prawn", "prawn vol-au-vents"],
-        #     },
-        #     {
-        #         "title": "Vegetarian starter",
-        #         "ingredients": ["Fig", "goat's cheese", "filo parcels"],
-        #     },
-        # ]
-
         return menu_type, self.combine_menus([], starter_menu)
 
     def lunch_meal(self):
@@ -108,26 +93,7 @@ class MenuView(TemplateView):
 
         menu_type = "Lunch Menu"
         specials = ChefSpecial.objects.filter(served=1)
-        lunch_menu = Menu.objects.filter(menu_type=4)
-
-        # lunch_menu = [
-        #     {
-        #         "title": "Confit Pork Belly",
-        #         "ingredients": [
-        #             "Savoy cabbage",
-        #             "Gratin dauphinois potatoes",
-        #             "Thyme jus",
-        #         ],
-        #     },
-        #     {
-        #         "title": "Roasted Lamb Rump",
-        #         "ingredients": [
-        #             "Anchovy Braised Lentils",
-        #             "chantenay carrots",
-        #             "Crispy Leeks",
-        #         ],
-        #     },
-        # ]
+        lunch_menu = Menu.objects.filter(menu_type=1)
 
         # display starter menu on main menu for lunch
         starter_menu = self.starter_menu()
@@ -141,26 +107,7 @@ class MenuView(TemplateView):
 
         menu_type = "Supper Menu"
         specials = ChefSpecial.objects.filter(served=2)
-
-        supper_menu = [
-            {
-                "title": "Rump 7oz",
-                "ingredients": [
-                    "firm texture and rich flavour",
-                    "recommended medium",
-                    "served with chips",
-                ],
-            },
-            {
-                "title": "Fish & chips",
-                "ingredients": [
-                    "Crispy golden battered haddock",
-                    "Thick cut chunky chips",
-                    "Pea puree",
-                    "Tartare sauce",
-                ],
-            },
-        ]
+        supper_menu = Menu.objects.filter(menu_type=2)
 
         # display starter menu on main menu for supper
         starter_menu = self.starter_menu()
@@ -173,34 +120,7 @@ class MenuView(TemplateView):
         """
 
         menu_type = "Alcohol Menu"
-
-        alcohol_menu = [
-            {
-                "title": "Ramon Roqueta Reserva",
-                "ingredients": [
-                    "Fruit aromas with balsamic touch",
-                    "Notes of vanilla and coconut",
-                ],
-            },
-            {
-                "title": "Musica en el camino",
-                "ingredients": [
-                    "Fresh and velvety",
-                    "Red fruit aromas with spicy and mint notes",
-                ],
-            },
-            {"title": "Aperol Spritz", "ingredients": ["Presecco", "Aperol", "Soda"]},
-            {
-                "title": "Mojito",
-                "ingredients": [
-                    "Rum",
-                    "Lime",
-                    "Mint",
-                    "Soda",
-                ],
-            },
-            {"title": "Margarita", "ingredients": ["Teqila", "Cointreau", "Lime"]},
-        ]
+        alcohol_menu = Menu.objects.filter(menu_type=3)
 
         return menu_type, self.combine_menus([], alcohol_menu)
 
@@ -278,7 +198,7 @@ class MenuView(TemplateView):
 
     def get_queryset(self):
         """
-        Special Django method used to gather data
+        Special Django method used to gather data from database
         """
 
         # gets menu_type and menu_items from decide_on_meal method
@@ -310,8 +230,5 @@ class MenuView(TemplateView):
         context["menu_type"] = self.get_queryset()[0]
         context["menu_items"] = self.get_queryset()[1]
         context["starter_menu"] = self.get_queryset()[2]
-
-        print("mt", context["menu_items"])
-        print("sta", context["starter_menu"])
 
         return {"meals": meals, "context": context, "theme": self.themes()}
