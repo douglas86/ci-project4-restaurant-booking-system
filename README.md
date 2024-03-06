@@ -431,7 +431,7 @@ What is the Issue?
 - The hamburger menu is jumping up and down as the menu is opened or closed
 - The bug is not visible from the screenshot below
 
-## ![hamburger-menu.png](static/images/readme/bugs/hamburger-menu.png)
+![hamburger-menu.png](static/images/readme/bugs/hamburger-menu.png)
 
 ### [Operational error in database as trying to run auto test](#bugs)
 
@@ -469,6 +469,18 @@ Note to myself for a future reference?
 
 - In future don't use the flush command as it will completely wipe my db
 - try and delete my migrations directory and start from there
+
+### [Carousel image not being aligned correctly](#bugs)
+
+Problem?
+
+- The image is not being aligned neatly to the carousel on Mobile devices
+- This was tested on the iPhone 6/7/8 display
+
+Solution?
+
+- The bug has not been solved yet
+- I will try and create an issue for it later
 
 ---
 
