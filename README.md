@@ -33,6 +33,8 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [Operational error in database as trying to run auto test](#operational-error-in-database-as-trying-to-run-auto-test)
   - [Carousel image not being aligned correctly](#carousel-image-not-being-aligned-correctly)
   - [Favicon icon not displaying](#favicon-icon-not-displaying)
+  - [Heroku auto refreshing unnecessarily](#heroku-auto-refreshing-unnecessarily)
+  - [Navbar not at top of screen](#navbar-not-at-top-of-screen)
 - [Credits](#credits)
 
 ---
@@ -536,6 +538,19 @@ Added logic to settings.py file
 Added logic to urls.py file
 
 ![heroku_refresh_logic_to_urls.png](static/images/readme/bugs/heroku_refresh_logic_to_urls.png)
+
+### [Navbar not at top of screen](#bugs)
+
+Problem?
+
+- The navbar is not quite sitting at the top of the screen
+
+![navbar_not_at_top.png](static/images/readme/bugs/navbar_not_at_top.png)
+
+Solution?
+
+- The bug has not been solved yet
+- I will try and create an issue for it later
 
 ---
 
