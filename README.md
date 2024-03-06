@@ -31,6 +31,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [Automated Testing](#automated-testing)
     - [Authentication](#authentication-1)
     - [Homepage](#homepage-2)
+    - [Test if the correct theme is being displayed](#test-if-the-correct-theme-is-being-displayed)
 - [Bugs](#bugs)
   - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
   - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
@@ -404,6 +405,30 @@ The results of a failing test
 Testing for a passing test
 
 ![auto-homepage-testing-what-pass.png](static/images/readme/testing/auto-homepage-testing-what-pass.png)
+
+#### [Test if the correct theme is being displayed](#automated-testing)
+
+What was being tested?
+
+- Test if the correct them was returned
+- Passing in the month and the filename
+- The filename is just hardcoded static images for the theme
+
+Failing test for theme
+
+![theme_failing_test.png](static/images/readme/testing/auto_testing/theme_failing_test.png)
+
+Failing test case
+
+![theme_failing_test_case.png](static/images/readme/testing/auto_testing/theme_failing_test_case.png)
+
+Passing test for theme
+
+![theme_passing_test.png](static/images/readme/testing/auto_testing/theme_passing_test.png)
+
+Passing test cases
+
+![theme_failing_test_case.png](static/images/readme/testing/auto_testing/theme_failing_test_case.png)
 
 ---
 
