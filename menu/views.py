@@ -1,4 +1,5 @@
 import datetime
+
 from django.utils.http import base64
 from django.views.generic import TemplateView
 
@@ -7,6 +8,31 @@ from menu.models import Menu
 
 
 # Create your views here.
+def images_to_be_displayed(month):
+    """
+    This function will determine what image needs to be displayed
+
+    Parameters:
+    month - this is an integer that is passed in based on the current month
+    """
+
+    # Winter - December, January, February
+    if month >= 12:
+        return "static/images/menu/winter.jpg"
+    # Autumn - September, October, November
+    elif month >= 9:
+        return "static/images/menu/autumn.jpg"
+    # Summer - June, July, August
+    elif month >= 6:
+        return "static/images/menu/summer.jpeg"
+    # Spring - March, April, May
+    elif month >= 3:
+        return "static/images/menu/spring.jpg"
+    # this section is for January and February months
+    else:
+        return "static/images/menu/winter.jpg"
+
+
 class MenuView(TemplateView):
     """
     View used for the Menu Page
@@ -78,7 +104,7 @@ class MenuView(TemplateView):
 
     def starter_menu(self):
         """
-        This menu will displayed at the top of the lunch and supper menu only
+        This menu will display at the top of the lunch and supper menu only
         """
 
         menu_type = "Starter Menu"
@@ -127,7 +153,7 @@ class MenuView(TemplateView):
     def decide_on_meal(self):
         """
         decision to be made on what menu gets displayed
-        based on url path
+        based on an url path
         """
 
         if self.slug == "breakfast":
@@ -139,31 +165,7 @@ class MenuView(TemplateView):
         else:
             return self.supper_meal()
 
-    def images_to_be_displayed(self, month):
-        """
-        This method will determine what image needs to be displayed
-
-        Parameters:
-        month - this is an integer that is passed in based on the current month
-        """
-
-        # Winter - December, January, February
-        if month >= 12:
-            return "static/images/menu/winter.jpg"
-        # Autumn - September, October, November
-        elif month >= 9:
-            return "static/images/menu/autumn.jpg"
-        # Summer - June, July, August
-        elif month >= 6:
-            return "static/images/menu/summer.jpeg"
-        # Spring - March, April, May
-        elif month >= 3:
-            return "static/images/menu/spring.jpg"
-        # this section is for January and February months
-        else:
-            return "static/images/menu/winter.jpg"
-
-    def determing_month_of_year(self):
+    def determining_month_of_year(self):
         """
         This method determines the month of the year
         Once that is determined it will pass it to the method
@@ -179,15 +181,15 @@ class MenuView(TemplateView):
         # Autumn - September, October, November
         # Winter - December, January, February
 
-        return self.images_to_be_displayed(month)
+        return images_to_be_displayed(month)
 
     def themes(self):
         """
         This method will return the current theme to get_context_data
         """
 
-        # varaible for returning image path
-        image_path = self.determing_month_of_year()
+        # variable for a returning image path
+        image_path = self.determining_month_of_year()
 
         # logic for reading in the file from the image_path variable
         # and returning it as a base64 string
@@ -206,13 +208,13 @@ class MenuView(TemplateView):
         menu_items = self.__getitem__(self.decide_on_meal())[1]
 
         # check if there is a starter menu included if not
-        # return starter_menu as empty list
+        # return starter_menu as an empty list
         try:
             starter_menu = self.__getitem__(self.decide_on_meal())[2]
         except IndexError:
             starter_menu = []
 
-        return (menu_type, menu_items, starter_menu)
+        return menu_type, menu_items, starter_menu
 
     def get_context_data(self, **kwargs):
         """
@@ -223,10 +225,10 @@ class MenuView(TemplateView):
         # variable used for dropdown list when on mobile
         # and tabs when on tablet
         meals = ["breakfast", "lunch", "supper", "alcohol"]
-        # changes self.slug to url path
+        # changes self.slug to an url path
         self.slug = self.kwargs["slug"]
 
-        # updated context with name of menu type and its items
+        # updated context with name of a menu type and its items
         context["menu_type"] = self.get_queryset()[0]
         context["menu_items"] = self.get_queryset()[1]
         context["starter_menu"] = self.get_queryset()[2]
