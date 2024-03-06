@@ -21,7 +21,11 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [Technology Used](#technology-used)
 - [Features](#features)
   - [Features that have been included in this project](#features-that-have-been-included-in-this-project)
+    - [hamburger image on smaller devices](#hamburger-image-on-smaller-devices)
+    - [Authentication](#authentication)
+    - [Theme image](#theme-image)
   - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
+    - [Theme image](#theme-image-1)
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
   - [Automated Testing](#automated-testing)
@@ -234,11 +238,13 @@ env.py
 
 ### [Features that have been included in this project](#features)
 
+#### [hamburger image on smaller devices](#features)
+
 When screen gets minimised all content gets reduced to hamburger menu
 
 ![header-hamburger-menu.png](static/images/readme/features/header-hamburger-menu.png)
 
-Authentication was implemented
+#### [Authentication](#features)
 
 When the user is not logged in, this image will be displayed
 
@@ -248,10 +254,29 @@ When the user is logged in, a welcome message will be displayed with a different
 
 ![header-login-image.png](static/images/readme/features/header-login-image.png)
 
+#### [Theme image](#features)
+
+- These themes are small images of the top right of the menu
+- This image represents the theme of the year
+- It will automatically change based on the time of the year
+- it works based on Summer, Winter, Autumn and Spring
+- These images are hard coded for now
+- But, as a future feature it will be in the database
+- This theme image only gets displayed on tablets and bigger devices
+
+![theme_image.png](static/images/readme/features/theme_image.png)
+
 ### [Future features to be added at a later stage](#features)
 
 - I would like to add a dashboard for the admin logged-in user
 - I have already included a role in the database for this feature
+
+#### [Theme image](#features)
+
+- As a future task as far as theming goes
+- I would like to create a model for storing all themes
+- Instead of, an image in the background creates some sort of animated background for themes
+- I can also do it were I create themes for easter or Christmas and others as needed
 
 ---
 
