@@ -153,6 +153,7 @@ p {
 /*forms*/
 form {
   padding: 2em;
+  margin-bottom: 1em;
 }
 
 form input[type="text"],
@@ -200,8 +201,9 @@ form input[type="email"] {
 
 /*footer*/
 footer {
-  margin-top: 1em;
+  margin-top: auto;
   background-color: #b5cbb7;
+  bottom: 0;
 }
 
 .footer {
