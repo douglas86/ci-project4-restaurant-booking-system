@@ -30,6 +30,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
   - [Problem with Hamburger Menu](#problem-with-hamburger-menu)
   - [Hamburger menu jumps as I try and open and close menu](#hamburger-menu-jumps-as-i-try-and-open-and-close-menu)
+  - [Operational error in database as trying to run auto test](#operational-error-in-database-as-trying-to-run-auto-test)
 - [Credits](#credits)
 
 ---
@@ -430,7 +431,42 @@ What is the Issue?
 - The hamburger menu is jumping up and down as the menu is opened or closed
 - The bug is not visible from the screenshot below
 
-![hamburger-menu.png](static/images/readme/bugs/hamburger-menu.png)
+## ![hamburger-menu.png](static/images/readme/bugs/hamburger-menu.png)
+
+### [Operational error in database as trying to run auto test](#bugs)
+
+Problem?
+
+- When I tied to run python manage.py test
+- I get the following error
+- error message "django.db.utils.OperationalError: near 'None': syntax error"
+
+![OperationalError.png](static/images/readme/bugs/operationalError.png)
+
+Solution?
+
+- Destroy all data in database using the flush command
+- I used this command as I suspected that it was an issue in the database
+- I then went on to delete all migration files, but accidentally deleted directories at the same time
+- Then tried to makemigrations and migrate
+- But, for some reason it was not picking up my app like: home, menu, about, book_table models
+- so I did a bit of googling to find that I can makemigrations on a single app
+- which is what I did: python manage.py makemigrations home
+- doing that for all of my apps
+- this then created the migrations directory and the initial migration for that app
+- after running makemigrations on all my app I then had to migrate my db
+- then the page could load properly after that and all was sorted out
+- which I could also run python manage.py test
+- I was not longer getting that error
+- Then test files were now running as they were suppose to
+- the issue was all sorted but now I have to create all my data again
+- re-populating my database with data from fixtures json files
+- I had to run the command one at a time python manage.py loaddata fixtures/fixture/chef_special.json
+
+Note to myself for a future reference?
+
+- In future don't use the flush command as it will completely wipe my db
+- try and delete my migrations directory and start from there
 
 ---
 
