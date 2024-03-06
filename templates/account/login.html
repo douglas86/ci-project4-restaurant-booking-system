@@ -3,29 +3,37 @@
 {% load allauth account %}
 
 {% block content %}
-    <h1>Sign In</h1>
+    {#heading#}
+    <div class="heading">
+        {#title#}
+        <h1 class="title">Sign In</h1>
+    </div>
 
-    <p>
-        {% blocktrans %}If you have not created an account yet, then please
-            <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-    </p>
-    {% url 'account_login' as login_url %}
-    {% element form form=form method="post" action=login_url tags="entrance,login" %}
-        {% slot body %}
-            {% csrf_token %}
-            {% element fields form=form unlabeled=True %}
-            {% endelement %}
-            {% if redirect_field_value %}
-                <input type="hidden"
-                       name="{{ redirect_field_name }}"
-                       value="{{ redirect_field_value }}"/>
-            {% endif %}
-        {% endslot %}
-        {% slot actions %}
-            <button type="submit" class="btn btn-primary">Sign In</button>
-        {% endslot %}
-    {% endelement %}
-    {% if SOCIALACCOUNT_ENABLED %}
-        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
-    {% endif %}
+    <div class="menu">
+        <p>
+            {% blocktrans %}If you have not created an account yet, then please
+                <a href="{{ signup_url }}">Sign Up</a> first.{% endblocktrans %}
+        </p>
+        {% url 'account_login' as login_url %}
+        {% element form form=form method="post" action=login_url tags="entrance,login" %}
+            {% slot body %}
+                {% csrf_token %}
+                {% element fields form=form unlabeled=True %}
+                {% endelement %}
+                {% if redirect_field_value %}
+                    <input type="hidden"
+                           name="{{ redirect_field_name }}"
+                           value="{{ redirect_field_value }}"/>
+                {% endif %}
+            {% endslot %}
+            {% slot actions %}
+                <button type="submit" class="btn btn-primary">Sign In</button>
+            {% endslot %}
+        {% endelement %}
+        {% if SOCIALACCOUNT_ENABLED %}
+            {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+        {% endif %}
+    </div>
+
+
 {% endblock content %}

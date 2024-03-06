@@ -32,7 +32,6 @@
   .heading .title {
     width: 30%;
     vertical-align: middle;
-    margin: auto;
   }
   .heading .theme {
     display: flex;

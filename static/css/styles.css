@@ -153,13 +153,15 @@ p {
 /*forms*/
 form {
   padding: 2em;
+  margin-bottom: 1em;
 }
 
 form input[type="text"],
 form input[type="password"],
 form input[type="email"] {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin: 1em;
 }
 
 /* menu */
@@ -167,7 +169,9 @@ form input[type="email"] {
   background-color: #d3d3d3;
   width: 80%;
   margin: 0 10%;
+  padding: 1em;
   opacity: 0.85;
+  font-weight: bold;
 }
 .main_menu {
   display: inline-block;
@@ -199,6 +203,7 @@ form input[type="email"] {
 footer {
   margin-top: auto;
   background-color: #b5cbb7;
+  bottom: 0;
 }
 
 .footer {
