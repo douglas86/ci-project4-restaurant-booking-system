@@ -33,6 +33,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [Homepage](#homepage-2)
     - [Test if theme file exists](#test-if-theme-file-exists)
     - [Test if the correct theme is being displayed](#test-if-the-correct-theme-is-being-displayed)
+    - [Test if correct menu gets returned based on slug](#test-if-correct-menu-gets-returned-based-on-slug)
 - [Bugs](#bugs)
   - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
   - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
@@ -447,6 +448,21 @@ Passing test for theme
 Passing test cases
 
 ![theme_failing_test_case.png](static/images/readme/testing/auto_testing/theme_failing_test_case.png)
+
+#### [Test if correct menu gets returned based on slug](#automated-testing)
+
+What was tested?
+
+- I purposefully made a spelling error to see if the Supper Menu fails
+- Then pass the correct test to see if it passes
+
+Failing test
+
+![menu_type_fail.png](static/images/readme/testing/auto_testing/menu_type_fail.png)
+
+Passing test
+
+![menu_type_passing.png](static/images/readme/testing/auto_testing/menu_type_passing.png)
 
 ---
 
