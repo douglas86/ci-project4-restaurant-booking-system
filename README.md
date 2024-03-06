@@ -29,6 +29,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
     - [Testing responsiveness of the image theme](#testing-responsiveness-of-the-image-theme)
+    - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
   - [Automated Testing](#automated-testing)
     - [Authentication](#authentication-1)
     - [Homepage](#homepage-2)
@@ -390,6 +391,21 @@ When on mobile devices
 ![image_theme_mobile.png](static/images/readme/testing/manual_testing/image_theme_mobile.png)
 
 #### [Testing responsiveness of the menu page](#manual-testing)
+
+- Testing to see how responsive the menu page is
+- on different screen sizes
+
+Responsive design on laptop
+
+![menu_page_laptop.png](static/images/readme/testing/manual_testing/menu_page_laptop.png)
+
+Responsive design on tablet
+
+![menu_page_tablet.png](static/images/readme/testing/manual_testing/menu_page_tablet.png)
+
+Responsive design on mobile
+
+![menu_page_mobile.png](static/images/readme/testing/manual_testing/menu_page_mobile.png)
 
 ### [Automated Testing](#testing)
 
