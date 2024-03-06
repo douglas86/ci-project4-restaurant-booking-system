@@ -32,6 +32,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [Hamburger menu jumps as I try and open and close menu](#hamburger-menu-jumps-as-i-try-and-open-and-close-menu)
   - [Operational error in database as trying to run auto test](#operational-error-in-database-as-trying-to-run-auto-test)
   - [Carousel image not being aligned correctly](#carousel-image-not-being-aligned-correctly)
+  - [Favicon icon not displaying](#favicon-icon-not-displaying)
 - [Credits](#credits)
 
 ---
@@ -503,6 +504,38 @@ Solution?
 
 - The bug has not been solved yet
 - I will try and create an issue for it later
+
+### [Heroku auto refreshing unnecessarily](#bugs)
+
+Problem?
+
+- for some reason, heroku is auto refreshing
+- I expected that it is a problem with django_browser_reload package
+- This package I use for in development
+- It refreshes my server on file change
+
+Refreshes browser tab unnecessarily
+
+![heroku_refresh_browser_tab.png](static/images/readme/bugs/heroku_refresh_browser_tab.png)
+
+Refreshing in the Heroku console logs
+
+![heroku_refresh_console_logs.png](static/images/readme/bugs/heroku_refresh_console_logs.png)
+
+Solution?
+
+- I solved this problem by adding a simple logic to settings.py and urls.py
+- If Debug == 'True' then add django_browser_reload to constant lists
+- It needed to be a string for the Debug constant for when environment variables load
+- It loads it as a string
+
+Added logic to settings.py file
+
+![heroku_refresh_logic_to_settings.png](static/images/readme/bugs/heroku_refresh_logic_to_settings.png)
+
+Added logic to urls.py file
+
+![heroku_refresh_logic_to_urls.png](static/images/readme/bugs/heroku_refresh_logic_to_urls.png)
 
 ---
 
