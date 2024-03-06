@@ -477,6 +477,8 @@ Problem?
 - The image is not being aligned neatly to the carousel on Mobile devices
 - This was tested on the iPhone 6/7/8 display
 
+![carousel_not_aligned.png](static/images/readme/bugs/carousel_not_aligned.png)
+
 Solution?
 
 - The bug has not been solved yet
