@@ -167,7 +167,9 @@ form input[type="email"] {
   background-color: #d3d3d3;
   width: 80%;
   margin: 0 10%;
+  padding: 1em;
   opacity: 0.85;
+  font-weight: bold;
 }
 .main_menu {
   display: inline-block;
