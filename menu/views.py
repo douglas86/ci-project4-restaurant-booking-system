@@ -206,7 +206,7 @@ class MenuView(TemplateView):
 
     def get_queryset(self):
         """
-        Special Django method used to gather data from database
+        Special Django method used to gather data from a database
         """
 
         # gets menu_type and menu_items from decide_on_meal method
