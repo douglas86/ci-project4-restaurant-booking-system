@@ -29,6 +29,8 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
   - [Automated Testing](#automated-testing)
+    - [Authentication](#authentication-1)
+    - [Homepage](#homepage-2)
 - [Bugs](#bugs)
   - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
   - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
@@ -373,7 +375,7 @@ python manage.py test --parallel auto
 
 If you are just wanting to test conventionally
 
-#### Authentication
+#### [Authentication](#automated-testing)
 
 What was tested in this scenario:
 
@@ -385,7 +387,7 @@ I wanted to keep it basic
 
 ![auto-test-authentication.png](static/images/readme/testing/auto-test-authentication.png)
 
-#### Homepage
+#### [Homepage](#automated-testing)
 
 What was tested in this scenario
 
