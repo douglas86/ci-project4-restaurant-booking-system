@@ -159,7 +159,8 @@ form input[type="text"],
 form input[type="password"],
 form input[type="email"] {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin: 1em;
 }
 
 /* menu */
@@ -199,7 +200,7 @@ form input[type="email"] {
 
 /*footer*/
 footer {
-  margin-top: auto;
+  margin-top: 1em;
   background-color: #b5cbb7;
 }
 
