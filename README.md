@@ -457,11 +457,13 @@ Solution?
 - after running makemigrations on all my app I then had to migrate my db
 - then the page could load properly after that and all was sorted out
 - which I could also run python manage.py test
-- I was not longer getting that error
-- Then test files were now running as they were suppose to
-- the issue was all sorted but now I have to create all my data again
+- I was no longer getting that error
+- Then test files were now running as they were supposed to
+- the issue was all sorted, but now I have to create all my data again
 - re-populating my database with data from fixtures json files
 - I had to run the command one at a time python manage.py loaddata fixtures/fixture/chef_special.json
+
+![database_working correctly.png](static/images/readme/bugs/database_working%20correctly.png)
 
 Note to myself for a future reference?
 
