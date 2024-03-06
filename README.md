@@ -31,6 +31,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [Automated Testing](#automated-testing)
     - [Authentication](#authentication-1)
     - [Homepage](#homepage-2)
+    - [Test if theme file exists](#test-if-theme-file-exists)
     - [Test if the correct theme is being displayed](#test-if-the-correct-theme-is-being-displayed)
 - [Bugs](#bugs)
   - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
@@ -405,6 +406,23 @@ The results of a failing test
 Testing for a passing test
 
 ![auto-homepage-testing-what-pass.png](static/images/readme/testing/auto-homepage-testing-what-pass.png)
+
+#### [Test if theme file exists](#automated-testing)
+
+What was being tested?
+
+- I first tested if the file exists
+- Passing it the file name of "winterP.jpg"
+- Then after that I passed it the correct file name to if the test works
+- Passing it the file name of "winter.jpg"
+
+Passing theme on a failing test
+
+![theme_exists_fail.png](static/images/readme/testing/auto_testing/theme_exists_fail.png)
+
+Passing theme on a passing test
+
+![theme_exists_pass.png](static/images/readme/testing/auto_testing/theme_exists_pass.png)
 
 #### [Test if the correct theme is being displayed](#automated-testing)
 
