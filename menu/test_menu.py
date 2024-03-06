@@ -57,7 +57,7 @@ class TestMenu(TestCase, views.MenuView):
         Test if the menu_type returned is the breakfast_menu
         """
 
-        menu = views.MenuView.breakfast_meal(self)[0]
+        menu = breakfast_meal()[0]
 
         self.assertEqual(
             menu.title(), "Breakfast Menu", msg="Breakfast menu get returned"
@@ -68,7 +68,7 @@ class TestMenu(TestCase, views.MenuView):
         Test if the menu_type returned is the lunch_menu
         """
 
-        menu = views.MenuView.lunch_meal(self)[0]
+        menu = lunch_meal()[0]
 
         self.assertEqual(menu.title(), "Lunch Menu", msg="Lunch menu gets returned")
 
@@ -77,6 +77,6 @@ class TestMenu(TestCase, views.MenuView):
         Test if the menu_type returned is the supper_menu
         """
 
-        menu = views.MenuView.supper_meal(self)[0]
+        menu = supper_meal()[0]
 
         self.assertEqual(menu.title(), "Supper Menu", msg="Supper menu gets returned")

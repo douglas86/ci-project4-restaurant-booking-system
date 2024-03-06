@@ -21,15 +21,32 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [Technology Used](#technology-used)
 - [Features](#features)
   - [Features that have been included in this project](#features-that-have-been-included-in-this-project)
+    - [hamburger image on smaller devices](#hamburger-image-on-smaller-devices)
+    - [Authentication](#authentication)
+    - [Theme image](#theme-image)
   - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
+    - [Theme image](#theme-image-1)
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
+    - [Testing responsiveness of the image theme](#testing-responsiveness-of-the-image-theme)
+    - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
   - [Automated Testing](#automated-testing)
+    - [Authentication](#authentication-1)
+    - [Homepage](#homepage-2)
+    - [Test if theme file exists](#test-if-theme-file-exists)
+    - [Test if the correct theme is being displayed](#test-if-the-correct-theme-is-being-displayed)
+    - [Test if correct menu gets returned based on slug](#test-if-correct-menu-gets-returned-based-on-slug)
+    - [Test if the correct menu is being returned with slug](#test-if-correct-menu-gets-returned-based-on-slug)
 - [Bugs](#bugs)
   - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
   - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
   - [Problem with Hamburger Menu](#problem-with-hamburger-menu)
   - [Hamburger menu jumps as I try and open and close menu](#hamburger-menu-jumps-as-i-try-and-open-and-close-menu)
+  - [Operational error in database as trying to run auto test](#operational-error-in-database-as-trying-to-run-auto-test)
+  - [Carousel image not being aligned correctly](#carousel-image-not-being-aligned-correctly)
+  - [Favicon icon not displaying](#favicon-icon-not-displaying)
+  - [Heroku auto refreshing unnecessarily](#heroku-auto-refreshing-unnecessarily)
+  - [Navbar not at top of screen](#navbar-not-at-top-of-screen)
 - [Credits](#credits)
 
 ---
@@ -229,11 +246,13 @@ env.py
 
 ### [Features that have been included in this project](#features)
 
+#### [hamburger image on smaller devices](#features)
+
 When screen gets minimised all content gets reduced to hamburger menu
 
 ![header-hamburger-menu.png](static/images/readme/features/header-hamburger-menu.png)
 
-Authentication was implemented
+#### [Authentication](#features)
 
 When the user is not logged in, this image will be displayed
 
@@ -243,10 +262,29 @@ When the user is logged in, a welcome message will be displayed with a different
 
 ![header-login-image.png](static/images/readme/features/header-login-image.png)
 
+#### [Theme image](#features)
+
+- These themes are small images of the top right of the menu
+- This image represents the theme of the year
+- It will automatically change based on the time of the year
+- it works based on Summer, Winter, Autumn and Spring
+- These images are hard coded for now
+- But, as a future feature it will be in the database
+- This theme image only gets displayed on tablets and bigger devices
+
+![theme_image.png](static/images/readme/features/theme_image.png)
+
 ### [Future features to be added at a later stage](#features)
 
 - I would like to add a dashboard for the admin logged-in user
 - I have already included a role in the database for this feature
+
+#### [Theme image](#features)
+
+- As a future task as far as theming goes
+- I would like to create a model for storing all themes
+- Instead of, an image in the background creates some sort of animated background for themes
+- I can also do it were I create themes for easter or Christmas and others as needed
 
 ---
 
@@ -335,6 +373,41 @@ Responsive on Laptop devices
 
 ![manual-homepage-responsive-laptop.png](static/images/readme/testing/manual-homepage-responsive-laptop.png)
 
+#### [Testing responsiveness of the image theme](#manual-testing)
+
+- The theme is responsive across all devices
+- If you are on a mobile device, you won't see the theme
+- It will only be displayed when on a tablet or bigger
+
+When on a laptop or bigger screen size
+
+![image_theme_laptop.png](static/images/readme/testing/manual_testing/image_theme_laptop.png)
+
+When on tablet devices
+
+![image_theme_tablet.png](static/images/readme/testing/manual_testing/image_theme_tablet.png)
+
+When on mobile devices
+
+![image_theme_mobile.png](static/images/readme/testing/manual_testing/image_theme_mobile.png)
+
+#### [Testing responsiveness of the menu page](#manual-testing)
+
+- Testing to see how responsive the menu page is
+- on different screen sizes
+
+Responsive design on laptop
+
+![menu_page_laptop.png](static/images/readme/testing/manual_testing/menu_page_laptop.png)
+
+Responsive design on tablet
+
+![menu_page_tablet.png](static/images/readme/testing/manual_testing/menu_page_tablet.png)
+
+Responsive design on mobile
+
+![menu_page_mobile.png](static/images/readme/testing/manual_testing/menu_page_mobile.png)
+
 ### [Automated Testing](#testing)
 
 The following command can be used to run tests in Parallel
@@ -343,7 +416,7 @@ python manage.py test --parallel auto
 
 If you are just wanting to test conventionally
 
-#### Authentication
+#### [Authentication](#automated-testing)
 
 What was tested in this scenario:
 
@@ -355,7 +428,7 @@ I wanted to keep it basic
 
 ![auto-test-authentication.png](static/images/readme/testing/auto-test-authentication.png)
 
-#### Homepage
+#### [Homepage](#automated-testing)
 
 What was tested in this scenario
 
@@ -372,6 +445,76 @@ The results of a failing test
 Testing for a passing test
 
 ![auto-homepage-testing-what-pass.png](static/images/readme/testing/auto-homepage-testing-what-pass.png)
+
+#### [Test if theme file exists](#automated-testing)
+
+What was being tested?
+
+- I first tested if the file exists
+- Passing it the file name of "winterP.jpg"
+- Then after that I passed it the correct file name to if the test works
+- Passing it the file name of "winter.jpg"
+
+Passing theme on a failing test
+
+![theme_exists_fail.png](static/images/readme/testing/auto_testing/theme_exists_fail.png)
+
+Passing theme on a passing test
+
+![theme_exists_pass.png](static/images/readme/testing/auto_testing/theme_exists_pass.png)
+
+#### [Test if the correct theme is being displayed](#automated-testing)
+
+What was being tested?
+
+- Test if the correct them was returned
+- Passing in the month and the filename
+- The filename is just hardcoded static images for the theme
+
+Failing test for theme
+
+![theme_failing_test.png](static/images/readme/testing/auto_testing/theme_failing_test.png)
+
+Failing test case
+
+![theme_failing_test_case.png](static/images/readme/testing/auto_testing/theme_failing_test_case.png)
+
+Passing test for theme
+
+![theme_passing_test.png](static/images/readme/testing/auto_testing/theme_passing_test.png)
+
+Passing test cases
+
+![theme_failing_test_case.png](static/images/readme/testing/auto_testing/theme_failing_test_case.png)
+
+#### [Test if correct menu gets returned based on slug](#automated-testing)
+
+What was tested?
+
+- I purposefully made a spelling error to see if the Supper Menu fails
+- Then pass the correct test to see if it passes
+
+Failing test
+
+![menu_type_fail.png](static/images/readme/testing/auto_testing/menu_type_fail.png)
+
+Passing test
+
+![menu_type_passing.png](static/images/readme/testing/auto_testing/menu_type_passing.png)
+
+#### [Test if the correct menu is being returned with slug](#automated-testing)
+
+- Test if the correct menu is being returned
+- When I pass in the slug
+- The slug will be the url of the menu that I want to use
+
+Failing test
+
+![slug_fail.png](static/images/readme/testing/manual_testing/slug_fail.png)
+
+Passing test
+
+![slug_passing.png](static/images/readme/testing/manual_testing/slug_passing.png)
 
 ---
 
@@ -432,6 +575,121 @@ What is the Issue?
 
 ![hamburger-menu.png](static/images/readme/bugs/hamburger-menu.png)
 
+### [Operational error in database as trying to run auto test](#bugs)
+
+Problem?
+
+- When I tied to run python manage.py test
+- I get the following error
+- error message "django.db.utils.OperationalError: near 'None': syntax error"
+
+![OperationalError.png](static/images/readme/bugs/operationalError.png)
+
+Solution?
+
+- Destroy all data in database using the flush command
+- I used this command as I suspected that it was an issue in the database
+- I then went on to delete all migration files, but accidentally deleted directories at the same time
+- Then tried to makemigrations and migrate
+- But, for some reason it was not picking up my app like: home, menu, about, book_table models
+- so I did a bit of googling to find that I can makemigrations on a single app
+- which is what I did: python manage.py makemigrations home
+- doing that for all of my apps
+- this then created the migrations directory and the initial migration for that app
+- after running makemigrations on all my app I then had to migrate my db
+- then the page could load properly after that and all was sorted out
+- which I could also run python manage.py test
+- I was no longer getting that error
+- Then test files were now running as they were supposed to
+- the issue was all sorted, but now I have to create all my data again
+- re-populating my database with data from fixtures json files
+- I had to run the command one at a time python manage.py loaddata fixtures/fixture/chef_special.json
+
+![database_working correctly.png](static/images/readme/bugs/database_working%20correctly.png)
+
+Note to myself for a future reference?
+
+- In future don't use the flush command as it will completely wipe my db
+- try and delete my migrations directory and start from there
+
+### [Carousel image not being aligned correctly](#bugs)
+
+Problem?
+
+- The image is not being aligned neatly to the carousel on Mobile devices
+- This was tested on the iPhone 6/7/8 display
+
+![carousel_not_aligned.png](static/images/readme/bugs/carousel_not_aligned.png)
+
+Solution?
+
+- The bug has not been solved yet
+- I will try and create an issue for it later
+
+### [Favicon icon not displaying](#bugs)
+
+Problem?
+
+- Favicon icon does not want to load on server start
+
+favicon is not loaded in the browser tab
+
+![favicon_browser_tab.png](static/images/readme/bugs/favicon_browser_tab.png)
+
+favicon is not loaded in the console
+
+![favicon_console_error.png](static/images/readme/bugs/favicon_console_error.png)
+
+Solution?
+
+- The bug has not been solved yet
+- I will try and create an issue for it later
+
+### [Heroku auto refreshing unnecessarily](#bugs)
+
+Problem?
+
+- for some reason, heroku is auto refreshing
+- I expected that it is a problem with django_browser_reload package
+- This package I use for in development
+- It refreshes my server on file change
+
+Refreshes browser tab unnecessarily
+
+![heroku_refresh_browser_tab.png](static/images/readme/bugs/heroku_refresh_browser_tab.png)
+
+Refreshing in the Heroku console logs
+
+![heroku_refresh_console_logs.png](static/images/readme/bugs/heroku_refresh_console_logs.png)
+
+Solution?
+
+- I solved this problem by adding a simple logic to settings.py and urls.py
+- If Debug == 'True' then add django_browser_reload to constant lists
+- It needed to be a string for the Debug constant for when environment variables load
+- It loads it as a string
+
+Added logic to settings.py file
+
+![heroku_refresh_logic_to_settings.png](static/images/readme/bugs/heroku_refresh_logic_to_settings.png)
+
+Added logic to urls.py file
+
+![heroku_refresh_logic_to_urls.png](static/images/readme/bugs/heroku_refresh_logic_to_urls.png)
+
+### [Navbar not at top of screen](#bugs)
+
+Problem?
+
+- The navbar is not quite sitting at the top of the screen
+
+![navbar_not_at_top.png](static/images/readme/bugs/navbar_not_at_top.png)
+
+Solution?
+
+- The bug has not been solved yet
+- I will try and create an issue for it later
+
 ---
 
 ## [Credits](#table-of-content)
@@ -442,6 +700,8 @@ What is the Issue?
   the help of Figma
 - All images that you see on the homepage for Chef's Specials were taken from homepage, I tried my best to make sure
   that there was no copyright on it
+- [example on how to test if file exists](https://www.w3resource.com/python-exercises/unittest/python-unittest-exercise-5.php#:~:text=We%20use%20the%20self.,We%20use%20the%20self.)
+- [convert to base64 string](https://dev.to/nemecek_f/django-how-to-send-image-file-as-part-of-response-j05)
 - [Luke Buchanan](https://www.linkedin.com/in/lukebuchanan67/) - Mentor
 - [Code Institute](https://codeinstitute.net/) - Bootcamp
 

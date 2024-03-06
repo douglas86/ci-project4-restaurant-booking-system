@@ -1,5 +1,6 @@
 import base64
 import os
+
 from django.test import TestCase
 
 from menu import views
@@ -47,7 +48,7 @@ class TestTheme(TestCase, views.MenuView):
         # varaible for file path
         file = f"static/images/menu/{image}"
         # variable to return the filepath of the image in views.MenuView
-        displayed_file = self.images_to_be_displayed(month)
+        displayed_file = images_to_be_displayed(month)
 
         # varaibles to convert image to base64 string
         image_based_on_month = self.convert_to_base64(displayed_file)
