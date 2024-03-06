@@ -18,7 +18,7 @@ class TestMenu(TestCase, views.MenuView):
 
     def test_decide_on_breakfast_menu(self):
         """
-        Test if the breakfast menu is returned simulating self.slug
+        Test if the breakfast menu is returned simulating Slug
         """
 
         meal = views.MenuView.decide_on_meal(self)
@@ -31,7 +31,7 @@ class TestMenu(TestCase, views.MenuView):
 
     def test_decide_on_lunch_menu(self):
         """
-        Test if the lunch menu is returned simulating self.slug change
+        Test if the lunch menu is returned simulating slug change
         """
         self.slug = "lunch"
         meal = views.MenuView.decide_on_meal(self)
@@ -40,7 +40,7 @@ class TestMenu(TestCase, views.MenuView):
 
     def test_decide_on_supper_menu(self):
         """
-        Test if the supper menu is returned simulating self.slug change
+        Test if the supper menu is returned simulating slug change
         """
 
         self.slug = "supper"
@@ -57,7 +57,7 @@ class TestMenu(TestCase, views.MenuView):
         Test if the menu_type returned is the breakfast_menu
         """
 
-        menu = breakfast_meal()[0]
+        menu = views.breakfast_meal()[0]
 
         self.assertEqual(
             menu.title(), "Breakfast Menu", msg="Breakfast menu get returned"
@@ -68,7 +68,7 @@ class TestMenu(TestCase, views.MenuView):
         Test if the menu_type returned is the lunch_menu
         """
 
-        menu = lunch_meal()[0]
+        menu = views.lunch_meal()[0]
 
         self.assertEqual(menu.title(), "Lunch Menu", msg="Lunch menu gets returned")
 
@@ -77,6 +77,6 @@ class TestMenu(TestCase, views.MenuView):
         Test if the menu_type returned is the supper_menu
         """
 
-        menu = supper_meal()[0]
+        menu = views.supper_meal()[0]
 
         self.assertEqual(menu.title(), "Supper Menu", msg="Supper menu gets returned")
