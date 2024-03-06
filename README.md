@@ -36,6 +36,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [Test if theme file exists](#test-if-theme-file-exists)
     - [Test if the correct theme is being displayed](#test-if-the-correct-theme-is-being-displayed)
     - [Test if correct menu gets returned based on slug](#test-if-correct-menu-gets-returned-based-on-slug)
+    - [Test if the correct menu is being returned with slug](#test-if-correct-menu-gets-returned-based-on-slug)
 - [Bugs](#bugs)
   - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
   - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
@@ -500,6 +501,20 @@ Failing test
 Passing test
 
 ![menu_type_passing.png](static/images/readme/testing/auto_testing/menu_type_passing.png)
+
+#### [Test if the correct menu is being returned with slug](#automated-testing)
+
+- Test if the correct menu is being returned
+- When I pass in the slug
+- The slug will be the url of the menu that I want to use
+
+Failing test
+
+![slug_fail.png](static/images/readme/testing/manual_testing/slug_fail.png)
+
+Passing test
+
+![slug_passing.png](static/images/readme/testing/manual_testing/slug_passing.png)
 
 ---
 
