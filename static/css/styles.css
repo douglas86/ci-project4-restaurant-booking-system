@@ -1,238 +1,251 @@
 /*general*/
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: white url("/static/images/home/restaurant_image.jpg") no-repeat;
-  background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: white url("/static/images/home/restaurant_image.jpg") no-repeat;
+    background-size: cover;
 }
 
 h1 {
-  justify-content: center;
-  text-align: center;
-  vertical-align: middle;
-  padding: 0.5em;
-  margin-top: 1em;
-  margin-left: 1em;
-  font-family: "Protest Revolution", sans-serif;
-  font-weight: bolder;
-  font-style: normal;
-  border: 5px solid #e7e08b;
-  color: black;
-  -webkit-text-stroke-width: 2px;
-  transform: rotate(-5deg);
-  letter-spacing: 5px;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.5em;
+    margin-top: 1em;
+    margin-left: 1em;
+    font-family: "Protest Revolution", sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+    border: 5px solid #e7e08b;
+    color: black;
+    -webkit-text-stroke-width: 2px;
+    transform: rotate(-5deg);
+    letter-spacing: 5px;
 }
+
 h3 {
-  text-align: center;
-  padding: 0.5em;
+    text-align: center;
+    padding: 0.5em;
 }
 
 p {
-  text-align: center;
+    text-align: center;
 }
 
 /*header*/
 .mobile {
-  display: block;
+    display: block;
 }
 
 .tablet {
-  display: none;
+    display: none;
 }
 
 #nav {
-  display: flex;
-  background-color: #b5cbb7;
+    display: flex;
+    background-color: #b5cbb7;
 }
 
 #nav button {
-  margin: 1em;
-  border: none;
-  background-color: transparent;
+    margin: 1em;
+    border: none;
+    background-color: transparent;
 }
 
 #icon-links {
-  display: none;
-  background-color: #b5cbb7;
+    display: none;
+    background-color: #b5cbb7;
 }
 
 #icon-links a {
-  text-decoration: none;
-  color: black;
-  font-size: large;
-  font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: bold;
 }
 
 #icon-links a:hover {
-  color: #e7e08b;
-  font-weight: bolder;
+    color: #e7e08b;
+    font-weight: bolder;
 }
 
 .links {
-  display: flex;
+    display: flex;
 }
 
 .links img {
-  margin: 1em;
+    margin: 1em;
 }
 
 .links p {
-  width: 80%;
-  margin: auto;
+    width: 80%;
+    margin: auto;
 }
 
 .authentication-icon {
-  display: flex;
-  width: 80%;
+    display: flex;
+    width: 80%;
 }
 
 #user-message {
-  width: 80%;
-  text-align: center;
-  margin: auto;
+    width: 80%;
+    text-align: center;
+    margin: auto;
 }
 
 .auth-icon {
-  padding: 0.8em;
+    padding: 0.8em;
 }
 
 .auth-icon p {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 /*main*/
 /*title*/
 .heading {
-  display: flex;
-  padding: 1em;
+    display: flex;
+    padding: 1em;
 }
+
 .title {
-  background-color: #d3d3d3;
-  opacity: 0.6;
+    background-color: #d3d3d3;
+    opacity: 0.6;
 }
 
 /*carousel*/
 .default-carousel-image img {
-  width: 100%;
-  padding: 1em;
+    width: 100%;
+    padding: 1em;
 }
 
 .carousel-inner {
-  display: flex;
-  width: 100%;
-  height: 45em;
+    display: flex;
+    width: 100%;
+    height: 45em;
 }
 
 .card {
-  width: 80%;
-  margin: auto;
-  padding: 1em;
-  background-color: #d3d3d3;
+    width: 80%;
+    margin: auto;
+    padding: 1em;
+    background-color: #d3d3d3;
 }
 
 .image {
-  margin: auto;
+    margin: auto;
 }
 
 .card img {
-  width: 18em;
-  height: 18em;
-  margin: auto;
+    width: 18em;
+    height: 18em;
+    margin: auto;
 }
 
 .card-title {
-  padding: 1em;
-  text-align: center;
+    padding: 1em;
+    text-align: center;
 }
 
 .ingredients {
-  padding: 1em;
+    padding: 1em;
 }
 
 /*forms*/
 form {
-  padding: 2em;
-  margin-bottom: 1em;
+    padding: 2em;
+    margin-bottom: 1em;
 }
 
 form input[type="text"],
 form input[type="password"],
 form input[type="email"] {
-  width: 100%;
-  border-radius: 5px;
-  margin: 1em;
+    width: 100%;
+    border-radius: 5px;
+    margin: 1em;
 }
 
 /* menu */
 .menu {
-  background-color: #d3d3d3;
-  width: 80%;
-  margin: 0 10%;
-  padding: 1em;
-  opacity: 0.85;
-  font-weight: bold;
+    background-color: #d3d3d3;
+    width: 80%;
+    margin: 1em 10%;
+    padding: 1em;
+    opacity: 0.85;
+    font-weight: bold;
 }
+
 .main_menu {
-  display: inline-block;
-  list-style-type: none;
-  width: 100%;
-  padding: 0.5em;
+    display: inline-block;
+    list-style-type: none;
+    width: 100%;
+    padding: 0.5em;
 }
+
 .menu_items {
-  margin: auto;
-  text-align: center;
+    margin: auto;
+    text-align: center;
 }
+
 .menu_items a {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .menu_context h4,
 .starter h4 {
-  text-align: center;
+    text-align: center;
 }
+
 .menu_title {
-  color: brown;
-  font-weight: 500;
-  opacity: 1;
+    color: brown;
+    font-weight: 500;
+    opacity: 1;
 }
+
 .theme {
-  display: none;
+    display: none;
+}
+
+/*about*/
+.about-start, .about-middle, .about-end {
+    margin: 0.5em auto;
 }
 
 /*footer*/
 footer {
-  margin-top: auto;
-  background-color: #b5cbb7;
-  bottom: 0;
+    margin-top: auto;
+    background-color: #b5cbb7;
+    bottom: 0;
 }
 
 .footer {
-  display: block;
-  padding: 1em;
-  text-align: center;
+    display: block;
+    padding: 1em;
+    text-align: center;
 }
 
 .contact-details {
-  display: inline-block;
-  justify-content: space-between;
+    display: inline-block;
+    justify-content: space-between;
 }
 
 .contact-details img {
-  width: 1.8em;
-  height: 1.8em;
+    width: 1.8em;
+    height: 1.8em;
 }
 
 .designer {
-  display: flex;
-  justify-content: space-between;
-  padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
 }
 
 .copyright {
-  display: flex;
+    display: flex;
 }
 
 .copyright img {
-  width: 1.2em;
-  height: 1.2em;
+    width: 1.2em;
+    height: 1.2em;
 }
