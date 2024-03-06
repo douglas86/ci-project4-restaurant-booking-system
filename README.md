@@ -31,6 +31,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [Problem with Hamburger Menu](#problem-with-hamburger-menu)
   - [Hamburger menu jumps as I try and open and close menu](#hamburger-menu-jumps-as-i-try-and-open-and-close-menu)
   - [Operational error in database as trying to run auto test](#operational-error-in-database-as-trying-to-run-auto-test)
+  - [Carousel image not being aligned correctly](#carousel-image-not-being-aligned-correctly)
 - [Credits](#credits)
 
 ---
@@ -478,6 +479,25 @@ Problem?
 - This was tested on the iPhone 6/7/8 display
 
 ![carousel_not_aligned.png](static/images/readme/bugs/carousel_not_aligned.png)
+
+Solution?
+
+- The bug has not been solved yet
+- I will try and create an issue for it later
+
+### [Favicon icon not displaying](#bugs)
+
+Problem?
+
+- Favicon icon does not want to load on server start
+
+favicon is not loaded in the browser tab
+
+![favicon_browser_tab.png](static/images/readme/bugs/favicon_browser_tab.png)
+
+favicon is not loaded in the console
+
+![favicon_console_error.png](static/images/readme/bugs/favicon_console_error.png)
 
 Solution?
 
