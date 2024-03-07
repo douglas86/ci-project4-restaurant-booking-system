@@ -32,6 +32,10 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [Testing responsiveness of the image theme](#testing-responsiveness-of-the-image-theme)
     - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
     - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
+    - [Html validation testing](#html-validation-testing)
+    - [Css validation testing](#css-validation-testing)
+    - [Wave testing for accessibility](#wave-testing-for-accessibility)
+    - [lighthouse testing](#lighthouse-testing)
   - [Automated Testing](#automated-testing)
     - [Authentication](#authentication-1)
     - [Homepage](#homepage-2)
@@ -186,6 +190,20 @@ Once the Issues were created, I gave them their labels using MOSCOW priorities
 After all, planning is in place the milestone section shows percentage done
 
 ![moscow-menu-milestone.png](static/images/docs/planning/moscow-menu-milestone.png)
+
+About Page
+
+- Screenshot of the issues board using moscow priorities
+
+![moscow-about-issues.png](static/images/docs/planning/moscow-about-issues.png)
+
+- The kambam board in action
+
+![kambam-about.png](static/images/docs/planning/kambam-about.png)
+
+- When the last section was added, this is the milestone thus far
+
+![milestones-about.png](static/images/docs/planning/milestones-about.png)
 
 ### [How to start this project locally](#planning)
 
@@ -434,6 +452,38 @@ Responsive design on Tablet
 Responsive design on Laptop
 
 ![about_responsive_laptop.png](static/images/docs/testing/manual_testing/about_responsive_laptop.png)
+
+#### [Html validation testing](#manual-testing)
+
+- I tested this on Html Validator
+- Using the Heroku link of my live site
+- As the validator won't work when copying and pasting code
+- This link was tested on the about page
+
+![html-validator-link.png](static/images/docs/testing/manual_testing/html-validator-link.png)
+
+![html-validator-results.png](static/images/docs/testing/manual_testing/html-validator-results.png)
+
+#### [Css validation testing](#manual-testing)
+
+- The only errors that css picked up were with bootstrap
+- There were no other errors with my css code
+
+![css-validation.png](static/images/docs/testing/manual_testing/css-validation.png)
+
+#### [Wave testing for accessibility](#manual-testing)
+
+- With the wave validator, there were just two contrast issues
+- With the footer this will be sorted out when I sort out the bug on the footer
+
+![wave-validator-about.png](static/images/docs/testing/manual_testing/wave-validator-about.png)
+
+#### [lighthouse testing](#manual-testing)
+
+- this lighthouse testing was done in incognito mode
+- As some of my extensions were messing with the results
+
+![lighthouse-about.png](static/images/docs/testing/manual_testing/lighthouse-about.png)
 
 ### [Automated Testing](#testing)
 
