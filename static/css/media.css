@@ -10,7 +10,7 @@
         background-color: #b5cbb7;
     }
 
-    #icon-links {
+    .icon-links {
         display: flex;
         width: 80%;
         justify-content: space-evenly;
