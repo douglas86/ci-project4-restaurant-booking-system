@@ -4,7 +4,7 @@ It will also hide the hamburger menu when on a screen tablet or bigger
  */
 const hamburgerMenu = () => {
     let iconLinks = document.getElementsByClassName('icon-links')[0]
-    let userMessage = document.getElementById('user-message')
+    let userMessage = document.getElementsByClassName('user-message')[0]
     let authIcon = document.getElementsByClassName('auth-icon')[0]
     let mobile = document.getElementsByClassName('mobile')[0]
 

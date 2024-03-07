@@ -84,7 +84,7 @@ p {
     width: 80%;
 }
 
-#user-message {
+.user-message {
     width: 80%;
     text-align: center;
     margin: auto;
