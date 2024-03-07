@@ -24,6 +24,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [hamburger image on smaller devices](#hamburger-image-on-smaller-devices)
     - [Authentication](#authentication)
     - [Theme image](#theme-image)
+    - [Description of the restaurant](#description-of-the-restaurant)
   - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
     - [Theme image](#theme-image-1)
 - [Testing](#testing)
@@ -275,6 +276,13 @@ When the user is logged in, a welcome message will be displayed with a different
 - This theme image only gets displayed on tablets and bigger devices
 
 ![theme_image.png](static/images/docs/features/theme_image.png)
+
+#### [Description of the restaurant](#features)
+
+- Created a description about the restaurant
+- With its very beginnings
+
+![description.png](static/images/docs/features/description.png)
 
 ### [Future features to be added at a later stage](#features)
 
