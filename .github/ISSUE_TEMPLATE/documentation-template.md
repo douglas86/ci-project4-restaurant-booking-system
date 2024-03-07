@@ -1,6 +1,6 @@
 ---
 name: Documentation template
-about: This is an issue for content that needs to be added to the readme file
+about: This is an issue for content that needs to be added to the docs file
 title: 'Docs: <title>'
 labels: documentation
 assignees: ''
