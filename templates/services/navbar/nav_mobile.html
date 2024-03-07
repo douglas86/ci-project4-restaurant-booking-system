@@ -1,0 +1,13 @@
+{% load static %}
+
+<nav id="nav">
+    <button type="button" class="hamburger-menu" onclick="hamburgerMenu()">
+        <img src="{% static 'images/navbar/Hamburger.png' %}" alt="not found">
+    </button>
+
+    {#        Loads Page icons#}
+    {% include 'services/navbar/icons.html' %}
+
+    {#        Loads authentication icons#}
+    {% include 'services/navbar/auth.html' %}
+</nav>
