@@ -3,38 +3,51 @@ This function is to hide and un hide elements when hamburger icon is open or clo
 It will also hide the hamburger menu when on a screen tablet or bigger
  */
 const hamburgerMenu = () => {
-	let iconLinks = document.getElementById("icon-links");
-	let nav = document.getElementById("nav");
-	let userMessage = document.getElementById("user-message");
-	let authIcon = document.getElementsByClassName("auth-icon")[0];
+    let iconLinks = document.getElementsByClassName('icon-links')[0]
+    let userMessage = document.getElementsByClassName('user-message')[0]
+    let authIcon = document.getElementsByClassName('auth-icon')[0]
+    let mobile = document.getElementsByClassName('mobile')[0]
 
-	if (iconLinks.style.display === "block") {
-		iconLinks.style.display = "none";
-		nav.style.display = "flex";
-		userMessage.style.display = "block";
-		authIcon.style.display = "block";
-	} else {
-		iconLinks.style.display = "block";
-		nav.style.display = "block";
-		userMessage.style.display = "none";
-		authIcon.style.display = "none";
-	}
-};
+    // toggle to show and hide a menu
+    if (iconLinks.style.display === "block") {
+        iconLinks.style.display = "none"
+        userMessage.style.display = 'block'
+        authIcon.style.display = 'block'
+        mobile.style.display = 'flex'
+    } else {
+        iconLinks.style.display = "block"
+        userMessage.style.display = 'none'
+        authIcon.style.display = 'none'
+        mobile.style.display = 'block'
+    }
+}
 
-const dropdownMenu = () => {
-	document.getElementById("dropdownContent").classList.toggle("show");
-};
+/*
+This function is used to detect screen sizes
+ */
+const resizeHandler = () => {
+    // variable to check window width
+    const matchResults = window.matchMedia("(min-width:768px)")
 
-// Close dropdown menu if user clicks outside
-window.onclick = (event) => {
-	if (!event.target.matches(".dropdownButton")) {
-		let dropdown = document.getElementsByClassName("dropdownContent");
+    const mobile = document.getElementsByClassName('mobile')[0]
+    const tablet = document.getElementsByClassName('tablet')[0]
+    const iconLinks = document.getElementsByClassName('icon-links')[0]
 
-		for (let i = 0; i < dropdown.length; i++) {
-			let openDropdown = dropdown[i];
-			if (openDropdown.classList.contains("show")) {
-				openDropdown.classList.remove("show");
-			}
-		}
-	}
-};
+    // when window width is tablet or bigger
+    if (matchResults.matches === true) {
+        mobile.style.display = 'none'
+        tablet.style.display = 'flex'
+    } else {
+        tablet.style.display = 'none'
+        // toggle to change the display of mobile
+        // depending on if the style for iconLinks variable is block or not
+        if (iconLinks.style.display === 'block') {
+            mobile.style.display = 'block'
+        } else {
+            mobile.style.display = 'flex'
+        }
+    }
+}
+
+// event listener for handling the width resizing
+window.addEventListener('resize', resizeHandler)

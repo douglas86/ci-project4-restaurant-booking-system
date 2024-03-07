@@ -24,12 +24,18 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [hamburger image on smaller devices](#hamburger-image-on-smaller-devices)
     - [Authentication](#authentication)
     - [Theme image](#theme-image)
+    - [Description of the restaurant](#description-of-the-restaurant)
   - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
     - [Theme image](#theme-image-1)
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
     - [Testing responsiveness of the image theme](#testing-responsiveness-of-the-image-theme)
     - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
+    - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
+    - [Html validation testing](#html-validation-testing)
+    - [Css validation testing](#css-validation-testing)
+    - [Wave testing for accessibility](#wave-testing-for-accessibility)
+    - [lighthouse testing](#lighthouse-testing)
   - [Automated Testing](#automated-testing)
     - [Authentication](#authentication-1)
     - [Homepage](#homepage-2)
@@ -47,6 +53,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [Favicon icon not displaying](#favicon-icon-not-displaying)
   - [Heroku auto refreshing unnecessarily](#heroku-auto-refreshing-unnecessarily)
   - [Navbar not at top of screen](#navbar-not-at-top-of-screen)
+  - [Performance issues in page loading](#performance-issues-in-page-loading)
 - [Credits](#credits)
 
 ---
@@ -59,45 +66,45 @@ These Wireframes and UX Designs were designed on Figma
 
 #### Homepage
 
-![wireframe-homepage.png](static/images/readme/planning/wireframe-homepage.png)
+![wireframe-homepage.png](static/images/docs/planning/wireframe-homepage.png)
 
 #### Menu Page
 
-![wireframe-menu-page.png](static/images/readme/planning/wireframe-menu-page.png)
+![wireframe-menu-page.png](static/images/docs/planning/wireframe-menu-page.png)
 
 #### About Page
 
-![wireframe-about.png](static/images/readme/planning/wireframe-about.png)
+![wireframe-about.png](static/images/docs/planning/wireframe-about.png)
 
 #### Book a table Page
 
-![wireframe-book-table.png](static/images/readme/planning/wireframe-book-table.png)
+![wireframe-book-table.png](static/images/docs/planning/wireframe-book-table.png)
 
 ### [Ux-design](#planning)
 
 #### Home Page
 
-![ux-homepage.png](static/images/readme/planning/ux-homepage.png)
+![ux-homepage.png](static/images/docs/planning/ux-homepage.png)
 
 #### Menu Page
 
-![ux-menu-page.png](static/images/readme/planning/ux-menu-page.png)
+![ux-menu-page.png](static/images/docs/planning/ux-menu-page.png)
 
 #### Book Table Page
 
-![ux-book-table.png](static/images/readme/planning/ux-book-table.png)
+![ux-book-table.png](static/images/docs/planning/ux-book-table.png)
 
 #### About Page
 
-![ux-about.png](static/images/readme/planning/ux-about.png)
+![ux-about.png](static/images/docs/planning/ux-about.png)
 
 ### ERD diagram
 
-![ERD diagram.png](static/images/readme/planning/ERD%20diagram.png)
+![ERD diagram.png](static/images/docs/planning/ERD%20diagram.png)
 
 ### [Colour Pallet](#planning)
 
-![color-pallet.png](static/images/readme/planning/color-pallet.png)
+![color-pallet.png](static/images/docs/planning/color-pallet.png)
 
 Click [here](https://coolors.co/9f7e69-d2bba0-f2efc7-f7ffe0-ffeee2) to see where I got this color pallet from
 
@@ -116,11 +123,11 @@ This Project was done in incremental stages, trying my best to follow the agile 
 
 Header
 
-![Screenshot from 2024-02-04 14-57-56.png](static/images/readme/moscow-header.png)
+![Screenshot from 2024-02-04 14-57-56.png](static/images/docs/moscow-header.png)
 
 Kambam board
 
-![kambam-board.png](static/images/readme/planning/kambam-board.png)
+![kambam-board.png](static/images/docs/planning/kambam-board.png)
 
 Explanation of the columns on the board:
 
@@ -135,34 +142,34 @@ Milestones
 This project was done in incremental stages, building it page by page.
 As such, the milestone percentage will change slightly in each iteration.
 
-![milestones.png](static/images/readme/planning/milestones.png)
+![milestones.png](static/images/docs/planning/milestones.png)
 
 This is when I am 46% done, but only the header issue was added
 
-![milestones-header-46.png](static/images/readme/planning/milestones-header-46.png)
+![milestones-header-46.png](static/images/docs/planning/milestones-header-46.png)
 
 Footer
 
 - The footer had only three issues in it, so I only labeled them as Must-have
 - There was also an issue that I created for Documentation
 
-![moscow-footer.png](static/images/readme/planning/moscow-footer.png)
+![moscow-footer.png](static/images/docs/planning/moscow-footer.png)
 
 - Once the footer had been completed, 84% was done.
 
-![milestone-footer.png](static/images/readme/planning/milestone-footer.png)
+![milestone-footer.png](static/images/docs/planning/milestone-footer.png)
 
 Homepage
 
 - There were only four issues added for this section
 - As I didn't plan on doing a lot of work here
 
-![moscow-homepage.png](static/images/readme/planning/moscow-homepage.png)
+![moscow-homepage.png](static/images/docs/planning/moscow-homepage.png)
 
 - The milestone was taken after the homepage was done
 - When the Menu Page and About Page were added as issues
 
-![milestone-homepage.png](static/images/readme/planning/milestone-homepage.png)
+![milestone-homepage.png](static/images/docs/planning/milestone-homepage.png)
 
 Menu Page
 
@@ -174,15 +181,29 @@ Menu Page
 
 Sticky notes on Figma to plan what sort of issues I am wanting to solve
 
-![moscow-menu-planning.png](static/images/readme/planning/moscow-menu-planning.png)
+![moscow-menu-planning.png](static/images/docs/planning/moscow-menu-planning.png)
 
 Once the Issues were created, I gave them their labels using MOSCOW priorities
 
-![moscow-menu-create-issues.png](static/images/readme/planning/moscow-menu-create-issues.png)
+![moscow-menu-create-issues.png](static/images/docs/planning/moscow-menu-create-issues.png)
 
 After all, planning is in place the milestone section shows percentage done
 
-![moscow-menu-milestone.png](static/images/readme/planning/moscow-menu-milestone.png)
+![moscow-menu-milestone.png](static/images/docs/planning/moscow-menu-milestone.png)
+
+About Page
+
+- Screenshot of the issues board using moscow priorities
+
+![moscow-about-issues.png](static/images/docs/planning/moscow-about-issues.png)
+
+- The kambam board in action
+
+![kambam-about.png](static/images/docs/planning/kambam-about.png)
+
+- When the last section was added, this is the milestone thus far
+
+![milestones-about.png](static/images/docs/planning/milestones-about.png)
 
 ### [How to start this project locally](#planning)
 
@@ -213,7 +234,7 @@ After all, planning is in place the milestone section shows percentage done
 
 env.py
 
-![env.png](static/images/readme/env.png)
+![env.png](static/images/docs/env.png)
 
 ### [How this project was deployed to Heroku](#planning)
 
@@ -250,17 +271,17 @@ env.py
 
 When screen gets minimised all content gets reduced to hamburger menu
 
-![header-hamburger-menu.png](static/images/readme/features/header-hamburger-menu.png)
+![header-hamburger-menu.png](static/images/docs/features/header-hamburger-menu.png)
 
 #### [Authentication](#features)
 
 When the user is not logged in, this image will be displayed
 
-![header-logout-image.png](static/images/readme/features/header-logout-image.png)
+![header-logout-image.png](static/images/docs/features/header-logout-image.png)
 
 When the user is logged in, a welcome message will be displayed with a different image
 
-![header-login-image.png](static/images/readme/features/header-login-image.png)
+![header-login-image.png](static/images/docs/features/header-login-image.png)
 
 #### [Theme image](#features)
 
@@ -272,7 +293,14 @@ When the user is logged in, a welcome message will be displayed with a different
 - But, as a future feature it will be in the database
 - This theme image only gets displayed on tablets and bigger devices
 
-![theme_image.png](static/images/readme/features/theme_image.png)
+![theme_image.png](static/images/docs/features/theme_image.png)
+
+#### [Description of the restaurant](#features)
+
+- Created a description about the restaurant
+- With its very beginnings
+
+![description.png](static/images/docs/features/description.png)
 
 ### [Future features to be added at a later stage](#features)
 
@@ -292,7 +320,7 @@ When the user is logged in, a welcome message will be displayed with a different
 
 This is generally the cycle that I tried to follow for testing
 
-![testing-lifecycle.png](static/images/readme/testing/testing-lifecycle.png)
+![testing-lifecycle.png](static/images/docs/testing/testing-lifecycle.png)
 
 ### [Manual Testing](#testing)
 
@@ -303,37 +331,37 @@ There is a collapsable hamburger menu on devices smaller than laptop
 
 This is what it looks like on a laptop and larger
 
-![header-desktop.png](static/images/readme/testing/header-desktop.png)
+![header-desktop.png](static/images/docs/testing/header-desktop.png)
 
 When the navbar becomes smaller than laptop, this is what it will look like
 
-![header-mobile.png](static/images/readme/testing/header-mobile.png)
+![header-mobile.png](static/images/docs/testing/header-mobile.png)
 
 When the hamburger icon menu is open
 
-![header-ham-open.png](static/images/readme/testing/header-ham-open.png)
+![header-ham-open.png](static/images/docs/testing/header-ham-open.png)
 
 Testing with html validator
 
-![header-html-validator.png](static/images/readme/testing/header-html-validator.png)
+![header-html-validator.png](static/images/docs/testing/header-html-validator.png)
 
 The results can be
 found [here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fci-booking-system-5abd35239ade.herokuapp.com%2F)
 
 Testing with a css validator
 
-![header-css-validator.png](static/images/readme/testing/header-css-validator.png)
+![header-css-validator.png](static/images/docs/testing/header-css-validator.png)
 
 The results can be
 found [here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fci-booking-system-5abd35239ade.herokuapp.com%2F)
 
 This testing was conducted on Lighthouse with Desktop in mind
 
-![testing-header.png](static/images/readme/testing/testing-header.png)
+![testing-header.png](static/images/docs/testing/testing-header.png)
 
 This testing was conducted on Lighthouse with Mobile in mind
 
-![testing-header2.png](static/images/readme/testing/testing-header2.png)
+![testing-header2.png](static/images/docs/testing/testing-header2.png)
 
 #### Homepage
 
@@ -344,11 +372,11 @@ This testing was conducted on Lighthouse with Mobile in mind
 
 If all data is correct, it will show this in the admin panel
 
-![manual-homepage-db-pass.png](static/images/readme/testing/manual-homepage-db-pass.png)
+![manual-homepage-db-pass.png](static/images/docs/testing/manual-homepage-db-pass.png)
 
 If you are trying to enter more than three entries for breakfast
 
-![manual-homepage-db-fail.png](static/images/readme/testing/manual-homepage-db-fail.png)
+![manual-homepage-db-fail.png](static/images/docs/testing/manual-homepage-db-fail.png)
 
 - Was testing to see if I could get the correct meals from the database
 - Just by changing the filter variable
@@ -356,22 +384,22 @@ If you are trying to enter more than three entries for breakfast
 - Zero being breakfast, one being lunched and 2 being supper
 - There is also a number three that means that if it doesn't correspond to any number that will then run
 
-![manual-homepage-meal.png](static/images/readme/testing/manual-homepage-meal.png)
+![manual-homepage-meal.png](static/images/docs/testing/manual-homepage-meal.png)
 
 - Tested responsiveness of the carousel
 - I don't test for anything below 400pixels
 
 Responsive on Mobile devices
 
-![manual-homepage-responsive-mobile.png](static/images/readme/testing/manual-homepage-responsive-mobile.png)
+![manual-homepage-responsive-mobile.png](static/images/docs/testing/manual-homepage-responsive-mobile.png)
 
 Responsive on Tablet devices
 
-![manual-homepage-responsive-tablet.png](static/images/readme/testing/manual-homepage-responsive-tablet.png)
+![manual-homepage-responsive-tablet.png](static/images/docs/testing/manual-homepage-responsive-tablet.png)
 
 Responsive on Laptop devices
 
-![manual-homepage-responsive-laptop.png](static/images/readme/testing/manual-homepage-responsive-laptop.png)
+![manual-homepage-responsive-laptop.png](static/images/docs/testing/manual-homepage-responsive-laptop.png)
 
 #### [Testing responsiveness of the image theme](#manual-testing)
 
@@ -381,15 +409,15 @@ Responsive on Laptop devices
 
 When on a laptop or bigger screen size
 
-![image_theme_laptop.png](static/images/readme/testing/manual_testing/image_theme_laptop.png)
+![image_theme_laptop.png](static/images/docs/testing/manual_testing/image_theme_laptop.png)
 
 When on tablet devices
 
-![image_theme_tablet.png](static/images/readme/testing/manual_testing/image_theme_tablet.png)
+![image_theme_tablet.png](static/images/docs/testing/manual_testing/image_theme_tablet.png)
 
 When on mobile devices
 
-![image_theme_mobile.png](static/images/readme/testing/manual_testing/image_theme_mobile.png)
+![image_theme_mobile.png](static/images/docs/testing/manual_testing/image_theme_mobile.png)
 
 #### [Testing responsiveness of the menu page](#manual-testing)
 
@@ -398,15 +426,64 @@ When on mobile devices
 
 Responsive design on laptop
 
-![menu_page_laptop.png](static/images/readme/testing/manual_testing/menu_page_laptop.png)
+![menu_page_laptop.png](static/images/docs/testing/manual_testing/menu_page_laptop.png)
 
 Responsive design on tablet
 
-![menu_page_tablet.png](static/images/readme/testing/manual_testing/menu_page_tablet.png)
+![menu_page_tablet.png](static/images/docs/testing/manual_testing/menu_page_tablet.png)
 
 Responsive design on mobile
 
-![menu_page_mobile.png](static/images/readme/testing/manual_testing/menu_page_mobile.png)
+![menu_page_mobile.png](static/images/docs/testing/manual_testing/menu_page_mobile.png)
+
+#### [Testing the responsiveness of the about page](#manual-testing)
+
+- This testing section was to test to see how the about page
+- is going to look at different screen sizes
+
+Responsive design on mobile
+
+![about_responsive_mobile.png](static/images/docs/testing/manual_testing/about_responsive_mobile.png)
+
+Responsive design on Tablet
+
+![about_responsive_tablet.png](static/images/docs/testing/manual_testing/about_responsive_tablet.png)
+
+Responsive design on Laptop
+
+![about_responsive_laptop.png](static/images/docs/testing/manual_testing/about_responsive_laptop.png)
+
+#### [Html validation testing](#manual-testing)
+
+- I tested this on Html Validator
+- Using the Heroku link of my live site
+- As the validator won't work when copying and pasting code
+- This link was tested on the about page
+
+![html-validator-link.png](static/images/docs/testing/manual_testing/html-validator-link.png)
+
+![html-validator-results.png](static/images/docs/testing/manual_testing/html-validator-results.png)
+
+#### [Css validation testing](#manual-testing)
+
+- The only errors that css picked up were with bootstrap
+- There were no other errors with my css code
+
+![css-validation.png](static/images/docs/testing/manual_testing/css-validation.png)
+
+#### [Wave testing for accessibility](#manual-testing)
+
+- With the wave validator, there were just two contrast issues
+- With the footer this will be sorted out when I sort out the bug on the footer
+
+![wave-validator-about.png](static/images/docs/testing/manual_testing/wave-validator-about.png)
+
+#### [lighthouse testing](#manual-testing)
+
+- this lighthouse testing was done in incognito mode
+- As some of my extensions were messing with the results
+
+![lighthouse-about.png](static/images/docs/testing/manual_testing/lighthouse-about.png)
 
 ### [Automated Testing](#testing)
 
@@ -426,7 +503,7 @@ What was tested in this scenario:
 As this is the first time I have written auto tests by myself,
 I wanted to keep it basic
 
-![auto-test-authentication.png](static/images/readme/testing/auto-test-authentication.png)
+![auto-test-authentication.png](static/images/docs/testing/auto-test-authentication.png)
 
 #### [Homepage](#automated-testing)
 
@@ -436,15 +513,15 @@ What was tested in this scenario
 
 Changing the assertEqual variable to a number that is not zero
 
-![auto-homepage-testing-what.png](static/images/readme/testing/auto-homepage-testing-what.png)
+![auto-homepage-testing-what.png](static/images/docs/testing/auto-homepage-testing-what.png)
 
 The results of a failing test
 
-![auto-homepage-testing-results-fail.png](static/images/readme/testing/auto-homepage-testing-results-fail.png)
+![auto-homepage-testing-results-fail.png](static/images/docs/testing/auto-homepage-testing-results-fail.png)
 
 Testing for a passing test
 
-![auto-homepage-testing-what-pass.png](static/images/readme/testing/auto-homepage-testing-what-pass.png)
+![auto-homepage-testing-what-pass.png](static/images/docs/testing/auto-homepage-testing-what-pass.png)
 
 #### [Test if theme file exists](#automated-testing)
 
@@ -457,11 +534,11 @@ What was being tested?
 
 Passing theme on a failing test
 
-![theme_exists_fail.png](static/images/readme/testing/auto_testing/theme_exists_fail.png)
+![theme_exists_fail.png](static/images/docs/testing/auto_testing/theme_exists_fail.png)
 
 Passing theme on a passing test
 
-![theme_exists_pass.png](static/images/readme/testing/auto_testing/theme_exists_pass.png)
+![theme_exists_pass.png](static/images/docs/testing/auto_testing/theme_exists_pass.png)
 
 #### [Test if the correct theme is being displayed](#automated-testing)
 
@@ -473,19 +550,19 @@ What was being tested?
 
 Failing test for theme
 
-![theme_failing_test.png](static/images/readme/testing/auto_testing/theme_failing_test.png)
+![theme_failing_test.png](static/images/docs/testing/auto_testing/theme_failing_test.png)
 
 Failing test case
 
-![theme_failing_test_case.png](static/images/readme/testing/auto_testing/theme_failing_test_case.png)
+![theme_failing_test_case.png](static/images/docs/testing/auto_testing/theme_failing_test_case.png)
 
 Passing test for theme
 
-![theme_passing_test.png](static/images/readme/testing/auto_testing/theme_passing_test.png)
+![theme_passing_test.png](static/images/docs/testing/auto_testing/theme_passing_test.png)
 
 Passing test cases
 
-![theme_failing_test_case.png](static/images/readme/testing/auto_testing/theme_failing_test_case.png)
+![theme_failing_test_case.png](static/images/docs/testing/auto_testing/theme_failing_test_case.png)
 
 #### [Test if correct menu gets returned based on slug](#automated-testing)
 
@@ -496,11 +573,11 @@ What was tested?
 
 Failing test
 
-![menu_type_fail.png](static/images/readme/testing/auto_testing/menu_type_fail.png)
+![menu_type_fail.png](static/images/docs/testing/auto_testing/menu_type_fail.png)
 
 Passing test
 
-![menu_type_passing.png](static/images/readme/testing/auto_testing/menu_type_passing.png)
+![menu_type_passing.png](static/images/docs/testing/auto_testing/menu_type_passing.png)
 
 #### [Test if the correct menu is being returned with slug](#automated-testing)
 
@@ -510,11 +587,11 @@ Passing test
 
 Failing test
 
-![slug_fail.png](static/images/readme/testing/manual_testing/slug_fail.png)
+![slug_fail.png](static/images/docs/testing/manual_testing/slug_fail.png)
 
 Passing test
 
-![slug_passing.png](static/images/readme/testing/manual_testing/slug_passing.png)
+![slug_passing.png](static/images/docs/testing/manual_testing/slug_passing.png)
 
 ---
 
@@ -524,26 +601,26 @@ Passing test
 
 The text was not aligned correctly to the icon above it
 
-![header-text-incorrect.png](static/images/readme/bugs/header-text-incorrect.png)
+![header-text-incorrect.png](static/images/docs/bugs/header-text-incorrect.png)
 
 - This bug was solved
 - by placing it inside a container
 - then I could manipulate it with CSS
 
-![header-text-correct.png](static/images/readme/bugs/header-text-correct.png)
+![header-text-correct.png](static/images/docs/bugs/header-text-correct.png)
 
 ### [Labels are not correctly sitting next to the Icons](#bugs)
 
 The label is sitting to far below the icons
 And not aligning correctly
 
-![header-label-incorrect.png](static/images/readme/bugs/header-label-incorrect.png)
+![header-label-incorrect.png](static/images/docs/bugs/header-label-incorrect.png)
 
 This issue was solved with flexbox and css
 They were already in their own container class
 I just had to alter the CSS properties
 
-![header-label-correct.png](static/images/readme/bugs/header-label-correct.png)
+![header-label-correct.png](static/images/docs/bugs/header-label-correct.png)
 
 ### [Problem with Hamburger Menu](#bugs)
 
@@ -552,7 +629,7 @@ What is the Problem?
 - When I am testing responsive design and the Hamburger menu is open
 - It doesn't want to display the page icons
 
-![page-icons-not-displayed.png](static/images/readme/bugs/page-icons-not-displayed.png)
+![page-icons-not-displayed.png](static/images/docs/bugs/page-icons-not-displayed.png)
 
 How was this Problem solved?
 
@@ -564,7 +641,7 @@ How was this Problem solved?
 - The reason for breaking up the code is that I needed to call the icons in two different locations
 - I am attempting to practice DRY (Don't Repeat Yourself) run coding style
 
-![page-icons-displaying.png](static/images/readme/bugs/page-icons-displaying.png)
+![page-icons-displaying.png](static/images/docs/bugs/page-icons-displaying.png)
 
 ### [Hamburger menu jumps as I try and open and close menu](#bugs)
 
@@ -573,7 +650,7 @@ What is the Issue?
 - The hamburger menu is jumping up and down as the menu is opened or closed
 - The bug is not visible from the screenshot below
 
-![hamburger-menu.png](static/images/readme/bugs/hamburger-menu.png)
+![hamburger-menu.png](static/images/docs/bugs/hamburger-menu.png)
 
 ### [Operational error in database as trying to run auto test](#bugs)
 
@@ -583,7 +660,7 @@ Problem?
 - I get the following error
 - error message "django.db.utils.OperationalError: near 'None': syntax error"
 
-![OperationalError.png](static/images/readme/bugs/operationalError.png)
+![OperationalError.png](static/images/docs/bugs/operationalError.png)
 
 Solution?
 
@@ -605,7 +682,7 @@ Solution?
 - re-populating my database with data from fixtures json files
 - I had to run the command one at a time python manage.py loaddata fixtures/fixture/chef_special.json
 
-![database_working correctly.png](static/images/readme/bugs/database_working%20correctly.png)
+![database_working correctly.png](static/images/docs/bugs/database_working%20correctly.png)
 
 Note to myself for a future reference?
 
@@ -619,7 +696,7 @@ Problem?
 - The image is not being aligned neatly to the carousel on Mobile devices
 - This was tested on the iPhone 6/7/8 display
 
-![carousel_not_aligned.png](static/images/readme/bugs/carousel_not_aligned.png)
+![carousel_not_aligned.png](static/images/docs/bugs/carousel_not_aligned.png)
 
 Solution?
 
@@ -634,16 +711,20 @@ Problem?
 
 favicon is not loaded in the browser tab
 
-![favicon_browser_tab.png](static/images/readme/bugs/favicon_browser_tab.png)
+![favicon_browser_tab.png](static/images/docs/bugs/favicon/favicon_browser_tab.png)
 
 favicon is not loaded in the console
 
-![favicon_console_error.png](static/images/readme/bugs/favicon_console_error.png)
+![favicon_console_error.png](static/images/docs/bugs/favicon/favicon_console_error.png)
 
 Solution?
 
-- The bug has not been solved yet
-- I will try and create an issue for it later
+- As soon as I turned some methods in the class Menu
+- To functions, as they were static methods
+- The icon loaded correctly as intended
+- Not quiet sure why or how it worked
+
+![favicon_issue_solved.png](static/images/docs/bugs/favicon/favicon_issue_solved.png)
 
 ### [Heroku auto refreshing unnecessarily](#bugs)
 
@@ -656,11 +737,11 @@ Problem?
 
 Refreshes browser tab unnecessarily
 
-![heroku_refresh_browser_tab.png](static/images/readme/bugs/heroku_refresh_browser_tab.png)
+![heroku_refresh_browser_tab.png](static/images/docs/bugs/heroku_refresh_browser_tab.png)
 
 Refreshing in the Heroku console logs
 
-![heroku_refresh_console_logs.png](static/images/readme/bugs/heroku_refresh_console_logs.png)
+![heroku_refresh_console_logs.png](static/images/docs/bugs/heroku_refresh_console_logs.png)
 
 Solution?
 
@@ -671,11 +752,11 @@ Solution?
 
 Added logic to settings.py file
 
-![heroku_refresh_logic_to_settings.png](static/images/readme/bugs/heroku_refresh_logic_to_settings.png)
+![heroku_refresh_logic_to_settings.png](static/images/docs/bugs/heroku_refresh_logic_to_settings.png)
 
 Added logic to urls.py file
 
-![heroku_refresh_logic_to_urls.png](static/images/readme/bugs/heroku_refresh_logic_to_urls.png)
+![heroku_refresh_logic_to_urls.png](static/images/docs/bugs/heroku_refresh_logic_to_urls.png)
 
 ### [Navbar not at top of screen](#bugs)
 
@@ -683,12 +764,27 @@ Problem?
 
 - The navbar is not quite sitting at the top of the screen
 
-![navbar_not_at_top.png](static/images/readme/bugs/navbar_not_at_top.png)
+![navbar_not_at_top.png](static/images/docs/bugs/navbar_not_at_top.png)
 
 Solution?
 
 - The bug has not been solved yet
 - I will try and create an issue for it later
+
+### [Performance issues in page loading](#bugs)
+
+Problem?
+
+- The score that I received is too low for lighthouse testing
+- I need to bring that score up
+- I think that there is too much logic that is happening in the background
+- I might have to consider a pip package for multi threading
+
+![performance_lighthouse.png](static/images/docs/bugs/performance/performance_lighthouse.png)
+
+Solution?
+
+- I will be solving this in an issue that I created
 
 ---
 

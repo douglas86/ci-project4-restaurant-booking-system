@@ -34,38 +34,34 @@ p {
 }
 
 /*header*/
-.mobile {
-    display: block;
-}
-
 .tablet {
     display: none;
 }
 
-#nav {
+.mobile {
     display: flex;
     background-color: #b5cbb7;
 }
 
-#nav button {
+.mobile button {
     margin: 1em;
     border: none;
     background-color: transparent;
 }
 
-#icon-links {
+.icon-links {
     display: none;
     background-color: #b5cbb7;
 }
 
-#icon-links a {
+.icon-links a {
     text-decoration: none;
     color: black;
     font-size: large;
     font-weight: bold;
 }
 
-#icon-links a:hover {
+.icon-links a:hover {
     color: #e7e08b;
     font-weight: bolder;
 }
@@ -88,7 +84,7 @@ p {
     width: 80%;
 }
 
-#user-message {
+.user-message {
     width: 80%;
     text-align: center;
     margin: auto;

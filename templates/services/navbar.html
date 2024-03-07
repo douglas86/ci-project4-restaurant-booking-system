@@ -1,25 +1,23 @@
 {% load static %}
 
-<div class="mobile">
-    <nav id="nav">
-        <button type="button" class="hamburger-menu" onclick="hamburgerMenu()">
+<nav id="nav">
+    <div class="mobile">
+        <button type="button" id="hamburger-menu" onclick="hamburgerMenu()">
             <img src="{% static 'images/navbar/Hamburger.png' %}" alt="not found">
         </button>
 
-        {#        Loads Page icons#}
+        {#Loads Page icons#}
         {% include 'services/navbar/icons.html' %}
 
-        {#        Loads authentication icons#}
+        {#Loads authentication icons#}
         {% include 'services/navbar/auth.html' %}
-    </nav>
-</div>
+    </div>
 
-<div class="tablet">
-    <nav id="nav">
-        {#        Loads Page icons#}
+    <div class="tablet">
+        {#Loads Page icons#}
         {% include 'services/navbar/icons.html' %}
 
-        {#        Loads authentication icons#}
+        {#Loads authentication icons#}
         {% include 'services/navbar/auth.html' %}
-    </nav>
-</div>
+    </div>
+</nav>
