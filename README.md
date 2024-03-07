@@ -48,6 +48,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [Favicon icon not displaying](#favicon-icon-not-displaying)
   - [Heroku auto refreshing unnecessarily](#heroku-auto-refreshing-unnecessarily)
   - [Navbar not at top of screen](#navbar-not-at-top-of-screen)
+  - [Performance issues in page loading](#performance-issues-in-page-loading)
 - [Credits](#credits)
 
 ---
@@ -711,6 +712,21 @@ Solution?
 
 - The bug has not been solved yet
 - I will try and create an issue for it later
+
+### [Performance issues in page loading](#bugs)
+
+Problem?
+
+- The score that I received is too low for lighthouse testing
+- I need to bring that score up
+- I think that there is too much logic that is happening in the background
+- I might have to consider a pip package for multi threading
+
+![performance_lighthouse.png](static/images/docs/bugs/performance/performance_lighthouse.png)
+
+Solution?
+
+- I will be solving this in an issue that I created
 
 ---
 
