@@ -30,6 +30,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [Manual Testing](#manual-testing)
     - [Testing responsiveness of the image theme](#testing-responsiveness-of-the-image-theme)
     - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
+    - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
   - [Automated Testing](#automated-testing)
     - [Authentication](#authentication-1)
     - [Homepage](#homepage-2)
@@ -407,6 +408,23 @@ Responsive design on tablet
 Responsive design on mobile
 
 ![menu_page_mobile.png](static/images/docs/testing/manual_testing/menu_page_mobile.png)
+
+#### [Testing the responsiveness of the about page](#manual-testing)
+
+- This testing section was to test to see how the about page
+- is going to look at different screen sizes
+
+Responsive design on mobile
+
+![about_responsive_mobile.png](static/images/docs/testing/manual_testing/about_responsive_mobile.png)
+
+Responsive design on Tablet
+
+![about_responsive_tablet.png](static/images/docs/testing/manual_testing/about_responsive_tablet.png)
+
+Responsive design on Laptop
+
+![about_responsive_laptop.png](static/images/docs/testing/manual_testing/about_responsive_laptop.png)
 
 ### [Automated Testing](#testing)
 
