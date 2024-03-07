@@ -34,20 +34,16 @@ p {
 }
 
 /*header*/
-.mobile {
-    display: block;
-}
-
 .tablet {
     display: none;
 }
 
-#nav {
+.mobile {
     display: flex;
     background-color: #b5cbb7;
 }
 
-#nav button {
+.mobile button {
     margin: 1em;
     border: none;
     background-color: transparent;
