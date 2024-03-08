@@ -3,6 +3,14 @@
         width: 10em;
         height: 10em;
     }
+
+    .carousel-control-prev-icon:after, .carousel-control-next-icon:after {
+        font-size: 40px;
+    }
+
+    button {
+        margin: 0 auto 10em;
+    }
 }
 
 /*media query for tablets and larger*/
@@ -78,6 +86,10 @@
         height: 25em;
     }
 
+    button {
+        margin: 0 auto 5em;
+    }
+
     /* menu */
     .menu {
         width: 70%;
@@ -105,6 +117,7 @@
     .card {
         width: 72%;
     }
+
     .default-carousel-image img {
         padding: 5em;
     }

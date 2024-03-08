@@ -143,6 +143,10 @@ p {
     color: black;
 }
 
+button {
+    margin: 0 auto 15em;
+}
+
 .card {
     width: 80%;
     margin: 1em auto;
