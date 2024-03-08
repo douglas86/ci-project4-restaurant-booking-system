@@ -124,9 +124,10 @@ p {
 
 .card {
     width: 80%;
-    margin: auto;
+    margin: 1em auto;
     padding: 1em;
     background-color: #d3d3d3;
+    opacity: 0.95;
 }
 
 .image {
@@ -134,8 +135,8 @@ p {
 }
 
 .card img {
-    width: 18em;
-    height: 18em;
+    width: 15em;
+    height: 15em;
     margin: auto;
 }
 

@@ -380,7 +380,7 @@ If you are trying to enter more than three entries for breakfast
 
 - Was testing to see if I could get the correct meals from the database
 - Just by changing the filter variable
-- When you enter what type of meal, you want, it is done as a choice based on three numbers
+- When you enter what type of meal you want, it is done as a choice based on three numbers
 - Zero being breakfast, one being lunched and 2 being supper
 - There is also a number three that means that if it doesn't correspond to any number that will then run
 
@@ -673,7 +673,7 @@ Solution?
 - which is what I did: python manage.py makemigrations home
 - doing that for all of my apps
 - this then created the migrations directory and the initial migration for that app
-- after running makemigrations on all my app I then had to migrate my db
+- after running makemigrations on all my apps, I then had to migrate my db
 - then the page could load properly after that and all was sorted out
 - which I could also run python manage.py test
 - I was no longer getting that error
