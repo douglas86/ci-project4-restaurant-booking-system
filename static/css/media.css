@@ -1,3 +1,10 @@
+@media screen and (max-width: 350px) {
+    .card img {
+        width: 10em;
+        height: 10em;
+    }
+}
+
 /*media query for tablets and larger*/
 @media screen and (min-width: 768px) {
     /*header*/
