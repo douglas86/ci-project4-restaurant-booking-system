@@ -22,5 +22,5 @@ class ChefForm(forms.ModelForm):
         chef = ChefSpecial.objects.filter(served=served_data_from_form).count()
 
         # if there is more than 3 for the choice model served, then error occurs
-        if chef >= 3:
+        if chef >= 4:
             raise ValidationError("You have already have enough of that meal")
