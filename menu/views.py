@@ -44,8 +44,35 @@ class MenuView(TemplateView):
 
         return menu
 
-    def breakfast_meal(self):
+    def combine_menus(self, specials=None, additional_meals=None):
+        """
+        Combine specails and additional meals into one list
+        :param specials: fetched from a chef special model
+        :param additional_meals: fetched from the main menu
+        :return:
+        """
+
         pass
+
+    def breakfast_meal(self):
+        """
+        Fetches information for the breakfast meal
+        :return:
+        """
+
+        menu_type = "Breakfast Menu"
+        specials = threading.Thread(target=self.get_chef_special)
+        breakfast_meal = threading.Thread(target=self.get_menu)
+
+        # start the threads for fetching data
+        specials.start()
+        breakfast_meal.start()
+
+        # finish the threads for fetching data
+        specials.join()
+        breakfast_meal.join()
+
+        return menu_type, breakfast_meal
 
     def lunch_meal(self):
         pass
