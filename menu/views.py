@@ -19,15 +19,20 @@ class MenuView(TemplateView):
 
     template_name = 'menu/menu.html'
 
+    # this variable represents the url that I am on
+    slug = 'breakfast'
+    # this variable represents the menu from 0 to 5
+    menu_type = 0
+
     def get_chef_special(self):
         """
         This method is used to get the chef special model from the database
         :return:
         """
 
-        chef_special = ChefSpecial.objects.filter(served=0)
+        chef_special = ChefSpecial.objects.filter(served=self.menu_type)
 
-        print(chef_special.count())
+        return chef_special
 
     def get_menu(self):
         """
@@ -35,9 +40,36 @@ class MenuView(TemplateView):
         :return:
         """
 
-        menu = Menu.objects.filter(menu_type=0)
+        menu = Menu.objects.filter(menu_type=self.menu_type)
 
-        print(menu.count())
+        return menu
+
+    def breakfast_meal(self):
+        pass
+
+    def lunch_meal(self):
+        pass
+
+    def supper_meal(self):
+        pass
+
+    def alcohol(self):
+        pass
+
+    def decide_on_meal(self):
+        """
+        This method is used to deside which model to return based on slug
+        :return:
+        """
+
+        if self.slug == 'breakfast':
+            return breakfast_meal()
+        elif self.slug == 'lunch':
+            return lunch_meal()
+        elif self.slug == 'alcohol':
+            return alcohol()
+        else:
+            return supper_meal()
 
     def get_queryset(self):
         """
@@ -64,6 +96,7 @@ class MenuView(TemplateView):
 
         meals = ["breakfast", "lunch", "supper", "alcohol"]
         context = super(MenuView, self).get_context_data(**kwargs)
+        self.slug = self.kwargs["slug"]
 
         self.get_queryset()
 
