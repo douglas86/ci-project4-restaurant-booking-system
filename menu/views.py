@@ -1,4 +1,9 @@
+import threading
+
 from django.views.generic import TemplateView
+
+from home.models import ChefSpecial
+from menu.models import Menu
 
 """
 I am wanting to design a view where it will embrace multithread processing
@@ -20,7 +25,9 @@ class MenuView(TemplateView):
         :return:
         """
 
-        pass
+        chef_special = ChefSpecial.objects.filter(served=0)
+
+        print(chef_special.count())
 
     def get_menu(self):
         """
@@ -28,7 +35,9 @@ class MenuView(TemplateView):
         :return:
         """
 
-        pass
+        menu = Menu.objects.filter(menu_type=0)
+
+        print(menu.count())
 
     def get_queryset(self):
         """
@@ -37,7 +46,14 @@ class MenuView(TemplateView):
         :return:
         """
 
-        pass
+        t1 = threading.Thread(target=self.get_chef_special)
+        t2 = threading.Thread(target=self.get_menu)
+
+        t1.start()
+        t2.start()
+
+        t1.join()
+        t2.join()
 
     def get_context_data(self, **kwargs):
         """
@@ -46,9 +62,12 @@ class MenuView(TemplateView):
         :return:
         """
 
+        meals = ["breakfast", "lunch", "supper", "alcohol"]
         context = super(MenuView, self).get_context_data(**kwargs)
 
-        pass
+        self.get_queryset()
+
+        return {"meals": meals, "context": context}
 
 # def images_to_be_displayed(month):
 #     """
