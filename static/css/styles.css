@@ -234,6 +234,22 @@ form input[type="email"] {
     margin: 0.5em auto;
 }
 
+/*book table*/
+.top {
+    display: flex;
+}
+
+.top .heading {
+    width: 50%;
+}
+
+.top .new-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+}
+
 /*footer*/
 footer {
     margin-top: auto;

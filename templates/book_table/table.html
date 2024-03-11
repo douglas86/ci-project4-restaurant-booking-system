@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-    <div class="heading">
-        <h1 class="title">Book a table</h1>
+    <div class="top">
+        <div class="heading">
+            <h1 class="title">Book a table</h1>
+        </div>
+        <div class="new-image">
+            <img src="{% static 'images/book_table/New.png' %}" alt="not found">
+        </div>
     </div>
 {% endblock content %}
