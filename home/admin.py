@@ -35,7 +35,7 @@ class ChefSpecialAdmin(admin.ModelAdmin):
     form = ChefForm
     list_display = (
         "title",
-        "ingredients",
+        "description",
         "served",
         "featured_image",
         "created_at",
