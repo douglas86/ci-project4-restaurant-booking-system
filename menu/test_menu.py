@@ -12,11 +12,31 @@ class TestMenu(TestCase, views.MenuView):
 
     def start_gathering_data(self):
         """
-        Starts to gather data from a database
+        Starts to gather data from the database
         :return:
         """
 
-        pass
+        self.get_chef_special()
+        self.get_menu()
+
+    def check_menu_data(self):
+        """
+        This will be a for loop that will return True or False
+        based on if the served value is correct
+        :return:
+        """
+
+        # iterate over a menu list from views
+        for items in self.menu:
+            # iterate over items data for key value pairs
+            for key, value in items.items():
+                # only check a key of served
+                if key == 'served':
+                    # check if value and menu_type are equal
+                    if self.menu_type == value:
+                        return True
+                    else:
+                        return False
 
     def test_breakfast(self):
         """
@@ -27,19 +47,37 @@ class TestMenu(TestCase, views.MenuView):
         :return:
         """
 
-        pass
+        self.slug = 'breakfast'
+        self.menu_type = 0
+
+        self.start_gathering_data()
+
+        self.assertEqual(self.check_menu_data(), True)
 
     def test_lunch(self):
-        pass
+        """
+        Tests:
+        - a Lunch menu returned
+        - with a special menu
 
-    def test_supper(self):
-        pass
+        :return:
+        """
 
-    def test_starter(self):
-        pass
+        self.slug = 'lunch'
+        self.menu_type = 1
 
-    def test_alcohol(self):
-        pass
+        self.start_gathering_data()
+
+        self.assertEqual(self.check_menu_data(), True)
+    #
+    # def test_supper(self):
+    #     pass
+    #
+    # def test_starter(self):
+    #     pass
+    #
+    # def test_alcohol(self):
+    #     pass
 
 # class TestMenu(TestCase, views.MenuView):
 #     """
