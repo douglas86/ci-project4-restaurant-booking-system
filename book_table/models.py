@@ -9,8 +9,8 @@ class TableBookings(models.Model):
     """
     id = models.AutoField(primary_key=True)
     user_name = models.ForeignKey(User, on_delete=models.CASCADE)
-    seats = models.IntegerField()
-    time_slots = models.DateTimeField()
+    seats = models.IntegerField(blank=False, null=False)
+    time_slots = models.DateTimeField(blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
