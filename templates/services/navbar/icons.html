@@ -15,6 +15,7 @@
 			<p>Menu</p>
 		</div>
 	</a>
+    {% if user.is_authenticated %}
 	<a class="nav-link" href="{% url 'table' %}">
 		<div class="links">
 			<img
@@ -24,6 +25,7 @@
 			<p>Book Table</p>
 		</div>
 	</a>
+    {% endif %}
 	<a class="nav-link" href="{% url 'about' %}">
 		<div class="links">
 			<img src="{% static 'images/navbar/Info.png' %}" alt="not found" />

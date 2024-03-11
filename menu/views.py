@@ -39,7 +39,7 @@ class MenuView(TemplateView):
         :return:
         """
 
-        menu = Menu.objects.filter(menu_type=self.menu_type).values()
+        menu = Menu.objects.filter(served=self.menu_type).values()
 
         # loop around model and append to a menu list
         for item in menu:

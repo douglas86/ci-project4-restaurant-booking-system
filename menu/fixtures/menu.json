@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "title": "Fluffy Pancakes",
-      "menu_type": 0,
+      "served": 0,
       "description": "whole milk, large eggs, vegatable oil, homemade pancake mix, sugar",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -15,7 +15,7 @@
     "pk": 2,
     "fields": {
       "title": "Focaccia French Toast",
-      "menu_type": 0,
+      "served": 0,
       "description": "large eggs, whole eggs, pure vanilla extracts, ground cinnamon, slices of focaccia, unsalted butter",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -26,7 +26,7 @@
     "pk": 3,
     "fields": {
       "title": "Confit Port Belly",
-      "menu_type": 1,
+      "served": 1,
       "description": "savoy cabbage, gratin dauphinois potatoes, thyme jus",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -37,7 +37,7 @@
     "pk": 4,
     "fields": {
       "title": "Roasted Lamb Rump",
-      "menu_type": 1,
+      "served": 1,
       "description": "anchovy braised lentils, chantenay carrots, crispy leeks",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -48,7 +48,7 @@
     "pk": 5,
     "fields": {
       "title": "Rump 7oz",
-      "menu_type": 2,
+      "served": 2,
       "description": "firm texture and rich flavour, recommended medium, served with chips",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -59,7 +59,7 @@
     "pk": 6,
     "fields": {
       "title": "Fish and chips",
-      "menu_type": 2,
+      "served": 2,
       "description": "cripsy golden battered haddock, thick cut chunky chips, pea puree, tartare sauce",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -70,7 +70,7 @@
     "pk": 7,
     "fields": {
       "title": "Meat Starters",
-      "menu_type": 3,
+      "served": 3,
       "description": "Fig, mozzarella, serrano, ham salad",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -81,7 +81,7 @@
     "pk": 8,
     "fields": {
       "title": "Seafood starters",
-      "menu_type": 3,
+      "served": 3,
       "description": "Giant champagne, lemon prawn, prawn vol-au-vents",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -92,7 +92,7 @@
     "pk": 9,
     "fields": {
       "title": "Vegetarian starters",
-      "menu_type": 3,
+      "served": 3,
       "description": "fig, goat's cheese, filo parcels",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -103,7 +103,7 @@
     "pk": 10,
     "fields": {
       "title": "Ramon Roqueta Reserva",
-      "menu_type": 4,
+      "served": 4,
       "description": "Fruit aromas with balsamic touch, notes of vanilla and coconut",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -114,7 +114,7 @@
     "pk": 11,
     "fields": {
       "title": "Musica en el camino",
-      "menu_type": 4,
+      "served": 4,
       "description": "Fresh and velvety, red fruit aromas with spicy and mint notes",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -125,7 +125,7 @@
     "pk": 12,
     "fields": {
       "title": "Aperol Spritz",
-      "menu_type": 4,
+      "served": 4,
       "description": "Presecco, aperol, soda",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -136,7 +136,7 @@
     "pk": 13,
     "fields": {
       "title": "Mojito",
-      "menu_type": 4,
+      "served": 4,
       "description": "Rum, lime, mint, soda",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -147,7 +147,7 @@
     "pk": 14,
     "fields": {
       "title": "Margarita",
-      "menu_type": 4,
+      "served": 4,
       "description": "Teqila, cointreau, lime",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
