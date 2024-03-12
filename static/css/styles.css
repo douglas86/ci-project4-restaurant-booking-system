@@ -225,9 +225,6 @@ form input[type="email"] {
     opacity: 1;
 }
 
-.theme {
-    display: none;
-}
 
 /*about*/
 .about-start, .about-middle, .about-end {
