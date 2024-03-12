@@ -266,6 +266,10 @@ form input[type="email"] {
     color: black;
 }
 
+.modal-body form .btn {
+    margin: 0;
+}
+
 /*footer*/
 footer {
     margin-top: auto;

@@ -12,4 +12,4 @@ class BookTableForm(forms.ModelForm):
         model = TableBookings
         fields = ['seats', 'time_slots', ]
         widgets = {'time_slots': forms.widgets.DateTimeInput(attrs={'type': 'datetime-local'})}
-        labels = {'seats': 'Number of seats', 'time_slots': 'time_slots'}
+        labels = {'seats': 'Number of seats', 'time_slots': 'time slots'}

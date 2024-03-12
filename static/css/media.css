@@ -11,6 +11,10 @@
     button {
         margin: 0 auto 10em;
     }
+
+    .modal-body form .btn {
+        margin-left: 0;
+    }
 }
 
 /*media query for tablets and larger*/
@@ -102,6 +106,16 @@
 
     .menu_items {
         justify-content: space-between;
+    }
+
+    .modal-body form {
+        width: 100%;
+        padding: 1em;
+        margin: auto;
+    }
+
+    .modal-body form .btn {
+        margin-left: 25%;
     }
 
     /*forms*/
