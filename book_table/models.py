@@ -3,15 +3,16 @@ from django.db import models
 
 
 # Create your models here.
-class TableBookings(models.Model):
+class Customers(models.Model):
     """
     Table Bookings for when the customer wants to book at the restaurant
     """
     id = models.AutoField(primary_key=True)
-    user_name = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     seats = models.IntegerField(blank=False, null=False)
     time_slots = models.DateTimeField(blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         """
