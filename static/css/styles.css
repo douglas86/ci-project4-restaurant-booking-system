@@ -225,13 +225,46 @@ form input[type="email"] {
     opacity: 1;
 }
 
-.theme {
-    display: none;
-}
 
 /*about*/
 .about-start, .about-middle, .about-end {
     margin: 0.5em auto;
+}
+
+/*book table*/
+.top {
+    display: flex;
+}
+
+.top .heading {
+    width: 50%;
+    height: auto;
+}
+
+.top .new-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+.new-image button {
+    margin: 0 !important;
+    background-color: transparent;
+    border: none;
+}
+
+.modal-content {
+    background-color: #b5cbb7;
+    font-weight: bold;
+}
+
+.modal-header h1 {
+    color: black;
+}
+
+.modal-body form .btn {
+    margin: 1em;
 }
 
 /*footer*/
