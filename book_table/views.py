@@ -46,11 +46,12 @@ class BookTableCreateView(LoginRequiredMixin, CreateView, Thread):
         instance.user = self.request.user
         return super().form_valid(form)
 
-    def get_success_url(self):
-        """
-        This method is used to redirect you to the table url
-        when the form is submitted and successfully saved
-        :return:
-        """
-        messages.success(self.request, self.success_message)
-        return reverse('book_table:table')
+
+def get_success_url(self):
+    """
+    This method is used to redirect you to the table url
+    when the form is submitted and successfully saved
+    :return:
+    """
+    messages.success(self.request, self.success_message)
+    return reverse('book_table:table')
