@@ -1,7 +1,7 @@
 # Register your models here.
 from django.contrib import admin
 
-from .models import Customer, Vouchers
+from .models import Customer, Voucher
 
 
 @admin.register(Customer)
@@ -14,7 +14,7 @@ class CustomerAdmin(admin.ModelAdmin):
     search_fields = ('user', 'seats', 'time_slots')
 
 
-@admin.register(Vouchers)
+@admin.register(Voucher)
 class VoucherAdmin(admin.ModelAdmin):
     """
     Custom Admin Panel for Vouchers Model

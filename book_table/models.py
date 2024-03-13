@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator
 from django.db import models
 
 
@@ -9,7 +10,8 @@ class Customer(models.Model):
     """
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    seats = models.IntegerField(blank=False, null=False)
+    seats = models.PositiveIntegerField(blank=False, null=False,
+                                        validators=[MinValueValidator(1), MaxValueValidator(10)])
     time_slots = models.DateTimeField(blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
