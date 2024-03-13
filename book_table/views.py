@@ -1,5 +1,3 @@
-from threading import Thread
-
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
@@ -24,7 +22,7 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         return {'form': self.form_class()}
 
 
-class BookTableCreateView(LoginRequiredMixin, CreateView, Thread):
+class BookTableCreateView(LoginRequiredMixin, CreateView):
     """
     This view is for posting data to the Customer Model
     """
