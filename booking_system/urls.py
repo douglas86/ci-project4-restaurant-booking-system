@@ -19,7 +19,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 from about.views import AboutView
-from book_table.views import BookTableView
 from home.views import HomePageView
 from .settings import DEBUG
 
@@ -28,7 +27,7 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("admin/", admin.site.urls),
     path("menu/", include("menu.urls")),
-    path("table/", BookTableView.as_view(), name="table"),
+    path("table/", include("book_table.urls"), name="table"),
     path("", HomePageView.as_view(), name="home"),
 ]
 
