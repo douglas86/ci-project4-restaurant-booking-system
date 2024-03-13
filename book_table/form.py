@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import TableBookings
+from .models import Customer
 
 
 class BookTableForm(forms.ModelForm):
@@ -9,7 +9,7 @@ class BookTableForm(forms.ModelForm):
     """
 
     class Meta:
-        model = TableBookings
+        model = Customer
         fields = ['seats', 'time_slots', ]
         widgets = {'time_slots': forms.widgets.DateTimeInput(attrs={'type': 'datetime-local'})}
         labels = {'seats': 'Number of seats', 'time_slots': 'time slots'}

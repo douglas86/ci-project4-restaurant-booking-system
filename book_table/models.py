@@ -3,7 +3,7 @@ from django.db import models
 
 
 # Create your models here.
-class Customers(models.Model):
+class Customer(models.Model):
     """
     Table Bookings for when the customer wants to book at the restaurant
     """
