@@ -27,7 +27,7 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("admin/", admin.site.urls),
     path("menu/", include("menu.urls")),
-    path("table/", include("book_table.urls"), name="table"),
+    path("table/", include("book_table.urls")),
     path("", HomePageView.as_view(), name="home"),
 ]
 
