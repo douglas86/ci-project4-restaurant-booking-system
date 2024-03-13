@@ -2,6 +2,14 @@
 {% load static %}
 
 {% block content %}
+    {#display messages to users#}
+    {% if messages %}
+        <div class="alert alert-success">
+        {% for m in messages %}
+            <p>{{ m }}</p>
+        {% endfor %}
+    {% endif %}
+</div>
     <div class="top">
         <div class="heading">
             <h1 class="title">Book a table</h1>

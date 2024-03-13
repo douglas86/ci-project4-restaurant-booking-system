@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.views.generic import TemplateView, FormView, CreateView
@@ -29,7 +30,7 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
     model = Customer
     template_name = 'book_table/table.html'
     form_class = BookTableForm
-    success_message = 'Form has been successfully created'
+    success_message = "Form data successfully created"
 
     def form_valid(self, form):
         """
@@ -49,5 +50,5 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         when the form is submitted and successfully saved
         :return:
         """
-
+        messages.success(self.request, self.success_message)
         return reverse('book_table:table')
