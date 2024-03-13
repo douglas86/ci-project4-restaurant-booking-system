@@ -11,7 +11,6 @@ class CustomerAdmin(admin.ModelAdmin):
     """
 
     list_display = ('user', 'seats', 'time_slots', 'created_at', 'updated_at')
-    search_fields = ('user', 'seats', 'time_slots')
 
 
 @admin.register(Voucher)
