@@ -1,3 +1,5 @@
+import uuid
+
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator
 from django.db import models
@@ -8,7 +10,7 @@ class Customer(models.Model):
     """
     Table Bookings for when the customer wants to book at the restaurant
     """
-    id = models.AutoField(primary_key=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     seats = models.PositiveIntegerField(blank=False, null=False,
                                         validators=[MinValueValidator(1), MaxValueValidator(10)])
@@ -35,7 +37,7 @@ class Voucher(models.Model):
     Vouchers for when the customer wants to book a table at the restaurant
     vouchers are automatically applied to the booking
     """
-    id = models.AutoField(primary_key=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     title = models.CharField(max_length=200)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
