@@ -28,7 +28,7 @@ class Customer(models.Model):
         ordering = ['time_slots']
 
 
-class Vouchers(models.Model):
+class Voucher(models.Model):
     """
     Vouchers for when the customer wants to book a table at the restaurant
     vouchers are automatically applied to the booking

@@ -15,7 +15,7 @@ class CustomerAdmin(admin.ModelAdmin):
 
 
 @admin.register(Vouchers)
-class VouchersAdmin(admin):
+class VoucherAdmin(admin.ModelAdmin):
     """
     Custom Admin Panel for Vouchers Model
     """
