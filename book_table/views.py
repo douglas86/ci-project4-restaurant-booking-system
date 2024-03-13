@@ -1,3 +1,5 @@
+from threading import Thread
+
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
@@ -22,7 +24,7 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         return {'form': self.form_class()}
 
 
-class BookTableCreateView(LoginRequiredMixin, CreateView):
+class BookTableCreateView(LoginRequiredMixin, CreateView, Thread):
     """
     This view is for posting data to the Customer Model
     """
@@ -30,7 +32,7 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
     model = Customer
     template_name = 'book_table/table.html'
     form_class = BookTableForm
-    success_message = "Form data successfully created"
+    success_message = "You have successfully booked your table"
 
     def form_valid(self, form):
         """
