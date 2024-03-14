@@ -12,48 +12,49 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 # Table of Content
 
 - [Planning](#planning)
-  - [Wireframes](#wireframes)
-  - [Ux-design](#ux-design)
-  - [Colour Pallet](#colour-pallet)
-  - [User Stories using MOSCOW Prioritization techniques](#user-stories-using-moscow-prioritization-techniques)
-  - [How to start this project locally](#how-to-start-this-project-locally)
-  - [How this project was deployed to Heroku](#how-this-project-was-deployed-to-heroku)
-  - [Technology Used](#technology-used)
+    - [Wireframes](#wireframes)
+    - [Ux-design](#ux-design)
+    - [Colour Pallet](#colour-pallet)
+    - [User Stories using MOSCOW Prioritization techniques](#user-stories-using-moscow-prioritization-techniques)
+    - [How to start this project locally](#how-to-start-this-project-locally)
+    - [How this project was deployed to Heroku](#how-this-project-was-deployed-to-heroku)
+    - [Technology Used](#technology-used)
 - [Features](#features)
-  - [Features that have been included in this project](#features-that-have-been-included-in-this-project)
-    - [hamburger image on smaller devices](#hamburger-image-on-smaller-devices)
-    - [Authentication](#authentication)
-    - [Theme image](#theme-image)
-    - [Description of the restaurant](#description-of-the-restaurant)
-  - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
-    - [Theme image](#theme-image-1)
+    - [Features that have been included in this project](#features-that-have-been-included-in-this-project)
+        - [hamburger image on smaller devices](#hamburger-image-on-smaller-devices)
+        - [Authentication](#authentication)
+        - [Theme image](#theme-image)
+        - [Description of the restaurant](#description-of-the-restaurant)
+    - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
+        - [Theme image](#theme-image-1)
 - [Testing](#testing)
-  - [Manual Testing](#manual-testing)
-    - [Testing responsiveness of the image theme](#testing-responsiveness-of-the-image-theme)
-    - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
-    - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
-    - [Html validation testing](#html-validation-testing)
-    - [Css validation testing](#css-validation-testing)
-    - [Wave testing for accessibility](#wave-testing-for-accessibility)
-    - [lighthouse testing](#lighthouse-testing)
-  - [Automated Testing](#automated-testing)
-    - [Authentication](#authentication-1)
-    - [Homepage](#homepage-2)
-    - [Test if theme file exists](#test-if-theme-file-exists)
-    - [Test if the correct theme is being displayed](#test-if-the-correct-theme-is-being-displayed)
-    - [Test if correct menu gets returned based on slug](#test-if-correct-menu-gets-returned-based-on-slug)
-    - [Test if the correct menu is being returned with slug](#test-if-correct-menu-gets-returned-based-on-slug)
+    - [Manual Testing](#manual-testing)
+        - [Testing responsiveness of the image theme](#testing-responsiveness-of-the-image-theme)
+        - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
+        - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
+        - [Html validation testing](#html-validation-testing)
+        - [Css validation testing](#css-validation-testing)
+        - [Wave testing for accessibility](#wave-testing-for-accessibility)
+        - [lighthouse testing](#lighthouse-testing)
+    - [Automated Testing](#automated-testing)
+        - [Authentication](#authentication-1)
+        - [Homepage](#homepage-2)
+        - [Test if theme file exists](#test-if-theme-file-exists)
+        - [Test if the correct theme is being displayed](#test-if-the-correct-theme-is-being-displayed)
+        - [Test if correct menu gets returned based on slug](#test-if-correct-menu-gets-returned-based-on-slug)
+        - [Test if the correct menu is being returned with slug](#test-if-correct-menu-gets-returned-based-on-slug)
 - [Bugs](#bugs)
-  - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
-  - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
-  - [Problem with Hamburger Menu](#problem-with-hamburger-menu)
-  - [Hamburger menu jumps as I try and open and close menu](#hamburger-menu-jumps-as-i-try-and-open-and-close-menu)
-  - [Operational error in database as trying to run auto test](#operational-error-in-database-as-trying-to-run-auto-test)
-  - [Carousel image not being aligned correctly](#carousel-image-not-being-aligned-correctly)
-  - [Favicon icon not displaying](#favicon-icon-not-displaying)
-  - [Heroku auto refreshing unnecessarily](#heroku-auto-refreshing-unnecessarily)
-  - [Navbar not at top of screen](#navbar-not-at-top-of-screen)
-  - [Performance issues in page loading](#performance-issues-in-page-loading)
+    - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
+    - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
+    - [Problem with Hamburger Menu](#problem-with-hamburger-menu)
+    - [Hamburger menu jumps as I try and open and close menu](#hamburger-menu-jumps-as-i-try-and-open-and-close-menu)
+    - [Operational error in database as trying to run auto test](#operational-error-in-database-as-trying-to-run-auto-test)
+    - [Carousel image not being aligned correctly](#carousel-image-not-being-aligned-correctly)
+    - [Favicon icon not displaying](#favicon-icon-not-displaying)
+    - [Heroku auto refreshing unnecessarily](#heroku-auto-refreshing-unnecessarily)
+    - [Navbar not at top of screen](#navbar-not-at-top-of-screen)
+    - [Performance issues in page loading](#performance-issues-in-page-loading)
+    - [Too many connections to database at once](#too-many-connections-to-database-at-once)
 - [Credits](#credits)
 
 ---
@@ -785,6 +786,20 @@ Problem?
 Solution?
 
 - I will be solving this in an issue that I created
+
+### [Too many connections to database at once](#bugs)
+
+Problem?
+
+- When trying to connect to the database on the menu page, I am getting a connection error
+- There are too many models trying to connect at once
+
+![db_connections.png](static/images/docs/bugs/db_connections.png)
+
+Solution?
+
+- This problem has not been solved yet
+- Will try and come to it at the end
 
 ---
 
