@@ -43,7 +43,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
         - [Test if theme file exists](#test-if-theme-file-exists)
         - [Test if the correct theme is being displayed](#test-if-the-correct-theme-is-being-displayed)
         - [Test if correct menu gets returned based on slug](#test-if-correct-menu-gets-returned-based-on-slug)
-        - [Test if the correct menu is being returned with slug](#test-if-correct-menu-gets-returned-based-on-slug)
+      - [Test form invalid on Booking a table page](#test-form-invalid-on-booking-a-table-page)
 - [Bugs](#bugs)
     - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
     - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
@@ -592,19 +592,27 @@ Passing test
 
 ![menu_type_passing.png](static/images/docs/testing/auto_testing/menu_type_passing.png)
 
-#### [Test if the correct menu is being returned with slug](#automated-testing)
+#### [Test form invalid on Booking a table page](#automated-testing)
 
-- Test if the correct menu is being returned
-- When I pass in the slug
-- The slug will be the url of the menu that I want to use
+- First testing for a negative test
+- changed seats form data to 2
+- wanting to see what happens if the correct data is entered
+- to make sure that form validation is working correctly
+- Then changed form seats data to 20
+- wanting to see if it gives me a false reading
+- making this test, test for a false value
 
-Failing test
+- Testing form invalid failing test
 
-![slug_fail.png](static/images/docs/testing/manual_testing/slug_fail.png)
+![test_form_invalid_fail.png](static/images/docs/testing/auto_testing/test_form_invalid_fail.png)
 
-Passing test
+![test_form_invalid_fail_function.png](static/images/docs/testing/auto_testing/test_form_invalid_fail_function.png)
 
-![slug_passing.png](static/images/docs/testing/manual_testing/slug_passing.png)
+- Testing form invalid passing test
+
+![test_form_valid_pass.png](static/images/docs/testing/auto_testing/test_form_valid_pass.png)
+
+![test_form_invalid_pass_function.png](static/images/docs/testing/auto_testing/test_form_invalid_pass_function.png)
 
 ---
 
