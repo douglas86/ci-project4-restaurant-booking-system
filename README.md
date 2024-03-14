@@ -103,7 +103,7 @@ These Wireframes and UX Designs were designed on Figma
 
 ### ERD diagram
 
-![ERD diagram.png](static/images/docs/planning/ERD%20diagram.png)
+![ERD_diagram.png](static/images/docs/planning/ERD_diagram.png)
 
 ### [Colour Pallet](#planning)
 
