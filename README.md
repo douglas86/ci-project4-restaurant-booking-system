@@ -25,6 +25,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
         - [Authentication](#authentication)
         - [Theme image](#theme-image)
         - [Description of the restaurant](#description-of-the-restaurant)
+      - [scrolling left and right arrows for carousel](#scrolling-left-and-right-arrows-for-carousel)
     - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
         - [Theme image](#theme-image-1)
 - [Testing](#testing)
@@ -303,6 +304,13 @@ When the user is logged in, a welcome message will be displayed with a different
 - With its very beginnings
 
 ![description.png](static/images/docs/features/description.png)
+
+#### [scrolling left and right arrows for carousel](#features)
+
+- There is an arrow that you can use to scroll left and right
+- I have tried to blend it in to the rest of the site
+
+![scrolling_left_right_arrows_carousel.png](static/images/docs/features/scrolling_left_right_arrows_carousel.png)
 
 ### [Future features to be added at a later stage](#features)
 
