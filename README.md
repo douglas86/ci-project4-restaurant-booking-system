@@ -12,48 +12,55 @@ I am also able to see the Restaurant's Menu and Chef's specials.
 # Table of Content
 
 - [Planning](#planning)
-  - [Wireframes](#wireframes)
-  - [Ux-design](#ux-design)
-  - [Colour Pallet](#colour-pallet)
-  - [User Stories using MOSCOW Prioritization techniques](#user-stories-using-moscow-prioritization-techniques)
-  - [How to start this project locally](#how-to-start-this-project-locally)
-  - [How this project was deployed to Heroku](#how-this-project-was-deployed-to-heroku)
-  - [Technology Used](#technology-used)
+    - [Wireframes](#wireframes)
+    - [Ux-design](#ux-design)
+    - [Colour Pallet](#colour-pallet)
+    - [User Stories using MOSCOW Prioritization techniques](#user-stories-using-moscow-prioritization-techniques)
+    - [How to start this project locally](#how-to-start-this-project-locally)
+    - [How this project was deployed to Heroku](#how-this-project-was-deployed-to-heroku)
+    - [Technology Used](#technology-used)
 - [Features](#features)
-  - [Features that have been included in this project](#features-that-have-been-included-in-this-project)
-    - [hamburger image on smaller devices](#hamburger-image-on-smaller-devices)
-    - [Authentication](#authentication)
-    - [Theme image](#theme-image)
-    - [Description of the restaurant](#description-of-the-restaurant)
-  - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
-    - [Theme image](#theme-image-1)
+    - [Features that have been included in this project](#features-that-have-been-included-in-this-project)
+        - [hamburger image on smaller devices](#hamburger-image-on-smaller-devices)
+        - [Authentication](#authentication)
+        - [Theme image](#theme-image)
+        - [Description of the restaurant](#description-of-the-restaurant)
+      - [scrolling left and right arrows for carousel](#scrolling-left-and-right-arrows-for-carousel)
+    - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
+        - [Theme image](#theme-image-1)
 - [Testing](#testing)
-  - [Manual Testing](#manual-testing)
-    - [Testing responsiveness of the image theme](#testing-responsiveness-of-the-image-theme)
-    - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
-    - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
-    - [Html validation testing](#html-validation-testing)
-    - [Css validation testing](#css-validation-testing)
-    - [Wave testing for accessibility](#wave-testing-for-accessibility)
-    - [lighthouse testing](#lighthouse-testing)
-  - [Automated Testing](#automated-testing)
-    - [Authentication](#authentication-1)
-    - [Homepage](#homepage-2)
-    - [Test if theme file exists](#test-if-theme-file-exists)
-    - [Test if the correct theme is being displayed](#test-if-the-correct-theme-is-being-displayed)
-    - [Test if correct menu gets returned based on slug](#test-if-correct-menu-gets-returned-based-on-slug)
-    - [Test if the correct menu is being returned with slug](#test-if-correct-menu-gets-returned-based-on-slug)
+    - [Manual Testing](#manual-testing)
+        - [Testing responsiveness of the image theme](#testing-responsiveness-of-the-image-theme)
+        - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
+        - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
+      - [Testing if I can navigate to table page](#testing-if-i-can-navigate-to-table-page)
+        - [Html validation testing](#html-validation-testing)
+        - [Css validation testing](#css-validation-testing)
+        - [Wave testing for accessibility](#wave-testing-for-accessibility)
+        - [lighthouse testing](#lighthouse-testing)
+    - [Automated Testing](#automated-testing)
+        - [Authentication](#authentication-1)
+        - [Homepage](#homepage-2)
+        - [Test if theme file exists](#test-if-theme-file-exists)
+        - [Test if the correct theme is being displayed](#test-if-the-correct-theme-is-being-displayed)
+        - [Test if correct menu gets returned based on slug](#test-if-correct-menu-gets-returned-based-on-slug)
+      - [Test form invalid on Booking a table page](#test-form-invalid-on-booking-a-table-page)
+      - [Test form valid on Booking a table page](#test-form-valid-on-booking-a-table-page)
+      - [Test protected pages against anonymous user](#test-protected-pages-against-anonymous-user)
+      - [Test protected pages against users that are logged in or not](#test-protected-pages-against-users-that-are-logged-in-or-not)
 - [Bugs](#bugs)
-  - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
-  - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
-  - [Problem with Hamburger Menu](#problem-with-hamburger-menu)
-  - [Hamburger menu jumps as I try and open and close menu](#hamburger-menu-jumps-as-i-try-and-open-and-close-menu)
-  - [Operational error in database as trying to run auto test](#operational-error-in-database-as-trying-to-run-auto-test)
-  - [Carousel image not being aligned correctly](#carousel-image-not-being-aligned-correctly)
-  - [Favicon icon not displaying](#favicon-icon-not-displaying)
-  - [Heroku auto refreshing unnecessarily](#heroku-auto-refreshing-unnecessarily)
-  - [Navbar not at top of screen](#navbar-not-at-top-of-screen)
-  - [Performance issues in page loading](#performance-issues-in-page-loading)
+    - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
+    - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
+    - [Problem with Hamburger Menu](#problem-with-hamburger-menu)
+    - [Hamburger menu jumps as I try and open and close menu](#hamburger-menu-jumps-as-i-try-and-open-and-close-menu)
+    - [Operational error in database as trying to run auto test](#operational-error-in-database-as-trying-to-run-auto-test)
+    - [Carousel image not being aligned correctly](#carousel-image-not-being-aligned-correctly)
+    - [Favicon icon not displaying](#favicon-icon-not-displaying)
+    - [Heroku auto refreshing unnecessarily](#heroku-auto-refreshing-unnecessarily)
+    - [Navbar not at top of screen](#navbar-not-at-top-of-screen)
+    - [Performance issues in page loading](#performance-issues-in-page-loading)
+    - [Too many connections to database at once](#too-many-connections-to-database-at-once)
+  - [styling of homepage](#styling-of-homepage)
 - [Credits](#credits)
 
 ---
@@ -100,7 +107,7 @@ These Wireframes and UX Designs were designed on Figma
 
 ### ERD diagram
 
-![ERD diagram.png](static/images/docs/planning/ERD%20diagram.png)
+![ERD_diagram.png](static/images/docs/planning/ERD_diagram.png)
 
 ### [Colour Pallet](#planning)
 
@@ -302,10 +309,20 @@ When the user is logged in, a welcome message will be displayed with a different
 
 ![description.png](static/images/docs/features/description.png)
 
+#### [scrolling left and right arrows for carousel](#features)
+
+- There is an arrow that you can use to scroll left and right
+- I have tried to blend it in to the rest of the site
+
+![scrolling_left_right_arrows_carousel.png](static/images/docs/features/scrolling_left_right_arrows_carousel.png)
+
 ### [Future features to be added at a later stage](#features)
 
 - I would like to add a dashboard for the admin logged-in user
 - I have already included a role in the database for this feature
+- Search based on Foreign Key in an admin panel:
+    - I would like to search based on a foreign key in the admin panel
+    - for some reason, I can't seem to search using the search_filed as it does not work on foreign keys
 
 #### [Theme image](#features)
 
@@ -453,6 +470,19 @@ Responsive design on Laptop
 
 ![about_responsive_laptop.png](static/images/docs/testing/manual_testing/about_responsive_laptop.png)
 
+#### [Testing if I can navigate to table page](#manual-testing)
+
+- when I am logged out and I try to log in to the table page
+- it redirects me to sign in page
+
+- manually entering the address in address bar
+
+![tabel_address_bar.png](static/images/docs/testing/manual_testing/tabel_address_bar.png)
+
+- when hit enters the address bar
+
+![table_protected_page.png](static/images/docs/testing/manual_testing/table_protected_page.png)
+
 #### [Html validation testing](#manual-testing)
 
 - I tested this on Html Validator
@@ -484,6 +514,31 @@ Responsive design on Laptop
 - As some of my extensions were messing with the results
 
 ![lighthouse-about.png](static/images/docs/testing/manual_testing/lighthouse-about.png)
+
+##### Menu page testing
+
+- All these tests were done on incognito mode in a new window
+- As extensions were messing with my results
+
+![lighthouse_menu_alcohol_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_alcohol_desktop.png)
+
+![lighthouse_menu_alcohol_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_alcohol_mobile.png)
+
+![lighthouse_menu_breakfast_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_breakfast_mobile.png)
+
+![lighthouse_menu_breakfast_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_breakfast_desktop.png)
+
+![lighthouse_menu_lunch_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_lunch_mobile.png)
+
+![lighthouse_menu_lunch_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_lunch_desktop.png)
+
+![lighthouse_menu_starter_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_starter_mobile.png)
+
+![lighthouse_menu_starter_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_starter_desktop.png)
+
+![lighthouse_menu_supper_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_supper_mobile.png)
+
+![lighthouse_menu_supper_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_supper_desktop.png)
 
 ### [Automated Testing](#testing)
 
@@ -579,19 +634,81 @@ Passing test
 
 ![menu_type_passing.png](static/images/docs/testing/auto_testing/menu_type_passing.png)
 
-#### [Test if the correct menu is being returned with slug](#automated-testing)
+#### [Test form invalid on Booking a table page](#automated-testing)
 
-- Test if the correct menu is being returned
-- When I pass in the slug
-- The slug will be the url of the menu that I want to use
+- First testing for a negative test
+- changed seats form data to 2
+- wanting to see what happens if the correct data is entered
+- to make sure that form validation is working correctly
+- Then changed form seats data to 20
+- wanting to see if it gives me a false reading
+- making this test, test for a false value
 
-Failing test
+- Testing form invalid failing test
 
-![slug_fail.png](static/images/docs/testing/manual_testing/slug_fail.png)
+![test_form_invalid_fail.png](static/images/docs/testing/auto_testing/test_form_invalid_fail.png)
 
-Passing test
+![test_form_invalid_fail_function.png](static/images/docs/testing/auto_testing/test_form_invalid_fail_function.png)
 
-![slug_passing.png](static/images/docs/testing/manual_testing/slug_passing.png)
+- Testing form invalid passing test
+
+![test_form_valid_pass.png](static/images/docs/testing/auto_testing/test_form_valid_pass.png)
+
+![test_form_invalid_pass_function.png](static/images/docs/testing/auto_testing/test_form_invalid_pass_function.png)
+
+#### [Test form valid on Booking a table page](#automated-testing)
+
+- Tested for incorrect value changed seats data to 20
+- Just to get a negative result
+- Tested for correct value changed seats data to 2
+- To get a positive test result
+
+- Testing form valid failing test
+
+![test_form_valid_fail.png](static/images/docs/testing/auto_testing/test_form_valid_fail.png)
+
+![test_form_valid_fail_function.png](static/images/docs/testing/auto_testing/test_form_valid_fail_function.png)
+
+- Testing form valid passing test
+
+![test_form_valid_pass1.png](static/images/docs/testing/auto_testing/test_form_valid_pass1.png)
+
+![test_form_valid_pass_function.png](static/images/docs/testing/auto_testing/test_form_valid_pass_function.png)
+
+#### [Test protected pages against anonymous user](#automated-testing)
+
+- Test for a failing test, if status code is not 302
+- For some reason this test, tests against a 302 http status code
+- 302 status codes mean resources permanently removed, in other words, it was there but then were moved somewhere else
+
+- Test anonymous user failing test
+
+![test_protected_page_anonymous_fail.png](static/images/docs/testing/auto_testing/test_protected_page_anonymous_fail.png)
+
+![test_protected_page_anonymous_fail_function.png](static/images/docs/testing/auto_testing/test_protected_page_anonymous_fail_function.png)
+
+- Test anonymous user passing test
+
+![test_protected_page_anonymous_pass.png](static/images/docs/testing/auto_testing/test_protected_page_anonymous_pass.png)
+
+![test_protected_page_anonymous_pass_function.png](static/images/docs/testing/auto_testing/test_protected_page_anonymous_pass_function.png)
+
+#### [Test protected pages against users that are logged in or not](#automated-testing)
+
+- Testing if the status code is something other than 200, if it returns an error message
+- Testing if the status code is 200, a passing test
+
+- Test user failing test
+
+![test_protected_page_user_fail.png](static/images/docs/testing/auto_testing/test_protected_page_user_fail.png)
+
+![test_protected_page_user_fail_function.png](static/images/docs/testing/auto_testing/test_protected_page_user_fail_function.png)
+
+- Test user passing test
+
+![test_protected_page_user_pass.png](static/images/docs/testing/auto_testing/test_protected_page_user_pass.png)
+
+![test_protected_page_user_pass_function.png](static/images/docs/testing/auto_testing/test_protected_page_user_pass_function.png)
 
 ---
 
@@ -784,7 +901,41 @@ Problem?
 
 Solution?
 
-- I will be solving this in an issue that I created
+- I have solved this bug by digging into multi-thread processing
+- And reduced some of the logic that I was using
+
+![performance_lighthouse_solved.png](static/images/docs/bugs/performance/performance_lighthouse_solved.png)
+
+### [Too many connections to database at once](#bugs)
+
+Problem?
+
+- When trying to connect to the database on the menu page, I am getting a connection error
+- There are too many models trying to connect at once
+
+![db_connections.png](static/images/docs/bugs/db_connections.png)
+
+Solution?
+
+- This problem has not been solved yet
+- Will try and come to it at the end
+
+### [styling of homepage](#bugs)
+
+Problem?
+
+- The styling of the homepage does not look the same as the rest of the site
+
+![styling_homepage_problem.png](static/images/docs/bugs/styling_homepage_problem.png)
+
+Solution?
+
+- changed all the correct styling for the homepage to make it conform to the rest of the site
+- add the correct images to the database
+- I have also changed the form for the admin panel that only allows four entries to make room for if you need to update
+  one of the models
+
+![styling_homepage_solution.png](static/images/docs/bugs/styling_homepage_solution.png)
 
 ---
 
@@ -796,8 +947,13 @@ Solution?
   the help of Figma
 - All images that you see on the homepage for Chef's Specials were taken from homepage, I tried my best to make sure
   that there was no copyright on it
+- [Document that assisted me with CRUD operation using Class-Based Views](https://docs.djangoproject.com/en/5.0/topics/class-based-views/generic-editing/)
+- [Document that help me with form validation and success url](https://stackoverflow.com/questions/54129416/django-how-do-i-perform-a-createview-redirect-properly)
+- [Setting form validation with widgets](https://medium.com/@alex.kirkup/making-error-messages-visible-in-django-forms-1abea48c802a)
+- [How to display messages in the template](https://stackoverflow.com/questions/25470452/django-clear-form-field-after-a-submit)
 - [example on how to test if file exists](https://www.w3resource.com/python-exercises/unittest/python-unittest-exercise-5.php#:~:text=We%20use%20the%20self.,We%20use%20the%20self.)
-- [convert to base64 string](https://dev.to/nemecek_f/django-how-to-send-image-file-as-part-of-response-j05)
+- [convert to base64 string](https://dev.to/nemecek_f/django-how-to-send-image-file-as-part-of-response-j05) this was
+  used for themes, but decided to take themes out, I am planning on this for a future feature
 - [Luke Buchanan](https://www.linkedin.com/in/lukebuchanan67/) - Mentor
 - [Code Institute](https://codeinstitute.net/) - Bootcamp
 
