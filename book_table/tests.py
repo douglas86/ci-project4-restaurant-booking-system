@@ -52,7 +52,7 @@ class TestBookTableCreate(TestCase):
 
     def test_form_isvalid(self):
         """
-        Test if I can post a form if I am a logged-in user
+        Test if my data I am sending to form is valid
         :return:
         """
 
@@ -61,60 +61,12 @@ class TestBookTableCreate(TestCase):
         response = BookTableForm(instance=self.customer, data=data)
         self.assertTrue(response.is_valid(), 'Form data incorrect')
 
-    def test_posting_form_anonymous(self):
+    def test_form_not_valid(self):
         """
-        Test if I can post a form if I am an Anonymous user
+        Test if my data I am sending to form is invalid
         :return:
         """
 
-        pass
-
-    # def test_details(self):
-    #     request = self.factory.get('/table/')
-    #     # request.user = self.user
-    #     request.user = AnonymousUser()
-    #     # data = {'seats': 1, "time_slots": "2024-02-15T13:20:30+03:00"}
-    #     # response = BookTableCreateView(form=data)
-    #     response = BookTableCreateView.as_view()(request)
-    #     self.assertEqual(response.status_code, 200)
-
-# Create your tests here.
-# class TestBookTable(TestCase, BookTableCreateView):
-#     """
-#     Tests to be run:
-#     Test if the logged-in user is able to submit a form
-#     Test if the logged-out user is able to submit a form
-#     Test if you can access the book table page if not logged in
-#     """
-#
-#     form_class = BookTableForm
-#     url = '/table'
-#
-#     def setUp(self):
-#         """
-#         Special test case to set up the db for testing
-#         :return:
-#         """
-#         self.client = Client()
-#         self.create_user = self.client.post(
-#             "/accounts/signup/", {"username": "test", "password": "123456"}
-#         )
-#         self.customer = baker.make('Customer')
-#
-#     def test_using_customer(self):
-#         """
-#         Test method using baked model
-#         :return:
-#         """
-#         self.assertIsInstance(self.customer, Customer)
-#
-#     def test_form_valid(self):
-#         """
-#         Test method to save form only if logged-in user
-#         :return:
-#         """
-#
-#         # self.client.login(username="test", password="123456")
-#         data = {"seats": 2, "time_slots": "2024-02-15T13:20:30+03:00"}
-#         f = BookTableForm(instance=self.customer, data=data)
-#         self.assertTrue(f.is_valid())
+        data = {'seats': 20, "time_slots": "2024-02-15T13:20:30+03:00"}
+        response = BookTableForm(instance=self.customer, data=data)
+        self.assertFalse(response.is_valid(), 'Form data correct')
