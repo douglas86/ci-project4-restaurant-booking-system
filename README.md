@@ -785,7 +785,10 @@ Problem?
 
 Solution?
 
-- I will be solving this in an issue that I created
+- I have solved this bug by digging into multi-thread processing
+- And reduced some of the logic that I was using
+
+![performance_lighthouse_solved.png](static/images/docs/bugs/performance/performance_lighthouse_solved.png)
 
 ### [Too many connections to database at once](#bugs)
 
