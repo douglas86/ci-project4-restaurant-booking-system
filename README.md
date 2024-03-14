@@ -33,6 +33,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
         - [Testing responsiveness of the image theme](#testing-responsiveness-of-the-image-theme)
         - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
         - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
+      - [Testing if I can navigate to table page](#testing-if-i-can-navigate-to-table-page)
         - [Html validation testing](#html-validation-testing)
         - [Css validation testing](#css-validation-testing)
         - [Wave testing for accessibility](#wave-testing-for-accessibility)
@@ -468,6 +469,19 @@ Responsive design on Tablet
 Responsive design on Laptop
 
 ![about_responsive_laptop.png](static/images/docs/testing/manual_testing/about_responsive_laptop.png)
+
+#### [Testing if I can navigate to table page](#manual-testing)
+
+- when I am logged out and I try to log in to the table page
+- it redirects me to sign in page
+
+- manually entering the address in address bar
+
+![tabel_address_bar.png](static/images/docs/testing/manual_testing/tabel_address_bar.png)
+
+- when hit enters the address bar
+
+![table_protected_page.png](static/images/docs/testing/manual_testing/table_protected_page.png)
 
 #### [Html validation testing](#manual-testing)
 
