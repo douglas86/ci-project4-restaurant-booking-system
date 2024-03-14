@@ -316,6 +316,9 @@ When the user is logged in, a welcome message will be displayed with a different
 
 - I would like to add a dashboard for the admin logged-in user
 - I have already included a role in the database for this feature
+- Search based on Foreign Key in an admin panel:
+    - I would like to search based on a foreign key in the admin panel
+    - for some reason, I can't seem to search using the search_filed as it does not work on foreign keys
 
 #### [Theme image](#features)
 
