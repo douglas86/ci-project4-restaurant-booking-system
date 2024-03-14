@@ -832,8 +832,13 @@ Solution?
   the help of Figma
 - All images that you see on the homepage for Chef's Specials were taken from homepage, I tried my best to make sure
   that there was no copyright on it
+- [Document that assisted me with CRUD operation using Class-Based Views](https://docs.djangoproject.com/en/5.0/topics/class-based-views/generic-editing/)
+- [Document that help me with form validation and success url](https://stackoverflow.com/questions/54129416/django-how-do-i-perform-a-createview-redirect-properly)
+- [Setting form validation with widgets](https://medium.com/@alex.kirkup/making-error-messages-visible-in-django-forms-1abea48c802a)
+- [How to display messages in the template](https://stackoverflow.com/questions/25470452/django-clear-form-field-after-a-submit)
 - [example on how to test if file exists](https://www.w3resource.com/python-exercises/unittest/python-unittest-exercise-5.php#:~:text=We%20use%20the%20self.,We%20use%20the%20self.)
-- [convert to base64 string](https://dev.to/nemecek_f/django-how-to-send-image-file-as-part-of-response-j05)
+- [convert to base64 string](https://dev.to/nemecek_f/django-how-to-send-image-file-as-part-of-response-j05) this was
+  used for themes, but decided to take themes out, I am planning on this for a future feature
 - [Luke Buchanan](https://www.linkedin.com/in/lukebuchanan67/) - Mentor
 - [Code Institute](https://codeinstitute.net/) - Bootcamp
 
