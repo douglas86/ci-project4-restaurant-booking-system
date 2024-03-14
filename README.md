@@ -55,6 +55,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [Navbar not at top of screen](#navbar-not-at-top-of-screen)
     - [Performance issues in page loading](#performance-issues-in-page-loading)
     - [Too many connections to database at once](#too-many-connections-to-database-at-once)
+  - [styling of homepage](#styling-of-homepage)
 - [Credits](#credits)
 
 ---
@@ -803,6 +804,23 @@ Solution?
 
 - This problem has not been solved yet
 - Will try and come to it at the end
+
+### [styling of homepage](#bugs)
+
+Problem?
+
+- The styling of the homepage does not look the same as the rest of the site
+
+![styling_homepage_problem.png](static/images/docs/bugs/styling_homepage_problem.png)
+
+Solution?
+
+- changed all the correct styling for the homepage to make it conform to the rest of the site
+- add the correct images to the database
+- I have also changed the form for the admin panel that only allows four entries to make room for if you need to update
+  one of the models
+
+![styling_homepage_solution.png](static/images/docs/bugs/styling_homepage_solution.png)
 
 ---
 
