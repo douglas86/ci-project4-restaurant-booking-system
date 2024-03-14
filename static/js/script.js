@@ -51,3 +51,12 @@ const resizeHandler = () => {
 
 // event listener for handling the width resizing
 window.addEventListener('resize', resizeHandler)
+
+
+setTimeout(() => {
+    let message = document.getElementById("message_container")
+
+    message.style.display = 'none'
+}, 5000)
+
+

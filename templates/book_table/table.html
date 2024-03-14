@@ -2,6 +2,17 @@
 {% load static %}
 
 {% block content %}
+    {#display messages to users#}
+    <div id="message_container">
+        {% if messages %}
+            <div class="alert alert-success">
+                {% for m in messages %}
+                    <p>{{ m }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
     <div class="top">
         <div class="heading">
             <h1 class="title">Book a table</h1>
@@ -23,11 +34,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="">
+                    <form method="post" action="{% url 'book_table:create' %}">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>

@@ -18,18 +18,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from .settings import DEBUG
-
 from about.views import AboutView
-from book_table.views import BookTable
 from home.views import HomePageView
+from .settings import DEBUG
 
 urlpatterns = [
     path("about/", AboutView.as_view(), name="about"),
     path("accounts/", include("allauth.urls")),
     path("admin/", admin.site.urls),
     path("menu/", include("menu.urls")),
-    path("table/", BookTable.as_view(), name="table"),
+    path("table/", include("book_table.urls")),
     path("", HomePageView.as_view(), name="home"),
 ]
 
