@@ -44,6 +44,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
         - [Test if the correct theme is being displayed](#test-if-the-correct-theme-is-being-displayed)
         - [Test if correct menu gets returned based on slug](#test-if-correct-menu-gets-returned-based-on-slug)
       - [Test form invalid on Booking a table page](#test-form-invalid-on-booking-a-table-page)
+      - [Test form valid on Booking a table page](#test-form-valid-on-booking-a-table-page)
 - [Bugs](#bugs)
     - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
     - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
@@ -613,6 +614,25 @@ Passing test
 ![test_form_valid_pass.png](static/images/docs/testing/auto_testing/test_form_valid_pass.png)
 
 ![test_form_invalid_pass_function.png](static/images/docs/testing/auto_testing/test_form_invalid_pass_function.png)
+
+#### [Test form valid on Booking a table page](#automated-testing)
+
+- Tested for incorrect value changed seats data to 20
+- Just to get a negative result
+- Tested for correct value changed seats data to 2
+- To get a positive test result
+
+- Testing form valid failing test
+
+![test_form_valid_fail.png](static/images/docs/testing/auto_testing/test_form_valid_fail.png)
+
+![test_form_valid_fail_function.png](static/images/docs/testing/auto_testing/test_form_valid_fail_function.png)
+
+- Testing form valid passing test
+
+![test_form_valid_pass1.png](static/images/docs/testing/auto_testing/test_form_valid_pass1.png)
+
+![test_form_valid_pass_function.png](static/images/docs/testing/auto_testing/test_form_valid_pass_function.png)
 
 ---
 
