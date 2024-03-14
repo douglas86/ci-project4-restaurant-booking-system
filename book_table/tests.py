@@ -1,7 +1,9 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AnonymousUser
 from django.test import TestCase, RequestFactory
+from model_bakery import baker
 
 from book_table.views import BookTableCreateView
+from .form import BookTableForm
 
 
 class TestBookTableCreate(TestCase):
@@ -9,8 +11,8 @@ class TestBookTableCreate(TestCase):
     Tests:
     - Test if I can access the protected page if I am a user
     - Test if I can access the protected page if I am an Anonymous user
-    - Test if I can post a form if I am a user
-    - Test if I can post a form if I am an Anonymous user
+    - Test if the form is valid data
+    - Test if the for is invalid data
     """
 
     def setUp(self):
@@ -25,6 +27,8 @@ class TestBookTableCreate(TestCase):
         self.user = User.objects.create_user(username='test', email='test@gmail.com', password='123456')
         # url that I am testing for
         self.request = self.factory.get('/table')
+        # populate data for customer
+        self.customer = baker.make('Customer')
 
     def test_protected_page_user(self):
         """
@@ -42,15 +46,20 @@ class TestBookTableCreate(TestCase):
         :return:
         """
 
-        pass
+        self.request.user = AnonymousUser()
+        response = BookTableCreateView.as_view()(self.request)
+        self.assertEqual(response.status_code, 302, 'The protected page')
 
-    def test_posting_form_user(self):
+    def test_form_isvalid(self):
         """
         Test if I can post a form if I am a logged-in user
         :return:
         """
 
-        pass
+        self.request.user = self.user
+        data = {'seats': 2, "time_slots": "2024-02-15T13:20:30+03:00"}
+        response = BookTableForm(instance=self.customer, data=data)
+        self.assertTrue(response.is_valid(), 'Form data incorrect')
 
     def test_posting_form_anonymous(self):
         """
