@@ -45,6 +45,8 @@ I am also able to see the Restaurant's Menu and Chef's specials.
         - [Test if correct menu gets returned based on slug](#test-if-correct-menu-gets-returned-based-on-slug)
       - [Test form invalid on Booking a table page](#test-form-invalid-on-booking-a-table-page)
       - [Test form valid on Booking a table page](#test-form-valid-on-booking-a-table-page)
+      - [Test protected pages against anonymous user](#test-protected-pages-against-anonymous-user)
+      - [Test protected pages against users that are logged in or not](#test-protected-pages-against-users-that-are-logged-in-or-not)
 - [Bugs](#bugs)
     - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
     - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
@@ -633,6 +635,41 @@ Passing test
 ![test_form_valid_pass1.png](static/images/docs/testing/auto_testing/test_form_valid_pass1.png)
 
 ![test_form_valid_pass_function.png](static/images/docs/testing/auto_testing/test_form_valid_pass_function.png)
+
+#### [Test protected pages against anonymous user](#automated-testing)
+
+- Test for a failing test, if status code is not 302
+- For some reason this test, tests against a 302 http status code
+- 302 status codes mean resources permanently removed, in other words, it was there but then were moved somewhere else
+
+- Test anonymous user failing test
+
+![test_protected_page_anonymous_fail.png](static/images/docs/testing/auto_testing/test_protected_page_anonymous_fail.png)
+
+![test_protected_page_anonymous_fail_function.png](static/images/docs/testing/auto_testing/test_protected_page_anonymous_fail_function.png)
+
+- Test anonymous user passing test
+
+![test_protected_page_anonymous_pass.png](static/images/docs/testing/auto_testing/test_protected_page_anonymous_pass.png)
+
+![test_protected_page_anonymous_pass_function.png](static/images/docs/testing/auto_testing/test_protected_page_anonymous_pass_function.png)
+
+#### [Test protected pages against users that are logged in or not](#automated-testing)
+
+- Testing if the status code is something other than 200, if it returns an error message
+- Testing if the status code is 200, a passing test
+
+- Test user failing test
+
+![test_protected_page_user_fail.png](static/images/docs/testing/auto_testing/test_protected_page_user_fail.png)
+
+![test_protected_page_user_fail_function.png](static/images/docs/testing/auto_testing/test_protected_page_user_fail_function.png)
+
+- Test user passing test
+
+![test_protected_page_user_pass.png](static/images/docs/testing/auto_testing/test_protected_page_user_pass.png)
+
+![test_protected_page_user_pass_function.png](static/images/docs/testing/auto_testing/test_protected_page_user_pass_function.png)
 
 ---
 
