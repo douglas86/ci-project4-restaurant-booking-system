@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django.test import TestCase, RequestFactory
 
+from book_table.views import BookTableCreateView
+
 
 class TestBookTableCreate(TestCase):
     """
@@ -17,8 +19,12 @@ class TestBookTableCreate(TestCase):
         :return:
         """
 
+        # setup instance of RequestFactory
         self.factory = RequestFactory()
+        # create a new user
         self.user = User.objects.create_user(username='test', email='test@gmail.com', password='123456')
+        # url that I am testing for
+        self.request = self.factory.get('/table')
 
     def test_protected_page_user(self):
         """
@@ -26,7 +32,9 @@ class TestBookTableCreate(TestCase):
         :return:
         """
 
-        pass
+        self.request.user = self.user
+        response = BookTableCreateView.as_view()(self.request)
+        self.assertEqual(response.status_code, 200, 'The protected page')
 
     def test_protected_page_anonymous(self):
         """
