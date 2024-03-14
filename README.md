@@ -501,6 +501,31 @@ Responsive design on Laptop
 
 ![lighthouse-about.png](static/images/docs/testing/manual_testing/lighthouse-about.png)
 
+##### Menu page testing
+
+- All these tests were done on incognito mode in a new window
+- As extensions were messing with my results
+
+![lighthouse_menu_alcohol_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_alcohol_desktop.png)
+
+![lighthouse_menu_alcohol_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_alcohol_mobile.png)
+
+![lighthouse_menu_breakfast_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_breakfast_mobile.png)
+
+![lighthouse_menu_breakfast_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_breakfast_desktop.png)
+
+![lighthouse_menu_lunch_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_lunch_mobile.png)
+
+![lighthouse_menu_lunch_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_lunch_desktop.png)
+
+![lighthouse_menu_starter_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_starter_mobile.png)
+
+![lighthouse_menu_starter_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_starter_desktop.png)
+
+![lighthouse_menu_supper_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_supper_mobile.png)
+
+![lighthouse_menu_supper_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_supper_desktop.png)
+
 ### [Automated Testing](#testing)
 
 The following command can be used to run tests in Parallel
