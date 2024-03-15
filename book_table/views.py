@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import redirect
 from django.urls import reverse
 from django.views.generic import TemplateView, FormView, CreateView
 
@@ -32,6 +33,16 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
     form_class = BookTableForm
     success_message = "You have successfully booked your table"
 
+    def get_queryset(self):
+        """
+        Built in method normally used to gather data from the database
+        :return:
+        """
+
+        queryset = Customer.objects.filter(user=self.request.user).count()
+
+        return queryset
+
     def form_valid(self, form):
         """
         This method is used to save the form to the Customer Model
@@ -40,16 +51,22 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         :return:
         """
 
-        instance = form.save(commit=False)
-        instance.user = self.request.user
+        if self.get_queryset() <= 0:
+            instance = form.save(commit=False)
+            instance.user = self.request.user
+        else:
+            self.success_message = 'You have already booked please choose anther day'
+            messages.error(self.request, self.success_message)
+            return redirect('book_table:table')
         return super().form_valid(form)
 
-    def get_success_url(self):
-        """
-        This method is used to redirect you to the table url
-        when the form is submitted and successfully saved
-        :return:
-        """
 
-        messages.success(self.request, self.success_message)
-        return reverse('book_table:table')
+def get_success_url(self):
+    """
+    This method is used to redirect you to the table url
+    when the form is submitted and successfully saved
+    :return:
+    """
+
+    messages.success(self.request, self.success_message)
+    return reverse('book_table:table')
