@@ -43,6 +43,7 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         :return:
         """
 
+        # counts how many records are in db based on user
         queryset = Customer.objects.filter(user=self.request.user).count()
 
         return queryset
