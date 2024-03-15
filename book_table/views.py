@@ -9,32 +9,18 @@ from .models import Customer
 
 
 # Create your views here.
-class BookTableView(LoginRequiredMixin, TemplateView, FormView):
-    """
-    This view is used to render data to the table page
-    """
-
-    template_name = 'book_table/table.html'
-    form_class = BookTableForm
-
-    def get_context_data(self, **kwargs):
-        """
-        This method is used to render data to the template context
-        :param kwargs:
-        :return:
-        """
-
-        return {'form': self.form_class()}
 
 
 class BookTableCreateView(LoginRequiredMixin, CreateView):
     """
-    This view is for posting data to the Customer Model
+    This view is used to write data to the database
     """
 
+    # model to be used
     model = Customer
-    template_name = 'book_table/table.html'
+    # form to be used called from form.py
     form_class = BookTableForm
+    # when form is valid send a success message
     success_message = "You have successfully booked your table"
 
     def get_queryset(self):
@@ -48,10 +34,19 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
 
         return queryset
 
+    def get_success_url(self):
+        """
+        Built in method normally runs on form validation success
+        :return:
+        """
+
+        # send a success message to template
+        messages.success(self.request, self.success_message)
+        return reverse('book_table:table')
+
     def form_valid(self, form):
         """
-        This method is used to save the form to the Customer Model
-        only if it is valid
+        Built in method normally used to validate the form
         :param form:
         :return:
         """
@@ -59,6 +54,7 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         # form validation check
         if self.get_queryset() <= 0:
             # save form only if there is no booking for the current day
+            # based on logged-in user
             instance = form.save(commit=False)
             instance.user = self.request.user
         else:
@@ -68,12 +64,22 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
             return redirect('book_table:table')
         return super().form_valid(form)
 
-    def get_success_url(self):
+
+class BookTableView(LoginRequiredMixin, TemplateView, FormView):
+    """
+    This view is used to read and render data from database to template
+    """
+
+    # template to send data to
+    template_name = 'book_table/table.html'
+    # form to be used called from form.py
+    form_class = BookTableForm
+
+    def get_context_data(self, **kwargs):
         """
-        This method is used to redirect you to the table url
-        when the form is submitted and successfully saved
+        This method is used to render data to the template context
+        :param kwargs:
         :return:
         """
 
-        messages.success(self.request, self.success_message)
-        return reverse('book_table:table')
+        return {'form': self.form_class()}

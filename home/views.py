@@ -11,21 +11,27 @@ class HomePageView(TemplateView):
     Home page view
     """
 
+    # template to send data to
     template_name = "home/index.html"
+    # model that you want data from
     model = ChefSpecial
 
-    today = datetime.date.today()  # gets current data of laptop
-    current_hour = datetime.datetime.now().strftime("%H")  # gets the current hour only
-    year = today.year  # gets the current year
+    # fetches current date of computer
+    today = datetime.date.today()
+    # fetches current hour based off the variable above
+    current_hour = datetime.datetime.now().strftime("%H")
+    # fetches current year based off the variable above
+    year = today.year
 
     # name of the restaurant
     name = "culinary Haven"
 
     def get_served(self):
         """
-        Logic to return current meal served
+        Helper function to return choice variable for meal served
         :return:
         """
+
         if int(self.current_hour) >= 18:
             return 2  # filters all supper meals
         elif int(self.current_hour) >= 12:
@@ -37,10 +43,12 @@ class HomePageView(TemplateView):
 
     def get_queryset(self):
         """
-        Gathers data from a database based on filter
+        Built in method used to fetch data from a database
         """
+
         # calls method get_served to see what meals it needs to display
         served_meals = self.get_served()
+
         # ternary operator to see if variable served_meals is greater than 3
         meal = (
             ChefSpecial.objects.all().filter(served=served_meals)
@@ -52,9 +60,10 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, *args, **kwargs):
         """
-        Passes data to the template variable
+        Built in method used to render context to template file
         :param args:
         :param kwargs:
         :return:
         """
+
         return {"year": self.year, "name": self.name, "meals": self.get_queryset()}

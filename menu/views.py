@@ -8,10 +8,10 @@ from menu.models import Menu
 
 class MenuView(TemplateView):
     """
-    View used for the menu page
-    This will be my first implementation of multithreading operations
+    This view is responsible for reading and rendering to the templates
     """
 
+    # template to send data to
     template_name = 'menu/menu.html'
 
     # this variable represents the url that I am on
@@ -23,10 +23,11 @@ class MenuView(TemplateView):
 
     def get_chef_special(self):
         """
-        This method is used to get the chef special model from the database
-        :return:
+        This method is responsible for gathering data from a Chef Special model
         """
 
+        # use the menu_type as its filter
+        # only displays its values
         chef_special = ChefSpecial.objects.filter(served=self.menu_type).values()
 
         # loop around model and append to a menu list
@@ -35,10 +36,11 @@ class MenuView(TemplateView):
 
     def get_menu(self):
         """
-        This method is used to get the menu model from the database
-        :return:
+        This method is responsible for gathering data from a Menu model
         """
 
+        # use the menu_type as its filter
+        # only displays its values
         menu = Menu.objects.filter(served=self.menu_type).values()
 
         # loop around model and append to a menu list
@@ -47,12 +49,10 @@ class MenuView(TemplateView):
 
     def get_queryset(self):
         """
-        This is a built-in Django method used to gather
-        data from the database for get_context_data
-        :return:
+        Built in method used for fetching data from the database
         """
 
-        # reset menu
+        # reset a menu list on start of method
         self.menu = []
 
         # run methods on its own separate threads
@@ -83,15 +83,17 @@ class MenuView(TemplateView):
 
     def get_context_data(self, **kwargs):
         """
-        This is a built-in Django method used to send data to the template for rendering
-        :param kwargs:
-        :return:
+        Built in method used for rendering data to the template
         """
 
-        # used for tabs on menu page
+        # used to display tabs on template page
+        # for the different menu items
         meals = ["breakfast", "starter", "lunch", "supper", "alcohol"]
 
+        # context variable for storing all kwargs
+        # this variable makes it easier to send to template
         context = super(MenuView, self).get_context_data(**kwargs)
+        # variable for changing the slug based on url
         self.slug = self.kwargs["slug"]
 
         # store variables to context

@@ -30,16 +30,6 @@ class TestBookTableCreate(TestCase):
         # populate data for customer
         self.customer = baker.make('Customer')
 
-    def test_protected_page_user(self):
-        """
-        Test if I can access the protected if I am a user of the site
-        :return:
-        """
-
-        self.request.user = self.user
-        response = BookTableCreateView.as_view()(self.request)
-        self.assertEqual(response.status_code, 200, 'The protected page')
-
     def test_protected_page_anonymous(self):
         """
         Test if I can access the protected if I am an Anonymous user
@@ -49,6 +39,16 @@ class TestBookTableCreate(TestCase):
         self.request.user = AnonymousUser()
         response = BookTableCreateView.as_view()(self.request)
         self.assertEqual(response.status_code, 302, 'The protected page')
+
+    def test_protected_page_user(self):
+        """
+        Test if I can access the protected if I am a user of the site
+        :return:
+        """
+
+        self.request.user = self.user
+        response = BookTableCreateView.as_view()(self.request)
+        self.assertEqual(response.status_code, 200, 'The protected page')
 
     def test_form_isvalid(self):
         """
