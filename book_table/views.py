@@ -10,6 +10,10 @@ from .models import Customer
 
 # Create your views here.
 class BookTableView(LoginRequiredMixin, TemplateView, FormView):
+    """
+    This view is used to render data to the table page
+    """
+
     template_name = 'book_table/table.html'
     form_class = BookTableForm
 
@@ -51,22 +55,24 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         :return:
         """
 
+        # form validation check
         if self.get_queryset() <= 0:
+            # save form only if there is no booking for the current day
             instance = form.save(commit=False)
             instance.user = self.request.user
         else:
+            # return error message if there is already an entry in db
             self.success_message = 'You have already booked please choose anther day'
             messages.error(self.request, self.success_message)
             return redirect('book_table:table')
         return super().form_valid(form)
 
+    def get_success_url(self):
+        """
+        This method is used to redirect you to the table url
+        when the form is submitted and successfully saved
+        :return:
+        """
 
-def get_success_url(self):
-    """
-    This method is used to redirect you to the table url
-    when the form is submitted and successfully saved
-    :return:
-    """
-
-    messages.success(self.request, self.success_message)
-    return reverse('book_table:table')
+        messages.success(self.request, self.success_message)
+        return reverse('book_table:table')
