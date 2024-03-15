@@ -1,4 +1,5 @@
 from cloudinary.models import CloudinaryField
+
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -21,16 +22,16 @@ class ChefSpecial(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    class Meta:
-        """
-        Metaclass to order data based on the served value and created_at in ascending order
-        """
-
-        ordering = ["served", "created_at"]
-
     def __str__(self):
         """
         String for representing the Model object by title
         :return:
         """
         return self.title
+
+    class Meta:
+        """
+        Metaclass to order data based on the served value and created_at in ascending order
+        """
+
+        ordering = ["served", "created_at"]

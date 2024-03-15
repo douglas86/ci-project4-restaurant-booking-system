@@ -5,7 +5,9 @@ from . import views
 
 class TestMenu(TestCase, views.MenuView):
     """
-    Test the menu functionality of my site
+    Test if the correct menu is returned from a menu model
+    :param model: The menu model
+    :param MenuView: The main menu view for fetching methods for testing
     """
 
     # populate database
@@ -17,9 +19,12 @@ class TestMenu(TestCase, views.MenuView):
         :return:
         """
 
+        # fetch methods from MenuView for testing
+        # this will also populate the menu list in MenuView class
         self.get_chef_special()
         self.get_menu()
 
+        # once the menu view has been populated, it will then return it
         return self.menu
 
     def check_menu_data(self):
@@ -29,6 +34,8 @@ class TestMenu(TestCase, views.MenuView):
         :return:
         """
 
+        # this will reset the menu list from MenuView
+        #  before the logic runs below
         self.menu = []
 
         # iterate over a menu list from views
@@ -45,80 +52,80 @@ class TestMenu(TestCase, views.MenuView):
 
     def test_breakfast(self):
         """
-        Tests:
-        - a Breakfast menu returned
-        - with a special menu
-
+        Testing if a breakfast menu is correct
         :return:
         """
 
         print('Testing breakfast menu')
 
+        # simulate changing of slug for a breakfast menu
         self.slug = 'breakfast'
+        # this is the variable to be filtered in a database
         self.menu_type = 0
 
+        # assertion to validate if correct menu
         self.assertEqual(self.check_menu_data(), True)
 
     def test_lunch(self):
         """
-        Tests:
-        - a Lunch menu returned
-        - with a special menu
-
+        Testing if the lunch menu is correct
         :return:
         """
 
         print('Testing lunch menu')
 
+        # simulate changing of slug for a lunch menu
         self.slug = 'lunch'
+        # this is the variable to be filtered in a database
         self.menu_type = 1
 
+        # assertion to validate if correct menu
         self.assertEqual(self.check_menu_data(), True)
 
     def test_supper(self):
         """
-        Tests:
-        - a Supper menu returned
-        - with a special menu
-
+        Testing if the supper menu is correct
         :return:
         """
 
         print('Testing supper menu')
 
+        # simulate changing of slug for a supper menu
         self.slug = 'supper'
+        # this is the variable to be filtered in a database
         self.menu_type = 2
 
+        # assertion to validate if correct menu
         self.assertEqual(self.check_menu_data(), True)
 
     def test_starter(self):
         """
-        Tests:
-        - a Supper menu returned
-        - with a special menu
-
+        Testing if the starter menu is correct
         :return:
         """
 
         print('Testing starter menu')
 
+        # simulate changing of slug for a starter menu
         self.slug = 'starter'
+        # this is the variable to be filtered in a database
         self.menu_type = 3
 
+        # assertion to validate if correct menu
         self.assertEqual(self.check_menu_data(), True)
 
     def test_alcohol(self):
         """
-        Tests:
-        - a Supper menu returned
-        - with a special menu
-
+        Testing if the alcohol menu is correct
         :return:
         """
 
         print('Testing alcohol menu')
 
+        # simulate changing of slug for an alcohol menu
         self.slug = 'alcohol'
+        # this is the variable to be filtered in a database
         self.menu_type = 4
 
+        # assertion to validate if correct menu
         self.assertEqual(self.check_menu_data(), True)
