@@ -1,3 +1,5 @@
+import asyncio
+
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
@@ -77,11 +79,31 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
     # this will only send paginate_by number to template at once
     paginate_by = 5
 
+    async def factorial(self, name, number):
+        f = 1
+        for i in range(2, number + 1):
+            print(f'Task {name}: Compute factorial({number}), currently i={i}...')
+            await asyncio.sleep(1)
+            f *= i
+        print(f'Task {name}: factorial({number}) = {f}')
+        return f
+
+    async def main(self):
+        L = await asyncio.gather(
+            self.factorial("A", 2),
+            self.factorial("B", 3),
+            self.factorial("C", 4),
+        )
+
+        print(L)
+
     def get_queryset(self):
         """
         Built in method used to fetch data from a database
         :return:
         """
+
+        asyncio.run(self.main())
 
         customer = Customer.objects.filter(user=self.request.user).values()
         data = []
