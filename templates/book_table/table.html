@@ -31,10 +31,13 @@
                             data-bs-target="#staticBackdrop">New Booking
                     </button>
                 </div>
-                {% for items in context.customer %}
-                    <p>{{ items.seats }}</p>
-                {% endfor %}
-                <h2 class="booking-history-header">No Booking History To Display</h2>
+                {% if not context.customer %}
+                    <h2 class="booking-history-header">No Booking History To Display</h2>
+                {% else %}
+                    {% for items in context.customer %}
+                        <p>{{ items }}</p>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
     </div>
