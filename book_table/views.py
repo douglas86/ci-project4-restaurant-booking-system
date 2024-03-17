@@ -74,6 +74,8 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
     template_name = 'book_table/table.html'
     # form to be used called from form.py
     form_class = BookTableForm
+    # this will only send paginate_by number to template at once
+    paginate_by = 5
 
     def get_queryset(self):
         """
@@ -81,7 +83,9 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         :return:
         """
 
-        pass
+        customer = Customer.objects.filter(user=self.request.user).values()
+
+        return customer
 
     def get_context_data(self, **kwargs):
         """
@@ -90,4 +94,10 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         :return:
         """
 
-        return {'form': self.form_class()}
+        # context variable for storing all kwargs
+        # this variable makes it easier to send to template
+        context = super(BookTableView, self).get_context_data(**kwargs)
+
+        context['customer'] = self.get_queryset()
+
+        return {'form': self.form_class(), 'context': context}
