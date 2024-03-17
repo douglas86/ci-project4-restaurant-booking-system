@@ -75,9 +75,17 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
     # form to be used called from form.py
     form_class = BookTableForm
 
+    def get_queryset(self):
+        """
+        Built in method used to fetch data from a database
+        :return:
+        """
+
+        pass
+
     def get_context_data(self, **kwargs):
         """
-        This method is used to render data to the template context
+        Built in method used to render data to template
         :param kwargs:
         :return:
         """
