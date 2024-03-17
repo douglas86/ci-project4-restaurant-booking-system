@@ -268,6 +268,22 @@ form input[type="email"] {
 }
 
 /*table booking history*/
+.dashboard {
+    display: flex;
+    margin: 2em auto;
+}
+
+.left-container {
+    width: 20%;
+}
+
+.right-container {
+    width: 50%;
+    height: 10em;
+    background-color: #d3d3d3;
+    opacity: 0.8;
+    margin: auto;
+}
 
 /*footer*/
 footer {
