@@ -285,12 +285,24 @@ form input[type="email"] {
     margin: auto;
 }
 
+.new-booking {
+    width: 100%;
+    height: 2em;
+}
+
+.new-booking .btn {
+    width: 20%;
+    height: 2em;
+    margin: 0.5em;
+    float: right;
+}
+
 .booking-history-header {
     border: none;
     text-align: center;
-    margin: 1em;
     font-family: "Protest Revolution", sans-serif;
     font-weight: bold;
+    margin: 1em;
 }
 
 /*footer*/
