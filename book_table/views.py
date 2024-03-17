@@ -84,8 +84,23 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         """
 
         customer = Customer.objects.filter(user=self.request.user).values()
+        data = []
+        data_items = {}
 
-        return customer
+        # iterate over Customer model
+        for key, value in customer[0].items():
+            # convert model into a usable format
+            # only convert items in a model that have a datatime attribute
+            try:
+                data_items[key] = value.strftime('%d %B %Y %H:%M')
+            # if no datatime attribute leave item as is
+            except AttributeError:
+                data_items[key] = value
+
+        # push data_items to data list
+        data.append(data_items)
+
+        return data
 
     def get_context_data(self, **kwargs):
         """
