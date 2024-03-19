@@ -17,10 +17,35 @@
         <div class="heading">
             <h1 class="title">Book a table</h1>
         </div>
-        <div class="new-image">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                <img src="{% static 'images/book_table/New.png' %}" alt="not found">
-            </button>
+    </div>
+
+    <div class="dashboard">
+        {#voucher and next booking display#}
+        <div class="left-container">
+            <div class="next-booking"></div>
+            <div class="vouchers"></div>
+        </div>
+        {#booking history display#}
+        <div class="right-container">
+            <div class="booking-history">
+                <div class="new-booking">
+                    <button class="btn btn-success" type="button" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">New Booking
+                    </button>
+                </div>
+                {% if not context.customer %}
+                    {#if there is no data to be displayed#}
+                    <h2 class="booking-history-header">No Booking History To Display</h2>
+                {% else %}
+                    {#when there is data to be displayed show table#}
+                    {#toggle display of screen greater than 400px#}
+                    {% include 'services/table/screen_400.html' %}
+
+                    {#toggle display of screen less than 400px#}
+                    {% include 'services/table/screen_399.html' %}
+
+                {% endif %}
+            </div>
         </div>
     </div>
 

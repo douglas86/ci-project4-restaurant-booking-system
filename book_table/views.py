@@ -74,12 +74,48 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
     template_name = 'book_table/table.html'
     # form to be used called from form.py
     form_class = BookTableForm
+    # this will only send paginate_by number to template at once
+    paginate_by = 5
+
+    def get_data(self):
+        return Customer.objects.filter(user=self.request.user).values()
+
+    def get_queryset(self):
+        """
+        Built in method used to fetch data from a database
+        :return:
+        """
+
+        customer = self.get_data()
+        data = []
+        data_items = {}
+
+        # iterate over Customer model
+        for key, value in customer[0].items():
+            # convert model into a usable format
+            # only convert items in a model that have a datatime attribute
+            try:
+                data_items[key] = value.strftime('%d %B %Y %H:%M')
+            # if no datatime attribute leave item as is
+            except AttributeError:
+                data_items[key] = value
+
+        # push data_items to data list
+        data.append(data_items)
+
+        return data
 
     def get_context_data(self, **kwargs):
         """
-        This method is used to render data to the template context
+        Built in method used to render data to template
         :param kwargs:
         :return:
         """
 
-        return {'form': self.form_class()}
+        # context variable for storing all kwargs
+        # this variable makes it easier to send to template
+        context = super(BookTableView, self).get_context_data(**kwargs)
+
+        context['customer'] = self.get_queryset()
+
+        return {'form': self.form_class(), 'context': context}

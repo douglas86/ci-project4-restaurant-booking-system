@@ -1,0 +1,20 @@
+<div class="screen-399">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Party of</th>
+            <th scope="col">Time Slot</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for data in context.customer %}
+            <tr>
+                <th scope="col">{{ forloop.counter }}</th>
+                <td>{{ data.seats }}</td>
+                <td>{{ data.time_slots }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
