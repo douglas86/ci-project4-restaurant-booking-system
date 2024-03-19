@@ -83,16 +83,20 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         :return:
         """
 
-        return Customer.objects.filter(user=self.request.user).order_by('time_slots')
+        return Customer.objects.filter(user=self.request.user).order_by('-time_slots')
 
     def get_queryset(self):
         """
-        Built in method used to fetch data from a database
+        Built in method used to gather data for get_context_data method
         :return:
         """
 
+        # variable to keep track of get_data from a database
         fetch_data = self.get_data()
-        items = []
+        # variable to get last record in a database
+        last_booking = fetch_data.first().time_slots
+        # list to return properly formatted time stamps
+        data = []
 
         # for loop to iterate over fetch data variable
         for item in fetch_data.values():
@@ -110,9 +114,9 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
 
             # once key, value loop is complete
             # push data to an item list for template
-            items.append(data_item)
+            data.append(data_item)
 
-        return items
+        return data, last_booking
 
     def get_context_data(self, **kwargs):
         """
@@ -125,6 +129,7 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         # this variable makes it easier to send to template
         context = super(BookTableView, self).get_context_data(**kwargs)
 
-        context['customer'] = self.get_queryset()
+        context['customer'] = self.get_queryset()[0]
+        context['last_booking'] = self.get_queryset()[1]
 
         return {'form': self.form_class(), 'context': context}
