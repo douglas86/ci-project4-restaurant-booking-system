@@ -270,7 +270,19 @@ form input[type="email"] {
 }
 
 .left-container {
+    width: 100%;
+}
+
+.next-booking {
     width: 80%;
+    height: auto;
+    background-color: #d3d3d3;
+    opacity: 0.8;
+    margin: auto;
+}
+
+.vouchers {
+    display: none;
 }
 
 .right-container {
@@ -304,48 +316,6 @@ form input[type="email"] {
 .booking-history {
     padding: 1em;
 }
-
-/*table booking history*/
-/*.dashboard {*/
-/*    display: flex;*/
-/*    margin: 2em auto;*/
-/*}*/
-
-/*.left-container {*/
-/*    width: 20%;*/
-/*}*/
-
-/*.right-container {*/
-/*    width: 50%;*/
-/*    height: auto;*/
-/*    background-color: #d3d3d3;*/
-/*    opacity: 0.8;*/
-/*    margin: auto;*/
-/*}*/
-
-/*.new-booking {*/
-/*    width: 100%;*/
-/*    height: 2em;*/
-/*}*/
-
-/*.new-booking .btn {*/
-/*    width: 20%;*/
-/*    height: 2em;*/
-/*    margin: 0.5em;*/
-/*    float: right;*/
-/*}*/
-
-/*.booking-history-header {*/
-/*    border: none;*/
-/*    text-align: center;*/
-/*    font-family: "Protest Revolution", sans-serif;*/
-/*    font-weight: bold;*/
-/*    margin: 1em;*/
-/*}*/
-
-/*.booking-history {*/
-/*    padding: 1em;*/
-/*}*/
 
 /*footer*/
 footer {
