@@ -20,10 +20,12 @@
     </div>
 
     <div class="dashboard">
+        {#voucher and next booking display#}
         <div class="left-container">
             <div class="next-booking"></div>
             <div class="vouchers"></div>
         </div>
+        {#booking history display#}
         <div class="right-container">
             <div class="booking-history">
                 <div class="new-booking">
@@ -32,11 +34,32 @@
                     </button>
                 </div>
                 {% if not context.customer %}
+                    {#if there is no data to be displayed#}
                     <h2 class="booking-history-header">No Booking History To Display</h2>
                 {% else %}
-                    {% for items in context.customer %}
-                        <p>{{ items }}</p>
-                    {% endfor %}
+                    {#when there is data to be displayed show table#}
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Party of</th>
+                            <th scope="col">Time Slot</th>
+                            <th scope="col">Booking Created</th>
+                            <th scope="col">Booking Updated</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for data in context.customer %}
+                            <tr>
+                                <th scope="col">{{ forloop.counter }}</th>
+                                <td>{{ data.seats }}</td>
+                                <td>{{ data.time_slots }}</td>
+                                <td>{{ data.created_at }}</td>
+                                <td>{{ data.updated_at }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
                 {% endif %}
             </div>
         </div>
