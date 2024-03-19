@@ -93,8 +93,6 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
 
         # variable to keep track of get_data from a database
         fetch_data = self.get_data()
-        # variable to get last record in a database
-        last_booking = fetch_data.first().time_slots
         # list to return properly formatted time stamps
         data = []
 
@@ -116,7 +114,7 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
             # push data to an item list for template
             data.append(data_item)
 
-        return data, last_booking
+        return data
 
     def get_context_data(self, **kwargs):
         """
@@ -129,7 +127,7 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         # this variable makes it easier to send to template
         context = super(BookTableView, self).get_context_data(**kwargs)
 
-        context['customer'] = self.get_queryset()[0]
-        context['last_booking'] = self.get_queryset()[1]
+        context['customer'] = self.get_queryset()
+        context['last_booking'] = context['customer'][0]
 
         return {'form': self.form_class(), 'context': context}
