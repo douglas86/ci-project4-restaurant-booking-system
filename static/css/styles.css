@@ -270,7 +270,19 @@ form input[type="email"] {
 }
 
 .left-container {
+    width: 100%;
+}
+
+.next-booking {
     width: 80%;
+    height: auto;
+    background-color: #d3d3d3;
+    opacity: 0.8;
+    margin: auto;
+}
+
+.vouchers {
+    display: none;
 }
 
 .right-container {
