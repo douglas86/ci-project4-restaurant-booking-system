@@ -8,9 +8,6 @@ from .form import BookTableForm
 from .models import Customer
 
 
-# Create your views here.
-
-
 class BookTableCreateView(LoginRequiredMixin, CreateView):
     """
     This view is used to write data to the database
@@ -127,7 +124,9 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         # this variable makes it easier to send to template
         context = super(BookTableView, self).get_context_data(**kwargs)
 
+        # context for all data stored in Customer model
         context['customer'] = self.get_queryset()
+        # context for displaying last entry in customer context
         context['last_booking'] = context['customer'][0]
 
         return {'form': self.form_class(), 'context': context}
