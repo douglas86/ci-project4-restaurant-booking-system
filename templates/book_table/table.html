@@ -38,28 +38,53 @@
                     <h2 class="booking-history-header">No Booking History To Display</h2>
                 {% else %}
                     {#when there is data to be displayed show table#}
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Party of</th>
-                            <th scope="col">Time Slot</th>
-                            <th scope="col">Booking Created</th>
-                            <th scope="col">Booking Updated</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for data in context.customer %}
+                    {#toggle display of screen greater than 400px#}
+                    <div class="screen-400">
+                        <table class="table">
+                            <thead>
                             <tr>
-                                <th scope="col">{{ forloop.counter }}</th>
-                                <td>{{ data.seats }}</td>
-                                <td>{{ data.time_slots }}</td>
-                                <td>{{ data.created_at }}</td>
-                                <td>{{ data.updated_at }}</td>
+                                <th scope="col">#</th>
+                                <th scope="col">Party of</th>
+                                <th scope="col">Time Slot</th>
+                                <th scope="col">Booking Created</th>
+                                <th scope="col">Booking Updated</th>
                             </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            {% for data in context.customer %}
+                                <tr>
+                                    <th scope="col">{{ forloop.counter }}</th>
+                                    <td>{{ data.seats }}</td>
+                                    <td>{{ data.time_slots }}</td>
+                                    <td>{{ data.created_at }}</td>
+                                    <td>{{ data.updated_at }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {#toggle display of screen less than 400px#}
+                    <div class="screen-399">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Party of</th>
+                                <th scope="col">Time Slot</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for data in context.customer %}
+                                <tr>
+                                    <th scope="col">{{ forloop.counter }}</th>
+                                    <td>{{ data.seats }}</td>
+                                    <td>{{ data.time_slots }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
                 {% endif %}
             </div>
         </div>
