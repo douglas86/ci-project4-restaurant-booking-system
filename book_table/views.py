@@ -75,10 +75,15 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
     # form to be used called from form.py
     form_class = BookTableForm
     # this will only send paginate_by number to template at once
-    paginate_by = 5
+    paginate_by = 10
 
     def get_data(self):
-        return Customer.objects.filter(user=self.request.user).values()
+        """
+        Fetch data from a database by order in ascending order by time_slots
+        :return:
+        """
+
+        return Customer.objects.filter(user=self.request.user).order_by('time_slots')
 
     def get_queryset(self):
         """
@@ -86,24 +91,28 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         :return:
         """
 
-        customer = self.get_data()
-        data = []
-        data_items = {}
+        fetch_data = self.get_data()
+        items = []
 
-        # iterate over Customer model
-        for key, value in customer[0].items():
-            # convert model into a usable format
-            # only convert items in a model that have a datatime attribute
-            try:
-                data_items[key] = value.strftime('%d %B %Y %H:%M')
-            # if no datatime attribute leave item as is
-            except AttributeError:
-                data_items[key] = value
+        # for loop to iterate over fetch data variable
+        for item in fetch_data.values():
+            # dictionary to keep track of properly
+            # formatted data from queryset
+            data_item = {}
+            # for loop to iterate over items in queryset
+            for key, value in item.items():
+                try:
+                    # format all time stamps to day, month, year and time
+                    data_item[key] = value.strftime('%d %B %Y %H:%M')
+                except AttributeError:
+                    # if no time stamp on data leave as is
+                    data_item[key] = value
 
-        # push data_items to data list
-        data.append(data_items)
+            # once key, value loop is complete
+            # push data to an item list for template
+            items.append(data_item)
 
-        return data
+        return items
 
     def get_context_data(self, **kwargs):
         """
