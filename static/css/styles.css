@@ -266,7 +266,7 @@ form input[type="email"] {
 
 .right-container {
     width: 50%;
-    height: 10em;
+    height: auto;
     background-color: #d3d3d3;
     opacity: 0.8;
     margin: auto;
@@ -290,6 +290,10 @@ form input[type="email"] {
     font-family: "Protest Revolution", sans-serif;
     font-weight: bold;
     margin: 1em;
+}
+
+.booking-history {
+    padding: 1em;
 }
 
 /*footer*/
