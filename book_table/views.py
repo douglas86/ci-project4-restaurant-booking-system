@@ -77,9 +77,8 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
     # this will only send paginate_by number to template at once
     paginate_by = 5
 
-    async def get_data(self):
-        task = await Customer.objects.filter(user=self.request.user)
-        yield task
+    def get_data(self):
+        return Customer.objects.filter(user=self.request.user).values()
 
     def get_queryset(self):
         """
@@ -87,10 +86,7 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         :return:
         """
 
-        task = self.get_data()
-        print('task', task)
-
-        customer = Customer.objects.filter(user=self.request.user).values()
+        customer = self.get_data()
         data = []
         data_items = {}
 
