@@ -26,6 +26,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
         - [Theme image](#theme-image)
         - [Description of the restaurant](#description-of-the-restaurant)
       - [scrolling left and right arrows for carousel](#scrolling-left-and-right-arrows-for-carousel)
+      - [table booking with booking history, vouchers and next booking](#table-booking-with-booking-history-vouchers-and-next-booking)
     - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
         - [Theme image](#theme-image-1)
 - [Testing](#testing)
@@ -315,6 +316,33 @@ When the user is logged in, a welcome message will be displayed with a different
 - I have tried to blend it in to the rest of the site
 
 ![scrolling_left_right_arrows_carousel.png](static/images/docs/features/scrolling_left_right_arrows_carousel.png)
+
+#### [table booking with booking history, vouchers and next booking](#features)
+
+- You can only book a table if you are logged in
+- The icon in the header will not be displayed if you are logged out
+- There is a section to show all history of your bookings it will only display 10
+- I have left out pagination, I will only be displaying 10 history items at the most
+- Displaying all history bookings as a table
+- I have also added it to display your next booking
+- But at this time it will only display the last booking that you have booked for
+- I have not added the logic needed to work out the next booking
+- as if you had a few bookings after the current date
+- it will just display the last one
+- As I believe at this stage, it will be a performance issue, as async has not been worked out properly yet
+- There is also a voucher system that is running
+- I have only been able to do one voucher at present
+- This voucher system will only be displayed on tablet and bigger devices
+- The voucher will be applied once it sees that you have no booking history
+- This voucher is still experimental needing to work out the logic a little bit better
+
+- What it looks like on mobile devices
+
+![table-mobile.png](static/images/docs/features/table-mobile.png)
+
+- What it looks like on desktop devices
+
+![table-desktop.png](static/images/docs/features/table-desktop.png)
 
 ### [Future features to be added at a later stage](#features)
 
@@ -695,7 +723,7 @@ Passing test
 
 #### [Test protected pages against users that are logged in or not](#automated-testing)
 
-- Testing if the status code is something other than 200, if it returns an error message
+- Testing if the status code is something other than 200 if it returns an error message
 - Testing if the status code is 200, a passing test
 
 - Test user failing test
