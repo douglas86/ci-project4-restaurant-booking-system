@@ -19,6 +19,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [How to start this project locally](#how-to-start-this-project-locally)
     - [How this project was deployed to Heroku](#how-this-project-was-deployed-to-heroku)
     - [Technology Used](#technology-used)
+  - [neat and clean code](#neat-and-clean-code)
 - [Features](#features)
     - [Features that have been included in this project](#features-that-have-been-included-in-this-project)
         - [hamburger image on smaller devices](#hamburger-image-on-smaller-devices)
@@ -35,10 +36,10 @@ I am also able to see the Restaurant's Menu and Chef's specials.
         - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
         - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
       - [Testing if I can navigate to table page](#testing-if-i-can-navigate-to-table-page)
-        - [Html validation testing](#html-validation-testing)
-        - [Css validation testing](#css-validation-testing)
-        - [Wave testing for accessibility](#wave-testing-for-accessibility)
-        - [lighthouse testing](#lighthouse-testing)
+          - [Html validation testing](#html-validation-testing)
+          - [Css validation testing](#css-validation-testing)
+          - [Wave testing for accessibility](#wave-testing-for-accessibility)
+          - [lighthouse testing](#lighthouse-testing)
     - [Automated Testing](#automated-testing)
         - [Authentication](#authentication-1)
         - [Homepage](#homepage-2)
@@ -278,6 +279,43 @@ env.py
 - Heroku - cloud deployment
 - GitHub - version control
 - Pycharm - IDE for development
+
+### [neat and clean code](#planning)
+
+- Code always needs to be kept neat and tidy
+- As such, I have tried my best to organize my code in a readable manner
+
+order of imports
+
+- standard libraries
+- third-party libraries
+- django imports
+- local imports
+- imported based on logic: like try/except or if statements
+
+[reference](https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/#:~:text=Put%20imports%20in%20these%20groups,import%20objects%20in%20each%20section.)
+
+order of methods in classes
+
+- magic methods: def __magic_method__(self)
+- public methods: def public_method(self)
+- class method: class within class
+- private methods: def private_methods(self): helper functions
+- get_queryset: this is used for gathering data for get_context_data
+- get_context_data: this is for rendering data to template file
+
+order of classes within files:
+
+- follow CRUD operations for views
+- follow alphabetical order for all other files
+
+order in test files:
+
+- setUp method
+- helper functions: in alphabetical order, then grouped together by relevance
+- tests: in alphabetical order
+
+[reference](https://stackoverflow.com/questions/10289461/what-is-a-good-way-to-order-methods-in-a-python-class)
 
 ---
 
