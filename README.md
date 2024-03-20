@@ -2,6 +2,7 @@
 
 ## [Introduction](#table-of-content)
 
+
 This is Part of my Fourth Project at Code Institute.
 
 This is a simple Restaurant Booking System, were I can book tables based on a date and time
@@ -19,6 +20,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [How to start this project locally](#how-to-start-this-project-locally)
     - [How this project was deployed to Heroku](#how-this-project-was-deployed-to-heroku)
     - [Technology Used](#technology-used)
+  - [neat and clean code](#neat-and-clean-code)
 - [Features](#features)
     - [Features that have been included in this project](#features-that-have-been-included-in-this-project)
         - [hamburger image on smaller devices](#hamburger-image-on-smaller-devices)
@@ -26,6 +28,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
         - [Theme image](#theme-image)
         - [Description of the restaurant](#description-of-the-restaurant)
       - [scrolling left and right arrows for carousel](#scrolling-left-and-right-arrows-for-carousel)
+      - [table booking with booking history, vouchers and next booking](#table-booking-with-booking-history-vouchers-and-next-booking)
     - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
         - [Theme image](#theme-image-1)
 - [Testing](#testing)
@@ -34,6 +37,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
         - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
         - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
       - [Testing if I can navigate to table page](#testing-if-i-can-navigate-to-table-page)
+      - [Testing model form for booking a table](#testing-model-form-for-booking-a-table)
         - [Html validation testing](#html-validation-testing)
         - [Css validation testing](#css-validation-testing)
         - [Wave testing for accessibility](#wave-testing-for-accessibility)
@@ -132,9 +136,9 @@ Header
 
 ![Screenshot from 2024-02-04 14-57-56.png](static/images/docs/moscow-header.png)
 
-Kambam board
+kanban board
 
-![kambam-board.png](static/images/docs/planning/kambam-board.png)
+![kanban-board.png](static/images/docs/planning/kanban-board.png)
 
 Explanation of the columns on the board:
 
@@ -181,7 +185,7 @@ Homepage
 Menu Page
 
 - I created 10 sticky notes to decide on what I wanted for the issues
-- Once I knew what I wanted, then created the issues for the Kambam board,
+- Once I knew what I wanted, then created the issues for the kanban board,
 - Sorting them out into Moscow priorities sticking with 60% Must-have
 - I have also created an issue for the documentation
 - Which I will do after all required issues are done
@@ -204,13 +208,23 @@ About Page
 
 ![moscow-about-issues.png](static/images/docs/planning/moscow-about-issues.png)
 
-- The kambam board in action
+- The kanban board in action
 
-![kambam-about.png](static/images/docs/planning/kambam-about.png)
+![kanban-about.png](static/images/docs/planning/kanban-about.png)
 
 - When the last section was added, this is the milestone thus far
 
 ![milestones-about.png](static/images/docs/planning/milestones-about.png)
+
+Table booking Page
+
+- Screenshot of the kanban board when busy on the bookings page
+
+![kanban-table-booking.png](static/images/docs/planning/kanban-table-booking.png)
+
+- Screenshot of the Milestone project board
+
+![milestones-table-booking.png](static/images/docs/planning/milestones-table-booking.png)
 
 ### [How to start this project locally](#planning)
 
@@ -268,6 +282,43 @@ env.py
 - GitHub - version control
 - Pycharm - IDE for development
 
+### [neat and clean code](#planning)
+
+- Code always needs to be kept neat and tidy
+- As such, I have tried my best to organize my code in a readable manner
+
+order of imports
+
+- standard libraries
+- third-party libraries
+- django imports
+- local imports
+- imported based on logic: like try/except or if statements
+
+[reference](https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/#:~:text=Put%20imports%20in%20these%20groups,import%20objects%20in%20each%20section.)
+
+order of methods in classes
+
+- magic methods: def __magic_method__(self)
+- public methods: def public_method(self)
+- class method: class within class
+- private methods: def private_methods(self): helper functions
+- get_queryset: this is used for gathering data for get_context_data
+- get_context_data: this is for rendering data to template file
+
+order of classes within files:
+
+- follow CRUD operations for views
+- follow alphabetical order for all other files
+
+order in test files:
+
+- setUp method
+- helper functions: in alphabetical order, then grouped together by relevance
+- tests: in alphabetical order
+
+[reference](https://stackoverflow.com/questions/10289461/what-is-a-good-way-to-order-methods-in-a-python-class)
+
 ---
 
 ## [Features](#table-of-content)
@@ -315,6 +366,33 @@ When the user is logged in, a welcome message will be displayed with a different
 - I have tried to blend it in to the rest of the site
 
 ![scrolling_left_right_arrows_carousel.png](static/images/docs/features/scrolling_left_right_arrows_carousel.png)
+
+#### [table booking with booking history, vouchers and next booking](#features)
+
+- You can only book a table if you are logged in
+- The icon in the header will not be displayed if you are logged out
+- There is a section to show all history of your bookings it will only display 10
+- I have left out pagination, I will only be displaying 10 history items at the most
+- Displaying all history bookings as a table
+- I have also added it to display your next booking
+- But at this time it will only display the last booking that you have booked for
+- I have not added the logic needed to work out the next booking
+- as if you had a few bookings after the current date
+- it will just display the last one
+- As I believe at this stage, it will be a performance issue, as async has not been worked out properly yet
+- There is also a voucher system that is running
+- I have only been able to do one voucher at present
+- This voucher system will only be displayed on tablet and bigger devices
+- The voucher will be applied once it sees that you have no booking history
+- This voucher is still experimental needing to work out the logic a little bit better
+
+- What it looks like on mobile devices
+
+![table-mobile.png](static/images/docs/features/table-mobile.png)
+
+- What it looks like on desktop devices
+
+![table-desktop.png](static/images/docs/features/table-desktop.png)
 
 ### [Future features to be added at a later stage](#features)
 
@@ -483,6 +561,25 @@ Responsive design on Laptop
 
 ![table_protected_page.png](static/images/docs/testing/manual_testing/table_protected_page.png)
 
+#### [Testing model form for booking a table](#manual-testing)
+
+- The number of seats only allows you to select from 1 to 10
+- The validation of the timeslots only allows you to select from 1 hour of present time
+- As a logged-in user, you are only allowed to book once a day, to eliminate double booking on the same day
+- The modal is also fully responsive
+
+Modal form
+
+![modal_table_booking_form.png](static/images/docs/testing/manual_testing/modal_table_booking_form.png)
+
+Modal booking message
+
+![modal_table_booking_message.png](static/images/docs/testing/manual_testing/modal_table_booking_message.png)
+
+Modal testing of incorrect time slot
+
+![modal_table_booking_test.png](static/images/docs/testing/manual_testing/modal_table_booking_test.png)
+
 #### [Html validation testing](#manual-testing)
 
 - I tested this on Html Validator
@@ -539,6 +636,23 @@ Responsive design on Laptop
 ![lighthouse_menu_supper_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_supper_mobile.png)
 
 ![lighthouse_menu_supper_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_supper_desktop.png)
+
+Table booking page
+
+- Lighthouse testing on Desktop devices
+- The test scores were a bit low
+- I think that it is gathering from a database that is the issue
+- As a future features I want to implement async instead of sync
+- I have also written as a bug that needs to be fixed
+- So that I can try and improve the user experience
+
+- Testing on Desktop
+
+![table-desktop.png](static/images/docs/testing/lighthouse/table-desktop.png)
+
+- Testing on Mobile
+
+![table-mobile.png](static/images/docs/testing/lighthouse/table-mobile.png)
 
 ### [Automated Testing](#testing)
 
@@ -695,7 +809,7 @@ Passing test
 
 #### [Test protected pages against users that are logged in or not](#automated-testing)
 
-- Testing if the status code is something other than 200, if it returns an error message
+- Testing if the status code is something other than 200 if it returns an error message
 - Testing if the status code is 200, a passing test
 
 - Test user failing test
