@@ -37,6 +37,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
         - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
         - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
       - [Testing if I can navigate to table page](#testing-if-i-can-navigate-to-table-page)
+      - [Testing model form for booking a table](#testing-model-form-for-booking-a-table)
         - [Html validation testing](#html-validation-testing)
         - [Css validation testing](#css-validation-testing)
         - [Wave testing for accessibility](#wave-testing-for-accessibility)
@@ -559,6 +560,25 @@ Responsive design on Laptop
 - when hit enters the address bar
 
 ![table_protected_page.png](static/images/docs/testing/manual_testing/table_protected_page.png)
+
+#### [Testing model form for booking a table](#manual-testing)
+
+- The number of seats only allows you to select from 1 to 10
+- The validation of the timeslots only allows you to select from 1 hour of present time
+- As a logged-in user, you are only allowed to book once a day, to eliminate double booking on the same day
+- The modal is also fully responsive
+
+Modal form
+
+![modal_table_booking_form.png](static/images/docs/testing/manual_testing/modal_table_booking_form.png)
+
+Modal booking message
+
+![modal_table_booking_message.png](static/images/docs/testing/manual_testing/modal_table_booking_message.png)
+
+Modal testing of incorrect time slot
+
+![modal_table_booking_test.png](static/images/docs/testing/manual_testing/modal_table_booking_test.png)
 
 #### [Html validation testing](#manual-testing)
 
