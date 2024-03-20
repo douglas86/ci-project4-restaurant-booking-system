@@ -133,11 +133,8 @@
         background-color: #d3d3d3;
         opacity: 0.8;
         margin: auto;
-    }
-
-    .vouchers h2 {
-        padding: 0.5em;
         text-align: center;
+        padding: 0.5em;
     }
 
     .right-container {

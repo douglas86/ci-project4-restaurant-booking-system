@@ -27,6 +27,9 @@
             </div>
             <div class="vouchers">
                 {% if not context.customer %}
+                    <h4>You have a voucher</h4>
+                    <h5>First time user, you get 5% off next purchase</h5>
+                    <p>Note: This voucher will be applied automatically on the next visit</p>
                 {% else %}
                     <h2 class="voucher-heading">No Vouchers to display</h2>
                 {% endif %}
