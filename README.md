@@ -2,6 +2,7 @@
 
 ## [Introduction](#table-of-content)
 
+
 This is Part of my Fourth Project at Code Institute.
 
 This is a simple Restaurant Booking System, were I can book tables based on a date and time
@@ -36,10 +37,10 @@ I am also able to see the Restaurant's Menu and Chef's specials.
         - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
         - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
       - [Testing if I can navigate to table page](#testing-if-i-can-navigate-to-table-page)
-          - [Html validation testing](#html-validation-testing)
-          - [Css validation testing](#css-validation-testing)
-          - [Wave testing for accessibility](#wave-testing-for-accessibility)
-          - [lighthouse testing](#lighthouse-testing)
+        - [Html validation testing](#html-validation-testing)
+        - [Css validation testing](#css-validation-testing)
+        - [Wave testing for accessibility](#wave-testing-for-accessibility)
+        - [lighthouse testing](#lighthouse-testing)
     - [Automated Testing](#automated-testing)
         - [Authentication](#authentication-1)
         - [Homepage](#homepage-2)
@@ -615,6 +616,23 @@ Responsive design on Laptop
 ![lighthouse_menu_supper_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_supper_mobile.png)
 
 ![lighthouse_menu_supper_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_supper_desktop.png)
+
+Table booking page
+
+- Lighthouse testing on Desktop devices
+- The test scores were a bit low
+- I think that it is gathering from a database that is the issue
+- As a future features I want to implement async instead of sync
+- I have also written as a bug that needs to be fixed
+- So that I can try and improve the user experience
+
+- Testing on Desktop
+
+![table-desktop.png](static/images/docs/testing/lighthouse/table-desktop.png)
+
+- Testing on Mobile
+
+![table-mobile.png](static/images/docs/testing/lighthouse/table-mobile.png)
 
 ### [Automated Testing](#testing)
 
