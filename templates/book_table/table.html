@@ -26,7 +26,10 @@
                 {% include 'services/table/next_booking.html' %}
             </div>
             <div class="vouchers">
-                <h2 class="voucher-heading">No Vouchers to display</h2>
+                {% if not context.customer %}
+                {% else %}
+                    <h2 class="voucher-heading">No Vouchers to display</h2>
+                {% endif %}
             </div>
         </div>
         {#booking history display#}

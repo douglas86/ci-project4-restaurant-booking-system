@@ -135,6 +135,11 @@
         margin: auto;
     }
 
+    .vouchers h2 {
+        padding: 0.5em;
+        text-align: center;
+    }
+
     .right-container {
         width: 70%;
         height: auto;
