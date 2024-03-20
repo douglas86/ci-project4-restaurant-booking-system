@@ -129,6 +129,10 @@
 
     .vouchers {
         display: block;
+        width: 80%;
+        background-color: #d3d3d3;
+        opacity: 0.8;
+        margin: auto;
     }
 
     .right-container {
