@@ -117,6 +117,8 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         :return:
         """
 
+        # variable to run helper function
+        # for formatting time stamps
         data = self.format_time_stamps_for_display()
 
         return data

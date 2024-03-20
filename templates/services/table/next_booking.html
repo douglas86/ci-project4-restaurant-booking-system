@@ -1,0 +1,19 @@
+{% if not context.customer %}
+    <h2 class="next-booking-header">No new booking to show</h2>
+{% else %}
+    <h3>Next booking</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Party of</th>
+            <th scope="col">Time Slot</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ context.last_booking.seats }}</td>
+            <td>{{ context.last_booking.time_slots }}</td>
+        </tr>
+        </tbody>
+    </table>
+{% endif %}
