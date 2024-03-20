@@ -213,6 +213,16 @@ About Page
 
 ![milestones-about.png](static/images/docs/planning/milestones-about.png)
 
+Table booking Page
+
+- Screenshot of the kanban board when busy on the bookings page
+
+![kanban-table-booking.png](static/images/docs/planning/kanban-table-booking.png)
+
+- Screenshot of the Milestone project board
+
+![milestones-table-booking.png](static/images/docs/planning/milestones-table-booking.png)
+
 ### [How to start this project locally](#planning)
 
 - when using ssh
