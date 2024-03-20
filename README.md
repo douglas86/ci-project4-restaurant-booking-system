@@ -133,9 +133,9 @@ Header
 
 ![Screenshot from 2024-02-04 14-57-56.png](static/images/docs/moscow-header.png)
 
-Kambam board
+kanban board
 
-![kambam-board.png](static/images/docs/planning/kambam-board.png)
+![kanban-board.png](static/images/docs/planning/kanban-board.png)
 
 Explanation of the columns on the board:
 
@@ -182,7 +182,7 @@ Homepage
 Menu Page
 
 - I created 10 sticky notes to decide on what I wanted for the issues
-- Once I knew what I wanted, then created the issues for the Kambam board,
+- Once I knew what I wanted, then created the issues for the kanban board,
 - Sorting them out into Moscow priorities sticking with 60% Must-have
 - I have also created an issue for the documentation
 - Which I will do after all required issues are done
@@ -205,9 +205,9 @@ About Page
 
 ![moscow-about-issues.png](static/images/docs/planning/moscow-about-issues.png)
 
-- The kambam board in action
+- The kanban board in action
 
-![kambam-about.png](static/images/docs/planning/kambam-about.png)
+![kanban-about.png](static/images/docs/planning/kanban-about.png)
 
 - When the last section was added, this is the milestone thus far
 
