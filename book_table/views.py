@@ -74,27 +74,17 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
     # this will only send paginate_by number to template at once
     paginate_by = 10
 
-    def get_data(self):
+    def format_time_stamps_for_display(self):
         """
-        Fetch data from a database by order in ascending order by time_slots
-        :return:
-        """
-
-        return Customer.objects.filter(user=self.request.user).order_by('-time_slots')
-
-    def get_queryset(self):
-        """
-        Built in method used to gather data for get_context_data method
-        :return:
+        This method is used to format time stamps to day month year time
+        :return: properly formatted time stamps from queryset as a list
         """
 
-        # variable to keep track of get_data from a database
-        fetch_data = self.get_data()
         # list to return properly formatted time stamps
         data = []
 
         # for loop to iterate over fetch data variable
-        for item in fetch_data.values():
+        for item in self.get_data().values():
             # dictionary to keep track of properly
             # formatted data from queryset
             data_item = {}
@@ -110,6 +100,24 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
             # once key, value loop is complete
             # push data to an item list for template
             data.append(data_item)
+
+        return data
+
+    def get_data(self):
+        """
+        Fetch data from a database by order in ascending order by time_slots
+        :return:
+        """
+
+        return Customer.objects.filter(user=self.request.user).order_by('-time_slots')
+
+    def get_queryset(self):
+        """
+        Built in method used to gather data for get_context_data method
+        :return:
+        """
+
+        data = self.format_time_stamps_for_display()
 
         return data
 
