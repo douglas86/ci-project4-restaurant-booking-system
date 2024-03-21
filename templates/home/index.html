@@ -37,25 +37,11 @@
                 {% for meal in meals %}
                     {% if forloop.first %}
                         <div class="carousel-item active">
-                            <div class="card">
-                                <img src="{{ meal.featured_image.url }}" class="d-block w-100"
-                                     alt="image of meal">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ meal.title|title }}</h5>
-                                    <p class="card-title">{{ meal.description }}</p>
-                                </div>
-                            </div>
+                            {% include 'services/home/card.html' %}
                         </div>
                     {% else %}
                         <div class="carousel-item">
-                            <div class="card">
-                                <img src="{{ meal.featured_image.url }}" class="d-block w-100"
-                                     alt="image of meal">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ meal.title|title }}</h5>
-                                    <p class="card-title">{{ meal.description }}</p>
-                                </div>
-                            </div>
+                            {% include 'services/home/card.html' %}
                         </div>
                     {% endif %}
                 {% endfor %}
