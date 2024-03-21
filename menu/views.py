@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from home.models import ChefSpecial
 from menu.models import Menu
 
+# variables to gather data from database
 chef_specials_data = ChefSpecial.objects.all().values()
 menu_data = Menu.objects.all().values()
 
@@ -12,58 +13,31 @@ class MenuView(TemplateView):
     This view is responsible for rendering the menu from db to the template
     """
 
+    # template to render
     template_name = 'menu/menu.html'
+    # this is the url to know what menu to display
     slug = 'breakfast'
+    # variable to filter data from model
     menu_type = 0
+    # list to be returned once filtered correctly
     menu = []
 
-    # def change_menu_type(self):
-    #     """
-    #     This method is used to change the menu_type based on slug value
-    #     :return:
-    #     """
-    #
-    #     if self.slug == 'breakfast':
-    #         self.menu_type = 0
-    #     elif self.slug == 'lunch':
-    #         self.menu_type = 1
-    #     elif self.slug == 'alcohol':
-    #         self.menu_type = 3
-    #     elif self.slug == 'starter':
-    #         self.menu_type = 4
-    #     else:
-    #         self.menu_type = 2
+    def change_menu_type(self):
+        """
+        This method is used to change the menu_type based on slug value
+        :return:
+        """
 
-    # def fetch(self):
-    #     """
-    #     This method is used to fetch data from the database
-    #     :return:
-    #     """
-    #
-    #     chef_specials = ChefSpecial.objects.all().values()
-    #     menu = Menu.objects.all().values()
-    #
-    #     for i in chef_specials:
-    #         chef_specials.append(i)
-    #
-    #     for i in menu:
-    #         menu.append(i)
-
-    # def filtering_data_lists(self):
-    #     """
-    #     This method is used to filter menu and chef special lists
-    #     based on menu_type
-    #     :return:
-    #     """
-    #
-    #     menu_items = [i for i in menu for key, value in i.items() if key == 'served' and value == self.menu_type]
-    #
-    #     for i in menu:
-    #         for key, value in i.items():
-    #             if key == 'served' and value == 0:
-    #                 print('i', i)
-    #
-    #     print('menu_items', menu_items)
+        if self.slug == 'breakfast':
+            self.menu_type = 0
+        elif self.slug == 'lunch':
+            self.menu_type = 1
+        elif self.slug == 'alcohol':
+            self.menu_type = 3
+        elif self.slug == 'starter':
+            self.menu_type = 4
+        else:
+            self.menu_type = 2
 
     def get_data(self):
         """
@@ -79,15 +53,10 @@ class MenuView(TemplateView):
         chef_items = [i for i in chef_specials_data for key, value in i.items() if
                       key == 'served' and value == self.menu_type]
 
+        # combine the two lists into one
         self.menu = menu_items + chef_items
 
         return self.menu
-
-        # if chef_specials_data == [] or menu_data == []:
-        #     self.fetch()
-        # else:
-        #     self.change_menu_type()
-        #     self.filtering_data_lists()
 
     def get_queryset(self):
         """
@@ -95,6 +64,10 @@ class MenuView(TemplateView):
         :return:
         """
 
+        # run method to change the variable self.menu_type
+        self.change_menu_type()
+
+        # return data to context
         return self.get_data()
 
     def get_context_data(self, **kwargs):
@@ -105,111 +78,14 @@ class MenuView(TemplateView):
         """
 
         context = super(MenuView, self).get_context_data(**kwargs)
+        # change self.slug to url path menu
         self.slug = self.kwargs['slug']
 
+        # list for displaying menu tabs in template
         meals = ["breakfast", "starter", "lunch", "supper", "alcohol"]
 
-        self.get_queryset()
-
+        # update context dictionary with variables
         context['slug'] = self.slug
-        context['meals'] = self.get_queryset()
-
-        print(context['meals'])
+        context['menu'] = self.get_queryset()
 
         return {'meals': meals, 'context': context}
-
-# class MenuView(TemplateView):
-#     """
-#     This view is responsible for reading and rendering to the templates
-#     """
-#
-#     # template to send data to
-#     template_name = 'menu/menu.html'
-#
-#     # this variable represents the url that I am on
-#     slug = 'breakfast'
-#     # this variable represents the menu from 0 to 4
-#     menu_type = 0
-#     # menu to return when all lists are appended
-#     menu = []
-#
-#     def get_chef_special(self):
-#         """
-#         This method is responsible for gathering data from a Chef Special model
-#         """
-#
-#         # use the menu_type as its filter
-#         # only displays its values
-#         chef_special = ChefSpecial.objects.filter(served=self.menu_type).values()
-#
-#         # loop around model and append to a menu list
-#         for item in chef_special:
-#             self.menu.append(item)
-#
-#     def get_menu(self):
-#         """
-#         This method is responsible for gathering data from a Menu model
-#         """
-#
-#         # use the menu_type as its filter
-#         # only displays its values
-#         menu = Menu.objects.filter(served=self.menu_type).values()
-#
-#         # loop around model and append to a menu list
-#         for item in menu:
-#             self.menu.append(item)
-#
-#     def get_queryset(self):
-#         """
-#         Built in method used for fetching data from the database
-#         """
-#
-#         # reset a menu list on start of method
-#         self.menu = []
-#
-#         # run methods on its own separate threads
-#         specials = threading.Thread(target=self.get_chef_special)
-#         menu = threading.Thread(target=self.get_menu)
-#
-#         # gathers data from a model based on slug
-#         if self.slug == 'breakfast':
-#             self.menu_type = 0
-#         elif self.slug == 'lunch':
-#             self.menu_type = 1
-#         elif self.slug == 'alcohol':
-#             self.menu_type = 3
-#         elif self.slug == 'starter':
-#             self.menu_type = 4
-#         else:
-#             self.menu_type = 2
-#
-#         # start running thread
-#         specials.start()
-#         menu.start()
-#
-#         # finish running thread
-#         specials.join()
-#         menu.join()
-#
-#         return self.menu
-#
-#     def get_context_data(self, **kwargs):
-#         """
-#         Built in method used for rendering data to the template
-#         """
-#
-#         # used to display tabs on template page
-#         # for the different menu items
-#         meals = ["breakfast", "starter", "lunch", "supper", "alcohol"]
-#
-#         # context variable for storing all kwargs
-#         # this variable makes it easier to send to template
-#         context = super(MenuView, self).get_context_data(**kwargs)
-#         # variable for changing the slug based on url
-#         self.slug = self.kwargs["slug"]
-#
-#         # store variables to context
-#         context['slug'] = self.slug
-#         context['menu'] = self.get_queryset()
-#
-#         return {"meals": meals, "context": context}
