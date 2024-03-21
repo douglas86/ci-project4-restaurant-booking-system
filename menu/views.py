@@ -14,9 +14,18 @@ class MenuView(TemplateView):
 
     template_name = 'menu/menu.html'
     slug = 'breakfast'
+    menu_type = 0
 
     chef_specials = chef_specials
     menu = menu
+
+    def change_menu_type(self):
+        """
+        This method is used to change the menu_type based on slug value
+        :return:
+        """
+
+        pass
 
     def fetch(self):
         """
@@ -39,7 +48,8 @@ class MenuView(TemplateView):
         :return:
         """
 
-        self.fetch()
+        if self.chef_specials == [] or self.menu == []:
+            self.fetch()
 
     def get_queryset(self):
         """
