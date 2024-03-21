@@ -15,20 +15,31 @@ class MenuView(TemplateView):
     template_name = 'menu/menu.html'
     slug = 'breakfast'
 
+    chef_specials = chef_specials
+    menu = menu
+
+    def fetch(self):
+        """
+        This method is used to fetch data from the database
+        :return:
+        """
+
+        self.chef_specials = ChefSpecial.objects.all().values()
+        self.menu = Menu.objects.all().values()
+
+        for i in self.chef_specials:
+            chef_specials.append(i)
+
+        for i in self.menu:
+            menu.append(i)
+
     def get_data(self):
         """
         This method is used to fetch menu and chef data from database
         :return:
         """
 
-        specials = ChefSpecial.objects.all().values()
-        menus = Menu.objects.all().values()
-
-        for special in specials:
-            chef_specials.append(special)
-
-        for m in menus:
-            menu.append(m)
+        self.fetch()
 
     def get_queryset(self):
         """
@@ -38,8 +49,8 @@ class MenuView(TemplateView):
 
         self.get_data()
 
-        print('chef_specials:', chef_specials)
-        print('menu:', menu)
+        print(self.chef_specials)
+        print(self.menu)
 
     def get_context_data(self, **kwargs):
         """
