@@ -67,6 +67,11 @@
         padding: 1em;
     }
 
+    /*carousel*/
+    .carousel {
+        width: 60%;
+    }
+
     /* menu */
     .menu {
         width: 70%;
