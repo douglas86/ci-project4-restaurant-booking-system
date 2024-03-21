@@ -124,6 +124,15 @@ p {
     object-position: 50% 50%;
 }
 
+.card {
+    min-height: 45em;
+}
+
+.carousel-indicators {
+    background-color: black;
+    margin: 1em;
+}
+
 .carousel-control-prev-icon, .carousel-control-next-icon {
     outline: black;
     background-image: none;
@@ -142,6 +151,7 @@ p {
     color: black;
     font-weight: bolder;
 }
+
 
 /*.default-carousel-image img {*/
 /*    width: 100%;*/
