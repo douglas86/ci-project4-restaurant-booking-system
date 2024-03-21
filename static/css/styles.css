@@ -113,7 +113,7 @@ p {
 /*carousel*/
 .carousel {
     width: 80%;
-    min-height: 40em;
+    min-height: 45em;
     margin: 2em auto;
 }
 
@@ -124,9 +124,9 @@ p {
     object-position: 50% 50%;
 }
 
-.card {
-    min-height: 45em;
-}
+/*.card {*/
+/*    min-height: 45em;*/
+/*}*/
 
 .carousel-indicators {
     background-color: black;

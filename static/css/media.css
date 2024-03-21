@@ -1,5 +1,8 @@
 @media screen and (max-width: 400px) {
     /*carousel*/
+    .card {
+        min-height: 47em;
+    }
     /*.card img {*/
     /*    width: 10em;*/
     /*    height: 10em;*/
@@ -7,10 +10,9 @@
     /*.carousel-control-prev-icon:after, .carousel-control-next-icon:after {*/
     /*    font-size: 40px;*/
     /*}*/
-
-    button {
-        margin: 0 auto 10em;
-    }
+    /*button {*/
+    /*    margin: 0 auto 10em;*/
+    /*}*/
 
     .modal-body form .btn {
         margin-left: 0;
@@ -87,7 +89,6 @@
     /*button {*/
     /*    margin: 0 auto 5em;*/
     /*}*/
-
     /* menu */
     .menu {
         width: 70%;
@@ -193,7 +194,6 @@
     /*.ingredients {*/
     /*    margin-left: 1em;*/
     /*}*/
-
     /* menu */
     .menu {
         width: 60%;
