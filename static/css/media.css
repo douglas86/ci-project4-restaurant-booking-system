@@ -1,12 +1,12 @@
 @media screen and (max-width: 400px) {
-    .card img {
-        width: 10em;
-        height: 10em;
-    }
-
-    .carousel-control-prev-icon:after, .carousel-control-next-icon:after {
-        font-size: 40px;
-    }
+    /*carousel*/
+    /*.card img {*/
+    /*    width: 10em;*/
+    /*    height: 10em;*/
+    /*}*/
+    /*.carousel-control-prev-icon:after, .carousel-control-next-icon:after {*/
+    /*    font-size: 40px;*/
+    /*}*/
 
     button {
         margin: 0 auto 10em;
@@ -76,19 +76,17 @@
     }
 
     /*carousel*/
-    .carousel-inner {
-        height: 50em;
-        margin: 2em auto;
-    }
-
-    .card img {
-        width: 25em;
-        height: 25em;
-    }
-
-    button {
-        margin: 0 auto 5em;
-    }
+    /*.carousel-inner {*/
+    /*    height: 50em;*/
+    /*    margin: 2em auto;*/
+    /*}*/
+    /*.card img {*/
+    /*    width: 25em;*/
+    /*    height: 25em;*/
+    /*}*/
+    /*button {*/
+    /*    margin: 0 auto 5em;*/
+    /*}*/
 
     /* menu */
     .menu {
@@ -174,32 +172,27 @@
 @media screen and (min-width: 1024px) {
     /*main*/
     /*carousel*/
-    .card {
-        width: 72%;
-    }
-
-    .default-carousel-image img {
-        padding: 5em;
-    }
-
-    .carousel-inner {
-        height: 30em;
-    }
-
-    .image {
-        width: 50%;
-        margin: 0;
-    }
-
-    .card-details {
-        width: 50%;
-        position: absolute;
-        left: 50%;
-    }
-
-    .ingredients {
-        margin-left: 1em;
-    }
+    /*.card {*/
+    /*    width: 72%;*/
+    /*}*/
+    /*.default-carousel-image img {*/
+    /*    padding: 5em;*/
+    /*}*/
+    /*.carousel-inner {*/
+    /*    height: 30em;*/
+    /*}*/
+    /*.image {*/
+    /*    width: 50%;*/
+    /*    margin: 0;*/
+    /*}*/
+    /*.card-details {*/
+    /*    width: 50%;*/
+    /*    position: absolute;*/
+    /*    left: 50%;*/
+    /*}*/
+    /*.ingredients {*/
+    /*    margin-left: 1em;*/
+    /*}*/
 
     /* menu */
     .menu {

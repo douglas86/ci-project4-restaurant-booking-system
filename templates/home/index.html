@@ -31,22 +31,58 @@
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
             </div>
-            <div class="carousel-inner">
-                {% for meal in meals %} {% if forloop.first %}
-                    <div
-                            class="carousel-item active"
-                            style="width: 100%"
-                            data-bs-interval="5000"
-                    >
-                        {% include "services/home/card.html" %}
-                    </div>
-                {% else %}
-                    <div class="carousel-item" data-bs-interval="5000">
-                        {% include "services/home/card.html" %}
-                    </div>
-                {% endif %}
-                {% endfor %}
+
+            {#carousel#}
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    {% for meal in meals %}
+                        {% if forloop.first %}
+                            <div class="carousel-item active">
+                                <img src="{{ meal.featured_image.url }}" class="d-block" alt="not found">
+                            </div>
+                        {% else %}
+                            <div class="carousel-item">
+                                <img src="{{ meal.featured_image.url }}" class="d-block" alt="not found">
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    {#                    <div class="carousel-item active">#}
+                    {#                        <img src="..." class="d-block w-100" alt="...">#}
+                    {#                    </div>#}
+                    {#                    <div class="carousel-item">#}
+                    {#                        <img src="..." class="d-block w-100" alt="...">#}
+                    {#                    </div>#}
+                    {#                    <div class="carousel-item">#}
+                    {#                        <img src="..." class="d-block w-100" alt="...">#}
+                    {#                    </div>#}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+            {#            <div class="carousel-inner">#}
+            {#                {% for meal in meals %} {% if forloop.first %}#}
+            {#                    <div#}
+            {#                            class="carousel-item active"#}
+            {#                            style="width: 100%"#}
+            {#                            data-bs-interval="5000"#}
+            {#                    >#}
+            {#                        {% include "services/home/card.html" %}#}
+            {#                    </div>#}
+            {#                {% else %}#}
+            {#                    <div class="carousel-item" data-bs-interval="5000">#}
+            {#                        {% include "services/home/card.html" %}#}
+            {#                    </div>#}
+            {#                {% endif %}#}
+            {#                {% endfor %}#}
+            {#            </div>#}
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
                     data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
