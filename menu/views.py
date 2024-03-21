@@ -9,6 +9,19 @@ class MenuView(TemplateView):
     template_name = 'menu/menu.html'
     slug = 'breakfast'
 
+    def get_context_data(self, **kwargs):
+        """
+        built in method used for rendering data to template
+        :param kwargs:
+        :return:
+        """
+
+        context = super(MenuView, self).get_context_data(**kwargs)
+
+        meals = ["breakfast", "starter", "lunch", "supper", "alcohol"]
+
+        return {'meals': meals}
+
 # class MenuView(TemplateView):
 #     """
 #     This view is responsible for reading and rendering to the templates
