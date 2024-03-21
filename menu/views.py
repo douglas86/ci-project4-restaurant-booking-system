@@ -1,65 +1,33 @@
-import threading
-
 from django.views.generic import TemplateView
 
 from home.models import ChefSpecial
 from menu.models import Menu
 
+# variables to gather data from database
+chef_specials_data = ChefSpecial.objects.all().values()
+menu_data = Menu.objects.all().values()
+
 
 class MenuView(TemplateView):
     """
-    This view is responsible for reading and rendering to the templates
+    This view is responsible for rendering the menu from db to the template
     """
 
-    # template to send data to
+    # template to render
     template_name = 'menu/menu.html'
-
-    # this variable represents the url that I am on
+    # this is the url to know what menu to display
     slug = 'breakfast'
-    # this variable represents the menu from 0 to 4
+    # variable to filter data from model
     menu_type = 0
-    # menu to return when all lists are appended
+    # list to be returned once filtered correctly
     menu = []
 
-    def get_chef_special(self):
+    def change_menu_type(self):
         """
-        This method is responsible for gathering data from a Chef Special model
-        """
-
-        # use the menu_type as its filter
-        # only displays its values
-        chef_special = ChefSpecial.objects.filter(served=self.menu_type).values()
-
-        # loop around model and append to a menu list
-        for item in chef_special:
-            self.menu.append(item)
-
-    def get_menu(self):
-        """
-        This method is responsible for gathering data from a Menu model
+        This method is used to change the menu_type based on slug value
+        :return:
         """
 
-        # use the menu_type as its filter
-        # only displays its values
-        menu = Menu.objects.filter(served=self.menu_type).values()
-
-        # loop around model and append to a menu list
-        for item in menu:
-            self.menu.append(item)
-
-    def get_queryset(self):
-        """
-        Built in method used for fetching data from the database
-        """
-
-        # reset a menu list on start of method
-        self.menu = []
-
-        # run methods on its own separate threads
-        specials = threading.Thread(target=self.get_chef_special)
-        menu = threading.Thread(target=self.get_menu)
-
-        # gathers data from a model based on slug
         if self.slug == 'breakfast':
             self.menu_type = 0
         elif self.slug == 'lunch':
@@ -71,33 +39,53 @@ class MenuView(TemplateView):
         else:
             self.menu_type = 2
 
-        # start running thread
-        specials.start()
-        menu.start()
+    def get_data(self):
+        """
+        This method is used to fetch menu and chef data from database
+        :return:
+        """
 
-        # finish running thread
-        specials.join()
-        menu.join()
+        # variable to iterate over menu_data
+        # then it iterates over key, value pairs to filter out values based on served item
+        menu_items = [i for i in menu_data for key, value in i.items() if key == 'served' and value == self.menu_type]
+        # variable to iterate over chef_specials_data
+        # then it iterates over key, value pairs to filter out values based on served item
+        chef_items = [i for i in chef_specials_data for key, value in i.items() if
+                      key == 'served' and value == self.menu_type]
+
+        # combine the two lists into one
+        self.menu = menu_items + chef_items
 
         return self.menu
 
+    def get_queryset(self):
+        """
+        built in method used for gathering data for get_context_data
+        :return:
+        """
+
+        # run method to change the variable self.menu_type
+        self.change_menu_type()
+
+        # return data to context
+        return self.get_data()
+
     def get_context_data(self, **kwargs):
         """
-        Built in method used for rendering data to the template
+        built in method used for rendering data to template
+        :param kwargs:
+        :return:
         """
 
-        # used to display tabs on template page
-        # for the different menu items
+        context = super(MenuView, self).get_context_data(**kwargs)
+        # change self.slug to url path menu
+        self.slug = self.kwargs['slug']
+
+        # list for displaying menu tabs in template
         meals = ["breakfast", "starter", "lunch", "supper", "alcohol"]
 
-        # context variable for storing all kwargs
-        # this variable makes it easier to send to template
-        context = super(MenuView, self).get_context_data(**kwargs)
-        # variable for changing the slug based on url
-        self.slug = self.kwargs["slug"]
-
-        # store variables to context
+        # update context dictionary with variables
         context['slug'] = self.slug
         context['menu'] = self.get_queryset()
 
-        return {"meals": meals, "context": context}
+        return {'meals': meals, 'context': context}
