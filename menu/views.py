@@ -25,7 +25,16 @@ class MenuView(TemplateView):
         :return:
         """
 
-        pass
+        if self.slug == 'breakfast':
+            self.menu_type = 0
+        elif self.slug == 'lunch':
+            self.menu_type = 1
+        elif self.slug == 'alcohol':
+            self.menu_type = 3
+        elif self.slug == 'starter':
+            self.menu_type = 4
+        else:
+            self.menu_type = 2
 
     def fetch(self):
         """
@@ -42,6 +51,15 @@ class MenuView(TemplateView):
         for i in self.menu:
             menu.append(i)
 
+    def filtering_data_lists(self):
+        """
+        This method is used to filter menu and chef special lists
+        based on menu_type
+        :return:
+        """
+
+        pass
+
     def get_data(self):
         """
         This method is used to fetch menu and chef data from database
@@ -50,6 +68,8 @@ class MenuView(TemplateView):
 
         if self.chef_specials == [] or self.menu == []:
             self.fetch()
+        else:
+            self.change_menu_type()
 
     def get_queryset(self):
         """
@@ -70,10 +90,13 @@ class MenuView(TemplateView):
         """
 
         context = super(MenuView, self).get_context_data(**kwargs)
+        self.slug = self.kwargs['slug']
 
         meals = ["breakfast", "starter", "lunch", "supper", "alcohol"]
 
         self.get_queryset()
+
+        context['slug'] = self.slug
 
         return {'meals': meals}
 
