@@ -155,6 +155,10 @@
 /*media query for laptops and larger*/
 @media screen and (min-width: 1024px) {
     /*main*/
+    /*carousel*/
+    .carousel {
+        width: 40%;
+    }
     /* menu */
     .menu {
         width: 60%;
