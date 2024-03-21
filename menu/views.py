@@ -1,5 +1,11 @@
 from django.views.generic import TemplateView
 
+from home.models import ChefSpecial
+from menu.models import Menu
+
+chef_specials = []
+menu = []
+
 
 class MenuView(TemplateView):
     """
@@ -15,7 +21,14 @@ class MenuView(TemplateView):
         :return:
         """
 
-        pass
+        specials = ChefSpecial.objects.all().values()
+        menus = Menu.objects.all().values()
+
+        for special in specials:
+            chef_specials.append(special)
+
+        for m in menus:
+            menu.append(m)
 
     def get_queryset(self):
         """
@@ -23,7 +36,10 @@ class MenuView(TemplateView):
         :return:
         """
 
-        pass
+        self.get_data()
+
+        print('chef_specials:', chef_specials)
+        print('menu:', menu)
 
     def get_context_data(self, **kwargs):
         """
@@ -35,6 +51,8 @@ class MenuView(TemplateView):
         context = super(MenuView, self).get_context_data(**kwargs)
 
         meals = ["breakfast", "starter", "lunch", "supper", "alcohol"]
+
+        self.get_queryset()
 
         return {'meals': meals}
 
