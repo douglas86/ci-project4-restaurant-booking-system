@@ -3,8 +3,8 @@ from django.views.generic import TemplateView
 from home.models import ChefSpecial
 from menu.models import Menu
 
-chef_specials = []
-menu = []
+chef_specials_data = ChefSpecial.objects.all().values()
+menu_data = Menu.objects.all().values()
 
 
 class MenuView(TemplateView):
@@ -15,50 +15,55 @@ class MenuView(TemplateView):
     template_name = 'menu/menu.html'
     slug = 'breakfast'
     menu_type = 0
+    menu = []
 
-    chef_specials = chef_specials
-    menu = menu
+    # def change_menu_type(self):
+    #     """
+    #     This method is used to change the menu_type based on slug value
+    #     :return:
+    #     """
+    #
+    #     if self.slug == 'breakfast':
+    #         self.menu_type = 0
+    #     elif self.slug == 'lunch':
+    #         self.menu_type = 1
+    #     elif self.slug == 'alcohol':
+    #         self.menu_type = 3
+    #     elif self.slug == 'starter':
+    #         self.menu_type = 4
+    #     else:
+    #         self.menu_type = 2
 
-    def change_menu_type(self):
-        """
-        This method is used to change the menu_type based on slug value
-        :return:
-        """
+    # def fetch(self):
+    #     """
+    #     This method is used to fetch data from the database
+    #     :return:
+    #     """
+    #
+    #     chef_specials = ChefSpecial.objects.all().values()
+    #     menu = Menu.objects.all().values()
+    #
+    #     for i in chef_specials:
+    #         chef_specials.append(i)
+    #
+    #     for i in menu:
+    #         menu.append(i)
 
-        if self.slug == 'breakfast':
-            self.menu_type = 0
-        elif self.slug == 'lunch':
-            self.menu_type = 1
-        elif self.slug == 'alcohol':
-            self.menu_type = 3
-        elif self.slug == 'starter':
-            self.menu_type = 4
-        else:
-            self.menu_type = 2
-
-    def fetch(self):
-        """
-        This method is used to fetch data from the database
-        :return:
-        """
-
-        self.chef_specials = ChefSpecial.objects.all().values()
-        self.menu = Menu.objects.all().values()
-
-        for i in self.chef_specials:
-            chef_specials.append(i)
-
-        for i in self.menu:
-            menu.append(i)
-
-    def filtering_data_lists(self):
-        """
-        This method is used to filter menu and chef special lists
-        based on menu_type
-        :return:
-        """
-
-        pass
+    # def filtering_data_lists(self):
+    #     """
+    #     This method is used to filter menu and chef special lists
+    #     based on menu_type
+    #     :return:
+    #     """
+    #
+    #     menu_items = [i for i in menu for key, value in i.items() if key == 'served' and value == self.menu_type]
+    #
+    #     for i in menu:
+    #         for key, value in i.items():
+    #             if key == 'served' and value == 0:
+    #                 print('i', i)
+    #
+    #     print('menu_items', menu_items)
 
     def get_data(self):
         """
@@ -66,10 +71,22 @@ class MenuView(TemplateView):
         :return:
         """
 
-        if self.chef_specials == [] or self.menu == []:
-            self.fetch()
-        else:
-            self.change_menu_type()
+        # variable to iterate over menu_data
+        # then it iterates over key, value pairs to filter out values based on served item
+        menu_items = [i for i in menu_data for key, value in i.items() if key == 'served' and value == self.menu_type]
+        # variable to iterate over chef_specials_data
+        # then it iterates over key, value pairs to filter out values based on served item
+        chef_items = [i for i in chef_specials_data for key, value in i.items() if
+                      key == 'served' and value == self.menu_type]
+
+        print(menu_items)
+        print(chef_items)
+
+        # if chef_specials_data == [] or menu_data == []:
+        #     self.fetch()
+        # else:
+        #     self.change_menu_type()
+        #     self.filtering_data_lists()
 
     def get_queryset(self):
         """
@@ -78,9 +95,6 @@ class MenuView(TemplateView):
         """
 
         self.get_data()
-
-        print(self.chef_specials)
-        print(self.menu)
 
     def get_context_data(self, **kwargs):
         """
