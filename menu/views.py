@@ -79,8 +79,9 @@ class MenuView(TemplateView):
         chef_items = [i for i in chef_specials_data for key, value in i.items() if
                       key == 'served' and value == self.menu_type]
 
-        print(menu_items)
-        print(chef_items)
+        self.menu = menu_items + chef_items
+
+        return self.menu
 
         # if chef_specials_data == [] or menu_data == []:
         #     self.fetch()
@@ -94,7 +95,7 @@ class MenuView(TemplateView):
         :return:
         """
 
-        self.get_data()
+        return self.get_data()
 
     def get_context_data(self, **kwargs):
         """
@@ -111,8 +112,11 @@ class MenuView(TemplateView):
         self.get_queryset()
 
         context['slug'] = self.slug
+        context['meals'] = self.get_queryset()
 
-        return {'meals': meals}
+        print(context['meals'])
+
+        return {'meals': meals, 'context': context}
 
 # class MenuView(TemplateView):
 #     """
