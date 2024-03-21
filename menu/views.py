@@ -9,6 +9,22 @@ class MenuView(TemplateView):
     template_name = 'menu/menu.html'
     slug = 'breakfast'
 
+    def get_data(self):
+        """
+        This method is used to retrieve the menu model from a database for queryset
+        :return:
+        """
+
+        pass
+
+    def get_queryset(self):
+        """
+        built in method used for gathering data for get_context_data
+        :return:
+        """
+
+        pass
+
     def get_context_data(self, **kwargs):
         """
         built in method used for rendering data to template
