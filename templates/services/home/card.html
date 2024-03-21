@@ -1,14 +1,10 @@
 {% load static %}
 
 <div class="card">
-    <div class="image">
-        <img src="{{ meal.featured_image.url }}" class="card-img-top" alt="not found">
-    </div>
-    <div class="card-details">
-        <div class="card-title"><h2>{{ meal.title | title }}</h2></div>
-        <div class="ingredients">
-            <h3>Ingredients</h3>
-            <p>{{ meal.description }}</p>
-        </div>
+    <img src="{{ meal.featured_image.url }}" class="d-block w-100"
+         alt="image of meal">
+    <div class="card-body">
+        <h5 class="card-title">{{ meal.title|title }}</h5>
+        <p class="card-title">{{ meal.description }}</p>
     </div>
 </div>
