@@ -124,11 +124,6 @@ p {
     object-position: 50% 50%;
 }
 
-.carousel-caption {
-    color: white;
-    font-weight: bolder;
-}
-
 .carousel-control-prev-icon, .carousel-control-next-icon {
     outline: black;
     background-image: none;
