@@ -17,7 +17,7 @@ class MenuView(TemplateView):
 
     def get_data(self):
         """
-        This method is used to retrieve the menu model from a database for queryset
+        This method is used to fetch menu and chef data from database
         :return:
         """
 
