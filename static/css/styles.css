@@ -124,6 +124,11 @@ p {
     object-position: 50% 50%;
 }
 
+.carousel-caption {
+    color: white;
+    font-weight: bolder;
+}
+
 .carousel-control-prev-icon, .carousel-control-next-icon {
     outline: black;
     background-image: none;
@@ -133,12 +138,14 @@ p {
     content: "<";
     font-size: 50px;
     color: black;
+    font-weight: bolder;
 }
 
 .carousel-control-next-icon:after {
     content: ">";
     font-size: 50px;
     color: black;
+    font-weight: bolder;
 }
 
 /*.default-carousel-image img {*/
