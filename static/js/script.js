@@ -53,6 +53,11 @@ const resizeHandler = () => {
 window.addEventListener('resize', resizeHandler)
 
 
+/*
+This timeout function is for messages
+That need to be displayed for 10 seconds
+And disappear after that
+ */
 setTimeout(() => {
     let message = document.getElementById("message_container")
 
