@@ -22,6 +22,8 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
     # when form is valid send a success message
     success_message = "You have successfully booked your table"
 
+    time_slot = ''
+
     def get_queryset(self):
         """
         Built in method normally used to gather data from the database
@@ -29,7 +31,10 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         """
 
         # counts how many records are in db based on user
-        queryset = Customer.objects.filter(user=self.request.user).count()
+        queryset = Customer.objects.filter(user=self.request.user, time_slots=self.time_slot).count()
+
+        query = Customer.objects.filter(time_slots=self.time_slot).values()
+        print('query', query)
 
         return queryset
 
@@ -49,6 +54,11 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         :param form:
         :return:
         """
+
+        self.time_slot = form['time_slots'].value()
+
+        print('time_slot', self.time_slot)
+        print('query', self.get_queryset())
 
         # form validation check
         if self.get_queryset() <= 0:
