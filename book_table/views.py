@@ -1,3 +1,5 @@
+import datetime
+
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
@@ -74,6 +76,13 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
     # this will only send paginate_by number to template at once
     paginate_by = 10
 
+    # fetches current date of computer
+    today = datetime.date.today()
+    # fetches current hour based off the variable above
+    current_hour = datetime.datetime.now().strftime("%H")
+    # fetches current year based off the variable above
+    year = today.year
+
     def format_time_stamps_for_display(self):
         """
         This method is used to format time stamps to day month year time
@@ -139,4 +148,4 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         # context for displaying last entry in customer context
         context['last_booking'] = context['customer'][0]
 
-        return {'form': self.form_class(), 'context': context}
+        return {"year": self.year, 'form': self.form_class(), 'context': context}

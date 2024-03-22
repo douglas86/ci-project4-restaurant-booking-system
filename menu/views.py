@@ -1,3 +1,5 @@
+import datetime
+
 from django.views.generic import TemplateView
 
 from home.models import ChefSpecial
@@ -21,6 +23,13 @@ class MenuView(TemplateView):
     menu_type = 0
     # list to be returned once filtered correctly
     menu = []
+
+    # fetches current date of computer
+    today = datetime.date.today()
+    # fetches current hour based off the variable above
+    current_hour = datetime.datetime.now().strftime("%H")
+    # fetches current year based off the variable above
+    year = today.year
 
     def change_menu_type(self):
         """
@@ -88,4 +97,4 @@ class MenuView(TemplateView):
         context['slug'] = self.slug
         context['menu'] = self.get_queryset()
 
-        return {'meals': meals, 'context': context}
+        return {"year": self.year, 'meals': meals, 'context': context}
