@@ -56,7 +56,10 @@ window.addEventListener('resize', resizeHandler)
 setTimeout(() => {
     let message = document.getElementById("message_container")
 
-    message.style.display = 'none'
+    if (!TypeError) {
+        message.style.display = 'none'
+    }
+
 }, 5000)
 
 
