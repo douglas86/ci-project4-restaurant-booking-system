@@ -22,16 +22,33 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
     # when form is valid send a success message
     success_message = "You have successfully booked your table"
 
+    time_slot = ''
+
     def get_queryset(self):
         """
         Built in method normally used to gather data from the database
         :return:
         """
 
-        # counts how many records are in db based on user
-        queryset = Customer.objects.filter(user=self.request.user).count()
+        # variable to fetch time_slot only by date
+        format_time_slot = self.time_slot.split('T')[0]
+        # variable to fetch data from a Customer model by user
+        # only returns its value
+        query = Customer.objects.filter(user=self.request.user).values()
 
-        return queryset
+        # iterate over query from database
+        for items in query:
+            # iterate over items with key, value pairs
+            for key, value in items.items():
+                # check the time_slot from a database
+                if key == 'time_slots':
+                    # check to see if the date has been used already
+                    if str(value.date()) == format_time_slot:
+                        # if that date has not been used, then return False
+                        return False
+
+        # if that date has not been used, then return True
+        return True
 
     def get_success_url(self):
         """
@@ -50,8 +67,10 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         :return:
         """
 
+        self.time_slot = form['time_slots'].value()
+
         # form validation check
-        if self.get_queryset() <= 0:
+        if self.get_queryset():
             # save form only if there is no booking for the current day
             # based on logged-in user
             instance = form.save(commit=False)
@@ -146,6 +165,6 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         # context for all data stored in Customer model
         context['customer'] = self.get_queryset()
         # context for displaying last entry in customer context
-        context['last_booking'] = context['customer'][0]
+        context['last_booking'] = context['customer']
 
         return {"year": self.year, 'form': self.form_class(), 'context': context}
