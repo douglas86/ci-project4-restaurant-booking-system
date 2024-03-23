@@ -31,12 +31,18 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         """
 
         # counts how many records are in db based on user
-        queryset = Customer.objects.filter(user=self.request.user, time_slots=self.time_slot).count()
+        queryset = Customer.objects.filter(user=self.request.user).count()
 
-        query = Customer.objects.filter(time_slots=self.time_slot).values()
-        print('query', query)
+        format_time_slot = self.time_slot.split('T')[0]
+        query = Customer.objects.filter(user=self.request.user).values()
 
-        return queryset
+        for items in query:
+            for key, value in items.items():
+                if key == 'time_slots':
+                    if str(value.date()) == format_time_slot:
+                        return False
+
+        return True
 
     def get_success_url(self):
         """
@@ -57,11 +63,10 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
 
         self.time_slot = form['time_slots'].value()
 
-        print('time_slot', self.time_slot)
-        print('query', self.get_queryset())
+        self.get_queryset()
 
         # form validation check
-        if self.get_queryset() <= 0:
+        if self.get_queryset():
             # save form only if there is no booking for the current day
             # based on logged-in user
             instance = form.save(commit=False)
@@ -156,6 +161,6 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         # context for all data stored in Customer model
         context['customer'] = self.get_queryset()
         # context for displaying last entry in customer context
-        context['last_booking'] = context['customer'][0]
+        context['last_booking'] = context['customer']
 
         return {"year": self.year, 'form': self.form_class(), 'context': context}
