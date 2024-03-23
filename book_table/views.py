@@ -30,18 +30,24 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         :return:
         """
 
-        # counts how many records are in db based on user
-        queryset = Customer.objects.filter(user=self.request.user).count()
-
+        # variable to fetch time_slot only by date
         format_time_slot = self.time_slot.split('T')[0]
+        # variable to fetch data from a Customer model by user
+        # only returns its value
         query = Customer.objects.filter(user=self.request.user).values()
 
+        # iterate over query from database
         for items in query:
+            # iterate over items with key, value pairs
             for key, value in items.items():
+                # check the time_slot from a database
                 if key == 'time_slots':
+                    # check to see if the date has been used already
                     if str(value.date()) == format_time_slot:
+                        # if that date has not been used, then return False
                         return False
 
+        # if that date has not been used, then return True
         return True
 
     def get_success_url(self):
@@ -62,8 +68,6 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         """
 
         self.time_slot = form['time_slots'].value()
-
-        self.get_queryset()
 
         # form validation check
         if self.get_queryset():
