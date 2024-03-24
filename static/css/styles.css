@@ -204,7 +204,8 @@ form input[type="email"] {
 
 /*about*/
 .about-start, .about-middle, .about-end {
-    margin: 0.5em auto;
+    margin: 2em auto;
+    font-weight: 600;
 }
 
 /*book table*/
