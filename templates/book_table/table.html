@@ -2,15 +2,19 @@
 {% load static %}
 
 {% block content %}
-    {#display messages to users#}
-    <div id="message_container">
-        {% if messages %}
-            <div class="alert alert-success">
-                {% for m in messages %}
-                    <p>{{ m }}</p>
-                {% endfor %}
-            </div>
-        {% endif %}
+    {#message box#}
+    <div id="alertDiv">
+        {% for message in messages %}
+            {% if 'success' == message.tags %}
+                <div class="alert alert-success">
+                    <p>{{ message }}</p>
+                </div>
+            {% else %}
+                <div class="alert alert-danger">
+                    <p>{{ message }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
     </div>
 
     <div class="top">
@@ -35,6 +39,7 @@
                 {% endif %}
             </div>
         </div>
+
         {#booking history display#}
         <div class="right-container">
             <div class="booking-history">
