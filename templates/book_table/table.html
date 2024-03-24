@@ -3,17 +3,19 @@
 
 {% block content %}
     {#message box#}
-    {% for message in messages %}
-        {% if 'success' == message.tags %}
-            <div class="alert alert-success">
-                <p>{{ message }}</p>
-            </div>
-        {% else %}
-            <div class="alert alert-danger">
-                <p>{{ message }}</p>
-            </div>
-        {% endif %}
-    {% endfor %}
+    <div id="alertDiv">
+        {% for message in messages %}
+            {% if 'success' == message.tags %}
+                <div class="alert alert-success">
+                    <p>{{ message }}</p>
+                </div>
+            {% else %}
+                <div class="alert alert-danger">
+                    <p>{{ message }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
 
     <div class="top">
         <div class="heading">
