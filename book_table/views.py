@@ -20,7 +20,7 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
     # form to be used called from form.py
     form_class = BookTableForm
     # when form is valid send a success message
-    success_message = "You have successfully booked your table"
+    message = "You have successfully booked your table"
 
     time_slot = ''
 
@@ -57,7 +57,7 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         """
 
         # send a success message to template
-        messages.success(self.request, self.success_message)
+        messages.success(self.request, self.message)
         return reverse('book_table:table')
 
     def form_valid(self, form):
@@ -77,8 +77,8 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
             instance.user = self.request.user
         else:
             # return error message if there is already an entry in db
-            self.success_message = 'You have already booked please choose anther day'
-            messages.error(self.request, self.success_message)
+            self.message = 'You have already booked please choose anther day'
+            messages.error(self.request, self.message)
             return redirect('book_table:table')
         return super().form_valid(form)
 
