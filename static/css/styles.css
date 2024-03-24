@@ -209,6 +209,10 @@ form input[type="email"] {
 }
 
 /*book table*/
+.alert {
+    margin: 2em;
+}
+
 .top {
     display: flex;
 }
