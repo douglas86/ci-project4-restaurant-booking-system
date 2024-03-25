@@ -7,6 +7,8 @@
             <th scope="col">Time Slot</th>
             <th scope="col">Booking Created</th>
             <th scope="col">Booking Updated</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
@@ -17,6 +19,12 @@
                 <td>{{ data.time_slots }}</td>
                 <td>{{ data.created_at }}</td>
                 <td>{{ data.updated_at }}</td>
+                <td>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary">Update</button>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
