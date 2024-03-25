@@ -84,4 +84,33 @@
             </div>
         </div>
     </div>
+
+    <!-- Delete Modal -->
+    {% for data in context.customer %}
+        <div class="modal fade" id="deleteBackdrop" data-bs-backdrop="static"
+             data-bs-keyboard="false" tabindex="-1"
+             aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 title" id="staticBackdropLabel">Delete a
+                            table?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="{% url 'book_table:delete' pk=data.id %}">
+                            {% csrf_token %}
+                            <p>Are you sure you want to delete your booking?</p>
+                            <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Close
+                            </button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
 {% endblock content %}
