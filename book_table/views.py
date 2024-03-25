@@ -4,12 +4,13 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.urls import reverse
-from django.views.generic import TemplateView, FormView, CreateView
+from django.views.generic import TemplateView, FormView, CreateView, DeleteView
 
 from .form import BookTableForm
 from .models import Customer
 
 
+# create
 class BookTableCreateView(LoginRequiredMixin, CreateView):
     """
     This view is used to write data to the database
@@ -83,6 +84,7 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
+# read
 class BookTableView(LoginRequiredMixin, TemplateView, FormView):
     """
     This view is used to read and render data from database to template
@@ -168,3 +170,14 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         context['last_booking'] = context['customer']
 
         return {"year": self.year, 'form': self.form_class(), 'context': context}
+
+
+# delete
+class BookTableDeleteView(LoginRequiredMixin, DeleteView):
+    """
+    This view is used to delete a record from the booking table database
+    """
+
+    template_name = 'book_table/table.html'
+    model = Customer
+    success_url = "/table"
