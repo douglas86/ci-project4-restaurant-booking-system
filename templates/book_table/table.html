@@ -87,7 +87,8 @@
 
     <!-- Update Modal -->
     {% for data in context.customer %}
-        <div class="modal fade" id="updateBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        <div class="modal fade" id="updateBackdrop{{ data.id }}" data-bs-backdrop="static" data-bs-keyboard="false"
+             tabindex="-1"
              aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -99,6 +100,11 @@
                         <form method="post" action="{% url 'book_table:update' pk=data.id %}">
                             {% csrf_token %}
                             {{ form.as_p }}
+                            <label for="id_seats">Number of seats:</label>
+                            <input type="number" name="seats" min="1" max="10" required id="id_seats"
+                                   value="{{ data.seats }}">
+                            <label for="id_time_slots">time_slots:</label>
+                            <input type="datetime-local" name="time_slots" min="" required id="id_time_slots">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>
@@ -107,6 +113,8 @@
             </div>
         </div>
     {% endfor %}
+
+
 
     <!-- Delete Modal -->
     {% for data in context.customer %}
