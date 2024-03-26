@@ -178,7 +178,11 @@ class BookTableUpdateView(LoginRequiredMixin, UpdateView):
     This view is used to update a record from the booking table database
     """
 
-    pass
+    template_name = 'book_table/table.html'
+    model = Customer
+    form_class = BookTableForm
+    fields = ["seats", "time_slots"]
+    success_url = "/table"
 
 
 # delete
