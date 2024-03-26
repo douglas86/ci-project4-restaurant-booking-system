@@ -181,8 +181,15 @@ class BookTableUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'book_table/table.html'
     model = Customer
     form_class = BookTableForm
-    fields = ["seats", "time_slots"]
     success_url = "/table"
+
+    def get_initial(self):
+        """
+        Built in method used to initialize form data
+        :return:
+        """
+
+        pass
 
 
 # delete
