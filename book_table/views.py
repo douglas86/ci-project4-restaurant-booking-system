@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.urls import reverse
-from django.views.generic import TemplateView, FormView, CreateView, DeleteView
+from django.views.generic import TemplateView, FormView, CreateView, DeleteView, UpdateView
 
 from .form import BookTableForm
 from .models import Customer
@@ -170,6 +170,15 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         context['last_booking'] = context['customer']
 
         return {"year": self.year, 'form': self.form_class(), 'context': context}
+
+
+# update
+class BookTableUpdateView(LoginRequiredMixin, UpdateView):
+    """
+    This view is used to update a record from the booking table database
+    """
+
+    pass
 
 
 # delete
