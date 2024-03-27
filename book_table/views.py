@@ -183,22 +183,6 @@ class BookTableUpdateView(LoginRequiredMixin, UpdateView):
     form_class = BookTableForm
     success_url = "/table"
 
-    # def get_context_data(self, **kwargs):
-    #     """
-    #     Built in method used to render data to template
-    #     :param kwargs:
-    #     :return:
-    #     """
-    #
-    #     # context variable for storing all kwargs
-    #     # this variable makes it easier to send to template
-    #     context = super(BookTableUpdateView, self).get_context_data(**kwargs)
-    #     context['form'] = BookTableForm(instance=self.get_object())
-    #
-    #     print(context['form'])
-    #
-    #     return {'form': context['form']}
-
 
 # delete
 class BookTableDeleteView(LoginRequiredMixin, DeleteView):

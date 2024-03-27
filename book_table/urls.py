@@ -2,6 +2,7 @@ from django.urls import path
 
 from . import views
 
+# this variable makes it easier for when you want to call urls
 app_name = 'book_table'
 
 urlpatterns = [
