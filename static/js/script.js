@@ -56,6 +56,7 @@ window.addEventListener('resize', resizeHandler)
 This timeout function is for messages
 That need to be displayed for 10 seconds
 And disappear after that
+It is only used for the table booking page
  */
 setTimeout(() => {
     const alert = document.getElementById('alertDiv')
