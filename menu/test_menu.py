@@ -15,7 +15,7 @@ class TestMenu(TestCase, views.MenuView):
 
     def change_slug(self, new_slug_value, menu_type):
         """
-        This method is used to simulate the change of slug value
+        This method is used to simulate the change of slug and menu_type value
         :param new_slug_value:
         :param menu_type:
         :return:
@@ -43,9 +43,7 @@ class TestMenu(TestCase, views.MenuView):
         """
 
         self.change_slug('breakfast', 0)
-
         data = self.get_data()
-
         self.fetch_data(data)
 
     def test_lunch(self):
@@ -55,9 +53,37 @@ class TestMenu(TestCase, views.MenuView):
         """
 
         self.change_slug('lunch', 1)
-
         data = self.get_data()
+        self.fetch_data(data)
 
+    def test_supper(self):
+        """
+        Testing if the supper menu is returned correctly
+        :return:
+        """
+
+        self.change_slug('supper', 2)
+        data = self.get_data()
+        self.fetch_data(data)
+
+    def test_alcohol(self):
+        """
+        Testing if the alcohol menu is returned correctly
+        :return:
+        """
+
+        self.change_slug('alcohol', 3)
+        data = self.get_data()
+        self.fetch_data(data)
+
+    def test_starter(self):
+        """
+        Testing if the starter menu is returned correctly
+        :return:
+        """
+
+        self.change_slug('starter', 4)
+        data = self.get_data()
         self.fetch_data(data)
 
     # def test_lunch(self):
