@@ -13,14 +13,31 @@ class TestMenu(TestCase, views.MenuView):
     # populate database
     fixtures = ['home/fixtures/chef_specials.json', 'menu/fixtures/menu.json']
 
-    def change_slug(self, new_slug_value):
+    def change_slug(self, new_slug_value, menu_type):
         """
         This method is used to simulate the change of slug value
         :param new_slug_value:
+        :param menu_type:
         :return:
         """
 
         self.slug = new_slug_value
+        self.menu_type = menu_type
+
+    def test_breakfast(self):
+        """
+        Testing if the breakfast menu is returned correctly
+        :return:
+        """
+
+        self.change_slug('breakfast', 0)
+
+        data = self.get_data()
+
+        for item in data:
+            for key, value in item.items():
+                if key == 'served':
+                    self.assertEqual(value, 0)
 
     # def test_slug(self):
     #     print('slug', self.slug)
