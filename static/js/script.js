@@ -58,5 +58,15 @@ That need to be displayed for 10 seconds
 And disappear after that
  */
 setTimeout(() => {
-    document.getElementById('alertDiv').remove()
+    const alert = document.getElementById('alertDiv')
+
+    // try/catch block to only be used when on table page
+    try {
+        alert.remove()
+    } catch (err) {
+        // if this block is entered, don't do anything
+        // this is used for the TypeError
+        // as this div is only used on the table page
+    }
+
 }, 5000)
