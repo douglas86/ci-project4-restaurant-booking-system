@@ -149,6 +149,10 @@
     .booking-history {
         padding: 1em;
     }
+
+    .screen-400 .table td:last-child {
+        display: block;
+    }
 }
 
 /*media query for laptops and larger*/
@@ -158,10 +162,15 @@
     .carousel {
         width: 40%;
     }
+
     /* menu */
     .menu {
         width: 60%;
         margin: 4% 20%;
+    }
+
+    .screen-400 .table td:last-child {
+        display: flex;
     }
 
     /*forms*/
