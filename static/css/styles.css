@@ -263,10 +263,6 @@ form input[type="email"] {
     margin: auto;
 }
 
-.vouchers {
-    display: none;
-}
-
 .right-container {
     width: 80%;
     height: auto;
