@@ -8,7 +8,6 @@
             <th scope="col">Booking Created</th>
             <th scope="col">Booking Updated</th>
             <th scope="col"></th>
-            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
@@ -19,12 +18,10 @@
                 <td>{{ data.time_slots }}</td>
                 <td>{{ data.created_at }}</td>
                 <td>{{ data.updated_at }}</td>
-                <td>
+                <td class="buttons">
                     <button class="btn btn-danger" type="button" data-bs-toggle="modal"
                             data-bs-target="#deleteBackdrop">Delete
                     </button>
-                </td>
-                <td>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#updateBackdrop{{ data.id }}">Update
                     </button>
