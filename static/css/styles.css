@@ -299,6 +299,11 @@ form input[type="email"] {
     margin: 0.5em;
 }
 
+.screen-400 .table > :not(caption) > * > *, .screen-399 .table > :not(caption) > * > * {
+    background-color: transparent !important;
+    border-bottom-width: 0;
+}
+
 .screen-400 .table td:last-child {
     display: none;
 }
