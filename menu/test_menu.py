@@ -24,6 +24,18 @@ class TestMenu(TestCase, views.MenuView):
         self.slug = new_slug_value
         self.menu_type = menu_type
 
+    def fetch_data(self, data):
+        """
+        This method is used to fetch and return data from the menu model
+        :param data:
+        :return:
+        """
+
+        for item in data:
+            for key, value in item.items():
+                if key == 'served':
+                    self.assertEqual(value, self.menu_type)
+
     def test_breakfast(self):
         """
         Testing if the breakfast menu is returned correctly
@@ -34,10 +46,29 @@ class TestMenu(TestCase, views.MenuView):
 
         data = self.get_data()
 
-        for item in data:
-            for key, value in item.items():
-                if key == 'served':
-                    self.assertEqual(value, 0)
+        self.fetch_data(data)
+
+    def test_lunch(self):
+        """
+        Testing if the lunch menu is returned correctly
+        :return:
+        """
+
+        self.change_slug('lunch', 1)
+
+        data = self.get_data()
+
+        self.fetch_data(data)
+
+    # def test_lunch(self):
+    #     """
+    #     Testing if the lunch menu is returned correctly
+    #     :return:
+    #     """
+    #
+    #     self.change_slug('lunch', 1)
+    #
+    #     data = self.get_data()
 
     # def test_slug(self):
     #     print('slug', self.slug)
