@@ -299,6 +299,18 @@ form input[type="email"] {
     padding: 1em;
 }
 
+.buttons button {
+    margin: 0.5em;
+}
+
+.screen-400 .table td:last-child {
+    display: none;
+}
+
+.screen-400 .table th:last-child {
+    display: none;
+}
+
 /*footer*/
 footer {
     margin-top: auto;
