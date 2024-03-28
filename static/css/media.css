@@ -108,16 +108,6 @@
         display: block;
     }
 
-    .vouchers {
-        display: block;
-        width: 80%;
-        background-color: #d3d3d3;
-        opacity: 0.8;
-        margin: auto;
-        text-align: center;
-        padding: 0.5em;
-    }
-
     .right-container {
         width: 70%;
         height: auto;
