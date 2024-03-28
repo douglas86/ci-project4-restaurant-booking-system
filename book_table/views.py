@@ -169,8 +169,6 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         # context for displaying last entry in customer context
         context['last_booking'] = context['customer'][0]
 
-        print(context['last_booking'])
-
         return {"year": self.year, 'form': self.form_class(), 'context': context}
 
 
