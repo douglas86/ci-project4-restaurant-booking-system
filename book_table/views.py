@@ -185,6 +185,11 @@ class BookTableUpdateView(LoginRequiredMixin, UpdateView):
     model = Customer
     form_class = BookTableForm
     success_url = "/table"
+    success_message = "You have successfully updated your booking table"
+
+    def form_valid(self, form):
+        messages.success(self.request, self.success_message)
+        return super().form_valid(form)
 
 
 # delete
