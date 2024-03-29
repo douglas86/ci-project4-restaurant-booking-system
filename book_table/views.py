@@ -185,7 +185,7 @@ class BookTableUpdateView(LoginRequiredMixin, UpdateView):
     model = Customer
     form_class = BookTableForm
     success_url = "/table"
-    success_message = "You have successfully updated your booking table"
+    success_message = "You have successfully updated your booked table"
 
     def form_valid(self, form):
         messages.success(self.request, self.success_message)
@@ -201,3 +201,8 @@ class BookTableDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'book_table/table.html'
     model = Customer
     success_url = "/table"
+    success_message = "You have successfully deleted your booked table"
+
+    def form_valid(self, form):
+        messages.success(self.request, self.success_message)
+        return super().form_valid(form)
