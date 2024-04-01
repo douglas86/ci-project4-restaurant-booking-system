@@ -17,21 +17,8 @@
                 </li>
             {% endfor %}
         </ul>
-        <div class="starter">
-            <!-- title of when a starter menu is called -->
-            <h3 class="menu_title">{{ context.starter_menu.0 }}</h3>
-            <!-- iterate around starter_menu when being displayed -->
-            {% for starter in context.starter_menu.1 %}
-                <!-- title of menu item -->
-                <h4>{{ starter.title|title }}</h4>
-                <!-- ingredients of menu item -->
-                <p>{{ starter.description|title }}</p>
-            {% endfor %}
-        </div>
         <!-- main menu with the title of the item and its ingredients -->
         <div class="menu_context">
-            <!-- title of the menu in use based on slug from view -->
-            <h3 class="menu_title">{{ context.menu_type }}</h3>
             <!-- menu items from view -->
             {% for items in context.menu %}
                 <!-- title of a dish being served -->

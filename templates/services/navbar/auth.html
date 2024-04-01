@@ -6,7 +6,7 @@
         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{% url 'account_logout' %}"
            aria-current="page">
             <div class="auth-icon">
-                <img src="{% static 'images/navbar/logout.png' %}" alt="not found">
+                <img src="{% static 'images/navbar/logout.png' %}" alt="logged out">
                 <p>Logout</p>
             </div>
         </a>
@@ -15,7 +15,7 @@
         <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{% url 'account_login' %}"
            aria-current="page">
             <div class="auth-icon">
-                <img src="{% static 'images/navbar/login.png' %}" alt="not found">
+                <img src="{% static 'images/navbar/login.png' %}" alt="login">
                 <p>Login</p>
             </div>
         </a>

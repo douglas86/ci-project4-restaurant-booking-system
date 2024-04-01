@@ -94,8 +94,6 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
     template_name = 'book_table/table.html'
     # form to be used called from form.py
     form_class = BookTableForm
-    # this will only send paginate_by number to template at once
-    paginate_by = 10
 
     # fetches current date of computer
     today = datetime.date.today()
@@ -167,7 +165,10 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
         # context for all data stored in Customer model
         context['customer'] = self.get_queryset()
         # context for displaying last entry in customer context
-        context['last_booking'] = context['customer'][0]
+        try:
+            context['last_booking'] = context['customer'][0]
+        except IndexError:
+            context['last_booking'] = []
 
         return {"year": self.year, 'form': self.form_class(), 'context': context}
 
@@ -182,6 +183,11 @@ class BookTableUpdateView(LoginRequiredMixin, UpdateView):
     model = Customer
     form_class = BookTableForm
     success_url = "/table"
+    success_message = "You have successfully updated your booked table"
+
+    def form_valid(self, form):
+        messages.success(self.request, self.success_message)
+        return super().form_valid(form)
 
 
 # delete
@@ -193,3 +199,8 @@ class BookTableDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'book_table/table.html'
     model = Customer
     success_url = "/table"
+    success_message = "You have successfully deleted your booked table"
+
+    def form_valid(self, form):
+        messages.success(self.request, self.success_message)
+        return super().form_valid(form)

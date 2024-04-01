@@ -5,10 +5,6 @@ from django.views.generic import TemplateView
 from home.models import ChefSpecial
 from menu.models import Menu
 
-# variables to gather data from database
-chef_specials_data = ChefSpecial.objects.all().values()
-menu_data = Menu.objects.all().values()
-
 
 class MenuView(TemplateView):
     """
@@ -30,6 +26,10 @@ class MenuView(TemplateView):
     current_hour = datetime.datetime.now().strftime("%H")
     # fetches current year based off the variable above
     year = today.year
+
+    # variables to gather data from database
+    chef_specials_data = ChefSpecial.objects.all().values()
+    menu_data = Menu.objects.all().values()
 
     def change_menu_type(self):
         """
@@ -56,10 +56,11 @@ class MenuView(TemplateView):
 
         # variable to iterate over menu_data
         # then it iterates over key, value pairs to filter out values based on served item
-        menu_items = [i for i in menu_data for key, value in i.items() if key == 'served' and value == self.menu_type]
+        menu_items = [i for i in self.menu_data for key, value in i.items() if
+                      key == 'served' and value == self.menu_type]
         # variable to iterate over chef_specials_data
         # then it iterates over key, value pairs to filter out values based on served item
-        chef_items = [i for i in chef_specials_data for key, value in i.items() if
+        chef_items = [i for i in self.chef_specials_data for key, value in i.items() if
                       key == 'served' and value == self.menu_type]
 
         # combine the two lists into one

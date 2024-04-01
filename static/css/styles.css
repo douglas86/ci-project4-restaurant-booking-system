@@ -172,7 +172,7 @@ form input[type="email"] {
     width: 80%;
     margin: 1em 10%;
     padding: 1em;
-    opacity: 0.85;
+    opacity: 0.95;
 }
 
 .main_menu {
@@ -191,15 +191,8 @@ form input[type="email"] {
     text-decoration: none;
 }
 
-.menu_context h4,
-.starter h4 {
+.menu_context h4 {
     text-align: center;
-}
-
-.menu_title {
-    color: brown;
-    font-weight: 500;
-    opacity: 1;
 }
 
 /*about*/
