@@ -1,6 +1,6 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-## [Introduction](#table-of-content)
+## [Intro/tion](#table-of-content)
 
 This is Part of my Fourth Project at Code Institute.
 
@@ -69,6 +69,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [copyright text overlapping with developer content](#copyright-text-overlapping-with-developer-content)
   - [next booking not being displayed](#next-booking-not-being-displayed)
   - [not recognizing daylight savings mode](#not-recognizing-daylight-savings-mode)
+  - [table over lapping on smaller devices](#table-over-lapping-on-smaller-devices)
 - [Credits](#credits)
 
 ---
@@ -1132,6 +1133,23 @@ This is what was saved in the database with current model
 Notice that the Booking created time is an hour difference
 
 ![time_zone_2.png](static/images/docs/bugs/daylight_time/time_zone_2.png)
+
+### [table over lapping on smaller devices](#bugs)
+
+Problem?
+
+- The table was not responding when getting to smaller devices
+
+![overlapping_1.png](static/images/docs/bugs/table_over_lapping/overlapping_1.png)
+
+![overlapping_2.png](static/images/docs/bugs/table_over_lapping/overlapping_2.png)
+
+Solution?
+
+- Hide the last child element on smaller devices
+- In this case the Delete and Update buttons
+
+![overlapping_3.png](static/images/docs/bugs/table_over_lapping/overlapping_3.png)
 
 ---
 
