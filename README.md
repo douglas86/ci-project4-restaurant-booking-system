@@ -602,6 +602,7 @@ Modal testing of incorrect time slot
 - Using the Heroku link of my live site
 - As the validator won't work when copying and pasting code
 - This link was tested on the about page
+- But all the pages are only giving info warnings
 
 ![html-validator-link.png](static/images/docs/testing/manual_testing/html-validator-link.png)
 
@@ -626,49 +627,37 @@ Modal testing of incorrect time slot
 - this lighthouse testing was done in incognito mode
 - As some of my extensions were messing with the results
 
-![lighthouse-about.png](static/images/docs/testing/manual_testing/lighthouse-about.png)
+home page on mobile
 
-##### Menu page testing
+![home_mobile.png](static/images/docs/testing/lighthouse/home_mobile.png)
 
-- All these tests were done on incognito mode in a new window
-- As extensions were messing with my results
+home page on desktop
 
-![lighthouse_menu_alcohol_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_alcohol_desktop.png)
+![home_desktop.png](static/images/docs/testing/lighthouse/home_desktop.png)
 
-![lighthouse_menu_alcohol_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_alcohol_mobile.png)
+menu page on mobile
 
-![lighthouse_menu_breakfast_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_breakfast_mobile.png)
+![menu_mobile.png](static/images/docs/testing/lighthouse/menu_mobile.png)
 
-![lighthouse_menu_breakfast_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_breakfast_desktop.png)
+menu page on desktop
 
-![lighthouse_menu_lunch_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_lunch_mobile.png)
+![menu_desktop.png](static/images/docs/testing/lighthouse/menu_desktop.png)
 
-![lighthouse_menu_lunch_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_lunch_desktop.png)
+table booking page on mobile
 
-![lighthouse_menu_starter_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_starter_mobile.png)
+![table_mobile.png](static/images/docs/testing/lighthouse/table_mobile.png)
 
-![lighthouse_menu_starter_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_starter_desktop.png)
+table booking page on desktop
 
-![lighthouse_menu_supper_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_supper_mobile.png)
+![table_desktop.png](static/images/docs/testing/lighthouse/table_desktop.png)
 
-![lighthouse_menu_supper_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_supper_desktop.png)
+about page on mobile
 
-Table booking page
+![about_mobile.png](static/images/docs/testing/lighthouse/about_mobile.png)
 
-- Lighthouse testing on Desktop devices
-- The test scores were a bit low
-- I think that it is gathering from a database that is the issue
-- As a future features I want to implement async instead of sync
-- I have also written as a bug that needs to be fixed
-- So that I can try and improve the user experience
+about page on desktop
 
-- Testing on Desktop
-
-![table-desktop.png](static/images/docs/testing/lighthouse/table-desktop.png)
-
-- Testing on Mobile
-
-![table-mobile.png](static/images/docs/testing/lighthouse/table-mobile.png)
+![about_desktop.png](static/images/docs/testing/lighthouse/about_desktop.png)
 
 ### [Automated Testing](#testing)
 
