@@ -70,7 +70,7 @@
     "pk": 7,
     "fields": {
       "title": "Meat Starters",
-      "served": 3,
+      "served": 4,
       "description": "Fig, mozzarella, serrano, ham salad",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -81,7 +81,7 @@
     "pk": 8,
     "fields": {
       "title": "Seafood starters",
-      "served": 3,
+      "served": 4,
       "description": "Giant champagne, lemon prawn, prawn vol-au-vents",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -92,7 +92,7 @@
     "pk": 9,
     "fields": {
       "title": "Vegetarian starters",
-      "served": 3,
+      "served": 4,
       "description": "fig, goat's cheese, filo parcels",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -103,7 +103,7 @@
     "pk": 10,
     "fields": {
       "title": "Ramon Roqueta Reserva",
-      "served": 4,
+      "served": 3,
       "description": "Fruit aromas with balsamic touch, notes of vanilla and coconut",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -114,7 +114,7 @@
     "pk": 11,
     "fields": {
       "title": "Musica en el camino",
-      "served": 4,
+      "served": 3,
       "description": "Fresh and velvety, red fruit aromas with spicy and mint notes",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -125,7 +125,7 @@
     "pk": 12,
     "fields": {
       "title": "Aperol Spritz",
-      "served": 4,
+      "served": 3,
       "description": "Presecco, aperol, soda",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -136,7 +136,7 @@
     "pk": 13,
     "fields": {
       "title": "Mojito",
-      "served": 4,
+      "served": 3,
       "description": "Rum, lime, mint, soda",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
@@ -147,7 +147,7 @@
     "pk": 14,
     "fields": {
       "title": "Margarita",
-      "served": 4,
+      "served": 3,
       "description": "Teqila, cointreau, lime",
       "created_at": "2024-02-15T13:20:30+03:00",
       "updated_at": "2024-02-15T13:20:30+03:00"
