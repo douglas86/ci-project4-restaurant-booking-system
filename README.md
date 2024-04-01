@@ -1,5 +1,4 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
+![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.pn/
 ## [Introduction](#table-of-content)
 
 
@@ -65,6 +64,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [Performance issues in page loading](#performance-issues-in-page-loading)
     - [Too many connections to database at once](#too-many-connections-to-database-at-once)
   - [styling of homepage](#styling-of-homepage)
+  - [carousel arrows](#carousel-arrows)
 - [Credits](#credits)
 
 ---
@@ -1050,6 +1050,16 @@ Solution?
   one of the models
 
 ![styling_homepage_solution.png](static/images/docs/bugs/styling_homepage_solution.png)
+
+### [carousel arrows](#bugs)
+
+![arrows.png](static/images/docs/bugs/carousel_arrows/arrows.png)
+
+- carousel arrows are being displayed when there is no carousel to display
+- on certain devices the arrows don't seem to want to show up properly
+- at this stage, I am not sure how to change that
+
+![arrows_2.png](static/images/docs/bugs/carousel_arrows/arrows_2.png)
 
 ---
 
