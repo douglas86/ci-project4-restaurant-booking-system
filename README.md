@@ -28,6 +28,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
         - [Description of the restaurant](#description-of-the-restaurant)
       - [scrolling left and right arrows for carousel](#scrolling-left-and-right-arrows-for-carousel)
       - [table booking with booking history, vouchers and next booking](#table-booking-with-booking-history-vouchers-and-next-booking)
+      - [deleting table records](#deleting-table-records)
     - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
         - [Theme image](#theme-image-1)
 - [Testing](#testing)
@@ -399,6 +400,15 @@ When the user is logged in, a welcome message will be displayed with a different
 - What it looks like on desktop devices
 
 ![table-desktop.png](static/images/docs/features/table-desktop.png)
+
+#### [deleting table records](#features)
+
+- Once the Delete button is clicked
+- a modal will pop up for deleting the record from the database
+
+![delete_button.png](static/images/docs/bugs/delete_button.png)
+
+![delete_modal.png](static/images/docs/bugs/delete_modal.png)
 
 ### [Future features to be added at a later stage](#features)
 
