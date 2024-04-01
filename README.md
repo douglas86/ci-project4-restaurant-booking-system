@@ -1036,8 +1036,16 @@ Problem?
 
 Solution?
 
-- This problem has not been solved yet
-- Will try and come to it at the end
+- with this error, I was using thread module
+- with using thread module, you sometimes might get a thread lock issue
+- the computer doesn't know what todo, or it sends to many signals to elephantSQL
+- whichever issue it was, I have now completely removed thread module
+- and made two global variables to gather data that I needed
+- then filter it out for when I need it
+
+![menu_connection_issue.png](static/images/docs/bugs/menu_connection_issue.png)
+
+- These variables have since been moved inside the class
 
 ### [styling of homepage](#bugs)
 
