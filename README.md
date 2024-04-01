@@ -68,6 +68,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [copyright text not showing in footer](#copyright-text-not-showing-in-footer)
   - [copyright text overlapping with developer content](#copyright-text-overlapping-with-developer-content)
   - [next booking not being displayed](#next-booking-not-being-displayed)
+  - [not recognizing daylight savings mode](#not-recognizing-daylight-savings-mode)
 - [Credits](#credits)
 
 ---
@@ -1109,6 +1110,28 @@ Solution?
 - As last booking made more sense
 
 ![last_booking_3.png](static/images/docs/bugs/next%20booking/last_booking_3.png)
+
+### [not recognizing daylight savings mode](#bugs)
+
+Problem?
+
+- Django does not recognize daylight savings time
+- For some reason, Django does not change time zones
+- As I have just reached daylight savings mode
+
+This is the current date and time of my computer
+
+![time_zone_1.png](static/images/docs/bugs/daylight_time/time_zone_1.png)
+
+Solution?
+
+- This bug has not been solved yet
+- This is also added as an extra feature for future reference
+
+This is what was saved in the database with current model
+Notice that the Booking created time is an hour difference
+
+![time_zone_2.png](static/images/docs/bugs/daylight_time/time_zone_2.png)
 
 ---
 
