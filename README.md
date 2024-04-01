@@ -1177,7 +1177,7 @@ Solution?
 - in the catch block nothing will occur
 - I didn't see anywhere on the internet were you can't do a try/catch like this
 
-![TypeError_3.png](static%2Fimages%2Fdocs%2Fbugs%2Ftypeerror%2FTypeError_3.png)
+![TypeError_3.png](static/images/docs/bugs/typeerror/TypeError_3.png)
 
 ---
 
@@ -1198,5 +1198,7 @@ Solution?
   used for themes, but decided to take themes out, I am planning on this for a future feature
 - [Luke Buchanan](https://www.linkedin.com/in/lukebuchanan67/) - Mentor
 - [Code Institute](https://codeinstitute.net/) - Bootcamp
+- [reference for the success message](https://stackoverflow.com/questions/36087752/django-messaging-framework-how-to-only-display-success-messages)
+- [Example of how to use the Delete View](https://www.geeksforgeeks.org/deleteview-class-based-views-django/)
 
 ---
