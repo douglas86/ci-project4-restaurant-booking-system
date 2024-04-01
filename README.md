@@ -65,6 +65,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [Too many connections to database at once](#too-many-connections-to-database-at-once)
   - [styling of homepage](#styling-of-homepage)
   - [carousel arrows](#carousel-arrows)
+  - [copyright text not showing in footer](#copyright-text-not-showing-in-footer)
 - [Credits](#credits)
 
 ---
@@ -1067,6 +1068,13 @@ Solution?
 - at this stage, I am not sure how to change that
 
 ![arrows_2.png](static/images/docs/bugs/carousel_arrows/arrows_2.png)
+
+### [copyright text not showing in footer](#bugs)
+
+- The current year is not showing when
+- on the logout, login and sign out forms
+
+![copyright text.png](static/images/docs/bugs/copyright_text/copyright_text.png)
 
 ---
 
