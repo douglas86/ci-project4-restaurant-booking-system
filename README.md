@@ -75,6 +75,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [not recognizing daylight savings mode](#not-recognizing-daylight-savings-mode)
   - [table over lapping on smaller devices](#table-over-lapping-on-smaller-devices)
   - [TypeError in console](#typeerror-in-console)
+  - [Am I Responsive does not display image](#am-i-responsive-does-not-display-image)
 - [Credits](#credits)
 
 ---
@@ -1203,6 +1204,18 @@ Solution?
 - I didn't see anywhere on the internet were you can't do a try/catch like this
 
 ![TypeError_3.png](static/images/docs/bugs/typeerror/TypeError_3.png)
+
+### [Am I Responsive does not display image](#bugs)
+
+Problem?
+
+- Am I Responsive does not want to display a screenshot of my live website
+
+![responsive.png](static/images/docs/bugs/amiresponsive.png)
+
+Solution?
+
+- Not sure what this problem is it might be a loading issue
 
 ---
 
