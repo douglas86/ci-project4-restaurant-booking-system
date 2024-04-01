@@ -639,10 +639,12 @@ Modal testing of incorrect time slot
 
 #### [Wave testing for accessibility](#manual-testing)
 
-- With the wave validator, there were just two contrast issues
-- With the footer this will be sorted out when I sort out the bug on the footer
+- With the wave validator, there seems to be just two contrast issues on all pages
+- This is a small issue with the contrast of the developer section in footer
 
 ![wave-validator-about.png](static/images/docs/testing/manual_testing/wave-validator-about.png)
+
+![footer.png](static/images/docs/testing/manual_testing/footer.png)
 
 #### [lighthouse testing](#manual-testing)
 
