@@ -1,11 +1,13 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-## [Intro/tion](#table-of-content)
+## [Introduction](#table-of-content)
 
 This is Part of my Fourth Project at Code Institute.
 
 This is a simple Restaurant Booking System, were I can book tables based on a date and time
 I am also able to see the Restaurant's Menu and Chef's specials.
+
+[Live link can be found here](https://ci-booking-system-5abd35239ade.herokuapp.com/)
 
 ---
 
