@@ -66,6 +66,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [styling of homepage](#styling-of-homepage)
   - [carousel arrows](#carousel-arrows)
   - [copyright text not showing in footer](#copyright-text-not-showing-in-footer)
+  - [copyright text overlapping with developer content](#copyright-text-overlapping-with-developer-content)
 - [Credits](#credits)
 
 ---
@@ -1076,6 +1077,19 @@ Solution?
 
 ![copyright text.png](static/images/docs/bugs/copyright_text/copyright_text.png)
 
+### [copyright text overlapping with developer content](#bugs)
+
+Problem?
+
+- Overlapping text in footer
+
+![overlapping_1.png](static/images/docs/bugs/copyright_text_overlapping/overlapping_1.png)
+
+Solution?
+
+- changed the left and right margin from 0.5em to 1 em
+
+![overlapping_2.png](static/images/docs/bugs/copyright_text_overlapping/overlapping_2.png)
 ---
 
 ## [Credits](#table-of-content)
