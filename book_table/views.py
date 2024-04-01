@@ -94,8 +94,6 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
     template_name = 'book_table/table.html'
     # form to be used called from form.py
     form_class = BookTableForm
-    # this will only send paginate_by number to template at once
-    paginate_by = 10
 
     # fetches current date of computer
     today = datetime.date.today()
