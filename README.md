@@ -37,6 +37,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
         - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
         - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
       - [Testing if I can navigate to table page](#testing-if-i-can-navigate-to-table-page)
+      - [Testing of updating records](#testing-of-updating-records)
       - [Testing model form for booking a table](#testing-model-form-for-booking-a-table)
         - [Html validation testing](#html-validation-testing)
         - [Css validation testing](#css-validation-testing)
@@ -563,6 +564,27 @@ Responsive design on Tablet
 Responsive design on Laptop
 
 ![about_responsive_laptop.png](static/images/docs/testing/manual_testing/about_responsive_laptop.png)
+
+#### [Testing of updating records](#manual-testing)
+
+- When the update button is clicked
+- The modal will popup using form validation
+- I have not yet been able to pre-populate the form using JavaScript
+- That will be added as a future feature
+- However, the update does work
+- You have to update both fields at the sametime
+- Clicking the "X" or the Cancel button will exit the modal
+- When submit is clicked, it will send it to a database for updating
+- You can see it update on the history dashboard
+- The message response has not yet been worked out
+- You will notice that it has been updated
+- When you look at the different dates between created and updated
+
+![update_records_1.png](static/images/docs/testing/manual_testing/update_records_1.png)
+
+![update_records_2.png](static/images/docs/testing/manual_testing/update_records_2.png)
+
+![update_records_3.png](static/images/docs/testing/manual_testing/update_records_3.png)
 
 #### [Testing if I can navigate to table page](#manual-testing)
 
