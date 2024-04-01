@@ -2,11 +2,12 @@
 
 ## [Introduction](#table-of-content)
 
-
 This is Part of my Fourth Project at Code Institute.
 
 This is a simple Restaurant Booking System, were I can book tables based on a date and time
 I am also able to see the Restaurant's Menu and Chef's specials.
+
+[Live link can be found here](https://ci-booking-system-5abd35239ade.herokuapp.com/)
 
 ---
 
@@ -20,38 +21,35 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [How to start this project locally](#how-to-start-this-project-locally)
     - [How this project was deployed to Heroku](#how-this-project-was-deployed-to-heroku)
     - [Technology Used](#technology-used)
-  - [neat and clean code](#neat-and-clean-code)
+    - [neat and clean code](#neat-and-clean-code)
 - [Features](#features)
     - [Features that have been included in this project](#features-that-have-been-included-in-this-project)
         - [hamburger image on smaller devices](#hamburger-image-on-smaller-devices)
         - [Authentication](#authentication)
-        - [Theme image](#theme-image)
         - [Description of the restaurant](#description-of-the-restaurant)
-      - [scrolling left and right arrows for carousel](#scrolling-left-and-right-arrows-for-carousel)
-      - [table booking with booking history, vouchers and next booking](#table-booking-with-booking-history-vouchers-and-next-booking)
+        - [scrolling left and right arrows for carousel](#scrolling-left-and-right-arrows-for-carousel)
+        - [table booking with booking history and next booking](#table-booking-with-booking-history-and-next-booking)
+        - [deleting table records](#deleting-table-records)
     - [Future features to be added at a later stage](#future-features-to-be-added-at-a-later-stage)
-        - [Theme image](#theme-image-1)
 - [Testing](#testing)
     - [Manual Testing](#manual-testing)
-        - [Testing responsiveness of the image theme](#testing-responsiveness-of-the-image-theme)
         - [Testing responsiveness of the menu page](#testing-responsiveness-of-the-menu-page)
         - [Testing the responsiveness of the about page](#testing-the-responsiveness-of-the-about-page)
-      - [Testing if I can navigate to table page](#testing-if-i-can-navigate-to-table-page)
-      - [Testing model form for booking a table](#testing-model-form-for-booking-a-table)
-        - [Html validation testing](#html-validation-testing)
-        - [Css validation testing](#css-validation-testing)
-        - [Wave testing for accessibility](#wave-testing-for-accessibility)
-        - [lighthouse testing](#lighthouse-testing)
+        - [Testing if I can navigate to table page](#testing-if-i-can-navigate-to-table-page)
+        - [Testing of updating records](#testing-of-updating-records)
+        - [Testing model form for booking a table](#testing-model-form-for-booking-a-table)
+            - [Html validation testing](#html-validation-testing)
+            - [Css validation testing](#css-validation-testing)
+            - [Wave testing for accessibility](#wave-testing-for-accessibility)
+            - [lighthouse testing](#lighthouse-testing)
     - [Automated Testing](#automated-testing)
         - [Authentication](#authentication-1)
         - [Homepage](#homepage-2)
-        - [Test if theme file exists](#test-if-theme-file-exists)
-        - [Test if the correct theme is being displayed](#test-if-the-correct-theme-is-being-displayed)
         - [Test if correct menu gets returned based on slug](#test-if-correct-menu-gets-returned-based-on-slug)
-      - [Test form invalid on Booking a table page](#test-form-invalid-on-booking-a-table-page)
-      - [Test form valid on Booking a table page](#test-form-valid-on-booking-a-table-page)
-      - [Test protected pages against anonymous user](#test-protected-pages-against-anonymous-user)
-      - [Test protected pages against users that are logged in or not](#test-protected-pages-against-users-that-are-logged-in-or-not)
+        - [Test form invalid on Booking a table page](#test-form-invalid-on-booking-a-table-page)
+        - [Test form valid on Booking a table page](#test-form-valid-on-booking-a-table-page)
+        - [Test protected pages against anonymous user](#test-protected-pages-against-anonymous-user)
+        - [Test protected pages against users that are logged in or not](#test-protected-pages-against-users-that-are-logged-in-or-not)
 - [Bugs](#bugs)
     - [The text is not aligned correctly to the Authentication Icon](#the-text-is-not-aligned-correctly-to-the-authentication-icon)
     - [Labels are not correctly sitting next to the Icons](#labels-are-not-correctly-sitting-next-to-the-icons)
@@ -64,7 +62,15 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [Navbar not at top of screen](#navbar-not-at-top-of-screen)
     - [Performance issues in page loading](#performance-issues-in-page-loading)
     - [Too many connections to database at once](#too-many-connections-to-database-at-once)
-  - [styling of homepage](#styling-of-homepage)
+    - [styling of homepage](#styling-of-homepage)
+    - [carousel arrows](#carousel-arrows)
+    - [copyright text not showing in footer](#copyright-text-not-showing-in-footer)
+    - [copyright text overlapping with developer content](#copyright-text-overlapping-with-developer-content)
+    - [next booking not being displayed](#next-booking-not-being-displayed)
+    - [not recognizing daylight savings mode](#not-recognizing-daylight-savings-mode)
+    - [table over lapping on smaller devices](#table-over-lapping-on-smaller-devices)
+    - [TypeError in console](#typeerror-in-console)
+    - [Am I Responsive does not display image](#am-i-responsive-does-not-display-image)
 - [Credits](#credits)
 
 ---
@@ -79,17 +85,29 @@ These Wireframes and UX Designs were designed on Figma
 
 ![wireframe-homepage.png](static/images/docs/planning/wireframe-homepage.png)
 
+- The message box in the middle is for where the carousel will go
+
 #### Menu Page
 
 ![wireframe-menu-page.png](static/images/docs/planning/wireframe-menu-page.png)
+
+- The box in the middle is to represent the menu
+- breakfast, lunch, supper, alcohol or starter menu
 
 #### About Page
 
 ![wireframe-about.png](static/images/docs/planning/wireframe-about.png)
 
+- The box in the middle is where I will place a section about our humble beginnings
+
 #### Book a table Page
 
 ![wireframe-book-table.png](static/images/docs/planning/wireframe-book-table.png)
+
+- The big box in the middle is for all booking history
+- The top box on the left-hand side is for the last booking
+- The one under that is for vouchers
+- The voucher system has been taken out of the equation for now
 
 ### [Ux-design](#planning)
 
@@ -112,6 +130,9 @@ These Wireframes and UX Designs were designed on Figma
 ### ERD diagram
 
 ![ERD_diagram.png](static/images/docs/planning/ERD_diagram.png)
+
+- I have taken the voucher model out
+- as of now it became an unnecessary feature
 
 ### [Colour Pallet](#planning)
 
@@ -331,6 +352,9 @@ When screen gets minimised all content gets reduced to hamburger menu
 
 ![header-hamburger-menu.png](static/images/docs/features/header-hamburger-menu.png)
 
+- This has since been changed to the three horizontal lines
+- as it made for better UX design
+
 #### [Authentication](#features)
 
 When the user is not logged in, this image will be displayed
@@ -340,18 +364,6 @@ When the user is not logged in, this image will be displayed
 When the user is logged in, a welcome message will be displayed with a different image
 
 ![header-login-image.png](static/images/docs/features/header-login-image.png)
-
-#### [Theme image](#features)
-
-- These themes are small images of the top right of the menu
-- This image represents the theme of the year
-- It will automatically change based on the time of the year
-- it works based on Summer, Winter, Autumn and Spring
-- These images are hard coded for now
-- But, as a future feature it will be in the database
-- This theme image only gets displayed on tablets and bigger devices
-
-![theme_image.png](static/images/docs/features/theme_image.png)
 
 #### [Description of the restaurant](#features)
 
@@ -367,12 +379,15 @@ When the user is logged in, a welcome message will be displayed with a different
 
 ![scrolling_left_right_arrows_carousel.png](static/images/docs/features/scrolling_left_right_arrows_carousel.png)
 
-#### [table booking with booking history, vouchers and next booking](#features)
+- The design layout has changed slightly since this image
+- I have added it as a card, giving it better styling
+
+#### [table booking with booking history and next booking](#features)
 
 - You can only book a table if you are logged in
 - The icon in the header will not be displayed if you are logged out
-- There is a section to show all history of your bookings it will only display 10
-- I have left out pagination, I will only be displaying 10 history items at the most
+- There is a section to show all history of your bookings
+- I have left out pagination, as I will be implementing it at a later date
 - Displaying all history bookings as a table
 - I have also added it to display your next booking
 - But at this time it will only display the last booking that you have booked for
@@ -380,11 +395,6 @@ When the user is logged in, a welcome message will be displayed with a different
 - as if you had a few bookings after the current date
 - it will just display the last one
 - As I believe at this stage, it will be a performance issue, as async has not been worked out properly yet
-- There is also a voucher system that is running
-- I have only been able to do one voucher at present
-- This voucher system will only be displayed on tablet and bigger devices
-- The voucher will be applied once it sees that you have no booking history
-- This voucher is still experimental needing to work out the logic a little bit better
 
 - What it looks like on mobile devices
 
@@ -394,6 +404,15 @@ When the user is logged in, a welcome message will be displayed with a different
 
 ![table-desktop.png](static/images/docs/features/table-desktop.png)
 
+#### [deleting table records](#features)
+
+- Once the Delete button is clicked
+- a modal will pop up for deleting the record from the database
+
+![delete_button.png](static/images/docs/bugs/delete_button.png)
+
+![delete_modal.png](static/images/docs/bugs/delete_modal.png)
+
 ### [Future features to be added at a later stage](#features)
 
 - I would like to add a dashboard for the admin logged-in user
@@ -401,19 +420,13 @@ When the user is logged in, a welcome message will be displayed with a different
 - Search based on Foreign Key in an admin panel:
     - I would like to search based on a foreign key in the admin panel
     - for some reason, I can't seem to search using the search_filed as it does not work on foreign keys
-
-#### [Theme image](#features)
-
-- As a future task as far as theming goes
-- I would like to create a model for storing all themes
-- Instead of, an image in the background creates some sort of animated background for themes
-- I can also do it were I create themes for easter or Christmas and others as needed
+- I am wanting to implement async/await for fetching data
 
 ---
 
 ## [Testing](#table-of-content)
 
-This is generally the cycle that I tried to follow for testing
+- This is generally the cycle that I tried to follow for testing
 
 ![testing-lifecycle.png](static/images/docs/testing/testing-lifecycle.png)
 
@@ -431,6 +444,8 @@ This is what it looks like on a laptop and larger
 When the navbar becomes smaller than laptop, this is what it will look like
 
 ![header-mobile.png](static/images/docs/testing/header-mobile.png)
+
+- The hamburger-menu has changed to the three horizontal lines
 
 When the hamburger icon menu is open
 
@@ -460,10 +475,11 @@ This testing was conducted on Lighthouse with Mobile in mind
 
 #### Homepage
 
-- When you are added data for the Carousel
+- When I have added data for the Carousel?
 - You are only allowed to add three entries per meal
 - For instance, you are only allowed three breakfasts, three lunches and three suppers
 - The carousel will auto choose which one based on the time of day
+- I have allowed for four entries, based on the fact that if you need to update one of them
 
 If all data is correct, it will show this in the admin panel
 
@@ -496,23 +512,7 @@ Responsive on Laptop devices
 
 ![manual-homepage-responsive-laptop.png](static/images/docs/testing/manual-homepage-responsive-laptop.png)
 
-#### [Testing responsiveness of the image theme](#manual-testing)
-
-- The theme is responsive across all devices
-- If you are on a mobile device, you won't see the theme
-- It will only be displayed when on a tablet or bigger
-
-When on a laptop or bigger screen size
-
-![image_theme_laptop.png](static/images/docs/testing/manual_testing/image_theme_laptop.png)
-
-When on tablet devices
-
-![image_theme_tablet.png](static/images/docs/testing/manual_testing/image_theme_tablet.png)
-
-When on mobile devices
-
-![image_theme_mobile.png](static/images/docs/testing/manual_testing/image_theme_mobile.png)
+- This design has changed to a card since it was taken
 
 #### [Testing responsiveness of the menu page](#manual-testing)
 
@@ -531,6 +531,8 @@ Responsive design on mobile
 
 ![menu_page_mobile.png](static/images/docs/testing/manual_testing/menu_page_mobile.png)
 
+- I have changed the background color for the headings
+
 #### [Testing the responsiveness of the about page](#manual-testing)
 
 - This testing section was to test to see how the about page
@@ -547,6 +549,24 @@ Responsive design on Tablet
 Responsive design on Laptop
 
 ![about_responsive_laptop.png](static/images/docs/testing/manual_testing/about_responsive_laptop.png)
+
+#### [Testing of updating records](#manual-testing)
+
+- When the update button is clicked
+- The modal will popup using form validation
+- I have not yet been able to pre-populate the form using JavaScript
+- That will be added as a future feature
+- However, the update does work
+- You have to update both fields at the sametime
+- Clicking the "X" or the Cancel button will exit the modal
+- When submit is clicked, it will send it to a database for updating
+- which will send you a message to say it has been updated
+
+![update_records_1.png](static/images/docs/testing/manual_testing/update_records_1.png)
+
+![update_records_2.png](static/images/docs/testing/manual_testing/update_records_2.png)
+
+![update_records_3.png](static/images/docs/testing/manual_testing/update_records_3.png)
 
 #### [Testing if I can navigate to table page](#manual-testing)
 
@@ -567,6 +587,7 @@ Responsive design on Laptop
 - The validation of the timeslots only allows you to select from 1 hour of present time
 - As a logged-in user, you are only allowed to book once a day, to eliminate double booking on the same day
 - The modal is also fully responsive
+- I have not been able to work out daylight savings mode
 
 Modal form
 
@@ -586,6 +607,7 @@ Modal testing of incorrect time slot
 - Using the Heroku link of my live site
 - As the validator won't work when copying and pasting code
 - This link was tested on the about page
+- But all the pages are only giving info warnings
 
 ![html-validator-link.png](static/images/docs/testing/manual_testing/html-validator-link.png)
 
@@ -600,59 +622,49 @@ Modal testing of incorrect time slot
 
 #### [Wave testing for accessibility](#manual-testing)
 
-- With the wave validator, there were just two contrast issues
-- With the footer this will be sorted out when I sort out the bug on the footer
+- With the wave validator, there seems to be just two contrast issues on all pages
+- This is a small issue with the contrast of the developer section in footer
 
 ![wave-validator-about.png](static/images/docs/testing/manual_testing/wave-validator-about.png)
+
+![footer.png](static/images/docs/testing/manual_testing/footer.png)
 
 #### [lighthouse testing](#manual-testing)
 
 - this lighthouse testing was done in incognito mode
 - As some of my extensions were messing with the results
 
-![lighthouse-about.png](static/images/docs/testing/manual_testing/lighthouse-about.png)
+home page on mobile
 
-##### Menu page testing
+![home_mobile.png](static/images/docs/testing/lighthouse/home_mobile.png)
 
-- All these tests were done on incognito mode in a new window
-- As extensions were messing with my results
+home page on desktop
 
-![lighthouse_menu_alcohol_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_alcohol_desktop.png)
+![home_desktop.png](static/images/docs/testing/lighthouse/home_desktop.png)
 
-![lighthouse_menu_alcohol_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_alcohol_mobile.png)
+menu page on mobile
 
-![lighthouse_menu_breakfast_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_breakfast_mobile.png)
+![menu_mobile.png](static/images/docs/testing/lighthouse/menu_mobile.png)
 
-![lighthouse_menu_breakfast_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_breakfast_desktop.png)
+menu page on desktop
 
-![lighthouse_menu_lunch_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_lunch_mobile.png)
+![menu_desktop.png](static/images/docs/testing/lighthouse/menu_desktop.png)
 
-![lighthouse_menu_lunch_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_lunch_desktop.png)
+table booking page on mobile
 
-![lighthouse_menu_starter_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_starter_mobile.png)
+![table_mobile.png](static/images/docs/testing/lighthouse/table_mobile.png)
 
-![lighthouse_menu_starter_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_starter_desktop.png)
+table booking page on desktop
 
-![lighthouse_menu_supper_mobile.png](static/images/docs/testing/manual_testing/lighthouse_menu_supper_mobile.png)
+![table_desktop.png](static/images/docs/testing/lighthouse/table_desktop.png)
 
-![lighthouse_menu_supper_desktop.png](static/images/docs/testing/manual_testing/lighthouse_menu_supper_desktop.png)
+about page on mobile
 
-Table booking page
+![about_mobile.png](static/images/docs/testing/lighthouse/about_mobile.png)
 
-- Lighthouse testing on Desktop devices
-- The test scores were a bit low
-- I think that it is gathering from a database that is the issue
-- As a future features I want to implement async instead of sync
-- I have also written as a bug that needs to be fixed
-- So that I can try and improve the user experience
+about page on desktop
 
-- Testing on Desktop
-
-![table-desktop.png](static/images/docs/testing/lighthouse/table-desktop.png)
-
-- Testing on Mobile
-
-![table-mobile.png](static/images/docs/testing/lighthouse/table-mobile.png)
+![about_desktop.png](static/images/docs/testing/lighthouse/about_desktop.png)
 
 ### [Automated Testing](#testing)
 
@@ -691,47 +703,6 @@ The results of a failing test
 Testing for a passing test
 
 ![auto-homepage-testing-what-pass.png](static/images/docs/testing/auto-homepage-testing-what-pass.png)
-
-#### [Test if theme file exists](#automated-testing)
-
-What was being tested?
-
-- I first tested if the file exists
-- Passing it the file name of "winterP.jpg"
-- Then after that I passed it the correct file name to if the test works
-- Passing it the file name of "winter.jpg"
-
-Passing theme on a failing test
-
-![theme_exists_fail.png](static/images/docs/testing/auto_testing/theme_exists_fail.png)
-
-Passing theme on a passing test
-
-![theme_exists_pass.png](static/images/docs/testing/auto_testing/theme_exists_pass.png)
-
-#### [Test if the correct theme is being displayed](#automated-testing)
-
-What was being tested?
-
-- Test if the correct them was returned
-- Passing in the month and the filename
-- The filename is just hardcoded static images for the theme
-
-Failing test for theme
-
-![theme_failing_test.png](static/images/docs/testing/auto_testing/theme_failing_test.png)
-
-Failing test case
-
-![theme_failing_test_case.png](static/images/docs/testing/auto_testing/theme_failing_test_case.png)
-
-Passing test for theme
-
-![theme_passing_test.png](static/images/docs/testing/auto_testing/theme_passing_test.png)
-
-Passing test cases
-
-![theme_failing_test_case.png](static/images/docs/testing/auto_testing/theme_failing_test_case.png)
 
 #### [Test if correct menu gets returned based on slug](#automated-testing)
 
@@ -883,6 +854,8 @@ What is the Issue?
 
 ![hamburger-menu.png](static/images/docs/bugs/hamburger-menu.png)
 
+- I have since changed to the horizontal icon but the bug is still there
+
 ### [Operational error in database as trying to run auto test](#bugs)
 
 Problem?
@@ -931,8 +904,8 @@ Problem?
 
 Solution?
 
-- The bug has not been solved yet
-- I will try and create an issue for it later
+- This bug has been solved using cards
+- as cards were easier to keep content in a container
 
 ### [Favicon icon not displaying](#bugs)
 
@@ -999,8 +972,7 @@ Problem?
 
 Solution?
 
-- The bug has not been solved yet
-- I will try and create an issue for it later
+- this bug was solved with simple css
 
 ### [Performance issues in page loading](#bugs)
 
@@ -1015,8 +987,7 @@ Problem?
 
 Solution?
 
-- I have solved this bug by digging into multi-thread processing
-- And reduced some of the logic that I was using
+- I have solved this bug by simplify some of my logic that I use
 
 ![performance_lighthouse_solved.png](static/images/docs/bugs/performance/performance_lighthouse_solved.png)
 
@@ -1031,8 +1002,16 @@ Problem?
 
 Solution?
 
-- This problem has not been solved yet
-- Will try and come to it at the end
+- with this error, I was using thread module
+- with using thread module, you sometimes might get a thread lock issue
+- the computer doesn't know what todo, or it sends to many signals to elephantSQL
+- whichever issue it was, I have now completely removed thread module
+- and made two global variables to gather data that I needed
+- then filter it out for when I need it
+
+![menu_connection_issue.png](static/images/docs/bugs/menu_connection_issue.png)
+
+- These variables have since been moved inside the class
 
 ### [styling of homepage](#bugs)
 
@@ -1040,16 +1019,145 @@ Problem?
 
 - The styling of the homepage does not look the same as the rest of the site
 
-![styling_homepage_problem.png](static/images/docs/bugs/styling_homepage_problem.png)
+![styling_homepage_problem.png](static/images/docs/bugs/styling_homepage/styling_homepage_problem.png)
 
 Solution?
 
-- changed all the correct styling for the homepage to make it conform to the rest of the site
-- add the correct images to the database
-- I have also changed the form for the admin panel that only allows four entries to make room for if you need to update
-  one of the models
+- I have now created it as a card within the carousel
+- It is responsive from 375pixels
+- the indicators at the bottom will disappear on screen sizes less than 400px
+- the indicator is clickable for if you want to go to a specific item
+- with side indicators to click for left or right images
 
-![styling_homepage_solution.png](static/images/docs/bugs/styling_homepage_solution.png)
+![carousel_styling_above400.png](static/images/docs/bugs/styling_homepage/carousel_styling_above400.png)
+
+![carousel_styling_below400.png](static/images/docs/bugs/styling_homepage/carousel_styling_below400.png)
+
+![carousel_styling_laptop.png](static/images/docs/bugs/styling_homepage/carousel_styling_laptop.png)
+
+![carousel_styling_tablet.png](static/images/docs/bugs/styling_homepage/carousel_styling_tablet.png)
+
+### [carousel arrows](#bugs)
+
+![arrows.png](static/images/docs/bugs/carousel_arrows/arrows.png)
+
+- carousel arrows are being displayed when there is no carousel to display
+- on certain devices the arrows don't seem to want to show up properly
+- at this stage, I am not sure how to change that
+
+![arrows_2.png](static/images/docs/bugs/carousel_arrows/arrows_2.png)
+
+### [copyright text not showing in footer](#bugs)
+
+- The current year is not showing when
+- on the logout, login and sign out forms
+
+![copyright text.png](static/images/docs/bugs/copyright_text/copyright_text.png)
+
+### [copyright text overlapping with developer content](#bugs)
+
+Problem?
+
+- Overlapping text in footer
+
+![overlapping_1.png](static/images/docs/bugs/copyright_text_overlapping/overlapping_1.png)
+
+Solution?
+
+- changed the left and right margin from 0.5em to 1 em
+
+![overlapping_2.png](static/images/docs/bugs/copyright_text_overlapping/overlapping_2.png)
+
+### [next booking not being displayed](#bugs)
+
+Problem?
+
+- The Next booking is supposed to show the last booking in the history table
+
+![last_booking_1.png](static/images/docs/bugs/next%20booking/last_booking_1.png)
+
+![last_booking_2.png](static/images/docs/bugs/next%20booking/last_booking_2.png)
+
+Solution?
+
+- There was just a simple variable that I had to add
+- I also changed from next booking to last booking
+- As last booking made more sense
+
+![last_booking_3.png](static/images/docs/bugs/next%20booking/last_booking_3.png)
+
+### [not recognizing daylight savings mode](#bugs)
+
+Problem?
+
+- Django does not recognize daylight savings time
+- For some reason, Django does not change time zones
+- As I have just reached daylight savings mode
+
+This is the current date and time of my computer
+
+![time_zone_1.png](static/images/docs/bugs/daylight_time/time_zone_1.png)
+
+Solution?
+
+- This bug has not been solved yet
+- This is also added as an extra feature for future reference
+
+This is what was saved in the database with current model
+Notice that the Booking created time is an hour difference
+
+![time_zone_2.png](static/images/docs/bugs/daylight_time/time_zone_2.png)
+
+### [table over lapping on smaller devices](#bugs)
+
+Problem?
+
+- The table was not responding when getting to smaller devices
+
+![overlapping_1.png](static/images/docs/bugs/table_over_lapping/overlapping_1.png)
+
+![overlapping_2.png](static/images/docs/bugs/table_over_lapping/overlapping_2.png)
+
+Solution?
+
+- Hide the last child element on smaller devices
+- In this case, the Delete and Update buttons
+
+![overlapping_3.png](static/images/docs/bugs/table_over_lapping/overlapping_3.png)
+
+- I have decided that delete and update buttons
+- will only be used for screen sizes bigger than tablet
+
+### [TypeError in console](#bugs)
+
+Problem?
+
+- TypeError occurs after a few seconds of page load
+- This error occurs from the timeout section in the script.js file
+
+![TypeError_1.png](static/images/docs/bugs/typeerror/TypeError_1.png)
+
+![TypeError_2.png](static/images/docs/bugs/typeerror/TypeError_2.png)
+
+Solution?
+
+- added a try/catch block for TypeError
+- in the catch block nothing will occur
+- I didn't see anywhere on the internet were you can't do a try/catch like this
+
+![TypeError_3.png](static/images/docs/bugs/typeerror/TypeError_3.png)
+
+### [Am I Responsive does not display image](#bugs)
+
+Problem?
+
+- Am I Responsive does not want to display a screenshot of my live website
+
+![responsive.png](static/images/docs/bugs/amiresponsive.png)
+
+Solution?
+
+- Not sure what this problem is it might be a loading issue
 
 ---
 
@@ -1070,5 +1178,7 @@ Solution?
   used for themes, but decided to take themes out, I am planning on this for a future feature
 - [Luke Buchanan](https://www.linkedin.com/in/lukebuchanan67/) - Mentor
 - [Code Institute](https://codeinstitute.net/) - Bootcamp
+- [reference for the success message](https://stackoverflow.com/questions/36087752/django-messaging-framework-how-to-only-display-success-messages)
+- [Example of how to use the Delete View](https://www.geeksforgeeks.org/deleteview-class-based-views-django/)
 
 ---
