@@ -1,6 +1,6 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.pn/
-## [Introduction](#table-of-content)
+![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+## [Introduction](#table-of-content)
 
 This is Part of my Fourth Project at Code Institute.
 
@@ -1040,16 +1040,23 @@ Problem?
 
 - The styling of the homepage does not look the same as the rest of the site
 
-![styling_homepage_problem.png](static/images/docs/bugs/styling_homepage_problem.png)
+![styling_homepage_problem.png](static/images/docs/bugs/styling_homepage/styling_homepage_problem.png)
 
 Solution?
 
-- changed all the correct styling for the homepage to make it conform to the rest of the site
-- add the correct images to the database
-- I have also changed the form for the admin panel that only allows four entries to make room for if you need to update
-  one of the models
+- I have now created it as a card within the carousel
+- It is responsive from 375pixels
+- the indicators at the bottom will disappear on screen sizes less than 400px
+- the indicator is clickable for if you want to go to a specific item
+- with side indicators to click for left or right images
 
-![styling_homepage_solution.png](static/images/docs/bugs/styling_homepage_solution.png)
+![carousel_styling_above400.png](static/images/docs/bugs/styling_homepage/carousel_styling_above400.png)
+
+![carousel_styling_below400.png](static/images/docs/bugs/styling_homepage/carousel_styling_below400.png)
+
+![carousel_styling_laptop.png](static/images/docs/bugs/styling_homepage/carousel_styling_laptop.png)
+
+![carousel_styling_tablet.png](static/images/docs/bugs/styling_homepage/carousel_styling_tablet.png)
 
 ### [carousel arrows](#bugs)
 
