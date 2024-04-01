@@ -67,6 +67,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [carousel arrows](#carousel-arrows)
   - [copyright text not showing in footer](#copyright-text-not-showing-in-footer)
   - [copyright text overlapping with developer content](#copyright-text-overlapping-with-developer-content)
+  - [next booking not being displayed](#next-booking-not-being-displayed)
 - [Credits](#credits)
 
 ---
@@ -1090,6 +1091,25 @@ Solution?
 - changed the left and right margin from 0.5em to 1 em
 
 ![overlapping_2.png](static/images/docs/bugs/copyright_text_overlapping/overlapping_2.png)
+
+### [next booking not being displayed](#bugs)
+
+Problem?
+
+- The Next booking is supposed to show the last booking in the history table
+
+![last_booking_1.png](static/images/docs/bugs/next%20booking/last_booking_1.png)
+
+![last_booking_2.png](static/images/docs/bugs/next%20booking/last_booking_2.png)
+
+Solution?
+
+- There was just a simple variable that I had to add
+- I also changed from next booking to last booking
+- As last booking made more sense
+
+![last_booking_3.png](static/images/docs/bugs/next%20booking/last_booking_3.png)
+
 ---
 
 ## [Credits](#table-of-content)
