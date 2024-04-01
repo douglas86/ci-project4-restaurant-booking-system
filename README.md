@@ -70,6 +70,7 @@ I am also able to see the Restaurant's Menu and Chef's specials.
   - [next booking not being displayed](#next-booking-not-being-displayed)
   - [not recognizing daylight savings mode](#not-recognizing-daylight-savings-mode)
   - [table over lapping on smaller devices](#table-over-lapping-on-smaller-devices)
+  - [TypeError in console](#typeerror-in-console)
 - [Credits](#credits)
 
 ---
@@ -1155,9 +1156,28 @@ Problem?
 Solution?
 
 - Hide the last child element on smaller devices
-- In this case the Delete and Update buttons
+- In this case, the Delete and Update buttons
 
 ![overlapping_3.png](static/images/docs/bugs/table_over_lapping/overlapping_3.png)
+
+### [TypeError in console](#bugs)
+
+Problem?
+
+- TypeError occurs after a few seconds of page load
+- This error occurs from the timeout section in the script.js file
+
+![TypeError_1.png](static/images/docs/bugs/typeerror/TypeError_1.png)
+
+![TypeError_2.png](static/images/docs/bugs/typeerror/TypeError_2.png)
+
+Solution?
+
+- added a try/catch block for TypeError
+- in the catch block nothing will occur
+- I didn't see anywhere on the internet were you can't do a try/catch like this
+
+![TypeError_3.png](static%2Fimages%2Fdocs%2Fbugs%2Ftypeerror%2FTypeError_3.png)
 
 ---
 
