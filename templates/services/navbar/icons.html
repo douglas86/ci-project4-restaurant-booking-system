@@ -2,7 +2,7 @@
 <div class="icon-links">
 	<a aria-current="page" class="nav-link active" href="{% url 'home' %}">
 		<div class="links">
-			<img src="{% static 'images/navbar/Home.png' %}" alt="not found" />
+            <img src="{% static 'images/navbar/Home.png' %}" alt="home page"/>
 			<p>Home</p>
 		</div>
 	</a>
@@ -10,7 +10,7 @@
 		<div class="links">
 			<img
 				src="{% static 'images/navbar/Restaurant Menu.png' %}"
-				alt="not found"
+                alt="menu page"
 			/>
 			<p>Menu</p>
 		</div>
@@ -20,7 +20,7 @@
 		<div class="links">
 			<img
 				src="{% static 'images/navbar/Restaurant Table.png' %}"
-				alt="not found"
+                alt="table booking page"
 			/>
 			<p>Book Table</p>
 		</div>
@@ -28,7 +28,7 @@
     {% endif %}
 	<a class="nav-link" href="{% url 'about' %}">
 		<div class="links">
-			<img src="{% static 'images/navbar/Info.png' %}" alt="not found" />
+            <img src="{% static 'images/navbar/Info.png' %}" alt="about page"/>
 			<p>About</p>
 		</div>
 	</a>
