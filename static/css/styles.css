@@ -195,12 +195,6 @@ form input[type="email"] {
     text-align: center;
 }
 
-.menu_title {
-    color: brown;
-    font-weight: 500;
-    opacity: 1;
-}
-
 /*about*/
 .about-start, .about-middle, .about-end {
     margin: 2em auto;
