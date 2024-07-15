@@ -21,9 +21,11 @@ from django.urls import path, include
 from about.views import AboutView
 from home.views import HomePageView
 from .settings import DEBUG
+from .views import UsernamePasswordResetView
 
 urlpatterns = [
     path("about/", AboutView.as_view(), name="about"),
+    path("accounts/password/reset/", UsernamePasswordResetView.as_view(), name="password_reset"),
     path("accounts/", include("allauth.urls")),
     path("admin/", admin.site.urls),
     path("menu/", include("menu.urls")),
