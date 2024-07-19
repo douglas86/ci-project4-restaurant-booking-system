@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.models import User
 
 
@@ -18,19 +19,31 @@ class UsernameResetPasswordForm(forms.Form):
             raise forms.ValidationError('Username does not exist')
 
 
-class ChangePasswordForm(forms.Form):
-    username = forms.CharField(label='Username', max_length=150)
-    password = forms.CharField(label='Password', max_length=150)
-    temporary_password = forms.CharField(widget=forms.PasswordInput)
+# class ChangePasswordForm(forms.Form):
+#     username = forms.CharField(label='Username', max_length=150)
+#     password = forms.CharField(label='Password', max_length=150)
+#     temporary_password = forms.CharField(widget=forms.PasswordInput)
+#
+#     def save(self, request):
+#         temporary_password = self.cleaned_data['temporary_password']
+#         user = request.POST['username']
+#         new_password = self.cleaned_data['password']
+#
+#         if user.check_password(temporary_password):
+#             user.set_password(new_password)
+#             user.save()
+#             return new_password
+#         else:
+#             raise forms.ValidationError('Temporary password is incorrect.')
 
-    def save(self, request):
-        temporary_password = self.cleaned_data['temporary_password']
-        user = request.POST['username']
-        new_password = self.cleaned_data['password']
+class ChangePasswordForm(PasswordChangeForm):
+    def __init__(self, user, *args, **kwargs):
+        self.user = user
+        super(ChangePasswordForm, self).__init__(user, *args, **kwargs)
 
-        if user.check_password(temporary_password):
-            user.set_password(new_password)
-            user.save()
-            return new_password
-        else:
-            raise forms.ValidationError('Temporary password is incorrect.')
+    def clean_old_password(self):
+        old_password = self.cleaned_data['old_password']
+
+        if not self.user.check_password(old_password):
+            raise forms.ValidationError('Incorrect old password')
+        return old_password
