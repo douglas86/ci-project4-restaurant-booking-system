@@ -1,13 +1,25 @@
 import datetime
 
+from allauth.account.forms import SignupForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
+from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
 from .forms import UsernameResetPasswordForm, ChangePasswordForm
+
+
+class SignUpView(TemplateView):
+    template_name = 'account/signup.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = SignupForm()
+        context['action_url'] = reverse('account_signup')
+        return context
 
 
 class UsernamePasswordResetView(View):
