@@ -5,47 +5,32 @@ from django.contrib.auth.models import User
 class UsernameResetPasswordForm(forms.Form):
     username = forms.CharField(label='Username', max_length=150)
 
-    def clean_username(self):
+    def save(self, request):
         username = self.cleaned_data['username']
 
-        if not User.objects.filter(username=username).exists():
-            raise forms.ValidationError('There is no user registered with this username.')
-        return username
-
-    def save(self, request, **kwargs):
-        username = self.cleaned_data['username']
-        user = User.objects.get(username=username)
-        temporary_password = User.objects.make_random_password()
-        user.set_password(temporary_password)
-        user.save()
-        # email = User.objects.get(username=username).email
-        # self.cleaned_data['email'] = email
-        return temporary_password
+        try:
+            user = User.objects.get(username=username)
+            temporary_password = User.objects.make_random_password()
+            user.set_password(temporary_password)
+            user.save()
+            return temporary_password
+        except User.DoesNotExist:
+            raise forms.ValidationError('Username does not exist')
 
 
 class ChangePasswordForm(forms.Form):
     username = forms.CharField(label='Username', max_length=150)
     password = forms.CharField(label='Password', max_length=150)
-    old_password = forms.CharField(label='Old Password', max_length=150)
+    temporary_password = forms.CharField(widget=forms.PasswordInput)
 
-    def clean_username(self):
-        username = self.cleaned_data['username']
+    def save(self, request):
+        temporary_password = self.cleaned_data['temporary_password']
+        user = request.POST['username']
+        new_password = self.cleaned_data['password']
 
-        if not User.objects.filter(username=username).exists():
-            raise forms.ValidationError('There is no user registered with this username.')
-        return username
-
-    def clean_old_password(self):
-        old_password = self.cleaned_data['old_password']
-
-        if not User.objects.filter(username=old_password).exists():
-            raise forms.ValidationError('There is no old password registered with this username.')
-        return old_password
-
-    def save(self, request, **kwargs):
-        username = self.cleaned_data['username']
-        password = self.cleaned_data['password']
-        user = User.objects.get(username=username)
-        user.set_password(password)
-        user.save()
-        return user
+        if user.check_password(temporary_password):
+            user.set_password(new_password)
+            user.save()
+            return new_password
+        else:
+            raise forms.ValidationError('Temporary password is incorrect.')
