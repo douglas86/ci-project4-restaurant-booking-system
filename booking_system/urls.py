@@ -21,13 +21,12 @@ from django.urls import path, include
 from about.views import AboutView
 from home.views import HomePageView
 from .settings import DEBUG
-from .views import UsernamePasswordResetView, ChangePasswordView, LoginView
+from .views import UsernamePasswordResetView, ChangePasswordView
 
 urlpatterns = [
     path("about/", AboutView.as_view(), name="about"),
     path("accounts/password/reset/", UsernamePasswordResetView.as_view(), name="password_reset"),
     path("accounts/password/change/", ChangePasswordView.as_view(), name="password_change"),
-    path("accounts/login/", LoginView.as_view(), name="login"),
     path("accounts/", include("allauth.urls")),
     path("admin/", admin.site.urls),
     path("menu/", include("menu.urls")),
