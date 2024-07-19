@@ -250,7 +250,7 @@ Table booking Page
 ### [How to start this project locally](#planning)
 
 - when using ssh
-- git clone git@github.com:douglas86/ci-project4-restaurant-booking-system.git
+- git clone git@github.com: douglas86/ci-project4-restaurant-booking-system.git
 - when using http
 - git clone https://github.com/douglas86/ci-project4-restaurant-booking-system.git
 - make sure to have a look at the runtime.txt file to see what version of python I am using
@@ -282,19 +282,19 @@ env.py
 
 - head over to [Heroku Dashboard](https://dashboard.heroku.com/apps)
 - create a new app and add all the environment variables to your config vars
-- make sure to add DISABLE_COLLECTSTATIC with the value of 1
+- make sure to add DISABLE_COLLECT STATIC with the value of 1
 - if this variable is not used, Heroku will spit out an error
 - change DJANGO_DEBUG with the value of False
 - make sure that there is a runtime.txt file
 - this will tell Heroku what version of python to use
-- make sure that requirements.txt is up to date
+- make sure that requirements.txt is updated
 - make sure to see if Heroku hasn't automatically added a build pack for PostgresSQL
 - if it has deleted it as this project is using elephantSQL instead
 - connect GitHub and the repo to Heroku and build the project
 
 ### [Technology Used](#planning)
 
-- HTML/CSS - html templating and css styling
+- HTML/CSS - html templating and CSS styling
 - Python—logic used in this project
 - JavaScript—Used for Models and other front end logic
 - Django - Python Framework for developing this project
@@ -413,6 +413,24 @@ When the user is logged in, a welcome message will be displayed with a different
 
 ![delete_modal.png](static/images/docs/bugs/delete_modal.png)
 
+#### [reset password based on username](#features)
+
+- when you want to reset your password, enter your username
+
+![reset-password.png](static/images/docs/features/reset-password.png)
+
+- If the username is correct, it will take you to a page for a temporary password
+
+![reset-password-done.png](static/images/docs/features/reset-password-done.png)
+
+- There is a link on that page that takes you to the change password page
+- Which you can only access if you log in with the temp password
+
+![change_password.png](static/images/docs/features/change_password.png)
+
+- As a future feature, I would like to authenticate by email
+- As it will be more secure
+
 ### [Future features to be added at a later stage](#features)
 
 - I would like to add a dashboard for the admin logged-in user
@@ -421,6 +439,7 @@ When the user is logged in, a welcome message will be displayed with a different
     - I would like to search based on a foreign key in the admin panel
     - for some reason, I can't seem to search using the search_filed as it does not work on foreign keys
 - I am wanting to implement async/await for fetching data
+- As a future feature, I would like to add email for reset password
 
 ---
 
@@ -451,14 +470,14 @@ When the hamburger icon menu is open
 
 ![header-ham-open.png](static/images/docs/testing/header-ham-open.png)
 
-Testing with html validator
+Testing with HTML validator
 
 ![header-html-validator.png](static/images/docs/testing/header-html-validator.png)
 
 The results can be
 found [here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fci-booking-system-5abd35239ade.herokuapp.com%2F)
 
-Testing with a css validator
+Testing with a CSS validator
 
 ![header-css-validator.png](static/images/docs/testing/header-css-validator.png)
 
@@ -475,7 +494,7 @@ This testing was conducted on Lighthouse with Mobile in mind
 
 #### Homepage
 
-- When I have added data for the Carousel?
+- When do I have added data for the Carousel?
 - You are only allowed to add three entries per meal
 - For instance, you are only allowed three breakfasts, three lunches and three suppers
 - The carousel will auto choose which one based on the time of day
@@ -535,7 +554,7 @@ Responsive design on mobile
 
 #### [Testing the responsiveness of the about page](#manual-testing)
 
-- This testing section was to test to see how the about page
+- This testing section was to test it to see how the about page
 - is going to look at different screen sizes
 
 Responsive design on mobile
@@ -603,7 +622,7 @@ Modal testing of incorrect time slot
 
 #### [Html validation testing](#manual-testing)
 
-- I tested this on Html Validator
+- I tested this on HTML Validator
 - Using the Heroku link of my live site
 - As the validator won't work when copying and pasting code
 - This link was tested on the about page
@@ -615,8 +634,8 @@ Modal testing of incorrect time slot
 
 #### [Css validation testing](#manual-testing)
 
-- The only errors that css picked up were with bootstrap
-- There were no other errors with my css code
+- The only errors that CSS picked up were with bootstrap
+- There were no other errors with my CSS code
 
 ![css-validation.png](static/images/docs/testing/manual_testing/css-validation.png)
 
@@ -678,8 +697,8 @@ If you are just wanting to test conventionally
 
 What was tested in this scenario:
 
-- I wanted to test if a user can be created
-- I wanted to test if a user was able to log in
+- I wanted to test it if a user can be created
+- I wanted to test it if a user was able to log in
 
 As this is the first time I have written auto tests by myself,
 I wanted to keep it basic
@@ -818,7 +837,7 @@ And not aligning correctly
 
 ![header-label-incorrect.png](static/images/docs/bugs/header-label-incorrect.png)
 
-This issue was solved with flexbox and css
+This issue was solved with flexbox and CSS
 They were already in their own container class
 I just had to alter the CSS properties
 
@@ -883,7 +902,7 @@ Solution?
 - I was no longer getting that error
 - Then test files were now running as they were supposed to
 - the issue was all sorted, but now I have to create all my data again
-- re-populating my database with data from fixtures json files
+- re-populating my database with data from fixtures JSON files
 - I had to run the command one at a time python manage.py loaddata fixtures/fixture/chef_special.json
 
 ![database_working correctly.png](static/images/docs/bugs/database_working%20correctly.png)
@@ -972,7 +991,7 @@ Problem?
 
 Solution?
 
-- this bug was solved with simple css
+- this bug was solved with simple CSS
 
 ### [Performance issues in page loading](#bugs)
 
@@ -1126,7 +1145,7 @@ Solution?
 ![overlapping_3.png](static/images/docs/bugs/table_over_lapping/overlapping_3.png)
 
 - I have decided that delete and update buttons
-- will only be used for screen sizes bigger than tablet
+- it will only be used for screen sizes bigger than tablet
 
 ### [TypeError in console](#bugs)
 
