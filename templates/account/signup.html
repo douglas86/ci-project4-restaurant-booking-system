@@ -3,11 +3,12 @@
 {% load allauth account %}
 
 {% block content %}
-    {#heading#}
+    <!-- Heading -->
     <div class="heading">
-        {#title#}
         <h1 class="title">Sign Up</h1>
     </div>
+
+    <!-- Menu -->
     <div class="menu">
         <p>
             {% blocktrans %}
@@ -15,21 +16,58 @@
             {% endblocktrans %}
         </p>
         {% url 'account_signup' as signup_url %}
-        {% element form form=form method="post" action=signup_url tags="entrance,signup" %}
-            {% slot body %}
-                {% csrf_token %}
-                {% element fields form=form unlabeled=True %}
-                {% endelement %}
-                {% if redirect_field_value %}
-                    <input type="hidden"
-                           name="{{ redirect_field_name }}"
-                           value="{{ redirect_field_value }}"/>
-                {% endif %}
-            {% endslot %}
-            {% slot actions %}
-                <button type="submit" class="btn btn-primary">Register</button>
-            {% endslot %}
-        {% endelement %}
+        <form method="post" action="{{ signup_url }}" class="entrance signup">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.help_text %}
+                        <span class="helptext" id="{{ field.id_for_label }}_helptext">{{ field.help_text }}</span>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+            {% endif %}
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
     </div>
-
 {% endblock content %}
+
+
+{#{% extends "base.html" %}#}
+{#{% load i18n %}#}
+{#{% load allauth account %}#}
+{##}
+{#{% block content %}#}
+    {#heading#}
+{#    <div class="heading">#}
+        {#title#}
+{#        <h1 class="title">Sign Up</h1>#}
+{#    </div>#}
+{#    <div class="menu">#}
+{#        <p>#}
+{#            {% blocktrans %}#}
+{#                Already have an account? Then please <a href="{{ login_url }}">Sign In.</a>#}
+{#            {% endblocktrans %}#}
+{#        </p>#}
+{#        {% url 'account_signup' as signup_url %}#}
+{#        {% element form form=form method="post" action=signup_url tags="entrance,signup" %}#}
+{#            {% slot body %}#}
+{#                {% csrf_token %}#}
+{#                {% element fields form=form unlabeled=True %}#}
+{#                {% endelement %}#}
+{#                {% if redirect_field_value %}#}
+{#                    <input type="hidden"#}
+{#                           name="{{ redirect_field_name }}"#}
+{#                           value="{{ redirect_field_value }}"/>#}
+{#                {% endif %}#}
+{#            {% endslot %}#}
+{#            {% slot actions %}#}
+{#                <button type="submit" class="btn btn-primary">Register</button>#}
+{#            {% endslot %}#}
+{#        {% endelement %}#}
+{#    </div>#}
+{##}
+{#{% endblock content %}#}
