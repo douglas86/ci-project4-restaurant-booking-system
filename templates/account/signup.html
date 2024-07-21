@@ -11,7 +11,11 @@
     </div>
 
     <div class="menu">
-        {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">Sign In.</a>{% endblocktrans %}
+        <p>
+            {% blocktrans %}
+                Already have an account? Then please <a href="{{ login_url }}">Sign In.</a>
+            {% endblocktrans %}
+        </p>
 
         {% url 'account_signup' as signup_url %}
         {% element form form=form method="post" action=signup_url tags="entrance,signup" %}
@@ -34,4 +38,4 @@
         {% endif %}
     </div>
 
-{% endblock %}
+{% endblock content %}
