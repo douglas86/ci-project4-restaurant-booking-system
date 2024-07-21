@@ -23,8 +23,8 @@
                     {{ field.label_tag }}
                     {{ field }}
                     {% if field.help_text %}
-                        <span class="helptext" id="{{ field.id_for_label }}_helptext">{{ field.help_text }}</span>
-                    {% endif %}
+                        <div class="helptext"
+                             id="{{ field.id_for_label }}_helptext">{{ field.help_text }}</div>                    {% endif %}
                 </div>
             {% endfor %}
             {% if redirect_field_value %}
