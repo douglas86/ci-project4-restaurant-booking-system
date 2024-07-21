@@ -3,20 +3,17 @@
 {% load allauth account %}
 
 {% block content %}
-
     {#heading#}
     <div class="heading">
         {#title#}
         <h1 class="title">Sign Up</h1>
     </div>
-
     <div class="menu">
         <p>
             {% blocktrans %}
                 Already have an account? Then please <a href="{{ login_url }}">Sign In.</a>
             {% endblocktrans %}
         </p>
-
         {% url 'account_signup' as signup_url %}
         {% element form form=form method="post" action=signup_url tags="entrance,signup" %}
             {% slot body %}
@@ -33,9 +30,6 @@
                 <button type="submit" class="btn btn-primary">Register</button>
             {% endslot %}
         {% endelement %}
-        {% if SOCIALACCOUNT_ENABLED %}
-            {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
-        {% endif %}
     </div>
 
 {% endblock content %}
