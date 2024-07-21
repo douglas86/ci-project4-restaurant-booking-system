@@ -25,8 +25,13 @@
                            value="{{ redirect_field_value }}"/>
                 {% endif %}
             {% endslot %}
+            {% slot actions %}
+                <button type="submit" class="btn btn-primary">Register</button>
+            {% endslot %}
         {% endelement %}
-
+        {% if SOCIALACCOUNT_ENABLED %}
+            {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+        {% endif %}
     </div>
 
 {% endblock %}
