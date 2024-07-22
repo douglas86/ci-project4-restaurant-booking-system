@@ -26,11 +26,8 @@ class UsernamePasswordResetView(View):
     form_class = UsernameResetPasswordForm
     template_name = 'account/password_reset.html'
 
-    # fetches current date of computer
     today = datetime.date.today()
-    # fetches current hour based off the variable above
     current_hour = datetime.datetime.now().strftime("%H")
-    # fetches current year based off the variable above
     year = today.year
 
     def get(self, request, *args, **kwargs):

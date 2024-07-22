@@ -11,23 +11,15 @@ class MenuView(TemplateView):
     This view is responsible for rendering the menu from db to the template
     """
 
-    # template to render
     template_name = 'menu/menu.html'
-    # this is the url to know what menu to display
     slug = 'breakfast'
-    # variable to filter data from model
     menu_type = 0
-    # list to be returned once filtered correctly
     menu = []
 
-    # fetches current date of computer
     today = datetime.date.today()
-    # fetches current hour based off the variable above
     current_hour = datetime.datetime.now().strftime("%H")
-    # fetches current year based off the variable above
     year = today.year
 
-    # variables to gather data from database
     chef_specials_data = ChefSpecial.objects.all().values()
     menu_data = Menu.objects.all().values()
 

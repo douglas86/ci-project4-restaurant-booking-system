@@ -18,10 +18,24 @@
         {% url 'account_signup' as signup_url %}
         <form method="post" action="{{ signup_url }}" class="entrance signup">
             {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
             {% for field in form %}
                 <div class="form-group">
                     {{ field.label_tag }}
                     {{ field }}
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
                     {% if field.help_text %}
                         <div class="helptext"
                              id="{{ field.id_for_label }}_helptext">{{ field.help_text }}</div>                    {% endif %}

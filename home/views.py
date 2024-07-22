@@ -11,19 +11,13 @@ class HomePageView(TemplateView):
     Home page view
     """
 
-    # template to send data to
     template_name = "home/index.html"
-    # model that you want data from
     model = ChefSpecial
 
-    # fetches current date of computer
     today = datetime.date.today()
-    # fetches current hour based off the variable above
     current_hour = datetime.datetime.now().strftime("%H")
-    # fetches current year based off the variable above
     year = today.year
 
-    # name of the restaurant
     name = "culinary Haven"
 
     def get_served(self):
