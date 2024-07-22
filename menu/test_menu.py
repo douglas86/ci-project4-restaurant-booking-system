@@ -10,7 +10,6 @@ class TestMenu(TestCase, views.MenuView):
     :param MenuView: The main menu view for fetching methods for testing
     """
 
-    # populate database
     fixtures = ['home/fixtures/chef_specials.json', 'menu/fixtures/menu.json']
 
     def change_slug(self, new_slug_value, menu_type):

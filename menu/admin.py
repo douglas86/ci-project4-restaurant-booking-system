@@ -12,7 +12,5 @@ class MenuAdmin(admin.ModelAdmin):
     It will register as Menu and not MenuAdmin
     """
 
-    # fields that I want to see on the admin panel
     list_display = ("title", "description", "served", "created_at", "updated_at")
-    # I want to search based on title
     search_fields = ("title",)

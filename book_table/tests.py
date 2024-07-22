@@ -21,13 +21,9 @@ class TestBookTableCreate(TestCase):
         :return:
         """
 
-        # setup instance of RequestFactory
         self.factory = RequestFactory()
-        # create a new user
         self.user = User.objects.create_user(username='test', email='test@gmail.com', password='123456')
-        # url that I am testing for
         self.request = self.factory.get('/table')
-        # populate data for customer
         self.customer = baker.make('Customer')
 
     def test_protected_page_anonymous(self):

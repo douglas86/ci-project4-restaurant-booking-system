@@ -16,11 +16,8 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
     This view is used to write data to the database
     """
 
-    # model to be used
     model = Customer
-    # form to be used called from form.py
     form_class = BookTableForm
-    # when form is valid send a success message
     message = "You have successfully booked your table"
 
     time_slot = ''
@@ -57,7 +54,6 @@ class BookTableCreateView(LoginRequiredMixin, CreateView):
         :return:
         """
 
-        # send a success message to template
         messages.success(self.request, self.message)
         return reverse('book_table:table')
 
@@ -90,16 +86,11 @@ class BookTableView(LoginRequiredMixin, TemplateView, FormView):
     This view is used to read and render data from database to template
     """
 
-    # template to send data to
     template_name = 'book_table/table.html'
-    # form to be used called from form.py
     form_class = BookTableForm
 
-    # fetches current date of computer
     today = datetime.date.today()
-    # fetches current hour based off the variable above
     current_hour = datetime.datetime.now().strftime("%H")
-    # fetches current year based off the variable above
     year = today.year
 
     def format_time_stamps_for_display(self):
