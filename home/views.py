@@ -66,4 +66,4 @@ class HomePageView(TemplateView):
         :return:
         """
 
-        return {"year": self.year, "name": self.name, "meals": self.get_queryset()}
+        return {"year": self.year, "name": self.name, "meals": "Not served"}

@@ -110,6 +110,30 @@ p {
     opacity: 0.6;
 }
 
+.container {
+    display: flex;
+}
+
+.not-found {
+    width: 80%;
+    margin: 2em auto;
+    justify-content: center;
+}
+
+.image {
+    display: flex;
+    margin: 3em;
+}
+
+.not-found img {
+    margin: auto;
+}
+
+.not-found p {
+    color: white;
+    background-color: black;
+}
+
 /*carousel*/
 .carousel {
     width: 80%;
