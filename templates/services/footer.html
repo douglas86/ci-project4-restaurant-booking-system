@@ -8,7 +8,11 @@
     <div class="designer">
         <div class="copyright">
             <img src="{% static 'images/footer/copyright.png' %}" alt="copyright icon">
-            <p>2004</p>
+            {% if year %}
+                <p>{{ year }}</p>
+            {% else %}
+                <p>2024</p>
+            {% endif %}
         </div>
         <div class="developer">
             <p>Developed by
