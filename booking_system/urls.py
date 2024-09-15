@@ -20,7 +20,6 @@ from django.urls import path, include
 
 from about.views import AboutView
 from home.views import HomePageView
-from .settings import DEBUG
 from .views import UsernamePasswordResetView, ChangePasswordView, SignUpView
 
 urlpatterns = [
@@ -34,8 +33,3 @@ urlpatterns = [
     path("table/", include("book_table.urls")),
     path("", HomePageView.as_view(), name="home"),
 ]
-
-# this logic is needed in development
-# this will only run django_browser_reload during DEBUG True
-if DEBUG == "True":
-    urlpatterns.append(path("__reload__/", include("django_browser_reload.urls")))
