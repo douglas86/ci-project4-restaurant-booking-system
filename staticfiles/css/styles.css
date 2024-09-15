@@ -1,0 +1,374 @@
+/*general*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: white url("/static/images/home/restaurant_image.jpg") no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.5em;
+    margin-top: 1em;
+    margin-left: 1em;
+    font-family: "Protest Revolution", sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+    border: 5px solid #e7e08b;
+    color: black;
+    -webkit-text-stroke-width: 2px;
+    transform: rotate(-5deg);
+    letter-spacing: 5px;
+}
+
+h3 {
+    text-align: center;
+    padding: 0.5em;
+}
+
+p {
+    text-align: center;
+}
+
+/*header*/
+.tablet {
+    display: none;
+}
+
+.mobile {
+    display: flex;
+    background-color: #b5cbb7;
+}
+
+.mobile button {
+    margin: 1em;
+    border: none;
+    background-color: transparent;
+}
+
+.icon-links {
+    display: none;
+    background-color: #b5cbb7;
+}
+
+.icon-links a {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
+
+.icon-links a:hover {
+    color: #e7e08b;
+    font-weight: bolder;
+}
+
+.links {
+    display: flex;
+}
+
+.links img {
+    margin: 1em;
+}
+
+.links p {
+    width: 80%;
+    margin: auto;
+}
+
+.authentication-icon {
+    display: flex;
+    width: 80%;
+}
+
+.user-message {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+.auth-icon {
+    padding: 0.8em;
+}
+
+.auth-icon p {
+    font-weight: bold;
+}
+
+/*main*/
+/*title*/
+.heading {
+    display: flex;
+    padding: 1em;
+}
+
+.title {
+    background-color: #d3d3d3;
+    opacity: 0.6;
+}
+
+.container {
+    display: flex;
+}
+
+.not-found {
+    width: 80%;
+    margin: 2em auto;
+    justify-content: center;
+}
+
+.image {
+    display: flex;
+    margin: 3em;
+}
+
+.not-found img {
+    margin: auto;
+}
+
+.not-found p {
+    color: white;
+    background-color: black;
+}
+
+/*carousel*/
+.carousel {
+    width: 80%;
+    min-height: 46em;
+    margin: 2em auto;
+    opacity: 0.95;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.carousel-indicators {
+    margin: 1em;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    outline: black;
+    background-image: none;
+}
+
+.carousel-control-prev-icon:after {
+    content: "<";
+    font-size: 50px;
+    color: black;
+    font-weight: bolder;
+}
+
+.carousel-control-next-icon:after {
+    content: ">";
+    font-size: 50px;
+    color: black;
+    font-weight: bolder;
+}
+
+/*forms*/
+form {
+    padding: 2em;
+    margin-bottom: 1em;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    width: 100%;
+    border-radius: 5px;
+    margin: 1em;
+}
+
+/* menu */
+.menu {
+    background-color: #d3d3d3;
+    width: 80%;
+    margin: 1em 10%;
+    padding: 1em;
+    opacity: 0.95;
+}
+
+.main_menu {
+    display: inline-block;
+    list-style-type: none;
+    width: 100%;
+    padding: 0.5em;
+}
+
+.menu_items {
+    margin: auto;
+    text-align: center;
+}
+
+.menu_items a {
+    text-decoration: none;
+}
+
+.menu_context h4 {
+    text-align: center;
+}
+
+/*about*/
+.about-start, .about-middle, .about-end {
+    margin: 2em auto;
+    font-weight: 600;
+}
+
+/*book table*/
+/*alert message box*/
+.alert {
+    margin: 2em;
+}
+
+.top {
+    display: flex;
+}
+
+.top .heading {
+    width: 50%;
+    height: auto;
+}
+
+.modal-content {
+    background-color: #b5cbb7;
+    font-weight: bold;
+}
+
+.modal-header h1 {
+    color: black;
+}
+
+.modal-body form .btn {
+    margin: 1em;
+}
+
+/*table booking history*/
+.screen-400 {
+    display: block;
+}
+
+.screen-399 {
+    display: none;
+}
+
+.dashboard {
+    display: inline-block;
+    width: 100%;
+    margin: 1em auto;
+}
+
+.left-container {
+    width: 100%;
+}
+
+.next-booking {
+    width: 80%;
+    height: auto;
+    background-color: #d3d3d3;
+    opacity: 0.9;
+    margin: auto;
+}
+
+.right-container {
+    width: 80%;
+    height: auto;
+    background-color: #d3d3d3;
+    opacity: 0.9;
+    margin: auto;
+}
+
+.new-booking {
+    width: 100%;
+    height: 2em;
+}
+
+.new-booking .btn {
+    width: 20%;
+    height: 2em;
+    margin: 0.5em;
+    float: right;
+}
+
+.booking-history-header {
+    border: none;
+    text-align: center;
+    font-family: "Protest Revolution", sans-serif;
+    font-weight: bold;
+    margin: 1em;
+}
+
+.booking-history {
+    padding: 1em;
+}
+
+.buttons button {
+    margin: 0.5em;
+}
+
+.screen-400 .table > :not(caption) > * > *, .screen-399 .table > :not(caption) > * > * {
+    background-color: transparent !important;
+    border-bottom-width: 0;
+}
+
+.screen-400 .table td:last-child {
+    display: none;
+}
+
+.screen-400 .table th:last-child {
+    display: none;
+}
+
+/*footer*/
+footer {
+    margin-top: auto;
+    background-color: #b5cbb7;
+    bottom: 0;
+}
+
+.footer {
+    display: block;
+    padding: 1em;
+    text-align: center;
+}
+
+.contact-details {
+    display: inline-block;
+    justify-content: space-between;
+}
+
+.contact-details img {
+    width: 1.8em;
+    height: 1.8em;
+}
+
+.designer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.copyright {
+    display: flex;
+}
+
+.copyright img {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.copyright p {
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0 1em;
+}
