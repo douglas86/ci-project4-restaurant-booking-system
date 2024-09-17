@@ -294,7 +294,7 @@ env.py
 
 ### [Technology Used](#planning)
 
-- HTML/CSS - html templating and CSS styling
+- HTML/CSS - HTML templating and CSS styling
 - Python—logic used in this project
 - JavaScript—Used for Models and other front end logic
 - Django - Python Framework for developing this project
@@ -306,7 +306,7 @@ env.py
 ### [neat and clean code](#planning)
 
 - Code always needs to be kept neat and tidy
-- As such, I have tried my best to organize my code in a readable manner
+- As such, I have tried my best to organize my code readably
 
 order of imports
 
@@ -325,7 +325,7 @@ order of methods in classes
 - class method: class within class
 - private methods: def private_methods(self): helper functions
 - get_queryset: this is used for gathering data for get_context_data
-- get_context_data: this is for rendering data to template file
+- get_context_data: this is for rendering data to a template file
 
 order of classes within files:
 
@@ -517,7 +517,7 @@ If you are trying to enter more than three entries for breakfast
 ![manual-homepage-meal.png](static/images/docs/testing/manual-homepage-meal.png)
 
 - Tested responsiveness of the carousel
-- I don't test for anything below 400pixels
+- I don't test for anything below 400 pixels
 
 Responsive on Mobile devices
 
@@ -1043,8 +1043,8 @@ Problem?
 Solution?
 
 - I have now created it as a card within the carousel
-- It is responsive from 375pixels
-- the indicators at the bottom will disappear on screen sizes less than 400px
+- It is responsive from 375 pixels
+- the indicators at the bottom will disappear on screen sizes less than 400 px
 - the indicator is clickable for if you want to go to a specific item
 - with side indicators to click for left or right images
 
