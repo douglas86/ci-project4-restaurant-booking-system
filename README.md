@@ -453,6 +453,20 @@ When the user is logged in, a welcome message will be displayed with a different
 
 ### [Manual Testing](#testing)
 
+| Title                                   | Pass |
+|-----------------------------------------|------|
+| Header                                  | Yes  |
+| Homepage                                | Yes  |
+| Testing responsive of the menu page     | Yes  |
+| Testing responsive of the about page    | Yes  |
+| Testing of updating records             | Yes  |
+| Testing if I can navigate to table page | Yes  |
+| Testing model form for booking a table  | Yes  |
+| HTML Validation testing                 | Yes  |
+| CSS Validation testings                 | Yes  |
+| Wave testing for accessibility          | Yes  |
+| Lighthouse testing                      | Yes  |
+
 #### Header
 
 I have tested the responsive design of the header
@@ -694,6 +708,16 @@ Auto means that it will only run tests on threads that are available
 python manage.py test --parallel auto
 
 If you are just wanting to test conventionally
+
+| Title                                                        | Pass |
+|--------------------------------------------------------------|------|
+| Authentication                                               | Yes  |
+| Homepage                                                     | Yes  |
+| Test if correct menu gets returned based on slug             | Yes  |
+| Test form invalid on Booking a table page                    | Yes  |
+| Test form valid on Booking a table page                      | Yes  |
+| Test protected pages against anonymous user                  | Yes  |
+| Test protected pages against users that are logged in or not | Yes  |
 
 #### [Authentication](#automated-testing)
 
