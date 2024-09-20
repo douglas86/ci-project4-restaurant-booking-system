@@ -820,6 +820,29 @@ Passing test
 
 ## [Bugs](#table-of-content)
 
+| Title                                                        | Solved |
+|--------------------------------------------------------------|--------|
+| The text is not aligned correctly to the Authentication Icon | Yes    |
+| Labels are not correctly sitting next to the Icons           | Yes    |
+| Problem with Hamburger Menu                                  | Yes    |
+| Hamburger menu jumps as I try and open and close menu        | No     |
+| Operational error in database as trying to run auto test     | Yes    |
+| Carousel image not being aligned correctly                   | Yes    |
+| Favicon icon not displaying                                  | Yes    |
+| Heroku auto refreshing unnecessarily                         | Yes    |
+| Navbar not at top of screen                                  | Yes    |   
+| Performance issues in page loading                           | Yes    |
+| Too many connections to database at once                     | Yes    |
+| Styling of homepage                                          | Yes    |
+| Carousel arrows                                              | Yes    |
+| Copyright test not showing in footer                         | Yes    |
+| Copyright text overlapping with developer content            | Yes    |
+| Next booking not being displayed                             | Yes    |
+| Not recognizing daylight savings mode                        | No     |
+| Table over lapping on smaller devices                        | Yes    |
+| TypeError in console                                         | Yes    |
+| Am I Responsive does not display image                       | No     |
+
 ### [The text is not aligned correctly to the Authentication Icon](#bugs)
 
 The text was not aligned correctly to the icon above it
