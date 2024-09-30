@@ -333,14 +333,31 @@ order in test files:
 
 - Making a local clone of this repo can either be done by ssh or http
 - make sure that ssh is set up correctly on your PC before using it
-- to ssh use the following command: $ git clone git@github.com:douglas86/ci-project4-restaurant-booking-system.git
-- to use http use the following command: $ git
-  clone https://github.com/douglas86/ci-project4-restaurant-booking-system.git
+- to ssh use the following command
+
+```
+git clone git@github.com:douglas86/ci-project4-restaurant-booking-system.git
+```
+
+- to use http use the following command
+
+```
+git clone https://github.com/douglas86/ci-project4-restaurant-booking-system.git
+```
+
 - once it has been cloned, make sure to look at runtime.txt to see what python version is used
 - to install all the python packages that are required for this project, use the following command
-- $ pip install -r requirements.txt
+
+```
+pip install -r requirements.txt
+```
+
 - to start the virtual environment, use the following command
-- $ source .venv/bin/activate
+
+```
+source .venv/bin/activate
+```
+
 - once started to create a file called env.py
 - you only need to create three environment variables for local development
 - CLOUDINARY_URL
