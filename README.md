@@ -7,6 +7,8 @@ This is Part of my Fourth Project at Code Institute.
 This is a simple Restaurant Booking System, were I can book tables based on a date and time
 I am also able to see the Restaurant's Menu and Chef's specials.
 
+![heading-image.png](static/images/docs/introduction/heading-image.png)
+
 [Live link can be found here](https://ci-booking-system-5abd35239ade.herokuapp.com/)
 
 ---
@@ -18,10 +20,13 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [Ux-design](#ux-design)
     - [Colour Pallet](#colour-pallet)
     - [User Stories using MOSCOW Prioritization techniques](#user-stories-using-moscow-prioritization-techniques)
-    - [How to start this project locally](#how-to-start-this-project-locally)
-    - [How this project was deployed to Heroku](#how-this-project-was-deployed-to-heroku)
     - [Technology Used](#technology-used)
     - [neat and clean code](#neat-and-clean-code)
+- [Deployment](#deployment)
+    - [Setting up on Heroku](#setting-up-on-heroku)
+    - [Forking the GitHub Repository](#forking-the-github-repository)
+    - [Making a Local Clone](#making-a-local-clone)
+    - [Environment variables](#environment-variables)
 - [Features](#features)
     - [Features that have been included in this project](#features-that-have-been-included-in-this-project)
         - [hamburger image on smaller devices](#hamburger-image-on-smaller-devices)
@@ -247,54 +252,9 @@ Table booking Page
 
 ![milestones-table-booking.png](static/images/docs/planning/milestones-table-booking.png)
 
-### [How to start this project locally](#planning)
-
-- when using ssh
-- git clone git@github.com: douglas86/ci-project4-restaurant-booking-system.git
-- when using http
-- git clone https://github.com/douglas86/ci-project4-restaurant-booking-system.git
-- make sure to have a look at the runtime.txt file to see what version of python I am using
-- then create a virtual environment with that python version
-- to see if a virtual environment has been created, the words venv in brackets will appear in the terminal
-- as I am using pycharm, the virtual environment will start automatically when I start my IDE
-- then install all the packages needed for this project using the following command
-- pip install -r requirements.txt
-- to start the Django server, run the following command
-- create an env.py file this is used to store all environment variables
-- create the variable needs for this project see the image below
-- placing the name of the variables in the empty quotation marks
-- make sure to set DJANGO_DEBUG = True
-- django secret keys should never be committed to GitHub
-- so if you need one, follow the following link
-- [generate a new secret key](https://www.makeuseof.com/django-secret-key-generate-new/#:~:text=You%20can%20accidentally%20make%20your,are%20still%20learning%20about%20GitHub.)
-- Then go to [elephantSQL](https://www.elephantsql.com/)
-- And create a new database instance to make sure that the version of PostgresSQL is greater than 12
-- Once created, then copy and paste the url in the env.py for the DATABASE_URL string
-- once that is done, then you can run the command below to run the server
-- python manage.py runserver
-- you can use ctrl + click on the server name that should open up a web browser at the correct port
-
-env.py
-
-![env.png](static/images/docs/env.png)
-
-### [How this project was deployed to Heroku](#planning)
-
-- head over to [Heroku Dashboard](https://dashboard.heroku.com/apps)
-- create a new app and add all the environment variables to your config vars
-- make sure to add DISABLE_COLLECT STATIC with the value of 1
-- if this variable is not used, Heroku will spit out an error
-- change DJANGO_DEBUG with the value of False
-- make sure that there is a runtime.txt file
-- this will tell Heroku what version of python to use
-- make sure that requirements.txt is updated
-- make sure to see if Heroku hasn't automatically added a build pack for PostgresSQL
-- if it has deleted it as this project is using elephantSQL instead
-- connect GitHub and the repo to Heroku and build the project
-
 ### [Technology Used](#planning)
 
-- HTML/CSS - html templating and CSS styling
+- HTML/CSS - HTML templating and CSS styling
 - Python—logic used in this project
 - JavaScript—Used for Models and other front end logic
 - Django - Python Framework for developing this project
@@ -306,7 +266,7 @@ env.py
 ### [neat and clean code](#planning)
 
 - Code always needs to be kept neat and tidy
-- As such, I have tried my best to organize my code in a readable manner
+- As such, I have tried my best to organize my code readably
 
 order of imports
 
@@ -325,7 +285,7 @@ order of methods in classes
 - class method: class within class
 - private methods: def private_methods(self): helper functions
 - get_queryset: this is used for gathering data for get_context_data
-- get_context_data: this is for rendering data to template file
+- get_context_data: this is for rendering data to a template file
 
 order of classes within files:
 
@@ -339,6 +299,130 @@ order in test files:
 - tests: in alphabetical order
 
 [reference](https://stackoverflow.com/questions/10289461/what-is-a-good-way-to-order-methods-in-a-python-class)
+
+---
+
+## [Deployment](#table-of-content)
+
+### [Setting up on Heroku](#deployment)
+
+- head over to [Heroku Dashboard](https://id.heroku.com/login) to Login
+- once log in, click on New for creating a new project
+- type in the new name for the app
+- click on what region you are wanting your server to be in
+- once the app has been created, locate the tab that says, "Deploy"
+- under the deployment method, connect your GitHub account to your app and search for your repo
+- when you have connected your repo manual deploy your main branch
+- once manually deployed, it will fail next would be to get the environment variables up and running
+- locate the settings tab at the top
+- scroll down until you see config Vars
+- click the purple button that says, "Reveal Config Vars"
+- make sure that you have heroku/python build pack added to the project
+- add the [environment variables](#environment-variables) on the Heroku Dashboard
+
+### [Forking the GitHub Repository](#deployment)
+
+- Locate this [repository](https://github.com/douglas86/ci-project4-restaurant-booking-system)
+- Make sure that you are on the tab that says, "Code"
+- When on that tab, locate the tab that says, "Fork"
+- Click on the Fork tab
+- Once it has been forked
+- You need to clone it to your [local machine](#making-a-local-clone)
+
+### [Making a Local Clone](#deployment)
+
+- Making a local clone of this repo can either be done by ssh or http
+- make sure that ssh is set up correctly on your PC before using it
+- to ssh use the following command
+
+```
+git clone git@github.com:douglas86/ci-project4-restaurant-booking-system.git
+```
+
+- to use http use the following command
+
+```
+git clone https://github.com/douglas86/ci-project4-restaurant-booking-system.git
+```
+
+- once it has been cloned, make sure to look at runtime.txt to see what python version is used
+- to install all the python packages that are required for this project, use the following command
+
+```
+pip install -r requirements.txt
+```
+
+- to start the virtual environment, use the following command
+
+```
+source .venv/bin/activate
+```
+
+- once started to create a file called env.py
+- you only need to create three environment variables for local development
+- CLOUDINARY_URL
+- DATABASE_URL
+- DJANGO_SECRET_KEY
+- see detailed instructions down below in the [environment variables](#environment-variables) section
+
+### [Environment variables](#deployment)
+
+CLOUDINARY_URL environment variable
+
+- Login to your [cloudinary account](https://cloudinary.com/users/login)
+- Locate your Profile image, which you should see at the bottom of the tab on the left
+- Once on your profile page, go to your API Keys section
+- At the top of that page copy the one that says, API environment variable
+- place the API Key and API Secret in the correct places in the key parameters
+- this key can now be placed in Heroku or for local development
+- on the Heroku dashboard, there are two sections of the key and the value
+- place CLOUDINARY_URL in the key section
+- and your api key in the value section
+- on local development in the env.py file, you need to use the os module for environment variables
+- import the os module at the top
+- and create the following method:
+- os.environ.setdefault("key", "value")
+- placing CLOUDINARY_URL as the key
+- and the api key for cloudinary as the value
+
+DATABASE_URL environment variable
+
+- To get this env login to [ElephantSQL](https://www.elephantsql.com/)
+- create a new Instance (The big green button on the right-hand side)
+- fill in all the details make sure to select Postgres 13 and above
+- once the new instance has been created
+- locate the tab that says, "Details" on the left-hand side
+- once you have clicked on that tab, there is a URL that you need to copy for Heroku
+- That URL you will paste it into the Heroku environment variables section or for local development
+- on local development in the env.py file, you need to use the os module for environment variables
+- import the os module at the top
+- and create the following method:
+- os.environ.setdefault("key", "value")
+- placing DATABASE_URL as the key
+- and the api key for elephantSQL as the value
+
+DISABLE_COLLECTSTATIC environment variable
+
+- This env is used for heroku it needs to be set to 1
+- If you don't have it, heroku will give you an error
+- This is used for the styling in the site
+- place this environment variable in the Heroku section or for local development
+- for DISABLE_COLLECTSTATIC
+
+DJANGO_SECRET_KEY environment variable
+
+- Django secret keys should never be committed to GitHub
+- when running this project, you need to generate a
+  new [secret key](https://www.makeuseof.com/django-secret-key-generate-new/#:~:text=You%20can%20accidentally%20make%20your,are%20still%20learning%20about%20GitHub.)
+- once you have generated the key place it in the Heroku section or for local development
+- on local development in the env.py file, you need to use the os module for environment variables
+- import the os module at the top
+- and create the following method:
+- os.environ.setdefault("key", "value")
+- placing DJANGO_SECRET_KEY as the key
+- and the newly generated secret key for the value
+
+![env.png](static/images/docs/env.png)
 
 ---
 
@@ -451,6 +535,20 @@ When the user is logged in, a welcome message will be displayed with a different
 
 ### [Manual Testing](#testing)
 
+| Title                                   | Pass |
+|-----------------------------------------|------|
+| Header                                  | Yes  |
+| Homepage                                | Yes  |
+| Testing responsive of the menu page     | Yes  |
+| Testing responsive of the about page    | Yes  |
+| Testing of updating records             | Yes  |
+| Testing if I can navigate to table page | Yes  |
+| Testing model form for booking a table  | Yes  |
+| HTML Validation testing                 | Yes  |
+| CSS Validation testings                 | Yes  |
+| Wave testing for accessibility          | Yes  |
+| Lighthouse testing                      | Yes  |
+
 #### Header
 
 I have tested the responsive design of the header
@@ -517,7 +615,7 @@ If you are trying to enter more than three entries for breakfast
 ![manual-homepage-meal.png](static/images/docs/testing/manual-homepage-meal.png)
 
 - Tested responsiveness of the carousel
-- I don't test for anything below 400pixels
+- I don't test for anything below 400 pixels
 
 Responsive on Mobile devices
 
@@ -693,6 +791,16 @@ python manage.py test --parallel auto
 
 If you are just wanting to test conventionally
 
+| Title                                                        | Pass |
+|--------------------------------------------------------------|------|
+| Authentication                                               | Yes  |
+| Homepage                                                     | Yes  |
+| Test if correct menu gets returned based on slug             | Yes  |
+| Test form invalid on Booking a table page                    | Yes  |
+| Test form valid on Booking a table page                      | Yes  |
+| Test protected pages against anonymous user                  | Yes  |
+| Test protected pages against users that are logged in or not | Yes  |
+
 #### [Authentication](#automated-testing)
 
 What was tested in this scenario:
@@ -817,6 +925,29 @@ Passing test
 ---
 
 ## [Bugs](#table-of-content)
+
+| Title                                                        | Solved |
+|--------------------------------------------------------------|--------|
+| The text is not aligned correctly to the Authentication Icon | Yes    |
+| Labels are not correctly sitting next to the Icons           | Yes    |
+| Problem with Hamburger Menu                                  | Yes    |
+| Hamburger menu jumps as I try and open and close menu        | No     |
+| Operational error in database as trying to run auto test     | Yes    |
+| Carousel image not being aligned correctly                   | Yes    |
+| Favicon icon not displaying                                  | Yes    |
+| Heroku auto refreshing unnecessarily                         | Yes    |
+| Navbar not at top of screen                                  | Yes    |   
+| Performance issues in page loading                           | Yes    |
+| Too many connections to database at once                     | Yes    |
+| Styling of homepage                                          | Yes    |
+| Carousel arrows                                              | Yes    |
+| Copyright test not showing in footer                         | Yes    |
+| Copyright text overlapping with developer content            | Yes    |
+| Next booking not being displayed                             | Yes    |
+| Not recognizing daylight savings mode                        | No     |
+| Table over lapping on smaller devices                        | Yes    |
+| TypeError in console                                         | Yes    |
+| Am I Responsive does not display image                       | No     |
 
 ### [The text is not aligned correctly to the Authentication Icon](#bugs)
 
@@ -1043,8 +1174,8 @@ Problem?
 Solution?
 
 - I have now created it as a card within the carousel
-- It is responsive from 375pixels
-- the indicators at the bottom will disappear on screen sizes less than 400px
+- It is responsive from 375 pixels
+- the indicators at the bottom will disappear on screen sizes less than 400 px
 - the indicator is clickable for if you want to go to a specific item
 - with side indicators to click for left or right images
 
