@@ -21,9 +21,13 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [Colour Pallet](#colour-pallet)
     - [User Stories using MOSCOW Prioritization techniques](#user-stories-using-moscow-prioritization-techniques)
     - [How to start this project locally](#how-to-start-this-project-locally)
-    - [How this project was deployed to Heroku](#how-this-project-was-deployed-to-heroku)
     - [Technology Used](#technology-used)
     - [neat and clean code](#neat-and-clean-code)
+- [Deployment](#deployment)
+    - [Setting up on Heroku](#setting-up-on-heroku)
+    - [Forking the GitHub Repository](#forking-the-github-repository)
+    - [Making a Local Clone](#making-a-local-clone)
+    - [Environment variables](#environment-variables)
 - [Features](#features)
     - [Features that have been included in this project](#features-that-have-been-included-in-this-project)
         - [hamburger image on smaller devices](#hamburger-image-on-smaller-devices)
@@ -280,20 +284,6 @@ env.py
 
 ![env.png](static/images/docs/env.png)
 
-### [How this project was deployed to Heroku](#planning)
-
-- head over to [Heroku Dashboard](https://dashboard.heroku.com/apps)
-- create a new app and add all the environment variables to your config vars
-- make sure to add DISABLE_COLLECT STATIC with the value of 1
-- if this variable is not used, Heroku will spit out an error
-- change DJANGO_DEBUG with the value of False
-- make sure that there is a runtime.txt file
-- this will tell Heroku what version of python to use
-- make sure that requirements.txt is updated
-- make sure to see if Heroku hasn't automatically added a build pack for PostgresSQL
-- if it has deleted it as this project is using elephantSQL instead
-- connect GitHub and the repo to Heroku and build the project
-
 ### [Technology Used](#planning)
 
 - HTML/CSS - HTML templating and CSS styling
@@ -341,6 +331,113 @@ order in test files:
 - tests: in alphabetical order
 
 [reference](https://stackoverflow.com/questions/10289461/what-is-a-good-way-to-order-methods-in-a-python-class)
+
+---
+
+## [Deployment](#table-of-content)
+
+### [Setting up on Heroku](#deployment)
+
+- head over to [Heroku Dashboard](https://id.heroku.com/login) to Login
+- once log in, click on New for creating a new project
+- type in the new name for the app
+- click on what region you are wanting your server to be in
+- once the app has been created, locate the tab that says, "Deploy"
+- under the deployment method, connect your GitHub account to your app and search for your repo
+- when you have connected your repo manual deploy your main branch
+- once manually deployed, it will fail next would be to get the environment variables up and running
+- locate the settings tab at the top
+- scroll down until you see config Vars
+- click the purple button that says, "Reveal Config Vars"
+- make sure that you have heroku/python build pack added to the project
+- add the [environment variables](#environment-variables) on the Heroku Dashboard
+
+### [Forking the GitHub Repository](#deployment)
+
+- Locate this [repository](https://github.com/douglas86/ci-project4-restaurant-booking-system)
+- Make sure that you are on the tab that says, "Code"
+- When on that tab, locate the tab that says, "Fork"
+- Click on the Fork tab
+- Once it has been forked
+- You need to clone it to your [local machine](#making-a-local-clone)
+
+### [Making a Local Clone](#deployment)
+
+- Making a local clone of this repo can either be done by ssh or http
+- make sure that ssh is set up correctly on your PC before using it
+- to ssh use the following command: $ git clone git@github.com:douglas86/ci-project4-restaurant-booking-system.git
+- to use http use the following command: $ git
+  clone https://github.com/douglas86/ci-project4-restaurant-booking-system.git
+- once it has been cloned, make sure to look at runtime.txt to see what python version is used
+- to install all the python packages that are required for this project, use the following command
+- $ pip install -r requirements.txt
+- to start the virtual environment, use the following command
+- $ source .venv/bin/activate
+- once started to create a file called env.py
+- you only need to create three environment variables for local development
+- CLOUDINARY_URL
+- DATABASE_URL
+- DJANGO_SECRET_KEY
+- see detailed instructions down below in the [environment variables](#environment-variables) section
+
+### [Environment variables](#deployment)
+
+CLOUDINARY_URL environment variable
+
+- Login to your [cloudinary account](https://cloudinary.com/users/login)
+- Locate your Profile image, which you should see at the bottom of the tab on the left
+- Once on your profile page, go to your API Keys section
+- At the top of that page copy the one that says, API environment variable
+- place the API Key and API Secret in the correct places in the key parameters
+- this key can now be placed in Heroku or for local development
+- on the Heroku dashboard, there are two sections of the key and the value
+- place CLOUDINARY_URL in the key section
+- and your api key in the value section
+- on local development in the env.py file, you need to use the os module for environment variables
+- import the os module at the top
+- and create the following method:
+- os.environ.setdefault("key", "value")
+- placing CLOUDINARY_URL as the key
+- and the api key for cloudinary as the value
+
+DATABASE_URL environment variable
+
+- To get this env login to [ElephantSQL](https://www.elephantsql.com/)
+- create a new Instance (The big green button on the right-hand side)
+- fill in all the details make sure to select Postgres 13 and above
+- once the new instance has been created
+- locate the tab that says, "Details" on the left-hand side
+- once you have clicked on that tab, there is a URL that you need to copy for Heroku
+- That URL you will paste it into the Heroku environment variables section or for local development
+- on local development in the env.py file, you need to use the os module for environment variables
+- import the os module at the top
+- and create the following method:
+- os.environ.setdefault("key", "value")
+- placing DATABASE_URL as the key
+- and the api key for elephantSQL as the value
+
+DISABLE_COLLECTSTATIC environment variable
+
+- This env is used for heroku it needs to be set to 1
+- If you don't have it, heroku will give you an error
+- This is used for the styling in the site
+- place this environment variable in the Heroku section or for local development
+- for DISABLE_COLLECTSTATIC
+
+DJANGO_SECRET_KEY environment variable
+
+- Django secret keys should never be committed to GitHub
+- when running this project, you need to generate a
+  new [secret key](https://www.makeuseof.com/django-secret-key-generate-new/#:~:text=You%20can%20accidentally%20make%20your,are%20still%20learning%20about%20GitHub.)
+- once you have generated the key place it in the Heroku section or for local development
+- on local development in the env.py file, you need to use the os module for environment variables
+- import the os module at the top
+- and create the following method:
+- os.environ.setdefault("key", "value")
+- placing DJANGO_SECRET_KEY as the key
+- and the newly generated secret key for the value
+
+![env.png](static/images/docs/env.png)
 
 ---
 
