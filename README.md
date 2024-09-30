@@ -20,7 +20,6 @@ I am also able to see the Restaurant's Menu and Chef's specials.
     - [Ux-design](#ux-design)
     - [Colour Pallet](#colour-pallet)
     - [User Stories using MOSCOW Prioritization techniques](#user-stories-using-moscow-prioritization-techniques)
-    - [How to start this project locally](#how-to-start-this-project-locally)
     - [Technology Used](#technology-used)
     - [neat and clean code](#neat-and-clean-code)
 - [Deployment](#deployment)
@@ -252,37 +251,6 @@ Table booking Page
 - Screenshot of the Milestone project board
 
 ![milestones-table-booking.png](static/images/docs/planning/milestones-table-booking.png)
-
-### [How to start this project locally](#planning)
-
-- when using ssh
-- git clone git@github.com: douglas86/ci-project4-restaurant-booking-system.git
-- when using http
-- git clone https://github.com/douglas86/ci-project4-restaurant-booking-system.git
-- make sure to have a look at the runtime.txt file to see what version of python I am using
-- then create a virtual environment with that python version
-- to see if a virtual environment has been created, the words venv in brackets will appear in the terminal
-- as I am using pycharm, the virtual environment will start automatically when I start my IDE
-- then install all the packages needed for this project using the following command
-- pip install -r requirements.txt
-- to start the Django server, run the following command
-- create an env.py file this is used to store all environment variables
-- create the variable needs for this project see the image below
-- placing the name of the variables in the empty quotation marks
-- make sure to set DJANGO_DEBUG = True
-- django secret keys should never be committed to GitHub
-- so if you need one, follow the following link
-- [generate a new secret key](https://www.makeuseof.com/django-secret-key-generate-new/#:~:text=You%20can%20accidentally%20make%20your,are%20still%20learning%20about%20GitHub.)
-- Then go to [elephantSQL](https://www.elephantsql.com/)
-- And create a new database instance to make sure that the version of PostgresSQL is greater than 12
-- Once created, then copy and paste the url in the env.py for the DATABASE_URL string
-- once that is done, then you can run the command below to run the server
-- python manage.py runserver
-- you can use ctrl + click on the server name that should open up a web browser at the correct port
-
-env.py
-
-![env.png](static/images/docs/env.png)
 
 ### [Technology Used](#planning)
 
